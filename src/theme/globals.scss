@@ -1,5 +1,6 @@
 @import './normalize';
 @import './variables';
+@import './mixins';
 
 body {
   background-color: $background-color;
