@@ -1,12 +1,24 @@
 // Colors
+$white-text: #fcffff;
+$active-buttons: #f7a400;
+$hover-buttons: #fb7812;
+
+$background-one: #fff5ee;
+$background-two: #a6b7a9;
+$background-reserved: #457b6d;
+$header: rgb(17, 74, 62, 0.8);
+$footer: #114a3e;
+
+$black-text: #0e0e0e;
+$red-signal: #e11332;
+// ⤵️це не видаляю, бо помилку викинуло.
 $primary-color: #007bff;
 $secondary-color: #6c757d;
 $background-color: #f8f9fa;
 $text-color: #333;
 
 // Fonts
-$font-family-base:
-  var(--font-montserrat),
+$font-family-base: var(--font-montserrat),
   -apple-system,
   BlinkMacSystemFont,
   'Segoe UI',
