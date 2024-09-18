@@ -1,0 +1,29 @@
+@import '@/theme/mixins';
+
+.one {
+  @include text-h1;
+}
+.two {
+  @include text-h2;
+}
+.three {
+  @include text-subtitle;
+}
+.four {
+  @include text-card-title;
+}
+.five {
+  @include text-accent;
+}
+.six {
+  @include text-main;
+}
+.seven {
+  @include text-big-button;
+}
+.eight {
+  @include text-medium-button;
+}
+.nine {
+  @include text-small;
+}
