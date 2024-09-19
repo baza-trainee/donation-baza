@@ -1,16 +1,18 @@
+'use client';
+
 import SignOutButton from '@/components/ui/SignOutButton';
-import { redirect } from 'next/navigation';
-import { validateRequest } from '@/lib/lucia';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
-const page = async () => {
-  const { user, session } = await validateRequest();
-
-  if (!user && !session) {
-    redirect('/login');
+const page = () => {
+  const router = useRouter();
+  const session = useSession();
+  if (!session?.data?.user) {
+    router.replace('/login');
   }
   return (
     <div className="page_wrapper">
-      User with id {user?.id} is signed in
+      User {session?.data?.user?.email} signed in
       <SignOutButton />
     </div>
   );

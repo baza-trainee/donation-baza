@@ -1,8 +1,9 @@
 'use client';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
+
 import { ILoginData } from '@/types/common.types';
-import { loginUser } from '@/utils/api/auth';
+import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -13,9 +14,13 @@ const Login = () => {
 
   const onSubmit: SubmitHandler<ILoginData> = async (values) => {
     setIsProcessing(true);
-    const res = await loginUser(values);
-    if (res && res.status === 200) {
+    const callback = await signIn('credentials', {
+      ...values,
+      redirect: false,
+    });
+    if (callback?.ok) {
       router.replace('/admin');
+      router.refresh();
     }
     setIsProcessing(false);
   };
@@ -23,7 +28,7 @@ const Login = () => {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <input
-          {...register('username', {
+          {...register('email', {
             required: 'Це поле є обов’язковим',
           })}
         />
