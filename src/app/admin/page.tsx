@@ -1,13 +1,17 @@
 'use client';
 
+'use client';
+
 import SignOutButton from '@/components/ui/SignOutButton';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 
 const page = () => {
   const session = useSession();
-  if (!session) {
-    redirect('/login');
+  const router = useRouter();
+
+  if (!session?.data?.user) {
+    router.replace('/login');
   }
   return (
     <div className="page_wrapper">
