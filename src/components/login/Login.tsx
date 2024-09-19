@@ -2,7 +2,7 @@
 
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ILoginData } from '@/types/common.types';
-import { signIn } from '@/utils/actions/auth';
+import { loginUser } from '@/utils/api/auth';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -13,8 +13,8 @@ const Login = () => {
 
   const onSubmit: SubmitHandler<ILoginData> = async (values) => {
     setIsProcessing(true);
-    const res = await signIn(values);
-    if (res && res.success === true) {
+    const res = await loginUser(values);
+    if (res && res.status === 200) {
       router.replace('/admin');
     }
     setIsProcessing(false);
