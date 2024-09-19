@@ -15,3 +15,12 @@ export const createApplication = async (values: IApplicationData) => {
     return error instanceof Error ? { error: error.message } : { error };
   }
 };
+
+export const fetchApplications = async () => {
+  try {
+    const res = await db.query.applications.findMany();
+    return res;
+  } catch (error: unknown) {
+    return error instanceof Error ? { error: error.message } : { error };
+  }
+};

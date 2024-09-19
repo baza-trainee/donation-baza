@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-alert */
 'use client';
 
@@ -21,6 +22,8 @@ const Applications = () => {
     queryFn: async () => await getApplications(),
     queryKey: [queryKeys.applications.GET_APPLICATIONS],
   });
+
+  console.log(data);
 
   const { mutate } = useMutation({
     mutationKey: [queryKeys.applications.ADD_APPLICATION],
