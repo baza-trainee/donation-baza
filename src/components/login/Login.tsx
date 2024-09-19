@@ -1,16 +1,23 @@
 'use client';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { signIn, signOut } from '@/utils/actions/auth.action';
 import { ILoginData } from '@/types/common.types';
+import { signIn } from '@/utils/actions/auth';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
-const SignUp = () => {
+const Login = () => {
+  const router = useRouter();
+  const [isProcessing, setIsProcessing] = useState(false);
   const { register, handleSubmit } = useForm<ILoginData>({ mode: 'onChange' });
 
   const onSubmit: SubmitHandler<ILoginData> = async (values) => {
+    setIsProcessing(true);
     const res = await signIn(values);
-    // eslint-disable-next-line no-alert
-    alert(JSON.stringify(res, null, 2));
+    if (res && res.success === true) {
+      router.replace('/admin');
+    }
+    setIsProcessing(false);
   };
   return (
     <>
@@ -27,11 +34,12 @@ const SignUp = () => {
           })}
         />
 
-        <button type="submit">Увійти</button>
-        <button onClick={() => signOut()}>Вийти</button>
+        <button type="submit">
+          {isProcessing ? 'Обробка запиту' : 'Увійти'}
+        </button>
       </form>
     </>
   );
 };
 
-export default SignUp;
+export default Login;
