@@ -1,29 +1,39 @@
 @import '@/theme/mixins';
 
-.one {
+// Example of using font mixins
+
+.text-h1 {
   @include text-h1;
 }
-.two {
+
+.text-h2 {
   @include text-h2;
 }
-.three {
+
+.text-subtitle {
   @include text-subtitle;
 }
-.four {
+
+.text-card-title {
   @include text-card-title;
 }
-.five {
+
+.text-accent {
   @include text-accent;
 }
-.six {
+
+.text-main {
   @include text-main;
 }
-.seven {
+
+.text-big-button {
   @include text-big-button;
 }
-.eight {
+
+.text-medium-button {
   @include text-medium-button;
 }
-.nine {
+
+.text-small {
   @include text-small;
 }
