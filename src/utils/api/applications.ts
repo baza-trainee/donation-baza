@@ -16,5 +16,8 @@ export const postApplication = async (values: IApplicationData) => {
     '/api/application',
     values
   );
-  return data;
+  return {
+    status: 200,
+    data,
+  };
 };
