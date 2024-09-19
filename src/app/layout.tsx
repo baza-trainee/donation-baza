@@ -19,10 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${fonts.inter.variable} ${fonts.montserrat.variable}`}
-    >
+    <html lang="en" className={`${fonts.montserrat.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="16x16" />
       </head>

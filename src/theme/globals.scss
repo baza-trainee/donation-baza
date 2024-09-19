@@ -1,29 +1,12 @@
 @import './normalize';
 @import './variables';
+@import './mixins';
 
 body {
-  background-color: $background-color;
-  color: $text-color;
+  background-color: $background-one;
+  color: $black-text;
   font-family: $font-family-base;
-}
-
-.container {
-  max-width: $large-desktop;
-  margin: 0 auto;
-  padding: 0 $spacing-unit * 2;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: $spacing-unit * 2;
-}
-
-p {
-  margin-bottom: $spacing-unit;
+  position: relative;
 }
 
 .form {
