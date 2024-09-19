@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import QueryClientProvider from '@/components/providers/QueryClientProvider';
 import React from 'react';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import SessionWrapper from '@/components/providers/SessionProvider';
 import { fonts } from '@/theme/fonts';
 
 export const metadata: Metadata = {
@@ -25,15 +26,17 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="16x16" />
       </head>
-      <body>
-        <Header />
-        <QueryClientProvider>
-          {children}
-          <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
+      <SessionWrapper>
+        <body>
+          <Header />
+          <QueryClientProvider>
+            {children}
+            <ReactQueryDevtools initialIsOpen={false} />
+          </QueryClientProvider>
 
-        <Footer />
-      </body>
+          <Footer />
+        </body>
+      </SessionWrapper>
     </html>
   );
 }
