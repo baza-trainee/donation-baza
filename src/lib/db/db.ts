@@ -9,14 +9,14 @@ const connectionString = process.env.DATABASE_URL;
 
 const drizzleClient = drizzle(
   postgres(connectionString!, {
-    prepare: false,
-  }),
-  { schema }
-);
+     prepare: false,
+   }),
+   { schema }
+ );
 
 declare global {
-  var database: PostgresJsDatabase<typeof schema> | undefined;
-}
+var database: PostgresJsDatabase<typeof schema> | undefined;
+ }
 
 export const db = global.database || drizzleClient;
 if (process.env.NODE_ENV !== 'production') global.database = db;
