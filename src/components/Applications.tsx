@@ -2,10 +2,9 @@
 'use client';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { getApplications, postApplication } from '@/utils/api/applications';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { IApplicationData } from '@/types/common.types';
-import { createApplication } from '@/utils/actions/applications';
-import { getApplications } from '@/utils/api/applications';
 import { queryKeys } from '@/constants/queryKeys';
 import { useState } from 'react';
 
@@ -24,7 +23,7 @@ const Applications = () => {
 
   const { mutate } = useMutation({
     mutationKey: [queryKeys.applications.ADD_APPLICATION],
-    mutationFn: createApplication,
+    mutationFn: postApplication,
     onSuccess: () => {
       setIsProcessing(false);
       alert('success');
