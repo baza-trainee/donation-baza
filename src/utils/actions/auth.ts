@@ -4,13 +4,14 @@ import { lucia, validateRequest } from '@/lib/lucia';
 import { ILoginData } from '@/types/common.types';
 import bcrypt from 'bcryptjs';
 import { cookies } from 'next/headers';
-import { db } from '@/lib/db/db';
-import { eq } from 'drizzle-orm';
+import prisma from '@/lib/prisma';
 
 export const signIn = async (values: ILoginData) => {
   try {
-    const existingUser = await db.query.users.findFirst({
-      where: (table) => eq(table.username, values.username),
+    const existingUser = await prisma.user.findFirst({
+      where: {
+        username: values.username,
+      },
     });
 
     if (!existingUser) {
@@ -36,8 +37,10 @@ export const signIn = async (values: ILoginData) => {
       };
     }
 
+    const currentDate = new Date();
+
     const session = await lucia.createSession(existingUser.id, {
-      expiresIn: 60 * 60 * 24 * 30,
+      expiresAt: new Date(currentDate.getTime() + 60 * 60 * 24 * 30 * 1000),
     });
 
     const sessionCookie = lucia.createSessionCookie(session.id);

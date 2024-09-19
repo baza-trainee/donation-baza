@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable no-alert */
 'use client';
 
@@ -23,13 +22,12 @@ const Applications = () => {
     queryKey: [queryKeys.applications.GET_APPLICATIONS],
   });
 
-  console.log(data);
-
   const { mutate } = useMutation({
     mutationKey: [queryKeys.applications.ADD_APPLICATION],
     mutationFn: createApplication,
     onSuccess: () => {
       setIsProcessing(false);
+      alert('success');
       queryClient.invalidateQueries({
         queryKey: [queryKeys.applications.GET_APPLICATIONS],
       });
