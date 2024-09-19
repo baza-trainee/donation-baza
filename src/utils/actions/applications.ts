@@ -1,14 +1,19 @@
 'use server';
 
 import { IApplicationData } from '@/types/common.types';
-import { applications } from '@/lib/db/schema';
-import { db } from '@/lib/db/db';
+import prisma from '@/lib/prisma';
 
 export const createApplication = async (values: IApplicationData) => {
   try {
-    const res = await db.insert(applications).values(values).returning();
+    await prisma.application.create({
+      data: {
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        message: values.message,
+      },
+    });
     return {
-      res,
       success: true,
       message: 'Application sent successfully',
     };

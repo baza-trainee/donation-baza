@@ -1,6 +1,4 @@
-import { DrizzlePostgreSQLAdapter } from '@lucia-auth/adapter-drizzle';
-import { db } from './db/db';
-import sessionTable from './db/schema/session';
-import users from './db/schema/user';
+import { PrismaAdapter } from '@lucia-auth/adapter-prisma';
+import prisma from './prisma';
 
-export const adapter = new DrizzlePostgreSQLAdapter(db, sessionTable, users);
+export const adapter = new PrismaAdapter(prisma.session, prisma.user);

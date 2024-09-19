@@ -1,16 +1,14 @@
 import Applications from '@/components/Applications';
-import SignUp from '@/components/SignUp';
+import Link from 'next/link';
 
 import styles from './Page.module.scss';
-import { validateRequest } from '@/lib/lucia';
 
-export default async function Home() {
-  const { user, session } = await validateRequest();
-
+export default function Home() {
   return (
     <div className="wrapper">
-      <pre>{JSON.stringify(user, null, 2)}</pre>
-      <pre>{JSON.stringify(session, null, 2)}</pre>
+      <Link href={'/login'}>login</Link>
+      <Link href={'/applications'}>applications</Link>
+      <Link href={'/admin'}>admin</Link>
       <p className={styles.one}>Сила в єдності: твоя допомога важлива</p>
       <p className={styles.two}>Сила в єдності: твоя допомога важлива</p>
       <p className={styles.three}>Сила в єдності: твоя допомога важлива</p>
@@ -21,7 +19,6 @@ export default async function Home() {
       <p className={styles.eight}>Сила в єдності: твоя допомога важлива</p>
       <p className={styles.nine}>Сила в єдності: твоя допомога важлива</p>
       <Applications />
-      <SignUp />
     </div>
   );
 }

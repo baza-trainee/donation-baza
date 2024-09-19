@@ -10,3 +10,14 @@ export const getApplications = async () => {
   const { data } = await axios.get<IApplicationResponse[]>('/api/application');
   return data;
 };
+
+export const postApplication = async (values: IApplicationData) => {
+  const { data } = await axios.post<IApplicationResponse[]>(
+    '/api/application',
+    values
+  );
+  return {
+    status: 200,
+    data,
+  };
+};

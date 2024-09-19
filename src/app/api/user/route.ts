@@ -1,9 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
-import { db } from '@/lib/db/db';
-import { eq } from 'drizzle-orm';
-import { generateIdFromEntropySize } from 'lucia';
-import users from '@/lib/db/schema/user';
+import prisma from '@/lib/prisma';
 
 export async function POST(request: NextRequest) {
   const { username, password } = await request.json();
@@ -12,8 +9,10 @@ export async function POST(request: NextRequest) {
     if (!username || !password)
       return NextResponse.json({ message: 'Bad Credentials' }, { status: 422 });
 
-    const existingUser = await db.query.users.findFirst({
-      where: eq(users.username, username),
+    const existingUser = await prisma.user.findFirst({
+      where: {
+        username,
+      },
     });
 
     if (existingUser)
@@ -24,14 +23,12 @@ export async function POST(request: NextRequest) {
 
     const hashedPassword = await bcrypt.hash(password, 13);
 
-    const user = await db
-      .insert(users)
-      .values({
-        id: generateIdFromEntropySize(10),
+    const user = await prisma.user.create({
+      data: {
         username,
         password: hashedPassword,
-      })
-      .returning();
+      },
+    });
 
     return NextResponse.json(
       { message: 'User successfully created', user },
