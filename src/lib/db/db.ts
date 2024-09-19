@@ -1,7 +1,6 @@
-/* eslint-disable init-declarations */
 /* eslint-disable no-var */
 /* eslint-disable vars-on-top */
-
+/* eslint-disable init-declarations */
 import * as schema from './schema';
 import { PostgresJsDatabase, drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
