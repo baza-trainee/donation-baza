@@ -3,15 +3,15 @@ import bcrypt from 'bcryptjs';
 import prisma from '@/lib/prisma';
 
 export async function POST(request: NextRequest) {
-  const { username, password } = await request.json();
+  const { email, password } = await request.json();
 
   try {
-    if (!username || !password)
+    if (!email || !password)
       return NextResponse.json({ message: 'Bad Credentials' }, { status: 422 });
 
     const existingUser = await prisma.user.findFirst({
       where: {
-        username,
+        email,
       },
     });
 
@@ -21,11 +21,11 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
 
-    const hashedPassword = await bcrypt.hash(password, 13);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await prisma.user.create({
       data: {
-        username,
+        email,
         password: hashedPassword,
       },
     });

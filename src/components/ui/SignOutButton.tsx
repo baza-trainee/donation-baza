@@ -1,9 +1,9 @@
 'use client';
 
-import { signOut } from '@/utils/actions/auth';
+import { signOut } from 'next-auth/react';
 
 const SignOutButton = () => {
-  return <button onClick={() => signOut()}>Вийти</button>;
+  return <button onClick={() => signOut({ callbackUrl: '/' })}>Вийти</button>;
 };
 
 export default SignOutButton;
