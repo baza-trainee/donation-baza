@@ -1,0 +1,40 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.container {
+  border-bottom: 1px solid $black-text;
+}
+
+.accordionChildren {
+  @include text-accent;
+  width: 43.25rem;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.questionNumber {
+  @include text-accent;
+  padding-right: 24px;
+}
+
+.title {
+  @include text-big-button;
+}
+
+.iconDefault {
+  cursor: pointer;
+  fill: $black-text;
+}
+
+.iconDefault:hover {
+  fill: $white-text;
+}
+
+.iconRotate {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}

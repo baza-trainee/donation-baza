@@ -1,0 +1,20 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.container {
+  background-color: $background-two;
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  padding: 100px 64px;
+  gap: 48px;
+}
+
+.header {
+  @include text-h2;
+  text-align: center;
+}
+
+.textWrapper {
+  width: 47.3rem;
+}

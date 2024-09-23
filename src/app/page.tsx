@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import QASection from '@/features/home/sections/QASection';
 import styles from './Page.module.scss';
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
         <Link href={'/applications'}>applications</Link>
         <Link href={'/admin'}>admin</Link>
       </div>
+      <QASection />
       <p className={styles['text-h1']}>Сила в єдності: твоя допомога важлива</p>
       <p className={styles['text-h2']}>Сила в єдності: твоя допомога важлива</p>
       <p className={styles['text-subtitle']}>
