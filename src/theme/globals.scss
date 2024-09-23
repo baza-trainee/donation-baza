@@ -2,6 +2,13 @@
 @import './variables';
 @import './mixins';
 
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+// ⬆️ без цього у елементів зайві відступи
 body {
   background-color: $background-one;
   color: $black-text;
