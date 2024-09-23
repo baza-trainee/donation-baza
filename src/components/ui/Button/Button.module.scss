@@ -1,3 +1,16 @@
-button {
-  width: $tablet;
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.container {
+  padding: 10px;
+}
+
+.container > * {
+  @include text-accent;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

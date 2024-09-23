@@ -1,4 +1,5 @@
 import Application from '@/components/main/application/Application';
+import Button from '@/components/ui/Button';
 import ErrorMessage from '@/components/common/ErrorMessage/ErrorMessage';
 import Modal from '@/components/common/Modal/Modal';
 import styles from './Page.module.scss';
@@ -33,6 +34,9 @@ export default function Home() {
       <Modal modalKey="error_message">
         <ErrorMessage />
       </Modal>
+      <Button variant="icon" size="medium" iconImage="uah">
+        Щомісячна підписка
+      </Button>
     </>
   );
 }
