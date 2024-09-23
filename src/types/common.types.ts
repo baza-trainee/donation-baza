@@ -6,6 +6,5 @@ export interface ILoginData {
 export interface IApplicationData {
   name: string;
   email: string;
-  phone: string;
   message: string;
 }

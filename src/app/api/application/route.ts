@@ -18,7 +18,6 @@ export async function POST(request: Request) {
       data: {
         name: values.name,
         email: values.email,
-        phone: values.phone,
         message: values.message,
       },
     });
