@@ -1,15 +1,12 @@
-import Link from 'next/link';
-
+import Application from '@/components/main/application/Application';
+import ErrorMessage from '@/components/common/ErrorMessage/ErrorMessage';
+import Modal from '@/components/common/Modal/Modal';
 import styles from './Page.module.scss';
 
 export default function Home() {
   return (
     <>
-      <div className="wrapper">
-        <Link href={'/login'}>login</Link>
-        <Link href={'/applications'}>applications</Link>
-        <Link href={'/admin'}>admin</Link>
-      </div>
+      <Application />
       <p className={styles['text-h1']}>Сила в єдності: твоя допомога важлива</p>
       <p className={styles['text-h2']}>Сила в єдності: твоя допомога важлива</p>
       <p className={styles['text-subtitle']}>
@@ -33,6 +30,9 @@ export default function Home() {
       <p className={styles['text-small']}>
         Сила в єдності: твоя допомога важлива
       </p>
+      <Modal modalKey="error_message">
+        <ErrorMessage />
+      </Modal>
     </>
   );
 }

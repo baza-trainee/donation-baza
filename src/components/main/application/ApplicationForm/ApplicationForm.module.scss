@@ -1,0 +1,30 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.application_form {
+  @include flex-center-col;
+  width: 100%;
+  gap: 1.5rem;
+
+  .application_form_content {
+    width: 100%;
+    display: flex;
+    @media screen and (max-width: $small-desktop) {
+      flex-direction: column;
+    }
+
+    .application_form_inputs {
+      @include flex-center-col;
+      width: 50%;
+      gap: 1rem;
+      @media screen and (max-width: $small-desktop) {
+        width: 100%;
+      }
+    }
+  }
+
+  .application_form_button {
+    @include button(10.1rem, 3.4rem);
+    margin-top: 44px;
+  }
+}

@@ -2,6 +2,7 @@ import '@/theme/globals.scss';
 import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
 import type { Metadata } from 'next';
+import { ModalProvider } from '@/context/ModalContext';
 import QueryClientProvider from '@/components/providers/QueryClientProvider';
 import React from 'react';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -24,15 +25,17 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="16x16" />
       </head>
       <SessionWrapper>
-        <body>
-          <Header />
-          <QueryClientProvider>
-            {children}
-            <ReactQueryDevtools initialIsOpen={false} />
-          </QueryClientProvider>
+        <ModalProvider>
+          <body>
+            <Header />
+            <QueryClientProvider>
+              {children}
+              <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
 
-          <Footer />
-        </body>
+            <Footer />
+          </body>
+        </ModalProvider>
       </SessionWrapper>
     </html>
   );
