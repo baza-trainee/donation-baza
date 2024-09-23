@@ -1,0 +1,15 @@
+@import '@/theme/mixins';
+
+.feedback_layout {
+  @include flex-center-col;
+  width: 100%;
+  height: 100%;
+  gap: 16px;
+
+  .feedback_title {
+    @include text-card-title;
+  }
+  .feedback_text {
+    @include text-accent;
+  }
+}

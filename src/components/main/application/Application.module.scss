@@ -1,0 +1,13 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.application_wrapper {
+  @include flex-center-col;
+  gap: 44px;
+  padding: $section-padding;
+  background-color: $background-two;
+
+  .application_title {
+    @include text-h2;
+  }
+}
