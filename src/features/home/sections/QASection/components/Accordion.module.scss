@@ -3,12 +3,13 @@
 
 .container {
   border-bottom: 1px solid $black-text;
+  width: 43.125rem;
+  padding: 8px;
 }
 
-.accordionChildren {
-  @include text-accent;
-  width: 43.25rem;
-  overflow: hidden;
+.children {
+  @include text-main;
+  padding: 10px 8px 10px 70px;
 }
 
 .header {
@@ -36,5 +37,5 @@
 
 .iconRotate {
   transform: rotate(45deg);
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease-out;
 }

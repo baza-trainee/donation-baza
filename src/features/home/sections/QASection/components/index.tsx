@@ -22,16 +22,12 @@ const Accordion = ({
           <span className={styles.questionNumber}>{questionNumber}</span>
           <span className={styles.title}>{title}</span>
         </div>
-        <div
+        <AccordionIcon
           onClick={() => setIsAccordionOpen(!isAccordionOpen)}
           className={isAccordionOpen ? styles.iconRotate : styles.iconDefault}
-        >
-          <AccordionIcon />
-        </div>
+        />
       </div>
-      {isAccordionOpen && (
-        <div className={styles.accordionChildren}>{children}</div>
-      )}
+      {isAccordionOpen && <div className={styles.children}>{children}</div>}
     </div>
   );
 };

@@ -1,9 +1,12 @@
-export const AccordionIcon = () => (
+import { SVGProps } from 'react';
+
+export const AccordionIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width="42"
     height="42"
     viewBox="0 0 42 42"
     xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <path
       fillRule="evenodd"
