@@ -1,11 +1,11 @@
 @import '@/theme/variables';
 @import '@/theme/mixins';
 
-// screen 1440px
+// screen 1440px - $desktop
 .footer {
   background-color: $footer;
   font-family: $font-family-base;
-  color: #fff;
+  color: $white-text;
   width: auto;
   padding: 60px 64px;
   @include text-accent;
@@ -15,15 +15,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  // flex-wrap: wrap;
 }
 
 .logo {
   color: $white-text;
 }
 .logo img:hover {
-  content: url('/img/footer/logo-footer-hover.png');
+  content: url('/svg/logo-hover.svg');
 }
 /////////////////
 .footerMenu ul {
@@ -119,17 +117,14 @@
   color: $white-text;
   text-align: center;
 }
-//////////////
-@media (min-width: 1680px) {
+///// media /////////
+@media (min-width: $large-desktop) {
   .footer {
     padding: 60px 120px;
   }
 }
 
-@media (max-width: 1440px) {
-}
-
-@media (max-width: 1024px) {
+@media (max-width: $small-desktop) {
   .footer {
     padding: 50px 40px;
     font-size: 1rem;
@@ -137,7 +132,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $tablet) {
   .footer {
     padding: 50px 40px;
     font-size: 1rem;
@@ -155,7 +150,7 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: $mobile) {
   .footer {
     padding: 40px 20px;
     font-size: 1rem;
