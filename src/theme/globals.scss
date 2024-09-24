@@ -1,7 +1,14 @@
-@import './normalize';
-@import './variables';
-@import './mixins';
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
 
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+// ⬆️ без цього у елементів зайві відступи
 body {
   background-color: $background-one;
   color: $black-text;
@@ -9,27 +16,8 @@ body {
   position: relative;
 }
 
-.form {
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.page_wrapper {
-  min-height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 15px;
+body.lock {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
 }
