@@ -117,6 +117,9 @@
   color: $white-text;
   text-align: center;
 }
+.footerCopyright p {
+  @include text-accent;
+}
 ///// media /////////
 @media (min-width: $large-desktop) {
   .footer {
@@ -128,6 +131,10 @@
   .footer {
     padding: 50px 40px;
     font-size: 1rem;
+    font-weight: 500;
+  }
+  .footerCopyright p {
+    font-size: 0.875rem;
     font-weight: 500;
   }
 }
@@ -147,6 +154,10 @@
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+  }
+  .footerCopyright p {
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 }
 
@@ -178,8 +189,8 @@
     left: 4.8rem;
   }
   ////
-  .footerCopyright {
-    font-size: 14px;
+  .footerCopyright p {
+    font-size: 0.875rem;
     font-weight: 500;
   }
 }
