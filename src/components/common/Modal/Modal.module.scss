@@ -1,7 +1,7 @@
 @import '@/theme/variables';
 @import '@/theme/mixins';
 
-.modal_overlay {
+.modalOverlay {
   @include flex-center;
   position: fixed;
   inset: 0;
@@ -9,7 +9,7 @@
   backdrop-filter: blur(10px) brightness(60%);
   background-color: rgba(0, 0, 0, 0.5);
 
-  .modal_content {
+  .modalContent {
     @include flex-center;
     position: relative;
     padding-top: 1rem;
@@ -26,7 +26,7 @@
       display: none;
     }
 
-    .modal_close {
+    .modalClose {
       position: absolute;
       right: 1rem;
       top: 1rem;

@@ -2,8 +2,8 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import ApplicationText from './ApplicationText/ApplicationText';
 import { IApplicationData } from '@/types/common.types';
-import TextArea from '@/components/ui/text_area/TextArea';
-import TextInput from '@/components/ui/text_input/TextInput';
+import TextArea from '@/components/ui/TextArea/TextArea';
+import TextInput from '@/components/ui/TextInput/TextInput';
 import { applicationScheme } from './applicationScheme';
 import { postApplication } from '@/utils/api/applications';
 import { queryKeys } from '@/constants/queryKeys';
@@ -57,10 +57,10 @@ const ApplicationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.application_form}>
-      <div className={styles.application_form_content}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.applicationForm}>
+      <div className={styles.applicationFormContent}>
         <ApplicationText />
-        <div className={styles.application_form_inputs}>
+        <div className={styles.applicationFormInputs}>
           <Controller
             name="name"
             control={control}
@@ -99,7 +99,7 @@ const ApplicationForm = () => {
           />
         </div>
       </div>
-      <button type="submit" className={styles.application_form_button}>
+      <button type="submit" className={styles.applicationFormButton}>
         {isProcessing ? 'Відправляємо' : 'Відправити'}
       </button>
     </form>

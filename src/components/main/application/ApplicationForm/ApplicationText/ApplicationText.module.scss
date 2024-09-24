@@ -1,13 +1,13 @@
 @import '@/theme/variables';
 @import '@/theme/mixins';
 
-.application_text {
+.applicationTextWrapper {
   width: 50%;
   @media screen and (max-width: $small-desktop) {
     width: 100%;
   }
 
-  &_text {
+  .applicationTextContent {
     width: 27.6rem;
     @include text-small;
   }
