@@ -19,12 +19,9 @@ const Modal = ({ modalKey, children }: ModalProps) => {
   const isModalOpen = modals[modalKey];
 
   const ModalLayout = () => (
-    <div className={styles.modal_overlay}>
-      <div className={styles.modal_content}>
-        <div
-          onClick={() => closeModal(modalKey)}
-          className={styles.modal_close}
-        >
+    <div className={styles.modalOverlay}>
+      <div className={styles.modalContent}>
+        <div onClick={() => closeModal(modalKey)} className={styles.modalClose}>
           <Image src="/svg/close.svg" alt="close" width={20} height={20} />
         </div>
         {children}
