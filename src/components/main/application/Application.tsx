@@ -7,8 +7,8 @@ import styles from './Application.module.scss';
 
 const Application = () => {
   return (
-    <section className={styles.application_wrapper}>
-      <h2 className={styles.application_title}>Подати заявку</h2>
+    <section className={styles.applicationWrapper}>
+      <h2 className={styles.applicationTitle}>Подати заявку</h2>
       <ApplicationForm />
       <Modal modalKey="application_feedback">
         <ApplicationFeedback />

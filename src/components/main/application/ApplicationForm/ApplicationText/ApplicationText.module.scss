@@ -1,14 +1,30 @@
 @import '@/theme/variables';
 @import '@/theme/mixins';
 
-.application_text {
+.applicationTextWrapper {
   width: 50%;
+  display: flex;
+  justify-content: center;
   @media screen and (max-width: $small-desktop) {
     width: 100%;
   }
 
-  &_text {
+  .applicationTextContent {
     width: 27.6rem;
-    @include text-small;
+    @include text-accent;
+
+    @media screen and (max-width: $small-desktop) {
+      width: 651px;
+      text-align: center;
+      margin-bottom: 46px;
+      @include text-small;
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 372px;
+      text-align: center;
+      margin-bottom: 46px;
+      @include text-extra-small;
+    }
   }
 }

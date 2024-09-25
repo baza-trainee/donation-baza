@@ -1,17 +1,17 @@
 @import '@/theme/mixins';
 @import '@/theme/variables';
 
-.error_layout {
+.errorLayout {
   @include flex-center-col;
   width: 100%;
   height: 100%;
   gap: 16px;
 
-  .error_title {
+  .errorTitle {
     @include text-card-title;
     color: $red-signal;
   }
-  .error_text {
+  .errorText {
     @include text-accent;
   }
 }
