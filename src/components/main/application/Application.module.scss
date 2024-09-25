@@ -3,11 +3,19 @@
 
 .applicationWrapper {
   @include flex-center-col;
+  @include section-padding;
   gap: 44px;
-  padding: $section-padding;
   background-color: $background-two;
+
+  @media screen and (max-width: $mobile) {
+    gap: 20px;
+  }
 
   .applicationTitle {
     @include text-h2;
+
+    @media screen and (max-width: $mobile) {
+      @include text-card-title;
+    }
   }
 }
