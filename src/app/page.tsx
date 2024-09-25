@@ -70,6 +70,15 @@ export default function Home() {
           Підтримати Baza
         </Button>
       </div>
+      <div className={styles.buttonGroup}>
+        <span>secondary button</span>
+        <Button variant="secondary" size="medium">
+          Допомогти Baza
+        </Button>
+        <Button variant="secondary" size="large">
+          Допомогти Baza
+        </Button>
+      </div>
     </>
   );
 }
