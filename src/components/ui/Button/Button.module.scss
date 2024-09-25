@@ -1,16 +1,76 @@
 @import '@/theme/variables';
 @import '@/theme/mixins';
-
-.container {
-  padding: 10px;
-}
-
-.container > * {
-  @include text-accent;
-}
-
+// variant: 'primary' | 'secondary' | 'outline' | 'underline' | 'pay';
+// size: 'small' | 'medium' | 'large';
 .flex {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.container {
+  display: block;
+  border: none;
+  & > * {
+    @include text-accent;
+    color: $black-text;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &.pay {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9d7c9;
+    border: 1px solid #000000;
+    padding: 16px 32px;
+    border-radius: 8px;
+    & > * {
+      @include text-accent;
+      color: #030110;
+    }
+    &:hover {
+      background-color: #f5e9df;
+    }
+    &:active {
+      border-color: $hover-buttons;
+    }
+  }
+  &.primary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $active-buttons;
+    box-shadow: inset 2px 2px 8px rgb(0 0 0 / 25%);
+    border-radius: 8px;
+    color: $black-text;
+    &.small {
+      padding: 14px 24px;
+      @include text-small;
+    }
+    &.medium {
+      padding: 16px 32px;
+      @include text-medium-button;
+    }
+    &.large {
+      padding: 24px 56px;
+      @include text-big-button;
+    }
+    &:hover {
+      color: $white-text;
+      background-color: $hover-buttons;
+    }
+    &:active {
+      color: $black-text;
+      background-color: $active-buttons;
+    }
+    &:disabled {
+      background-color: $secondary;
+      color: $black-text;
+    }
+  }
 }

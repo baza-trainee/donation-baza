@@ -34,9 +34,42 @@ export default function Home() {
       <Modal modalKey="error_message">
         <ErrorMessage />
       </Modal>
-      <Button variant="icon" size="medium" iconImage="uah">
-        Щомісячна підписка
-      </Button>
+      <div className={styles.buttonGroup}>
+        <span>pay button</span>
+        <Button variant="pay" size="medium">
+          Щомісячна підписка
+        </Button>
+        <Button variant="pay" size="medium" icon="uah"></Button>
+        <Button variant="pay" size="medium" icon="eur"></Button>
+        <Button variant="pay" size="medium" icon="zloty"></Button>
+      </div>
+      <div className={styles.buttonGroup}>
+        <span>primary (header) button</span>
+        <Button variant="primary" size="small">
+          Підтримати Baza
+        </Button>
+        <Button disabled variant="primary" size="small">
+          Підтримати Baza
+        </Button>
+      </div>
+      <div className={styles.buttonGroup}>
+        <span>primary (header) button</span>
+        <Button variant="primary" size="medium">
+          Підтримати Baza
+        </Button>
+        <Button disabled variant="primary" size="medium">
+          Підтримати Baza
+        </Button>
+      </div>
+      <div className={styles.buttonGroup}>
+        <span>primary (header) button</span>
+        <Button variant="primary" size="large">
+          Підтримати Baza
+        </Button>
+        <Button disabled variant="primary" size="large">
+          Підтримати Baza
+        </Button>
+      </div>
     </>
   );
 }

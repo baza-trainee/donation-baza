@@ -3,22 +3,21 @@ import React from 'react';
 import styles from './Button.module.scss';
 
 interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: 'primary' | 'secondary' | 'outline' | 'underline' | 'icon';
+  variant: 'primary' | 'secondary' | 'outline' | 'underline' | 'pay';
   size: 'small' | 'medium' | 'large';
-  iconImage?: 'uah' | 'zloty' | 'eur' | React.ReactNode;
+  icon?: 'uah' | 'zloty' | 'eur';
 }
 
 const Button: React.FC<IButton> = ({
   children,
   variant,
   size,
-
-  iconImage,
+  icon,
   className,
   ...props
 }) => {
   const renderedIcon = () => {
-    switch (iconImage) {
+    switch (icon) {
       case 'uah':
         return (
           <Image
@@ -29,11 +28,20 @@ const Button: React.FC<IButton> = ({
           />
         );
       case 'zloty':
-        return <Image src={'/svg/zloty-icon.svg'} alt="zloty" />;
+        return (
+          <Image
+            src={'/svg/zloty-icon.svg'}
+            width={40}
+            height={40}
+            alt="zloty"
+          />
+        );
       case 'eur':
-        return <Image src={'/svg/euro-icon.svg'} alt="euro" />;
+        return (
+          <Image src={'/svg/euro-icon.svg'} width={40} height={40} alt="euro" />
+        );
       default:
-        return iconImage;
+        return icon;
     }
   };
   return (
@@ -41,7 +49,7 @@ const Button: React.FC<IButton> = ({
       className={`${styles.container} ${styles[variant]} ${styles[size]} ${className}`}
       {...props}
     >
-      {variant === 'icon' ? (
+      {variant === 'pay' ? (
         <div className={styles.flex}>
           {renderedIcon()}
           {children}
