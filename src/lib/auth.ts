@@ -54,10 +54,13 @@ export const authOptions: AuthOptions = {
     }),
   ],
   pages: {
-    signIn: '/login',
+    signIn: '/signin',
   },
   session: {
     strategy: 'jwt',
+  },
+  jwt: {
+    secret: process.env.NEXTAUTH_SECRET,
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
