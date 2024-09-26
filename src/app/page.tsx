@@ -8,8 +8,8 @@ import styles from './Page.module.scss';
 export default function Home() {
   return (
     <>
-      <Application />
       <QASection />
+      <Application />
       <p className={styles['text-h1']}>Сила в єдності: твоя допомога важлива</p>
       <p className={styles['text-h2']}>Сила в єдності: твоя допомога важлива</p>
       <p className={styles['text-subtitle']}>

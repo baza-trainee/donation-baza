@@ -1,20 +1,22 @@
 @import '@/theme/variables';
 @import '@/theme/mixins';
 
-.container {
+.containerQA {
   background-color: $background-two;
   display: flex;
-  justify-content: space-between;
-  justify-content: center;
-  padding: 100px 64px;
   gap: 48px;
+  justify-content: center;
+  padding: 100px 120px;
 }
 
-.header {
+.headerQA {
   @include text-h2;
   text-align: center;
 }
 
-.textWrapper {
-  width: 47.3rem;
+.textWrapperQA {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 43.125rem;
 }

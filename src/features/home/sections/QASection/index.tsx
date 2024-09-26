@@ -1,22 +1,23 @@
 import Accordion from './components';
 import Image from 'next/image';
+import { faqContent } from './locales/constants';
 import styles from './QASection.module.scss';
 
 const QASection: React.FC = () => {
   return (
-    <div className={styles.container}>
-      <Image src="/img/faq-test-img.png" alt="faq" width={478} height={592} />
-      <div className={styles.textWrapper}>
-        <h2 className={styles.header}>FAQ</h2>
-        <Accordion
-          questionNumber="(01)"
-          title="Які існують типи запитів про допомогу?"
-        >
-          Персональні - від конкретної людини, локальні - від місцевої
-          спільноти, тематичні - про постійну підтримку арт-проєкту, наприклад,
-          або державні. Ви можете визначити рівень проєкту, побачивши партнерів
-          проєкту.
-        </Accordion>
+    <div className={styles.containerQA}>
+      <Image src="/img/faq-test-img.png" alt="faq" width={486} height={630} />
+      <div className={styles.textWrapperQA}>
+        <h2 className={styles.headerQA}>FAQ</h2>
+        {faqContent.map((question, index) => (
+          <Accordion
+            key={index}
+            questionNumber={question.questionNumber}
+            title={question.title}
+          >
+            {question.children}
+          </Accordion>
+        ))}
       </div>
     </div>
   );
