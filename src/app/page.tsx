@@ -1,3 +1,4 @@
+import Banner from '@/components/common/Banner/Banner';
 import ButtonsExample from '@/components/examples/ButtonsExample';
 import ContactUsFormSection from '@/features/home/sections/ContactUsFormSection';
 import ErrorMessage from '@/components/common/ErrorMessage/ErrorMessage';
@@ -7,6 +8,7 @@ import TextExample from '@/components/examples/TextExample';
 export default function Home() {
   return (
     <>
+      <Banner />
       <ContactUsFormSection />
       <Modal modalKey="error_message">
         <ErrorMessage />
