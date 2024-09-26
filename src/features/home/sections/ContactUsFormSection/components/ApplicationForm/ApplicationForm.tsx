@@ -1,6 +1,7 @@
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import ApplicationText from './ApplicationText/ApplicationText';
+import Button from '@/components/ui/Button';
 import { IApplicationData } from '@/types/common.types';
 import TextArea from '@/components/ui/TextArea/TextArea';
 import TextInput from '@/components/ui/TextInput/TextInput';
@@ -99,9 +100,14 @@ const ApplicationForm = () => {
           />
         </div>
       </div>
-      <button type="submit" className={styles.applicationFormButton}>
+      <Button
+        type="submit"
+        variant="primary"
+        size="medium"
+        className={styles.applicationFormButton}
+      >
         {isProcessing ? 'Відправляємо' : 'Відправити'}
-      </button>
+      </Button>
     </form>
   );
 };

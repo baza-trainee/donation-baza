@@ -17,7 +17,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: React.FC<IButton> = ({
   children,
   variant,
-  size = 'medium',
+  size,
   icon,
   className,
   ...props
