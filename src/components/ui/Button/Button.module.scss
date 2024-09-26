@@ -12,6 +12,7 @@
   display: block;
   border: none;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 
   & > * {
     @include text-accent;
@@ -80,6 +81,33 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: $active-buttons;
+    box-shadow: inset 2px 2px 8px rgb(0 0 0 / 25%);
+    border-radius: 8px;
+    color: $black-text;
+    &.medium {
+      padding: 24px 26px;
+      @include text-big-button;
+    }
+
+    &:hover {
+      color: $white-text;
+      background-color: $hover-buttons;
+    }
+    &:active {
+      color: $black-text;
+      background-color: $active-buttons;
+    }
+    &:disabled {
+      background-color: $secondary;
+      color: $black-text;
+    }
+  }
+  &.underline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     border-bottom: 2px solid $black-text;
     border-top: 2px solid rgb(0 0 0 / 0%);
@@ -124,6 +152,75 @@
       color: $black-text;
       border-top: 2px solid $black-text;
       border-bottom: 2px solid $black-text;
+    }
+  }
+  &.outline {
+    $border-width: 2px;
+    $border-radius: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    position: relative;
+    background: transparent;
+    color: $active-buttons;
+    @include text-medium-button;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: $border-radius;
+      padding: $border-width;
+      background: $active-buttons;
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+    }
+
+    &:hover::before {
+      background: linear-gradient(45deg, $hover-buttons, #9a360c);
+    }
+
+    &:hover {
+      color: $hover-buttons;
+      filter: drop-shadow(0 32px 40px rgba(247, 164, 0, 0.5));
+    }
+
+    &:active {
+      color: $active-buttons;
+
+      &::before {
+        background: $active-buttons;
+      }
+    }
+
+    &:disabled {
+      color: $black-text;
+      filter: none;
+
+      &::before {
+        background: $secondary;
+      }
+    }
+  }
+  &.navigation {
+    box-sizing: border-box;
+    color: $footer;
+    @include text-medium-button;
+    background-color: $background-two;
+    border: 1px solid $footer;
+    border-radius: 8px;
+    &:hover {
+      color: $white-text;
+      background-color: $footer;
+    }
+    &.medium {
+      padding: 16px 32px;
     }
   }
 }

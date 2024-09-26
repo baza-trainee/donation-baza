@@ -3,7 +3,13 @@ import React from 'react';
 import styles from './Button.module.scss';
 
 interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: 'primary' | 'secondary' | 'outline' | 'underline' | 'pay';
+  variant:
+    | 'primary'
+    | 'secondary'
+    | 'outline'
+    | 'underline'
+    | 'pay'
+    | 'navigation';
   size: 'small' | 'medium' | 'large';
   icon?: 'uah' | 'zloty' | 'eur';
 }
@@ -11,7 +17,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button: React.FC<IButton> = ({
   children,
   variant,
-  size,
+  size = 'medium',
   icon,
   className,
   ...props
