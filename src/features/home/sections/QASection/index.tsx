@@ -5,10 +5,10 @@ import styles from './QASection.module.scss';
 
 const QASection: React.FC = () => {
   return (
-    <div className={styles.containerQA}>
+    <div className={styles.container}>
       <Image src="/img/faq-test-img.png" alt="faq" width={486} height={630} />
-      <div className={styles.textWrapperQA}>
-        <h2 className={styles.headerQA}>FAQ</h2>
+      <div className={styles.textWrapper}>
+        <h2 className={styles.header}>FAQ</h2>
         {faqContent.map((question, index) => (
           <Accordion
             key={index}

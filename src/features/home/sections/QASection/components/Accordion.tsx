@@ -16,21 +16,17 @@ const Accordion = ({
 }: React.PropsWithChildren<IAccordion>) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
   return (
-    <div className={styles.containerAccordion}>
-      <div className={styles.headerAccordion}>
-        <span className={styles.questionNumberAccordion}>{questionNumber}</span>
-        <span className={styles.titleAccordion}>{title}</span>
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <span className={styles.questionNumber}>{questionNumber}</span>
+        <span className={styles.title}>{title}</span>
         <AccordionIcon
           onClick={() => setIsAccordionOpen(!isAccordionOpen)}
-          className={
-            isAccordionOpen
-              ? styles.iconRotateAccordion
-              : styles.iconDefaultAccordion
-          }
+          className={isAccordionOpen ? styles.iconRotate : styles.iconDefault}
         />
       </div>
       <div
-        className={`${styles.childrenAccordion} ${isAccordionOpen ? styles.childrenOpen : styles.childrenClosed}`}
+        className={`${styles.children} ${isAccordionOpen ? styles.childrenOpen : styles.childrenClosed}`}
       >
         {children}
       </div>
