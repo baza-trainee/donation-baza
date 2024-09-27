@@ -1,4 +1,4 @@
-import Accordion from './components';
+import Accordion from './components/Accordion';
 import Image from 'next/image';
 import { faqContent } from './locales/constants';
 import styles from './QASection.module.scss';
