@@ -24,6 +24,22 @@
       padding-right: 24px;
       width: 43px;
     }
+
+    .iconDefault {
+      cursor: pointer;
+      fill: $black-text;
+      transition: transform 0.6s ease-in-out;
+      transform: rotate(0);
+      &:hover {
+        fill: $white-text;
+      }
+    }
+
+    .iconRotate {
+      transform: rotate(45deg);
+      transition: transform 0.6s ease-in-out;
+      cursor: pointer;
+    }
   }
 
   .children {
@@ -44,21 +60,5 @@
       padding-top: 0;
       padding-bottom: 0;
     }
-  }
-
-  .iconDefault {
-    cursor: pointer;
-    fill: $black-text;
-    transition: transform 0.6s ease-in-out;
-    transform: rotate(0);
-    &:hover {
-      fill: $white-text;
-    }
-  }
-
-  .iconRotate {
-    transform: rotate(45deg);
-    transition: transform 0.6s ease-in-out;
-    cursor: pointer;
   }
 }

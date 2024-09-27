@@ -8,15 +8,15 @@
   justify-content: center;
   padding: 100px 120px;
 
-  .header {
-    @include text-h2;
-    text-align: center;
-  }
-
   .textWrapper {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 43.125rem;
+
+    .header {
+      @include text-h2;
+      text-align: center;
+    }
   }
 }
