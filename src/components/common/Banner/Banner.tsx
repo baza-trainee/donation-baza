@@ -12,9 +12,13 @@ const Banner: React.FC = () => {
   useEffect(() => {
     if (containerRef.current && textRef.current) {
       const textWidth = textRef.current.offsetWidth;
+      const containerWidth = containerRef.current.clientWidth;
       const speed = 100;
-      const duration = textWidth / speed;
-      containerRef.current.style.setProperty('--text-width', `${textWidth}px`);
+      const duration = (textWidth - containerWidth) / speed;
+      containerRef.current.style.setProperty(
+        '--text-width',
+        `${textWidth - containerWidth}px`
+      );
       containerRef.current.style.setProperty('--duration', `${duration}s`);
     }
   }, []);
