@@ -36,7 +36,7 @@ const Banner: React.FC = () => {
 
       <div className={styles.collection} ref={containerRef}>
         <div className={styles.text1} ref={textRef}>
-          {Array(5)
+          {Array(15)
             .fill(null)
             .map((currentValue, index) => (
               <span key={index}>{banner}</span>
