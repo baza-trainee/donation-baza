@@ -1,0 +1,22 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.container {
+  background-color: $background-two;
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  padding: 100px 120px;
+
+  .textWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 43.125rem;
+
+    .header {
+      @include text-h2;
+      text-align: center;
+    }
+  }
+}
