@@ -11,37 +11,26 @@
   align-items: center;
   justify-content: space-between;
   font-family: $font-family-base;
-  // 1
   .iconBell {
     display: flex;
     align-items: center;
     padding-inline: 10px;
   }
-  /////2
   .collection {
     width: auto;
     overflow: hidden;
-
     .text {
       font-size: 1.875rem; //30px;
       font-weight: 600;
       color: $white-text;
-
       white-space: nowrap;
-      display: inline-flex;
-      padding-left: 100%;
-
+      display: inline-block;
       animation: scrollingText var(--duration) linear infinite;
-      //   span {
-      //     padding-right: 2.5rem;
-      //   }
+      & > span {
+        padding-right: 2.5rem;
+      }
     }
-
-    // .text {
-    // animation: scrollingText 40s linear infinite;
-    // }
   }
-  //...3
   .supportButton {
     margin-left: 15px;
     width: 243px;
@@ -49,49 +38,47 @@
 }
 
 @keyframes scrollingText {
-  0% {
+  from {
     transform: translate(0, 0);
   }
-  100% {
-    //  transform: translateX(calc(-50%));
+  to {
     transform: translate(calc(-1 * var(--text-width)), 0);
   }
 }
 
-// MEDIA ////////////////
 @media (max-width: $small-desktop) {
   .container {
     padding: 8px 64px;
   }
 }
+
 @media (max-width: $tablet) {
   .container {
     padding: 8px 40px;
-
     .text {
       font-weight: 600;
       font-size: 1.25rem;
     }
   }
 }
+
 @media (max-width: $mobile) {
   .container {
     padding: 20px;
     flex-wrap: wrap;
     max-height: max-content;
-
-    .text {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      animation-duration: calc(var(--duration) * 1.8);
-      & > span {
-        padding-right: 1rem;
-      }
-    }
     .collection {
       order: -1;
       width: 100%;
+      .text {
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        animation-duration: calc(var(--duration) * 1.8);
+        & > span {
+          padding-right: 1rem;
+        }
+      }
     }
   }
 }
