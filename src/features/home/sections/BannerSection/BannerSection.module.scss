@@ -1,0 +1,84 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.container {
+  width: auto;
+  max-height: 80px;
+  padding: 8px 120px;
+  background-color: $background-reserved;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-family-base;
+  .iconBell {
+    display: flex;
+    align-items: center;
+    padding-inline: 10px;
+  }
+  .collection {
+    width: auto;
+    overflow: hidden;
+    .text {
+      font-size: 1.875rem; //30px;
+      font-weight: 600;
+      color: $white-text;
+      white-space: nowrap;
+      display: inline-block;
+      animation: scrollingText var(--duration) linear infinite;
+      & > span {
+        padding-right: 2.5rem;
+      }
+    }
+  }
+  .supportButton {
+    margin-left: 15px;
+    width: 243px;
+  }
+}
+
+@keyframes scrollingText {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(calc(-1 * var(--text-width)), 0);
+  }
+}
+
+@media (max-width: $small-desktop) {
+  .container {
+    padding: 8px 64px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .container {
+    padding: 8px 40px;
+    .text {
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .container {
+    padding: 20px;
+    flex-wrap: wrap;
+    max-height: max-content;
+    .collection {
+      order: -1;
+      width: 100%;
+      .text {
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        animation-duration: calc(var(--duration) * 1.8);
+        & > span {
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+}
