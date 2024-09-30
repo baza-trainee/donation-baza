@@ -11,18 +11,18 @@ const SecondViewSection = () => {
         width={549}
         height={464}
       />
-      <div className={styles.textWrapper}>
+      <div>
         <h2 className={styles.header}>Важливість підтримки</h2>
         <div className={styles.content}>
           <span>
             Ознака розвиненого суспільства - благодійність приватна, локальна,
             корпоративна або на рівні держави.
           </span>
-          <span className={styles.content}>
+          <span>
             Постійні найменші внески гуртують спільноту, підтримують вразливі
             категорії, а також контролюють отримувачів допомоги.
           </span>
-          <span className={styles.content}>
+          <span>
             Прозорість, долученість, контроль - ось три стовпи сучасного
             благодійництва.
           </span>
