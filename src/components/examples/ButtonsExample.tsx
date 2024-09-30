@@ -3,7 +3,7 @@ import styles from './ButtonsExample.module.scss';
 
 export default function ButtonsExample() {
   return (
-    <>
+    <section className={styles.wrapper}>
       <div className={styles.buttonGroup}>
         <span>pay button</span>
         <Button variant="pay" size="medium">
@@ -67,6 +67,6 @@ export default function ButtonsExample() {
           Повернутися на головну
         </Button>
       </div>
-    </>
+    </section>
   );
 }

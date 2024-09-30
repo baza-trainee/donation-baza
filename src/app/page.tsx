@@ -1,3 +1,4 @@
+import BannerSection from '@/features/home/sections/BannerSection';
 import ButtonsExample from '@/components/examples/ButtonsExample';
 import ContactUsFormSection from '@/features/home/sections/ContactUsFormSection';
 import ErrorMessage from '@/components/common/ErrorMessage/ErrorMessage';
@@ -9,6 +10,7 @@ import TextExample from '@/components/examples/TextExample';
 export default function Home() {
   return (
     <>
+      <BannerSection />
       <SecondViewSection />
       <QASection />
       <ContactUsFormSection />
