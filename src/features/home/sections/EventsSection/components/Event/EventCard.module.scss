@@ -1,0 +1,56 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.wrapper {
+  color: $black-text;
+
+  .imageContainer {
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .description {
+    padding: 16px;
+
+    .textContainer {
+      header {
+        margin-bottom: 16px;
+
+        h2 {
+          @include text-card-title;
+        }
+      }
+
+      .text {
+        @include text-accent;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        display: -webkit-box;
+        transition:
+          max-height 0.6s ease-in-out,
+          padding 0.6s ease-in-out;
+
+        &.closed {
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-wrap: break-word;
+          max-height: 150px;
+          line-clamp: 5;
+          -webkit-line-clamp: 5;
+          padding-bottom: 0;
+        }
+
+        &.opened {
+          max-height: 600px;
+          line-clamp: none;
+          -webkit-line-clamp: none;
+          padding-bottom: 16px;
+        }
+      }
+    }
+  }
+}
