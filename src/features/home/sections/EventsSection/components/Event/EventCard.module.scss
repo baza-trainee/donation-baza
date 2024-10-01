@@ -4,13 +4,6 @@
 .wrapper {
   color: $black-text;
   box-sizing: border-box;
-  min-height: 696px;
-  @media (max-width: $large-desktop) {
-    min-height: 780px;
-  }
-  @media (max-width: $extra-large-desktop) {
-    min-height: 850px;
-  }
   &.wrapperOpened {
     border: 1px solid $background-two;
     border-radius: 12px;
