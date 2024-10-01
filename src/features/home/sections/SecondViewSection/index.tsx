@@ -4,34 +4,34 @@ import styles from './SecondViewSection.module.scss';
 
 const SecondViewSection = () => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <Image
         src="/img/support-test-img.png"
         alt="Важливість підтримки"
         width={549}
         height={464}
       />
-      <div>
-        <h2 className={styles.header}>Важливість підтримки</h2>
+      <article>
+        <header className={styles.header}>Важливість підтримки</header>
         <div className={styles.content}>
-          <span>
-            Ознака розвиненого суспільства - благодійність приватна, локальна,
+          <p>
+            Ознака розвиненого суспільства — благодійність приватна, локальна,
             корпоративна або на рівні держави.
-          </span>
-          <span>
+          </p>
+          <p>
             Постійні найменші внески гуртують спільноту, підтримують вразливі
             категорії, а також контролюють отримувачів допомоги.
-          </span>
-          <span>
-            Прозорість, долученість, контроль - ось три стовпи сучасного
+          </p>
+          <p>
+            Прозорість, долученість, контроль — ось три стовпи сучасного
             благодійництва.
-          </span>
+          </p>
         </div>
         <Button variant="underline" size="large" className={styles.button}>
           Допомогти Baza
         </Button>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 

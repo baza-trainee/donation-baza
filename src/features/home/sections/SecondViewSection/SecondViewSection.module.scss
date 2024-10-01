@@ -15,11 +15,9 @@
   }
 
   .content {
-    @include text-accent;
-
-    & > span {
+    & > p {
+      @include text-accent;
       margin-bottom: 24px;
-      display: block;
     }
   }
 
