@@ -124,3 +124,34 @@
     padding: 6.25rem 1rem 5.1rem 1rem;
   }
 }
+
+@mixin layout-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  margin: 0 120px;
+
+  @media (max-width: $small-desktop) {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 16px;
+    margin: 0 40px;
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 0 20px;
+  }
+}
+
+@mixin grid-column {
+  grid-column: span 12;
+
+  @media (max-width: $small-desktop) {
+    grid-column: span 8;
+  }
+
+  @media (max-width: $mobile) {
+    grid-column: span 2;
+  }
+}

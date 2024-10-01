@@ -1,0 +1,107 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.wrapper {
+  color: $black-text;
+  box-sizing: border-box;
+  &.wrapperOpened {
+    border: 1px solid $background-two;
+    border-radius: 12px;
+  }
+  .backBtn {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+    background: none;
+    width: 40px;
+    height: 60px;
+    svg {
+      color: $black-text;
+      &:hover,
+      :active,
+      :focus {
+        color: $header;
+      }
+    }
+  }
+  .imageContainer {
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      animation: opacity 0.5s ease-in-out;
+    }
+  }
+  .description {
+    padding: 16px;
+    border: 1px solid $background-two;
+    border-top: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    &.descriptionOpened {
+      border: none;
+    }
+    .textContainer {
+      header {
+        margin-bottom: 16px;
+        h2 {
+          @include text-card-title;
+        }
+      }
+      .text {
+        @include text-accent;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        display: -webkit-box;
+        margin-bottom: 14px;
+        &.closed {
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-wrap: break-word;
+          max-height: 150px;
+          line-clamp: 5;
+          -webkit-line-clamp: 5;
+          padding-bottom: 0;
+          animation:
+            unLiftText 0.6s ease-in-out,
+            opacity 0.6s ease-in-out;
+        }
+        &.opened {
+          max-height: 600px;
+          line-clamp: none;
+          -webkit-line-clamp: none;
+          margin-bottom: 0;
+          animation: liftText 0.6s ease-in-out;
+        }
+      }
+    }
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes unLiftText {
+  from {
+    transform: translate(0, -150px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes liftText {
+  from {
+    transform: translate(0, 150px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
