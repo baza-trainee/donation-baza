@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import styles from './Button.module.scss';
 
-interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant:
     | 'primary'
     | 'secondary'
