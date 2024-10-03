@@ -53,7 +53,7 @@ const Button: React.FC<IButton> = ({
   };
   return (
     <button
-      className={`${styles.container} ${styles[variant]} ${styles[size]} ${className}`}
+      className={`${styles.container} ${styles[variant]} ${styles[size]} ${className && styles[className]}`}
       {...props}
     >
       {variant === 'pay' ? (
