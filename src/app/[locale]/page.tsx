@@ -19,7 +19,7 @@ export default function Home() {
         <ErrorMessage />
       </Modal>
       <EventsSection />
-      {/* <ButtonsExample /> */}
+      <ButtonsExample />
       <TextExample />
     </>
   );
