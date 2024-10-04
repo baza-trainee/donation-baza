@@ -1,0 +1,134 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.languageSwitcher {
+  position: relative;
+  display: inline-block;
+
+  .languageButton {
+    background: none;
+    border: none;
+    color: $white-text;
+    @include text-small;
+    line-height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 1px;
+      background-color: $background-two;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    .noUnderline {
+      &::after {
+        width: 0 !important;
+      }
+    }
+
+    .dropdown {
+      transition: transform 0.3s ease;
+
+      &.up {
+        transform: rotate(180deg);
+      }
+    }
+
+    @media (max-width: $tablet) {
+      & {
+        background: none;
+        border: none;
+        color: $white-text;
+        @include text-small;
+        line-height: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+          width: 0;
+          height: 1px;
+          background-color: $background-two;
+          transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        .noUnderlineMobile {
+          &::after {
+            width: 0 !important;
+          }
+        }
+
+        .languageDropdownMobile {
+          position: absolute;
+          top: 110%;
+          left: 0;
+          z-index: 2;
+          min-width: 40px;
+          @include text-small;
+          text-align: left;
+
+          li {
+            color: $white-text;
+            cursor: pointer;
+            line-height: 100%;
+
+            &:hover {
+              color: $active-buttons;
+            }
+          }
+        }
+      }
+    }
+  }
+  .languageDropdown {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    z-index: 2;
+    min-width: 40px;
+    @include text-small;
+    text-align: left;
+    cursor: pointer;
+
+    li {
+      color: $white-text;
+      line-height: 100%;
+
+      &:hover {
+        color: $active-buttons;
+      }
+    }
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+
+  // @media (max-width: $tablet) {
+  //    &{
+  //       position: relative;
+  //       display: inline-block;
+  //       // padding: 0.5rem 0.5rem 0.5rem 0;
+  //    }
+  // }
+}

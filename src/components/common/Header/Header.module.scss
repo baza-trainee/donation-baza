@@ -11,46 +11,10 @@
   font-family: $font-family-base;
   @include text-small;
 
-  // logo
   .logo:hover {
     content: url('/svg/logo-hover.svg');
   }
-  //  nav
-  .nav {
-    display: flex;
-    @include text-small;
 
-    .navList {
-      list-style-type: none;
-      text-decoration: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .navLink {
-      color: $white-text;
-      text-decoration: none;
-      padding-inline: 1.5rem;
-      position: relative;
-      padding-bottom: 3px;
-
-      &::after {
-        content: '';
-        position: absolute;
-        left: 20px;
-        bottom: 0;
-        width: 0;
-        height: 1px;
-        background-color: $background-two;
-        transition: width 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-      }
-
-      &:hover::after {
-        width: 68%;
-      }
-    }
-  }
-  //  btn
   .supportButton {
     white-space: nowrap;
     @include text-small;
@@ -60,77 +24,6 @@
     }
   }
 
-  // Language
-  .languageSwitcher {
-    position: relative;
-    display: inline-block;
-
-    .languageButton {
-      background: none;
-      border: none;
-      color: $white-text;
-      @include text-small;
-      line-height: 100%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-
-      &::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -3px;
-        width: 0;
-        height: 1px;
-        background-color: $background-two;
-        transition: width 0.3s ease;
-      }
-
-      &:hover::after {
-        width: 100%;
-      }
-
-      .noUnderline {
-        &::after {
-          width: 0 !important;
-        }
-      }
-
-      .languageDropdown {
-        position: absolute;
-        top: 110%;
-        left: 0;
-        z-index: 2;
-        min-width: 40px;
-        @include text-small;
-        text-align: left;
-
-        li {
-          color: $white-text;
-          cursor: pointer;
-          line-height: 100%;
-
-          &:hover {
-            color: $active-buttons;
-          }
-        }
-      }
-    }
-
-    .dropdown {
-      transition: transform 0.3s ease;
-
-      &.up {
-        transform: rotate(180deg);
-      }
-    }
-
-    @media (max-width: $tablet) {
-      display: none;
-    }
-  }
-  // //////////////
   .burgerMenu {
     display: none;
 
@@ -143,165 +36,26 @@
       cursor: pointer;
     }
   }
-
-  .mobileNav {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 30%;
-    height: 100%;
-    background-color: $header;
-
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 0 0 1rem;
-
-    z-index: 3;
-    transition: 0.3s ease;
-
-    &.open {
-      display: flex;
-    }
-
-    .closeIcon {
-      filter: brightness(0) invert(1);
-      &:hover {
-        cursor: pointer;
-      }
-    }
-    // ////////////
-    @media (min-width: 768px) {
-      display: none !important;
-    }
-    @media (min-width: $mobile) {
-      width: 43%;
-    }
-
-    .navList {
-      list-style-type: none;
-
-      .navItem {
-        margin: 0 0 1rem 0;
-
-        .navLink {
-          color: $white-text;
-        }
-        .navLink:hover,
-        .navLink:focus {
-          color: $background-two;
-        }
-      }
-    }
-
-    .supportButtonMobile {
-      margin-top: 20px;
-      font-size: 20px;
-      display: block;
-      white-space: nowrap;
-    }
-
-    .closeIconWrapper {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-
-      &:hover {
-        cursor: pointer;
-        filter: $background-two;
-      }
+  //  -- ------ MEDIA---------
+  @media (max-width: $small-desktop) {
+    & {
+      padding: 10px 40px;
     }
   }
+  @media (max-width: $tablet) {
+    & {
+      padding: 24px 40px;
+      justify-content: space-between;
 
-  .languageSwitcherMobile {
-    display: none;
-  }
+      .nav {
+        display: none;
+      }
 
-  //  ⤵️ end header
-}
-
-//  -------- MEDIA---------
-//  -- ------ MEDIA---------
-
-@media (max-width: $small-desktop) {
-  .header {
-    padding: 10px 40px;
-  }
-}
-//  .......................
-@media (max-width: $tablet) {
-  .header {
-    padding: 24px 40px;
-    justify-content: space-between;
-
-    .nav {
-      display: none;
-    }
-
-    .supportButtonWrapper {
-      display: none;
-    }
-    .supportButtonMobile {
-      margin-bottom: 1.25rem;
-    }
-    // ,,,,,,,language,,,,,,,,,,,,,,
-    .languageSwitcherMobile {
-      position: relative;
-      display: inline-block;
-      padding: 0.5rem 0.5rem 0.5rem 0;
-
-      .languageButtonMobile {
-        background: none;
-        border: none;
-        color: $white-text;
-        @include text-small;
-        line-height: 100%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: -3px;
-          width: 0;
-          height: 1px;
-          background-color: $background-two;
-          transition: width 0.3s ease;
-        }
-
-        &:hover::after {
-          width: 100%;
-        }
-
-        .noUnderlineMobile {
-          &::after {
-            width: 0 !important;
-          }
-        }
-
-        .languageDropdownMobile {
-          position: absolute;
-          top: 110%;
-          left: 0;
-          z-index: 2;
-          min-width: 40px;
-          @include text-small;
-          text-align: left;
-
-          li {
-            color: $white-text;
-            cursor: pointer;
-            line-height: 100%;
-
-            &:hover {
-              color: $active-buttons;
-            }
-          }
-        }
+      .supportButtonWrapper {
+        display: none;
+      }
+      .supportButtonMobile {
+        margin-bottom: 1.25rem;
       }
 
       .dropdownMobile {
@@ -313,11 +67,10 @@
       }
     }
   }
-}
-// -------------------
-
-@media (max-width: $mobile) {
-  .header {
-    padding: 20px 24px;
+  @media (max-width: $mobile) {
+    & {
+      padding: 20px 24px;
+    }
   }
+  // ⤵🔚
 }
