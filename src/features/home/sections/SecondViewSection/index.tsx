@@ -1,8 +1,10 @@
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
 import styles from './SecondViewSection.module.scss';
+import { useTranslations } from 'next-intl';
 
 const SecondViewSection = () => {
+  const translations = useTranslations('Test');
   return (
     <section className={styles.container}>
       <Image
@@ -12,7 +14,7 @@ const SecondViewSection = () => {
         height={464}
       />
       <article>
-        <header className={styles.header}>Важливість підтримки</header>
+        <header className={styles.header}>{translations('testTitle')}</header>
         <div className={styles.content}>
           <p>
             Ознака розвиненого суспільства — благодійність приватна, локальна,
