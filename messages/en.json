@@ -9,5 +9,32 @@
       "regulations": "Regulations",
       "accounting": "Accounting"
     }
+  },
+  "homepage": {
+    "eventsSection": {
+      "title": "Events",
+      "subtitle": "Support us your way: Choose your donation method",
+      "buttonText": "Read more",
+      "events": {
+        "cardDonation": {
+          "title": "Donation to card",
+          "description": "Every Friday at your company, you can collect small change after lunch. Even small amounts of these funds can change the lives of many people. Just collect the money in a special box or transfer it to our account.",
+          "image": "/img/events/events-1.webp",
+          "imageAlt": "Christmas decorations"
+        },
+        "corporateFridays": {
+          "title": "Corporate Fridays",
+          "description": "In every company, you can collect small change after a shared pizza on Friday or a fruit Thursday. Usually, the company either supports the team this way, or colleagues pool their money to relax together. The leftover amount, rounded up to 100-200 UAH, transferred to the military or a cat shelter, provides essential support. If 50 companies do this every week, the collection will be completed, and the event will gain additional meaning.",
+          "image": "/img/events/events-2.webp",
+          "imageAlt": "A cup of cappuccino against the backdrop of a city park"
+        },
+        "weeklyLoteries": {
+          "title": "Weekly lotteries",
+          "description": "Once a week, each company can hold charitable lotteries – raffling small items from a pencil or apple to a computer mouse or branded sticker. The amount collected, even in tens of hryvnias but consistent, can be transferred to a fundraiser. Choose a verified fundraiser on our site, as they all have authors and reports.",
+          "image": "/img/events/events-3.webp",
+          "imageAlt": "lottery"
+        }
+      }
+    }
   }
 }
