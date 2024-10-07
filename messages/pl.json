@@ -31,11 +31,13 @@
       "contacts": "Kontakty",
       "home": "Strona główna",
       "projects": "O nas",
-      "safety": "Zbiórki charytatywne",
-      "privacyPolicy": "Polityka prywatności",
-      "termsOfService": "Regulamin usługi",
-      "statute": "Statut",
-      "reports": "Raporty"
+      "safety": "Zbiórki charytatywne"
+    },
+    "docs": {
+      "privacy_policy": "Polityka Prywatności",
+      "terms_of_service": "Warunki Świadczenia Usług",
+      "regulations": "Regulamin",
+      "accounting": "Księgowość"
     },
     "footer": {
       "rights": "Opracowane przez Baza Trainee Ukraina 2024 © Wszelkie prawa zastrzeżone",

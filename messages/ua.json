@@ -31,11 +31,13 @@
       "contacts": "Контакти",
       "home": "Головна",
       "projects": "Проєкти",
-      "safety": "Безпека",
-      "privacyPolicy": "Політика конфіденційності",
-      "termsOfService": "Правила користування сайтом",
-      "statute": "Статут",
-      "reports": "Звітність"
+      "safety": "Безпека"
+    },
+    "docs": {
+      "privacy_policy": "Політика конфіденційності",
+      "terms_of_service": "Правила користування сайтом",
+      "regulations": "Статут",
+      "accounting": "Звітність"
     },
     "footer": {
       "rights": "Розроблено Baza Trainee Ukraine 2024 © Усі права захищено",

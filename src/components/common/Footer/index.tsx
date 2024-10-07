@@ -1,13 +1,23 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { getDocuments } from '@/utils/api/documents';
+import { queryKeys } from '@/constants/queryKeys';
 import styles from './Footer.module.scss';
 import useNavLinks from '@/hooks/useNavLinks';
+import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 
 const Footer: React.FC = () => {
-  const { documentsLinks, pagesLinks } = useNavLinks();
-  const translate = useTranslations('common.footer');
+  const translate = useTranslations('common');
+
+  const { data: documents } = useQuery({
+    queryKey: [queryKeys.documents.GET_DOCUMENTS],
+    queryFn: getDocuments,
+  });
+
+  const links = useNavLinks();
   return (
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
@@ -15,7 +25,7 @@ const Footer: React.FC = () => {
         <div className={styles.logo}>
           <Image
             src="/svg/logo.svg"
-            alt={translate('logoAlt')}
+            alt={translate('footer.logoAlt')}
             width={100}
             height={100}
           />
@@ -23,9 +33,9 @@ const Footer: React.FC = () => {
         {/* About us */}
         <div className={styles.footerMenu}>
           <ul>
-            {pagesLinks.map((page) => (
-              <li key={page.href}>
-                <Link href={page.href}>{page.label}</Link>
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href}>{link.label}</Link>
               </li>
             ))}
           </ul>
@@ -33,11 +43,12 @@ const Footer: React.FC = () => {
         {/* Links Documents */}
         <div className={styles.footerLinks}>
           <ul>
-            {documentsLinks.map((doc) => (
-              <li key={doc.href}>
-                <Link href={doc.href}>{doc.label}</Link>
-              </li>
-            ))}
+            {documents &&
+              documents.map((doc) => (
+                <li key={doc.key}>
+                  <Link href={doc.url}>{translate(`docs.${doc.key}`)}</Link>
+                </li>
+              ))}
           </ul>
         </div>
 
@@ -48,7 +59,7 @@ const Footer: React.FC = () => {
                 <a href="tel:+380636286630">
                   <Image
                     src="/svg/phone-icon.svg"
-                    alt={translate('phoneAlt')}
+                    alt={translate('footer.phoneAlt')}
                     width={24}
                     height={24}
                   />
@@ -59,7 +70,7 @@ const Footer: React.FC = () => {
                 <a href="tel:+380675681788">
                   <Image
                     src="/svg/phone-icon.svg"
-                    alt={translate('phoneAlt')}
+                    alt={translate('footer.phoneAlt')}
                     width={24}
                     height={24}
                   />
@@ -70,7 +81,7 @@ const Footer: React.FC = () => {
                 <a href="mailto:info@baza-trainee.tech">
                   <Image
                     src="/svg/new-mail-icon.svg"
-                    alt={translate('emailAlt')}
+                    alt={translate('footer.emailAlt')}
                     width={24}
                     height={24}
                   />
@@ -83,7 +94,7 @@ const Footer: React.FC = () => {
               <a href="#" target="_blank">
                 <Image
                   src="/svg/linkedin.svg"
-                  alt={translate('linkedinAlt')}
+                  alt={translate('footer.linkedinAlt')}
                   width={48}
                   height={48}
                 />
@@ -92,7 +103,7 @@ const Footer: React.FC = () => {
               <a href="#" target="_blank">
                 <Image
                   src="/svg/facebook.svg"
-                  alt={translate('facebookAlt')}
+                  alt={translate('footer.facebookAlt')}
                   width={48}
                   height={48}
                 />
@@ -101,7 +112,7 @@ const Footer: React.FC = () => {
               <a href="#" target="_blank">
                 <Image
                   src="/svg/telegram.svg"
-                  alt={translate('telegramAlt')}
+                  alt={translate('footer.telegramAlt')}
                   width={48}
                   height={48}
                 />
@@ -112,7 +123,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className={styles.footerCopyright}>
-        <p>{translate('rights')}</p>
+        <p>{translate('footer.rights')}</p>
       </div>
     </footer>
   );
