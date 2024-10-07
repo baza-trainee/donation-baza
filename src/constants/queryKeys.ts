@@ -3,4 +3,7 @@ export const queryKeys = {
     GET_APPLICATIONS: 'GET_APPLICATIONS',
     ADD_APPLICATION: 'ADD_APPLICATION',
   },
+  documents: {
+    GET_DOCUMENTS: 'GET_DOCUMENTS',
+  },
 };

@@ -26,6 +26,12 @@ model Application {
   name    String
   email   String
   message    String
-
   createdAt DateTime @default(now())
+}
+
+model Document {
+  id           String   @id @default(cuid())
+  key          String
+  url          String
+  publicId     String
 }
