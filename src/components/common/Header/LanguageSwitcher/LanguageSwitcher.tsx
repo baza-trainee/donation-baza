@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './LanguageSwitcher.module.scss';
 
-const LanguageSwithcer: React.FC = () => {
+const LanguageSwitcher: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   type Language = 'UA' | 'EN' | 'PL';
@@ -63,4 +63,4 @@ const LanguageSwithcer: React.FC = () => {
   );
 };
 
-export default LanguageSwithcer;
+export default LanguageSwitcher;

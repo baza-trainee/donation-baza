@@ -1,68 +1,79 @@
 'use client';
-import React, { useState } from 'react';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
-import LanguageSwithcer from '../LanguageSwitcher/LanguageSwitcher';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import Link from 'next/link';
+import React from 'react';
 import styles from './MobileMenu.module.scss';
 
-const MobileMenu: React.FC = () => {
-  const [isOpenMobile, setIsOpenMobile] = useState(false);
-  //   Const handleMobileMenuToggle = () => {
-  //     SetIsOpenMobile(!isOpenMobile);
-  //   };
-  const closeMenu = () => {
-    setIsOpenMobile(false);
-  };
+interface MobileMenuProps {
+  isMobileMenuOpen: boolean;
+  closeMobileMenu: () => void;
+}
 
+const MobileMenu: React.FC<MobileMenuProps> = ({
+  isMobileMenuOpen,
+  closeMobileMenu,
+}) => {
   return (
-    <div className={`${styles.mobileNav} ${isOpenMobile && styles.open}`}>
-      <div className={styles.closeIconWrapper}>
-        <Image
-          alt="close"
-          src="/svg/close.svg"
-          width={30}
-          height={30}
-          className={styles.closeIcon}
-          onClick={closeMenu}
-        />
+    <>
+      <div className={`${styles.mobileNav} ${isMobileMenuOpen && styles.open}`}>
+        <button className={styles.closeIconWrapper} aria-label="Close menu">
+          <Image
+            alt="close"
+            src="/svg/close.svg"
+            width={30}
+            height={30}
+            className={styles.closeIcon}
+            onClick={closeMobileMenu}
+          />
+        </button>
+
+        <ul className={styles.navList}>
+          <li className={styles.navItem}>
+            <Link href="/" className={styles.navLink} onClick={closeMobileMenu}>
+              Головна
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link
+              href="/projects"
+              className={styles.navLink}
+              onClick={closeMobileMenu}
+            >
+              Проєкти
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link
+              href="/safety"
+              className={styles.navLink}
+              onClick={closeMobileMenu}
+            >
+              Безпека
+            </Link>
+          </li>
+          <li className={styles.navItem}>
+            <Link
+              href="/contacts"
+              className={styles.navLink}
+              onClick={closeMobileMenu}
+            >
+              Контакти
+            </Link>
+          </li>
+        </ul>
+        <Button
+          variant="primary"
+          size="small"
+          className={styles.supportButtonMobile}
+          onClick={closeMobileMenu}
+        >
+          Підтримати Baza
+        </Button>
+        <LanguageSwitcher />
       </div>
-
-      <ul className={styles.navList}>
-        <li className={styles.navItem}>
-          <Link href="/" className={styles.navLink} onClick={closeMenu}>
-            Головна
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/projecrs" className={styles.navLink} onClick={closeMenu}>
-            Проєкти
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/security" className={styles.navLink} onClick={closeMenu}>
-            Безпека
-          </Link>
-        </li>
-        <li className={styles.navItem}>
-          <Link href="/contacts" className={styles.navLink} onClick={closeMenu}>
-            Контакти
-          </Link>
-        </li>
-      </ul>
-      {/* Btn MOBILE */}
-      <Button
-        variant="primary"
-        size="small"
-        className={styles.supportButtonMobile}
-        onClick={closeMenu}
-      >
-        Підтримати Baza
-      </Button>
-
-      {/* Language MOBILE */}
-      <LanguageSwithcer />
-    </div>
+    </>
   );
 };
 export default MobileMenu;
