@@ -14,7 +14,7 @@ export default function EventsSection() {
           </header>
           <div className={styles.collection}>
             {events.map((event, idx) => (
-              <EventCard key={idx} {...{ ...event, buttonText }} />
+              <EventCard key={idx} {...event} buttonText={buttonText} />
             ))}
           </div>
         </div>
