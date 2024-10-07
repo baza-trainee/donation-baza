@@ -1,45 +1,41 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import styles from './Footer.module.scss';
-
-const documents = [
-  { title: 'Політика конфіденційності', link: '/privacy-policy' },
-  { title: 'Правила користування сайтом', link: '/terms-of-service' },
-  { title: 'Статут', link: '/statute' },
-  { title: 'Звітність', link: '/reports' },
-];
+import useNavLinks from '@/hooks/useNavLinks';
+import { useTranslations } from 'next-intl';
 
 const Footer: React.FC = () => {
+  const { documentsLinks, pagesLinks } = useNavLinks();
+  const translate = useTranslations('common.footer');
   return (
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
         {/* Logo */}
         <div className={styles.logo}>
-          <Image src="/svg/logo.svg" alt="Логотип" width={100} height={100} />
+          <Image
+            src="/svg/logo.svg"
+            alt={translate('logoAlt')}
+            width={100}
+            height={100}
+          />
         </div>
         {/* About us */}
         <div className={styles.footerMenu}>
           <ul>
-            <li>
-              <a href="#">Про нас</a>
-            </li>
-            <li>
-              <a href="#">Проєкти</a>
-            </li>
-            <li>
-              <a href="#">Безпека</a>
-            </li>
-            <li>
-              <a href="#">Контакти</a>
-            </li>
+            {pagesLinks.map((page) => (
+              <li key={page.href}>
+                <Link href={page.href}>{page.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         {/* Links Documents */}
         <div className={styles.footerLinks}>
           <ul>
-            {documents.map((doc, index) => (
-              <li key={index}>
-                <a href={doc.link}>{doc.title}</a>
+            {documentsLinks.map((doc) => (
+              <li key={doc.href}>
+                <Link href={doc.href}>{doc.label}</Link>
               </li>
             ))}
           </ul>
@@ -52,7 +48,7 @@ const Footer: React.FC = () => {
                 <a href="tel:+380636286630">
                   <Image
                     src="/svg/phone-icon.svg"
-                    alt="Телефон"
+                    alt={translate('phoneAlt')}
                     width={24}
                     height={24}
                   />
@@ -63,7 +59,7 @@ const Footer: React.FC = () => {
                 <a href="tel:+380675681788">
                   <Image
                     src="/svg/phone-icon.svg"
-                    alt="Телефон"
+                    alt={translate('phoneAlt')}
                     width={24}
                     height={24}
                   />
@@ -74,7 +70,7 @@ const Footer: React.FC = () => {
                 <a href="mailto:info@baza-trainee.tech">
                   <Image
                     src="/svg/new-mail-icon.svg"
-                    alt="email"
+                    alt={translate('emailAlt')}
                     width={24}
                     height={24}
                   />
@@ -87,7 +83,7 @@ const Footer: React.FC = () => {
               <a href="#" target="_blank">
                 <Image
                   src="/svg/linkedin.svg"
-                  alt="Linkedin"
+                  alt={translate('linkedinAlt')}
                   width={48}
                   height={48}
                 />
@@ -96,7 +92,7 @@ const Footer: React.FC = () => {
               <a href="#" target="_blank">
                 <Image
                   src="/svg/facebook.svg"
-                  alt="Facebook"
+                  alt={translate('facebookAlt')}
                   width={48}
                   height={48}
                 />
@@ -105,7 +101,7 @@ const Footer: React.FC = () => {
               <a href="#" target="_blank">
                 <Image
                   src="/svg/telegram.svg"
-                  alt="Telegram"
+                  alt={translate('telegramAlt')}
                   width={48}
                   height={48}
                 />
@@ -116,7 +112,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className={styles.footerCopyright}>
-        <p> Розробка Baza Trainee Ukraine 2024 © Усі права захищені</p>
+        <p>{translate('rights')}</p>
       </div>
     </footer>
   );
