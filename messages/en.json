@@ -25,5 +25,26 @@
         }
       }
     }
+  },
+  "common": {
+    "nav": {
+      "contacts": "Contacts",
+      "home": "Home",
+      "projects": "About",
+      "safety": "Fundraisers",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "statute": "Statute",
+      "reports": "Reports"
+    },
+    "footer": {
+      "rights": "Developed by Baza Trainee Ukraine 2024 © All rights reserved",
+      "logoAlt": "logotype",
+      "phoneAlt": "phone",
+      "emailAlt": "email",
+      "linkedinAlt": "linked in logo",
+      "facebookAlt": "facebook logo",
+      "telegramAlt": "telegram logo"
+    }
   }
 }
