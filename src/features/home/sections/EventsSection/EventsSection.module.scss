@@ -1,0 +1,44 @@
+@import '@/theme/mixins';
+
+.wrapper {
+  background-color: $background-one;
+  padding: 100px 0;
+  @media (max-width: $small-desktop) {
+    padding-top: 60px;
+  }
+  @media (max-width: $mobile) {
+    padding-top: 100px;
+  }
+  .layout {
+    @include layout-grid;
+    .container {
+      @include grid-column;
+      color: $black-text;
+      .title {
+        @include text-h2;
+        font-size: 2.25rem; // 36px;
+        text-align: center;
+        margin-bottom: 16px;
+        @media (max-width: $mobile) {
+          @include text-card-title;
+        }
+      }
+      .subtitle {
+        @include text-subtitle;
+        text-align: center;
+        margin-bottom: 40px;
+        @media (max-width: $small-desktop) {
+          @include text-card-title;
+        }
+        @media (max-width: $mobile) {
+          @include text-extra-small;
+        }
+      }
+      .collection {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+    }
+  }
+}
