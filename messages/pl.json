@@ -1,5 +1,13 @@
 {
   "Test": {
     "testTitle": "Dzien dobry!"
+  },
+  "Footer": {
+    "docs": {
+      "privacy_policy": "Polityka Prywatności",
+      "terms_of_service": "Warunki Świadczenia Usług",
+      "regulations": "Regulamin",
+      "accounting": "Księgowość"
+    }
   }
 }

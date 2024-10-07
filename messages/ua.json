@@ -1,5 +1,13 @@
 {
   "Test": {
     "testTitle": "Привіт"
+  },
+  "Footer": {
+    "docs": {
+      "privacy_policy": "Політика конфіденційності",
+      "terms_of_service": "Правила користування сайтом",
+      "regulations": "Статут",
+      "accounting": "Звітність"
+    }
   }
 }

@@ -1,5 +1,13 @@
 {
   "Test": {
     "testTitle": "Hello world!"
+  },
+  "Footer": {
+    "docs": {
+      "privacy_policy": "Privacy Policy",
+      "terms_of_service": "Terms of Service",
+      "regulations": "Regulations",
+      "accounting": "Accounting"
+    }
   }
 }

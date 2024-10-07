@@ -34,12 +34,12 @@ export default async function RootLayout({
         <ModalProvider>
           <body>
             <NextIntlClientProvider messages={messages} locale={locale}>
-              <Header />
               <QueryClientProvider>
+                <Header />
                 {children}
+                <Footer />
                 <ReactQueryDevtools initialIsOpen={false} />
               </QueryClientProvider>
-              <Footer />
             </NextIntlClientProvider>
           </body>
         </ModalProvider>
