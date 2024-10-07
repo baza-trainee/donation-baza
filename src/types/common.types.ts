@@ -8,3 +8,13 @@ export interface IApplicationData {
   email: string;
   message: string;
 }
+
+export interface IApplication extends IApplicationData {
+  id: string;
+  createdAt: Date;
+}
+
+export interface IDocument {
+  key: string;
+  url: string;
+}

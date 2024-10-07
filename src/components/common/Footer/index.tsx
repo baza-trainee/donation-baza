@@ -1,15 +1,21 @@
-import Image from 'next/image';
-import React from 'react';
-import styles from './Footer.module.scss';
+/* eslint-disable id-length */
+'use client';
 
-const documents = [
-  { title: 'Політика конфіденційності', link: '/privacy-policy' },
-  { title: 'Правила користування сайтом', link: '/terms-of-service' },
-  { title: 'Статут', link: '/statute' },
-  { title: 'Звітність', link: '/reports' },
-];
+import Image from 'next/image';
+import Link from 'next/link';
+import { getDocuments } from '@/utils/api/documents';
+import { queryKeys } from '@/constants/queryKeys';
+import styles from './Footer.module.scss';
+import { useQuery } from '@tanstack/react-query';
+import { useTranslations } from 'next-intl';
 
 const Footer: React.FC = () => {
+  const t = useTranslations('Footer');
+  const { data: documents } = useQuery({
+    queryKey: [queryKeys.documents.GET_DOCUMENTS],
+    queryFn: getDocuments,
+  });
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
@@ -37,11 +43,12 @@ const Footer: React.FC = () => {
         {/* Links Documents */}
         <div className={styles.footerLinks}>
           <ul>
-            {documents.map((doc, index) => (
-              <li key={index}>
-                <a href={doc.link}>{doc.title}</a>
-              </li>
-            ))}
+            {documents &&
+              documents.map((doc, index) => (
+                <li key={index}>
+                  <Link href={doc.url}>{t(`docs.${doc.key}`)}</Link>
+                </li>
+              ))}
           </ul>
         </div>
 
