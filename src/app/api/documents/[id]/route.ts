@@ -1,7 +1,7 @@
 import {
   deleteFromCloudinary,
   uploadToCloudinary,
-} from '@/utils/cloudinaryService';
+} from '@/services/cloudinaryService';
 import { NextResponse } from 'next/server';
 import { UploadApiResponse } from 'cloudinary';
 import prisma from '@/lib/prisma';
