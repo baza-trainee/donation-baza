@@ -6,4 +6,7 @@ export const queryKeys = {
   documents: {
     GET_DOCUMENTS: 'GET_DOCUMENTS',
   },
+  contacts: {
+    GET_CONTACTS: 'GET_CONTACTS',
+  },
 };
