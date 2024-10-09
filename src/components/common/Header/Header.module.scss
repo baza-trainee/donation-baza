@@ -1,0 +1,61 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.header {
+  background-color: $header;
+  display: flex;
+  align-items: center;
+  color: $white-text;
+  justify-content: space-between;
+  padding: 10px 120px;
+  font-family: $font-family-base;
+  @include text-small;
+  .logo:hover {
+    content: url('/svg/logo-hover.svg');
+  }
+  .supportButton {
+    white-space: nowrap;
+    @include text-small;
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  .burgerMenu {
+    display: none;
+    background: none;
+    border: none;
+    outline: none;
+    &:hover {
+      cursor: pointer;
+    }
+    @media (max-width: $tablet) {
+      display: flex;
+      align-items: center;
+    }
+  }
+  @media (max-width: $small-desktop) {
+    padding: 10px 40px;
+  }
+  @media (max-width: $tablet) {
+    padding: 24px 40px;
+    justify-content: space-between;
+    .nav {
+      display: none;
+    }
+    .supportButtonWrapper {
+      display: none;
+    }
+    .supportButtonMobile {
+      margin-bottom: 1.25rem;
+    }
+    .dropdownMobile {
+      transition: transform 0.3s ease;
+      &.up {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  @media (max-width: $mobile) {
+    padding: 20px 24px;
+  }
+}
