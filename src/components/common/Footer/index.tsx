@@ -1,15 +1,28 @@
-import Image from 'next/image';
-import React from 'react';
-import styles from './Footer.module.scss';
+/* eslint-disable id-length */
+'use client';
 
-const documents = [
-  { title: 'Політика конфіденційності', link: '/privacy-policy' },
-  { title: 'Правила користування сайтом', link: '/terms-of-service' },
-  { title: 'Статут', link: '/statute' },
-  { title: 'Звітність', link: '/reports' },
-];
+import Image from 'next/image';
+import Link from 'next/link';
+import { getContacts } from '@/utils/api/contacts';
+import { getDocuments } from '@/utils/api/documents';
+import { queryKeys } from '@/constants/queryKeys';
+import styles from './Footer.module.scss';
+import { useQuery } from '@tanstack/react-query';
+import { useTranslations } from 'next-intl';
 
 const Footer: React.FC = () => {
+  const t = useTranslations('Footer');
+
+  const { data: documents } = useQuery({
+    queryKey: [queryKeys.documents.GET_DOCUMENTS],
+    queryFn: getDocuments,
+  });
+
+  const { data: contacts } = useQuery({
+    queryKey: [queryKeys.contacts.GET_CONTACTS],
+    queryFn: getContacts,
+  });
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
@@ -37,11 +50,12 @@ const Footer: React.FC = () => {
         {/* Links Documents */}
         <div className={styles.footerLinks}>
           <ul>
-            {documents.map((doc, index) => (
-              <li key={index}>
-                <a href={doc.link}>{doc.title}</a>
-              </li>
-            ))}
+            {documents &&
+              documents.map((doc, index) => (
+                <li key={index}>
+                  <Link href={doc.url}>{t(`docs.${doc.key}`)}</Link>
+                </li>
+              ))}
           </ul>
         </div>
 
@@ -49,42 +63,42 @@ const Footer: React.FC = () => {
           <div className={styles.footerContacts}>
             <ul>
               <li>
-                <a href="tel:+380636286630">
+                <a href={`tel:${contacts?.phone1}`}>
                   <Image
                     src="/svg/phone-icon.svg"
                     alt="Телефон"
                     width={24}
                     height={24}
                   />
-                  +380 63 628 6630
+                  {contacts?.phone1}
                 </a>
               </li>
               <li>
-                <a href="tel:+380675681788">
+                <a href={`tel:${contacts?.phone2}`}>
                   <Image
                     src="/svg/phone-icon.svg"
                     alt="Телефон"
                     width={24}
                     height={24}
                   />
-                  +380 67 568 1788
+                  {contacts?.phone2}
                 </a>
               </li>
               <li>
-                <a href="mailto:info@baza-trainee.tech">
+                <a href={`mailto:${contacts?.email}`}>
                   <Image
                     src="/svg/new-mail-icon.svg"
                     alt="email"
                     width={24}
                     height={24}
                   />
-                  info@baza-trainee.tech
+                  {contacts?.email}
                 </a>
               </li>
             </ul>
 
             <div className={styles.footerSocial}>
-              <a href="#" target="_blank">
+              <a href={contacts?.linkedin} target="_blank" rel="noreferrer">
                 <Image
                   src="/svg/linkedin.svg"
                   alt="Linkedin"
@@ -93,7 +107,7 @@ const Footer: React.FC = () => {
                 />
               </a>
 
-              <a href="#" target="_blank">
+              <a href={contacts?.facebook} target="_blank" rel="noreferrer">
                 <Image
                   src="/svg/facebook.svg"
                   alt="Facebook"
@@ -102,7 +116,7 @@ const Footer: React.FC = () => {
                 />
               </a>
 
-              <a href="#" target="_blank">
+              <a href={contacts?.telegram} target="_blank" rel="noreferrer">
                 <Image
                   src="/svg/telegram.svg"
                   alt="Telegram"

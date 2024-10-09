@@ -1,5 +1,40 @@
 {
   "Test": {
     "testTitle": "Dzien dobry!"
+  },
+  "Footer": {
+    "docs": {
+      "privacy_policy": "Polityka Prywatności",
+      "terms_of_service": "Warunki Świadczenia Usług",
+      "regulations": "Regulamin",
+      "accounting": "Księgowość"
+    }
+  },
+  "homepage": {
+    "eventsSection": {
+      "title": "Wydarzenia",
+      "subtitle": "Wspieraj nas na swój sposób: Wybierz metodę darowizny",
+      "buttonText": "Czytaj więcej",
+      "events": {
+        "cardDonation": {
+          "title": "Darowizna na konto",
+          "description": "W każdy piątek w Twojej firmie można zbierać drobne po obiedzie. Nawet niewielkie kwoty zebranych środków mogą zmienić życie wielu osób. Po prostu zbierz pieniądze do specjalnej skrzynki lub przelej je na nasze konto.",
+          "image": "/img/events/events-1.webp",
+          "imageAlt": "dekoracje świąteczne"
+        },
+        "corporateFridays": {
+          "title": "Firmowe piątki",
+          "description": "W każdej firmie można zbierać drobne po wspólnym piątkowym jedzeniu pizzy lub czwartkowych owocach. Zazwyczaj firma w ten sposób wspiera zespół lub współpracownicy składają się na wspólny relaks. Pozostała kwota, zaokrąglona do 100-200 UAH, przekazana wojsku lub schronisku dla kotów, zapewnia niezbędne wsparcie. Jeśli 50 firm zrobi to co tydzień, zbiórka zostanie zakończona, a wydarzenie nabierze dodatkowego znaczenia.",
+          "image": "/img/events/events-2.webp",
+          "imageAlt": "Filiżanka cappuccino na tle parku miejskiego"
+        },
+        "weeklyLoteries": {
+          "title": "Cotygodniowe loterie",
+          "description": "Raz w tygodniu każda firma może organizować loterie charytatywne - losując drobne nagrody od ołówka lub jabłka po myszkę komputerową lub firmową naklejkę. Zebrana kwota, nawet w dziesiątkach hrywien, ale regularnie, może być przekazana na zbiórkę. Wybierz potwierdzoną zbiórkę na naszej stronie, ponieważ wszystkie mają autorów i raporty.",
+          "image": "/img/events/events-3.webp",
+          "imageAlt": "loteria"
+        }
+      }
+    }
   }
 }

@@ -2,21 +2,20 @@
 import React, { useState } from 'react';
 import { ArrowLeftWithoutDash } from '@/components/common/icons/ArrowLeftWithoutDash';
 import Button from '@/components/ui/Button';
+import { IEvent } from '@/features/home/types/home.types';
 import Image from 'next/image';
 import styles from './EventCard.module.scss';
 
-export interface IEvent {
-  header: string;
-  description: string;
-  imageUrl: string;
-  imageAlt: string;
+export interface EventCardProps extends IEvent {
+  buttonText: string;
 }
 
-const EventCard: React.FC<IEvent> = ({
-  imageUrl,
-  imageAlt,
-  header,
+const EventCard: React.FC<EventCardProps> = ({
+  title,
   description,
+  image,
+  imageAlt,
+  buttonText,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   return isOpened ? (
@@ -37,12 +36,20 @@ const EventCard: React.FC<IEvent> = ({
   ) : (
     <article className={styles.wrapper}>
       <div className={styles.imageContainer}>
-        <Image src={imageUrl} width={768} height={800} alt={imageAlt} />
+        <Image
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          quality={90}
+          loading="lazy"
+          src={image}
+          width={768}
+          height={800}
+          alt={imageAlt}
+        />
       </div>
       <div className={styles.description}>
         <div className={styles.textContainer}>
           <header>
-            <h2>{header}</h2>
+            <h2>{title}</h2>
           </header>
           <p className={`${styles.text} ${styles.closed}`}>{description}</p>
           <Button
@@ -52,7 +59,7 @@ const EventCard: React.FC<IEvent> = ({
             onClick={() => setIsOpened((prevState) => !prevState)}
             aria-label="Читати далі"
           >
-            Читати далі
+            {buttonText}
           </Button>
         </div>
       </div>

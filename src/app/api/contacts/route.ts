@@ -1,11 +1,11 @@
-import { IApplicationData } from '@/types/common.types';
+import { IContactData } from '@/types/common.types';
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
 export async function GET() {
   try {
-    const applications = await prisma.application.findMany();
-    return NextResponse.json(applications, { status: 200 });
+    const documents = await prisma.contact.findMany();
+    return NextResponse.json(documents, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: error }, { status: 500 });
   }
@@ -13,13 +13,16 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const values: IApplicationData = await request.json();
+    const values: IContactData = await request.json();
 
-    const res = await prisma.application.create({
+    const res = await prisma.contact.create({
       data: {
-        name: values.name,
+        phone1: values.phone1,
+        phone2: values.phone2,
         email: values.email,
-        message: values.message,
+        linkedin: values.linkedin,
+        facebook: values.facebook,
+        telegram: values.telegram,
       },
     });
     return NextResponse.json(res, { status: 200 });
