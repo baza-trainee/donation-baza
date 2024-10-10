@@ -1,15 +1,4 @@
 {
-  "Test": {
-    "testTitle": "Привіт"
-  },
-  "Footer": {
-    "docs": {
-      "privacy_policy": "Політика конфіденційності",
-      "terms_of_service": "Правила користування сайтом",
-      "regulations": "Статут",
-      "accounting": "Звітність"
-    }
-  },
   "homepage": {
     "eventsSection": {
       "title": "Івенти",
@@ -48,6 +37,29 @@
       },
       "custom_sum": "інша сума",
       "donate_btn": "Задонатити Baza"
+    }
+  },
+  "common": {
+    "nav": {
+      "contacts": "Контакти",
+      "home": "Головна",
+      "projects": "Проєкти",
+      "safety": "Безпека"
+    },
+    "docs": {
+      "privacy_policy": "Політика конфіденційності",
+      "terms_of_service": "Правила користування сайтом",
+      "regulations": "Статут",
+      "accounting": "Звітність"
+    },
+    "footer": {
+      "rights": "Розроблено Baza Trainee Ukraine 2024 © Усі права захищено",
+      "logoAlt": "логотип",
+      "phoneAlt": "телефон",
+      "emailAlt": "електронна пошта",
+      "linkedinAlt": "логотип LinkedIn",
+      "facebookAlt": "логотип Facebook",
+      "telegramAlt": "логотип Telegram"
     }
   }
 }
