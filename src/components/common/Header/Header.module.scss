@@ -10,6 +10,13 @@
   padding: 10px 120px;
   font-family: $font-family-base;
   @include text-small;
+  // хедер став у свою позицію. чекає на картинку)
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: -webkit-fill-available;
+  height: auto;
+  z-index: 3;
   .logo:hover {
     content: url('/svg/logo-hover.svg');
   }
