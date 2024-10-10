@@ -33,7 +33,9 @@
         "single": "Одноразовий платіж"
       },
       "payment_sum_label": {
-        "uah": "грн"
+        "uah": "грн",
+        "eur": "євро",
+        "zl": "злотих"
       },
       "custom_sum": "інша сума",
       "donate_btn": "Задонатити Baza"

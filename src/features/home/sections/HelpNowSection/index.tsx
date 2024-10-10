@@ -5,6 +5,7 @@ import { IPaymentButton } from '../../types/payments.types';
 import { formatCurrencyLabel } from '../../utils/formatCurrencyLabel';
 import styles from './HelpNowFormSection.module.scss';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 const DEFAULT_CURRENCY = 'uah';
 const DEFAULT_TYPE = 'Одноразовий платіж';
@@ -13,6 +14,7 @@ const DEFAULT_SUM_EUR = '5';
 const DEFAULT_SUM_ZLOTY = '10';
 
 const HelpNowSection = () => {
+  const translations = useTranslations('homepage.helpNowSection');
   const [selectedCurrency, setSelectedCurrency] = useState(DEFAULT_CURRENCY);
   const [selectedType, setSelectedType] = useState(DEFAULT_TYPE);
   const [selectedSum, setSelectedSum] = useState(DEFAULT_SUM_UAH);
@@ -72,7 +74,7 @@ const HelpNowSection = () => {
     {
       variant: 'pay',
       size: 'medium',
-      value: 'інша сума',
+      value: translations('custom_sum'),
     },
   ];
 
@@ -80,12 +82,12 @@ const HelpNowSection = () => {
     {
       variant: 'pay',
       size: 'medium',
-      value: 'Щомісячна підписка',
+      value: translations('payment_type.monthly'),
     },
     {
       variant: 'pay',
       size: 'medium',
-      value: 'Одноразовий платіж',
+      value: translations('payment_type.single'),
     },
   ];
 
@@ -111,10 +113,8 @@ const HelpNowSection = () => {
   return (
     <section className={styles.container}>
       <header className={styles.header}>
-        <h2 className={styles.title}>Допоможи сьогодні</h2>
-        <h3 className={styles.subtitle}>
-          Кожна гривня має значення. Долучайся до добрих справ!
-        </h3>
+        <h2 className={styles.title}>{translations('title')}</h2>
+        <h3 className={styles.subtitle}>{translations('subtitle')}</h3>
       </header>
       <div className={styles.paymentsWrapper}>
         <div className={styles.currency}>
@@ -159,7 +159,7 @@ const HelpNowSection = () => {
         </div>
       </div>
       <Button variant="secondary" size="medium" className={styles.button}>
-        Задонатити Baza
+        {translations('donate_btn')}
       </Button>
     </section>
   );

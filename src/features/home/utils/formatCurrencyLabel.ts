@@ -1,12 +1,16 @@
+import { useTranslations } from 'next-intl';
+
 export const formatCurrencyLabel = (currency: string, value: string) => {
-  if (value === 'інша сума') return value;
+  const translations = useTranslations('homepage.helpNowSection');
+
+  if (value === translations('custom_sum')) return value;
   switch (currency) {
     case 'eur':
-      return `${value} euro`;
+      return `${value} ${translations('payment_sum_label.eur')}`;
     case 'zloty':
-      return `${value} zł`;
+      return `${value} ${translations('payment_sum_label.zl')}`;
     case 'uah':
-      return `${value} грн`;
+      return `${value} ${translations('payment_sum_label.uah')}`;
     default:
       return `${value}`;
   }
