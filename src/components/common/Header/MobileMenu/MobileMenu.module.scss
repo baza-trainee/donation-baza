@@ -1,0 +1,64 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.mobileNav {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background-color: $header;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 0 0 1rem;
+  z-index: 3;
+  transition: 0.3s ease;
+  &.open {
+    display: flex;
+  }
+  .closeIconWrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    &:hover {
+      cursor: pointer;
+      filter: $background-two;
+    }
+    .closeIcon {
+      filter: brightness(0) invert(1);
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  @media (min-width: $tablet) {
+    display: none !important;
+  }
+  @media (min-width: $mobile) {
+    width: 43%;
+  }
+  .navList {
+    list-style-type: none;
+    .navItem {
+      margin: 0 0 1rem 0;
+      .navLink {
+        color: $white-text;
+      }
+      .navLink:hover,
+      .navLink:focus {
+        color: $background-two;
+      }
+    }
+  }
+  .supportButtonMobile {
+    margin-top: 20px;
+    font-size: 20px;
+    display: block;
+    white-space: nowrap;
+  }
+}
