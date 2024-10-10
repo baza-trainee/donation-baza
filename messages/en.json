@@ -47,6 +47,23 @@
       "linkedinAlt": "linked in logo",
       "facebookAlt": "facebook logo",
       "telegramAlt": "telegram logo"
+    },
+    "header": {
+      "logoAlt": "logo",
+      "supportBtn": "Support Baza",
+      "openMenuAriaLabel": "open menu",
+      "burgerMenuAlt": "burger menu",
+      "mobileMenu": {
+        "closeBtnLabel": "close mobile menu",
+        "supportBtn": "Support Baza",
+        "openMenuAriaLabel": "open menu",
+        "burgerMenuAlt": "burger menu"
+      }
+    },
+    "languageSwitcher": {
+      "dropDownButtonAriaLabel": "select language",
+      "dropDownIconOpenedAlt": "language selection menu open",
+      "dropDownIconClosedAlt": "language selection menu closed"
     }
   }
 }

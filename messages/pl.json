@@ -47,6 +47,23 @@
       "linkedinAlt": "logo linked in",
       "facebookAlt": "logo facebook",
       "telegramAlt": "logo telegram"
+    },
+    "header": {
+      "logoAlt": "logo",
+      "supportBtn": "Wesprzyj Bazę",
+      "openMenuAriaLabel": "otwórz menu",
+      "burgerMenuAlt": "menu-burger",
+      "mobileMenu": {
+        "closeBtnLabel": "zamknij menu mobilne",
+        "supportBtn": "Wesprzyj Bazę",
+        "openMenuAriaLabel": "otwórz menu",
+        "burgerMenuAlt": "menu-burger"
+      }
+    },
+    "languageSwitcher": {
+      "dropDownButtonAriaLabel": "wybierz język",
+      "dropDownIconOpenedAlt": "menu wyboru języka otwarte",
+      "dropDownIconClosedAlt": "menu wyboru języka zamknięte"
     }
   }
 }

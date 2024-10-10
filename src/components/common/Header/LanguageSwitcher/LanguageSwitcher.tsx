@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './LanguageSwitcher.module.scss';
+import { useTranslations } from 'next-intl';
 
 const LanguageSwitcher: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +9,7 @@ const LanguageSwitcher: React.FC = () => {
   type Language = 'UA' | 'EN' | 'PL';
   const languages: Language[] = ['UA', 'EN', 'PL'];
   const [selectedLanguage, setSelectedLanguage] = useState<Language>('UA');
+  const translate = useTranslations('common.languageSwitcher');
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -29,25 +31,20 @@ const LanguageSwitcher: React.FC = () => {
       <button
         className={`${styles.languageButton} ${isOpen && styles.noUnderline}`}
         onClick={toggleDropdown}
+        aria-label={translate('dropDownButtonAriaLabel')}
       >
         {selectedLanguage}
-        {isOpen ? (
-          <Image
-            alt="lang-dropdown-icon"
-            src="/svg/lang-dropdown-icon.svg"
-            width={10}
-            height={12}
-            className={`${styles.dropdown} ${styles.up}`}
-          />
-        ) : (
-          <Image
-            alt="lang-dropdown-icon"
-            src="/svg/lang-dropdown-icon.svg"
-            width={10}
-            height={12}
-            className={styles.dropdown}
-          />
-        )}
+        <Image
+          alt={
+            isOpen
+              ? translate('dropDownIconOpenedAlt')
+              : translate('dropDownIconClosedAlt')
+          }
+          src="/svg/lang-dropdown-icon.svg"
+          width={10}
+          height={12}
+          className={`${styles.dropdown} ${isOpen && styles.up}`}
+        />
       </button>
 
       {isOpen && (
