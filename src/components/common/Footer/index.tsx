@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { getContacts } from '@/utils/api/contacts';
 import { getDocuments } from '@/utils/api/documents';
 import { queryKeys } from '@/constants/queryKeys';
 import styles from './Footer.module.scss';
@@ -15,6 +16,10 @@ const Footer: React.FC = () => {
   const { data: documents } = useQuery({
     queryKey: [queryKeys.documents.GET_DOCUMENTS],
     queryFn: getDocuments,
+  });
+  const { data: contacts } = useQuery({
+    queryKey: [queryKeys.contacts.GET_CONTACTS],
+    queryFn: getContacts,
   });
 
   const links = useNavLinks();
@@ -56,42 +61,42 @@ const Footer: React.FC = () => {
           <div className={styles.footerContacts}>
             <ul>
               <li>
-                <a href="tel:+380636286630">
+                <a href={`tel:${contacts?.phone1}`}>
                   <Image
                     src="/svg/phone-icon.svg"
                     alt={translate('footer.phoneAlt')}
                     width={24}
                     height={24}
                   />
-                  +380 63 628 6630
+                  {contacts?.phone1}
                 </a>
               </li>
               <li>
-                <a href="tel:+380675681788">
+                <a href={`tel:${contacts?.phone2}`}>
                   <Image
                     src="/svg/phone-icon.svg"
                     alt={translate('footer.phoneAlt')}
                     width={24}
                     height={24}
                   />
-                  +380 67 568 1788
+                  {contacts?.phone2}
                 </a>
               </li>
               <li>
-                <a href="mailto:info@baza-trainee.tech">
+                <a href={`mailto:${contacts?.email}`}>
                   <Image
                     src="/svg/new-mail-icon.svg"
                     alt={translate('footer.emailAlt')}
                     width={24}
                     height={24}
                   />
-                  info@baza-trainee.tech
+                  {contacts?.email}
                 </a>
               </li>
             </ul>
 
             <div className={styles.footerSocial}>
-              <a href="#" target="_blank">
+              <a href={contacts?.linkedin} target="_blank" rel="noreferrer">
                 <Image
                   src="/svg/linkedin.svg"
                   alt={translate('footer.linkedinAlt')}
@@ -100,7 +105,7 @@ const Footer: React.FC = () => {
                 />
               </a>
 
-              <a href="#" target="_blank">
+              <a href={contacts?.facebook} target="_blank" rel="noreferrer">
                 <Image
                   src="/svg/facebook.svg"
                   alt={translate('footer.facebookAlt')}
@@ -109,7 +114,7 @@ const Footer: React.FC = () => {
                 />
               </a>
 
-              <a href="#" target="_blank">
+              <a href={contacts?.telegram} target="_blank" rel="noreferrer">
                 <Image
                   src="/svg/telegram.svg"
                   alt={translate('footer.telegramAlt')}
