@@ -1,15 +1,4 @@
 {
-  "Test": {
-    "testTitle": "Dzien dobry!"
-  },
-  "Footer": {
-    "docs": {
-      "privacy_policy": "Polityka Prywatności",
-      "terms_of_service": "Warunki Świadczenia Usług",
-      "regulations": "Regulamin",
-      "accounting": "Księgowość"
-    }
-  },
   "homepage": {
     "eventsSection": {
       "title": "Wydarzenia",
@@ -35,6 +24,29 @@
           "imageAlt": "loteria"
         }
       }
+    }
+  },
+  "common": {
+    "nav": {
+      "contacts": "Kontakty",
+      "home": "Strona główna",
+      "projects": "O nas",
+      "safety": "Zbiórki charytatywne"
+    },
+    "docs": {
+      "privacy_policy": "Polityka Prywatności",
+      "terms_of_service": "Warunki Świadczenia Usług",
+      "regulations": "Regulamin",
+      "accounting": "Księgowość"
+    },
+    "footer": {
+      "rights": "Opracowane przez Baza Trainee Ukraina 2024 © Wszelkie prawa zastrzeżone",
+      "logoAlt": "logotyp",
+      "phoneAlt": "telefon",
+      "emailAlt": "email",
+      "linkedinAlt": "logo linked in",
+      "facebookAlt": "logo facebook",
+      "telegramAlt": "logo telegram"
     }
   }
 }

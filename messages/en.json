@@ -1,15 +1,4 @@
 {
-  "Test": {
-    "testTitle": "Hello world!"
-  },
-  "Footer": {
-    "docs": {
-      "privacy_policy": "Privacy Policy",
-      "terms_of_service": "Terms of Service",
-      "regulations": "Regulations",
-      "accounting": "Accounting"
-    }
-  },
   "homepage": {
     "eventsSection": {
       "title": "Events",
@@ -35,6 +24,29 @@
           "imageAlt": "lottery"
         }
       }
+    }
+  },
+  "common": {
+    "nav": {
+      "contacts": "Contacts",
+      "home": "Home",
+      "projects": "About",
+      "safety": "Fundraisers"
+    },
+    "docs": {
+      "privacy_policy": "Privacy Policy",
+      "terms_of_service": "Terms of Service",
+      "regulations": "Statute",
+      "accounting": "Reports"
+    },
+    "footer": {
+      "rights": "Developed by Baza Trainee Ukraine 2024 © All rights reserved",
+      "logoAlt": "logotype",
+      "phoneAlt": "phone",
+      "emailAlt": "email",
+      "linkedinAlt": "linked in logo",
+      "facebookAlt": "facebook logo",
+      "telegramAlt": "telegram logo"
     }
   }
 }

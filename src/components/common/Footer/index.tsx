@@ -1,4 +1,3 @@
-/* eslint-disable id-length */
 'use client';
 
 import Image from 'next/image';
@@ -7,53 +6,52 @@ import { getContacts } from '@/utils/api/contacts';
 import { getDocuments } from '@/utils/api/documents';
 import { queryKeys } from '@/constants/queryKeys';
 import styles from './Footer.module.scss';
+import useNavLinks from '@/hooks/useNavLinks';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 
 const Footer: React.FC = () => {
-  const t = useTranslations('Footer');
+  const translate = useTranslations('common');
 
   const { data: documents } = useQuery({
     queryKey: [queryKeys.documents.GET_DOCUMENTS],
     queryFn: getDocuments,
   });
-
   const { data: contacts } = useQuery({
     queryKey: [queryKeys.contacts.GET_CONTACTS],
     queryFn: getContacts,
   });
 
+  const links = useNavLinks();
   return (
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
         {/* Logo */}
         <div className={styles.logo}>
-          <Image src="/svg/logo.svg" alt="Логотип" width={100} height={100} />
+          <Image
+            src="/svg/logo.svg"
+            alt={translate('footer.logoAlt')}
+            width={100}
+            height={100}
+          />
         </div>
         {/* About us */}
         <div className={styles.footerMenu}>
           <ul>
-            <li>
-              <a href="#">Про нас</a>
-            </li>
-            <li>
-              <a href="#">Проєкти</a>
-            </li>
-            <li>
-              <a href="#">Безпека</a>
-            </li>
-            <li>
-              <a href="#">Контакти</a>
-            </li>
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href}>{link.label}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         {/* Links Documents */}
         <div className={styles.footerLinks}>
           <ul>
             {documents &&
-              documents.map((doc, index) => (
-                <li key={index}>
-                  <Link href={doc.url}>{t(`docs.${doc.key}`)}</Link>
+              documents.map((doc) => (
+                <li key={doc.key}>
+                  <Link href={doc.url}>{translate(`docs.${doc.key}`)}</Link>
                 </li>
               ))}
           </ul>
@@ -66,7 +64,7 @@ const Footer: React.FC = () => {
                 <a href={`tel:${contacts?.phone1}`}>
                   <Image
                     src="/svg/phone-icon.svg"
-                    alt="Телефон"
+                    alt={translate('footer.phoneAlt')}
                     width={24}
                     height={24}
                   />
@@ -77,7 +75,7 @@ const Footer: React.FC = () => {
                 <a href={`tel:${contacts?.phone2}`}>
                   <Image
                     src="/svg/phone-icon.svg"
-                    alt="Телефон"
+                    alt={translate('footer.phoneAlt')}
                     width={24}
                     height={24}
                   />
@@ -88,7 +86,7 @@ const Footer: React.FC = () => {
                 <a href={`mailto:${contacts?.email}`}>
                   <Image
                     src="/svg/new-mail-icon.svg"
-                    alt="email"
+                    alt={translate('footer.emailAlt')}
                     width={24}
                     height={24}
                   />
@@ -101,7 +99,7 @@ const Footer: React.FC = () => {
               <a href={contacts?.linkedin} target="_blank" rel="noreferrer">
                 <Image
                   src="/svg/linkedin.svg"
-                  alt="Linkedin"
+                  alt={translate('footer.linkedinAlt')}
                   width={48}
                   height={48}
                 />
@@ -110,7 +108,7 @@ const Footer: React.FC = () => {
               <a href={contacts?.facebook} target="_blank" rel="noreferrer">
                 <Image
                   src="/svg/facebook.svg"
-                  alt="Facebook"
+                  alt={translate('footer.facebookAlt')}
                   width={48}
                   height={48}
                 />
@@ -119,7 +117,7 @@ const Footer: React.FC = () => {
               <a href={contacts?.telegram} target="_blank" rel="noreferrer">
                 <Image
                   src="/svg/telegram.svg"
-                  alt="Telegram"
+                  alt={translate('footer.telegramAlt')}
                   width={48}
                   height={48}
                 />
@@ -130,7 +128,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className={styles.footerCopyright}>
-        <p> Розробка Baza Trainee Ukraine 2024 © Усі права захищені</p>
+        <p>{translate('footer.rights')}</p>
       </div>
     </footer>
   );
