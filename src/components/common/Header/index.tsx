@@ -6,6 +6,7 @@ import MobileMenu from './MobileMenu/MobileMenu';
 import NavBar from './NavBar/NavBar';
 import styles from './Header.module.scss';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,10 +17,12 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(true);
   };
 
+  const translate = useTranslations('common.header');
+
   return (
     <header className={styles.header}>
       <Image
-        alt="logo"
+        alt={`${translate('logoAlt')}`}
         src="/svg/logo.svg"
         width={80}
         height={80}
@@ -28,11 +31,10 @@ const Header: React.FC = () => {
       <NavBar />
       <div className={styles.supportButtonWrapper}>
         <Button variant="primary" size="small" className={styles.supportButton}>
-          Підтримати Baza
+          {`${translate('supportBtn')}`}
         </Button>
       </div>
       <LanguageSwitcher />
-      {/*  Стани кнопок треба синхронізувати між основним та той, що у моб меню. коли в нав барі зникає, то треба щоб відображався в моб меню  */}
       {isMobileMenuOpen ? (
         <MobileMenu
           isMobileMenuOpen={isMobileMenuOpen}
@@ -41,11 +43,16 @@ const Header: React.FC = () => {
       ) : (
         <button
           type="button"
-          aria-label="Open menu"
+          aria-label={`${translate('openMenuAriaLabel')}`}
           onClick={openMobileMenu}
           className={styles.burgerMenu}
         >
-          <Image alt="burger-menu" src="/svg/menu.svg" width={34} height={24} />
+          <Image
+            alt={`${translate('burgerMenuAlt')}`}
+            src="/svg/menu.svg"
+            width={34}
+            height={24}
+          />
         </button>
       )}
     </header>

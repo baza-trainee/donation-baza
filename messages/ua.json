@@ -47,6 +47,12 @@
       "linkedinAlt": "логотип LinkedIn",
       "facebookAlt": "логотип Facebook",
       "telegramAlt": "логотип Telegram"
+    },
+    "header": {
+      "logoAlt": "логотип",
+      "supportBtn": "Підтримати Baza",
+      "openMenuAriaLabel": "відкрити меню",
+      "burgerMenuAlt": "бургер-меню"
     }
   }
 }
