@@ -62,6 +62,23 @@
       "linkedinAlt": "логотип LinkedIn",
       "facebookAlt": "логотип Facebook",
       "telegramAlt": "логотип Telegram"
+    },
+    "header": {
+      "logoAlt": "логотип",
+      "supportBtn": "Підтримати Baza",
+      "openMenuAriaLabel": "відкрити меню",
+      "burgerMenuAlt": "меню-бургер",
+      "mobileMenu": {
+        "closeBtnLabel": "закрити мобільне меню",
+        "supportBtn": "Підтримати Baza",
+        "openMenuAriaLabel": "відкрити меню",
+        "burgerMenuAlt": "меню-бургер"
+      }
+    },
+    "languageSwitcher": {
+      "dropDownButtonAriaLabel": "вибрати мову",
+      "dropDownIconOpenedAlt": "меню вибору мови відкрите",
+      "dropDownIconClosedAlt": "меню вибору мови закрите"
     }
   }
 }

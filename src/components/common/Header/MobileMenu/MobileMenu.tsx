@@ -5,6 +5,8 @@ import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import Link from 'next/link';
 import React from 'react';
 import styles from './MobileMenu.module.scss';
+import useNavLinks from '@/hooks/useNavLinks';
+import { useTranslations } from 'next-intl';
 
 interface MobileMenuProps {
   isMobileMenuOpen: boolean;
@@ -15,53 +17,39 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   isMobileMenuOpen,
   closeMobileMenu,
 }) => {
+  const translation = useTranslations('common.header');
+  const links = useNavLinks();
   return (
     <>
       <div className={`${styles.mobileNav} ${isMobileMenuOpen && styles.open}`}>
-        <button className={styles.closeIconWrapper} aria-label="Close menu">
+        <button
+          className={styles.closeIconWrapper}
+          aria-label={translation('mobileMenu.closeBtnLabel')}
+          onClick={closeMobileMenu}
+        >
           <Image
-            alt="close"
+            alt={translation('mobileMenu.closeBtnLabel')}
             src="/svg/close.svg"
             width={30}
             height={30}
             className={styles.closeIcon}
-            onClick={closeMobileMenu}
           />
         </button>
 
         <ul className={styles.navList}>
-          <li className={styles.navItem}>
-            <Link href="/" className={styles.navLink} onClick={closeMobileMenu}>
-              Головна
-            </Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link
-              href="/projects"
-              className={styles.navLink}
-              onClick={closeMobileMenu}
-            >
-              Проєкти
-            </Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link
-              href="/safety"
-              className={styles.navLink}
-              onClick={closeMobileMenu}
-            >
-              Безпека
-            </Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link
-              href="/contacts"
-              className={styles.navLink}
-              onClick={closeMobileMenu}
-            >
-              Контакти
-            </Link>
-          </li>
+          {links.map((link) => {
+            return (
+              <li className={styles.navItem} key={link.href}>
+                <Link
+                  href={link.href}
+                  className={styles.navLink}
+                  onClick={closeMobileMenu}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <Button
           variant="primary"
@@ -69,7 +57,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           className={styles.supportButtonMobile}
           onClick={closeMobileMenu}
         >
-          Підтримати Baza
+          {translation('supportBtn')}
         </Button>
         <LanguageSwitcher />
       </div>
