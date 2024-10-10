@@ -35,6 +35,19 @@
           "imageAlt": "loteria"
         }
       }
+    },
+    "paymentSection": {
+      "title": "",
+      "subtitle": "",
+      "payment_type": {
+        "monthly": "",
+        "single": ""
+      },
+      "payment_sum_label": {
+        "zl": "zł"
+      },
+      "custom_sum": "",
+      "donate_btn": ""
     }
   }
 }

@@ -35,6 +35,19 @@
           "imageAlt": "lottery"
         }
       }
+    },
+    "paymentSection": {
+      "title": "",
+      "subtitle": "",
+      "payment_type": {
+        "monthly": "",
+        "single": ""
+      },
+      "payment_sum_label": {
+        "eur": "euro"
+      },
+      "custom_sum": "",
+      "donate_btn": ""
     }
   }
 }
