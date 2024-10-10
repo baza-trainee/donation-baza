@@ -1,5 +1,5 @@
 import { IButton } from '@/components/ui/Button';
 
-export interface IPayment extends IButton {
+export interface IPaymentButton extends IButton {
   value: string;
 }

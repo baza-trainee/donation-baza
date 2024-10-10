@@ -3,7 +3,7 @@ import ButtonsExample from '@/components/examples/ButtonsExample';
 import ContactUsFormSection from '@/features/home/sections/ContactUsFormSection';
 import ErrorMessage from '@/components/common/ErrorMessage/ErrorMessage';
 import EventsSection from '@/features/home/sections/EventsSection';
-import HelpNowSection from '@/features/home/sections/HelpNowFormSection';
+import HelpNowSection from '@/features/home/sections/HelpNowSection';
 import Modal from '@/components/common/Modal/Modal';
 import QASection from '@/features/home/sections/QASection';
 import SecondViewSection from '@/features/home/sections/SecondViewSection';

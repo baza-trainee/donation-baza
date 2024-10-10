@@ -1,7 +1,8 @@
 'use client';
 
 import Button from '@/components/ui/Button';
-import { IPayment } from '../../types/payments.types';
+import { IPaymentButton } from '../../types/payments.types';
+import { formatCurrencyLabel } from '../../utils/formatCurrencyLabel';
 import styles from './HelpNowFormSection.module.scss';
 import { useState } from 'react';
 
@@ -16,7 +17,7 @@ const HelpNowSection = () => {
   const [selectedType, setSelectedType] = useState(DEFAULT_TYPE);
   const [selectedSum, setSelectedSum] = useState(DEFAULT_SUM_UAH);
 
-  const CURRENCY_VALUES: IPayment[] = [
+  const CURRENCY_VALUES: IPaymentButton[] = [
     {
       variant: 'pay',
       size: 'medium',
@@ -37,7 +38,7 @@ const HelpNowSection = () => {
     },
   ];
 
-  const DONATE_SUM: IPayment[] = [
+  const DONATE_SUM: IPaymentButton[] = [
     {
       variant: 'pay',
       size: 'medium',
@@ -75,7 +76,7 @@ const HelpNowSection = () => {
     },
   ];
 
-  const DONATE_TYPE: IPayment[] = [
+  const DONATE_TYPE: IPaymentButton[] = [
     {
       variant: 'pay',
       size: 'medium',
@@ -103,20 +104,8 @@ const HelpNowSection = () => {
     setSelectedSum(value);
   };
 
-  const handleTypeChange = (value: string) => {
+  const handlePaymentTypeChange = (value: string) => {
     setSelectedType(value);
-  };
-
-  const formatCurrencyLabel = (value: string) => {
-    if (value === 'інша сума') return value;
-    switch (selectedCurrency) {
-      case 'eur':
-        return `${value} euro`;
-      case 'zloty':
-        return `${value} zł`;
-      default:
-        return `${value} грн`;
-    }
   };
 
   return (
@@ -147,7 +136,7 @@ const HelpNowSection = () => {
               variant={item.variant}
               size={item.size}
               key={idx}
-              onClick={() => handleTypeChange(item.value)}
+              onClick={() => handlePaymentTypeChange(item.value)}
               isActive={selectedType === item.value}
             >
               {item.value}
@@ -164,7 +153,7 @@ const HelpNowSection = () => {
               onClick={() => handleSumChange(item.value)}
               isActive={selectedSum === item.value}
             >
-              {formatCurrencyLabel(item.value)}
+              {formatCurrencyLabel(selectedCurrency, item.value)}
             </Button>
           ))}
         </div>
