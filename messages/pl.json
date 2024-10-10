@@ -52,7 +52,13 @@
       "logoAlt": "logo",
       "supportBtn": "Wesprzyj Bazę",
       "openMenuAriaLabel": "otwórz menu",
-      "burgerMenuAlt": "menu hamburgerowe"
+      "burgerMenuAlt": "menu-burger",
+      "mobileMenu": {
+        "closeBtnLabel": "zamknij menu mobilne",
+        "supportBtn": "Wesprzyj Bazę",
+        "openMenuAriaLabel": "otwórz menu",
+        "burgerMenuAlt": "menu-burger"
+      }
     },
     "languageSwitcher": {
       "dropDownButtonAriaLabel": "wybierz język",

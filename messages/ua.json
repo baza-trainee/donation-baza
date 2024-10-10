@@ -52,7 +52,13 @@
       "logoAlt": "логотип",
       "supportBtn": "Підтримати Baza",
       "openMenuAriaLabel": "відкрити меню",
-      "burgerMenuAlt": "бургер-меню"
+      "burgerMenuAlt": "меню-бургер",
+      "mobileMenu": {
+        "closeBtnLabel": "закрити мобільне меню",
+        "supportBtn": "Підтримати Baza",
+        "openMenuAriaLabel": "відкрити меню",
+        "burgerMenuAlt": "меню-бургер"
+      }
     },
     "languageSwitcher": {
       "dropDownButtonAriaLabel": "вибрати мову",
