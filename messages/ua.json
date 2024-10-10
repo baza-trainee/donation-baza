@@ -53,6 +53,11 @@
       "supportBtn": "Підтримати Baza",
       "openMenuAriaLabel": "відкрити меню",
       "burgerMenuAlt": "бургер-меню"
+    },
+    "languageSwitcher": {
+      "dropDownButtonAriaLabel": "вибрати мову",
+      "dropDownIconOpenedAlt": "меню вибору мови відкрите",
+      "dropDownIconClosedAlt": "меню вибору мови закрите"
     }
   }
 }

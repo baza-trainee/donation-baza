@@ -22,7 +22,7 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <Image
-        alt={`${translate('logoAlt')}`}
+        alt={translate('logoAlt')}
         src="/svg/logo.svg"
         width={80}
         height={80}
@@ -31,7 +31,7 @@ const Header: React.FC = () => {
       <NavBar />
       <div className={styles.supportButtonWrapper}>
         <Button variant="primary" size="small" className={styles.supportButton}>
-          {`${translate('supportBtn')}`}
+          {translate('supportBtn')}
         </Button>
       </div>
       <LanguageSwitcher />
@@ -43,12 +43,12 @@ const Header: React.FC = () => {
       ) : (
         <button
           type="button"
-          aria-label={`${translate('openMenuAriaLabel')}`}
+          aria-label={translate('openMenuAriaLabel')}
           onClick={openMobileMenu}
           className={styles.burgerMenu}
         >
           <Image
-            alt={`${translate('burgerMenuAlt')}`}
+            alt={translate('burgerMenuAlt')}
             src="/svg/menu.svg"
             width={34}
             height={24}
