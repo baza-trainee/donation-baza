@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 import styles from './Button.module.scss';
 
-interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant:
     | 'primary'
     | 'secondary'
@@ -13,6 +13,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     | 'navigation';
   size: 'small' | 'medium' | 'large';
   icon?: 'uah' | 'zloty' | 'eur';
+  isActive?: boolean;
 }
 
 const Button: React.FC<IButton> = ({
@@ -20,6 +21,7 @@ const Button: React.FC<IButton> = ({
   variant,
   size,
   icon,
+  isActive,
   className,
   ...props
 }) => {
@@ -53,7 +55,7 @@ const Button: React.FC<IButton> = ({
   };
   return (
     <button
-      className={`${styles.container} ${styles[variant]} ${styles[size]} ${className}`}
+      className={`${styles.container} ${styles[variant]} ${styles[size]} ${isActive && styles.active} ${className && styles[className]}`}
       {...props}
     >
       {variant === 'pay' ? (
