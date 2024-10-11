@@ -30,7 +30,7 @@
       "subtitle": "Every hryvnia matters. Join in good deeds!",
       "payment_type": {
         "monthly": "Monthly subscription",
-        "single": "One-time payment"
+        "one_time": "One-time payment"
       },
       "payment_sum_label": {
         "uah": "uah",

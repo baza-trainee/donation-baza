@@ -30,7 +30,7 @@
       "subtitle": "Każda hrywna ma znaczenie. Dołącz do dobrych uczynków!",
       "payment_type": {
         "monthly": "Subskrypcja miesięczna",
-        "single": "Płatność jednorazowa"
+        "one_time": "Płatność jednorazowa"
       },
       "payment_sum_label": {
         "uah": "uah",

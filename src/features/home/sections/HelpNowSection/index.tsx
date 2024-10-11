@@ -1,114 +1,41 @@
 'use client';
 
+import {
+  type CURRENCY,
+  DEFAULT_CURRENCY,
+  DEFAULT_SUM_UAH,
+  DEFAULT_TYPE,
+  type PAYMENT_SUBSCRIPTION,
+  useDonationData,
+} from '../../hooks/useDonationData';
 import Button from '@/components/ui/Button';
-import { IPaymentButton } from '../../types/payments.types';
 import { formatCurrencyLabel } from '../../utils/formatCurrencyLabel';
+import { getTranslatedPaymentType } from '../../utils/getTranslatedPaymentType';
 import styles from './HelpNowFormSection.module.scss';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-const DEFAULT_CURRENCY = 'uah';
-const DEFAULT_TYPE = 'Одноразовий платіж';
-const DEFAULT_SUM_UAH = '20';
-const DEFAULT_SUM_EUR = '5';
-const DEFAULT_SUM_ZLOTY = '10';
-
 const HelpNowSection = () => {
   const translations = useTranslations('homepage.helpNowSection');
-  const [selectedCurrency, setSelectedCurrency] = useState(DEFAULT_CURRENCY);
-  const [selectedType, setSelectedType] = useState(DEFAULT_TYPE);
+  const [selectedCurrency, setSelectedCurrency] =
+    useState<CURRENCY>(DEFAULT_CURRENCY);
+  const [selectedType, setSelectedType] =
+    useState<PAYMENT_SUBSCRIPTION>(DEFAULT_TYPE);
   const [selectedSum, setSelectedSum] = useState(DEFAULT_SUM_UAH);
 
-  const CURRENCY_VALUES: IPaymentButton[] = [
-    {
-      variant: 'pay',
-      size: 'medium',
-      icon: 'uah',
-      value: 'uah',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      icon: 'eur',
-      value: 'eur',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      icon: 'zloty',
-      value: 'zloty',
-    },
-  ];
-
-  const DONATE_SUM: IPaymentButton[] = [
-    {
-      variant: 'pay',
-      size: 'medium',
-      value:
-        selectedCurrency === DEFAULT_CURRENCY
-          ? '20'
-          : selectedCurrency === 'eur'
-            ? '5'
-            : '10',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      value:
-        selectedCurrency === DEFAULT_CURRENCY
-          ? '50'
-          : selectedCurrency === 'eur'
-            ? '10'
-            : '15',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      value:
-        selectedCurrency === DEFAULT_CURRENCY
-          ? '100'
-          : selectedCurrency === 'eur'
-            ? '50'
-            : '80',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      value: translations('custom_sum'),
-    },
-  ];
-
-  const DONATE_TYPE: IPaymentButton[] = [
-    {
-      variant: 'pay',
-      size: 'medium',
-      value: translations('payment_type.monthly'),
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      value: translations('payment_type.single'),
-    },
-  ];
-
-  const handleCurrencyChange = (value: string) => {
-    setSelectedCurrency(value);
-    if (value === 'eur') {
-      setSelectedSum(DEFAULT_SUM_EUR);
-    } else if (value === 'zloty') {
-      setSelectedSum(DEFAULT_SUM_ZLOTY);
-    } else {
-      setSelectedSum(DEFAULT_SUM_UAH);
-    }
-  };
-
-  const handleSumChange = (value: string) => {
-    setSelectedSum(value);
-  };
-
-  const handlePaymentTypeChange = (value: string) => {
-    setSelectedType(value);
-  };
+  const {
+    CURRENCY_VALUES,
+    DONATE_SUM,
+    DONATE_TYPE,
+    handleCurrencyChange,
+    handleSumChange,
+    handlePaymentTypeChange,
+  } = useDonationData(
+    selectedCurrency,
+    setSelectedCurrency,
+    setSelectedSum,
+    setSelectedType
+  );
 
   return (
     <section className={styles.container}>
@@ -125,7 +52,7 @@ const HelpNowSection = () => {
               size={item.size}
               icon={item.icon}
               key={idx}
-              onClick={() => handleCurrencyChange(item.value)}
+              onClick={() => handleCurrencyChange(item.value as CURRENCY)}
               isActive={selectedCurrency === item.value}
             />
           ))}
@@ -136,10 +63,12 @@ const HelpNowSection = () => {
               variant={item.variant}
               size={item.size}
               key={idx}
-              onClick={() => handlePaymentTypeChange(item.value)}
+              onClick={() =>
+                handlePaymentTypeChange(item.value as PAYMENT_SUBSCRIPTION)
+              }
               isActive={selectedType === item.value}
             >
-              {item.value}
+              {getTranslatedPaymentType(item.value as PAYMENT_SUBSCRIPTION)}
             </Button>
           ))}
         </div>
