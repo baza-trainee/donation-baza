@@ -29,7 +29,7 @@ const FirstViewSection: React.FC = () => {
       {/* Контент сторінки */}
       <div className={styles.wrapper}>
         <h1 className={styles.header}>Культура благочинності -</h1>
-        <p className={styles.aboveHeader}>це не про внески і донати.</p>
+        <h2 className={styles.aboveHeader}>це не про внески і донати.</h2>
         <p className={styles.text}>
           Це історія про спільноту, де кожен почувається сильним або
           підтримуваним, де кожен може захистити або бути захищеним.
