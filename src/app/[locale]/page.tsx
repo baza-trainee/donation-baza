@@ -3,6 +3,7 @@ import ButtonsExample from '@/components/examples/ButtonsExample';
 import ContactUsFormSection from '@/features/home/sections/ContactUsFormSection';
 import ErrorMessage from '@/components/common/ErrorMessage/ErrorMessage';
 import EventsSection from '@/features/home/sections/EventsSection';
+import FirstViewSection from '@/features/home/sections/FirstViewSection';
 import Modal from '@/components/common/Modal/Modal';
 import QASection from '@/features/home/sections/QASection';
 import SecondViewSection from '@/features/home/sections/SecondViewSection';
@@ -11,6 +12,7 @@ import TextExample from '@/components/examples/TextExample';
 export default function Home() {
   return (
     <>
+      <FirstViewSection />
       <BannerSection />
       <SecondViewSection />
       <QASection />

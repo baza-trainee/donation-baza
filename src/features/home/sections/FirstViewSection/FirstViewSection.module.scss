@@ -1,0 +1,54 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.firstViewSection {
+  background-size: cover;
+  background-position: center;
+  height: 780px;
+  width: 100%;
+  position: relative;
+  background-image: url('/img/hero/mainPhoto.png');
+
+  .wrapper {
+    width: 41.5rem; //665px;
+    height: 17.4rem; //279px;
+    position: absolute;
+    left: 120px;
+    top: 170px;
+
+    background: linear-gradient(
+      88.42deg,
+      rgba(36, 27, 7, 0.4) 3.16%,
+      rgba(226, 207, 192, 0.4) 148.59%
+    );
+    border-radius: 1.25rem; //20px;
+    padding: 0.68rem; //11px;
+    color: $white-text;
+
+    .header {
+      @include text-h2;
+      // color: $white-text;
+    }
+    .aboveHeader {
+      @include text-big-button;
+      text-align: right;
+      padding-bottom: 0.87rem;
+    }
+    .text {
+      @include text-big-button;
+      padding-bottom: 0.87rem;
+    }
+  }
+
+  .photoAutor {
+    position: absolute;
+    bottom: 1rem;
+    right: 120px;
+
+    .autor {
+      color: $white-text;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+  }
+}
