@@ -1,12 +1,12 @@
-import { type PAYMENT_SUBSCRIPTION } from '../hooks/useDonationData';
+import { PAYMENT_SUBSCRIPTIONS } from '../hooks/useDonationData';
 import { useTranslations } from 'next-intl';
 
-export const getTranslatedPaymentType = (value: PAYMENT_SUBSCRIPTION) => {
+export const getTranslatedPaymentType = (value: string) => {
   const translations = useTranslations('homepage.helpNowSection.payment_type');
   switch (value) {
-    case 'ONE_TIME':
+    case PAYMENT_SUBSCRIPTIONS.ONE_TIME:
       return translations('one_time');
-    case 'SUBSCRIPTION':
+    case PAYMENT_SUBSCRIPTIONS.SUBSCRIPTION:
       return translations('monthly');
     default:
       return value;

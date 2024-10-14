@@ -1,11 +1,11 @@
 'use client';
 
 import {
-  type CURRENCY,
+  CURRENCY_NAMES,
   DEFAULT_CURRENCY,
-  DEFAULT_SUM_UAH,
+  DEFAULT_SUMS,
   DEFAULT_TYPE,
-  type PAYMENT_SUBSCRIPTION,
+  PAYMENT_SUBSCRIPTIONS,
   useDonationData,
 } from '../../hooks/useDonationData';
 import Button from '@/components/ui/Button';
@@ -18,24 +18,24 @@ import { useTranslations } from 'next-intl';
 const HelpNowSection = () => {
   const translations = useTranslations('homepage.helpNowSection');
   const [selectedCurrency, setSelectedCurrency] =
-    useState<CURRENCY>(DEFAULT_CURRENCY);
+    useState<CURRENCY_NAMES>(DEFAULT_CURRENCY);
   const [selectedType, setSelectedType] =
-    useState<PAYMENT_SUBSCRIPTION>(DEFAULT_TYPE);
-  const [selectedSum, setSelectedSum] = useState(DEFAULT_SUM_UAH);
+    useState<PAYMENT_SUBSCRIPTIONS>(DEFAULT_TYPE);
+  const [selectedSum, setSelectedSum] = useState<string>(DEFAULT_SUMS.UAH);
 
   const {
-    CURRENCY_VALUES,
-    DONATE_SUM,
-    DONATE_TYPE,
+    currencyButtonsData,
+    typeButtonsData,
+    sumButtonsData,
     handleCurrencyChange,
     handleSumChange,
     handlePaymentTypeChange,
-  } = useDonationData(
+  } = useDonationData({
     selectedCurrency,
     setSelectedCurrency,
     setSelectedSum,
-    setSelectedType
-  );
+    setSelectedType,
+  });
 
   return (
     <section className={styles.container}>
@@ -45,35 +45,33 @@ const HelpNowSection = () => {
       </header>
       <div className={styles.paymentsWrapper}>
         <div className={styles.currency}>
-          {CURRENCY_VALUES.map((item, idx) => (
+          {currencyButtonsData.map((item, idx) => (
             <Button
               variant={item.variant}
               value={item.value}
               size={item.size}
               icon={item.icon}
               key={idx}
-              onClick={() => handleCurrencyChange(item.value as CURRENCY)}
+              onClick={() => handleCurrencyChange(item.value)}
               isActive={selectedCurrency === item.value}
             />
           ))}
         </div>
         <div className={styles.type}>
-          {DONATE_TYPE.map((item, idx) => (
+          {typeButtonsData.map((item, idx) => (
             <Button
               variant={item.variant}
               size={item.size}
               key={idx}
-              onClick={() =>
-                handlePaymentTypeChange(item.value as PAYMENT_SUBSCRIPTION)
-              }
+              onClick={() => handlePaymentTypeChange(item.value)}
               isActive={selectedType === item.value}
             >
-              {getTranslatedPaymentType(item.value as PAYMENT_SUBSCRIPTION)}
+              {getTranslatedPaymentType(item.value)}
             </Button>
           ))}
         </div>
         <div className={styles.sum}>
-          {DONATE_SUM.map((item, idx) => (
+          {sumButtonsData.map((item, idx) => (
             <Button
               variant={item.variant}
               size={item.size}

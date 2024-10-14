@@ -1,128 +1,111 @@
 import { IPaymentButton } from '../types/payments.types';
-// Import { REG_EXP_DONATION_NUMBER } from '@/constants/regEx';
-// Import { isValideDonateSum } from './isValidDonateSum';
+import isCurrencyValue from '../utils/isCurrencyValue';
+import isNumPositiveInt from '../utils/isNumPositiveInt';
+import isPaymentSubscription from '../utils/isPaymentSubscription';
 import { useTranslations } from 'next-intl';
 
-export type CURRENCY = 'UAH' | 'EUR' | 'PLN';
-export type PAYMENT_SUBSCRIPTION = 'ONE_TIME' | 'SUBSCRIPTION';
+export enum PAYMENT_SUBSCRIPTIONS {
+  ONE_TIME = 'ONE_TIME',
+  SUBSCRIPTION = 'SUBSCRIPTION',
+}
 
-export const DEFAULT_CURRENCY: CURRENCY = 'UAH';
-export const DEFAULT_TYPE: PAYMENT_SUBSCRIPTION = 'ONE_TIME';
-export const DEFAULT_SUM_UAH = '20';
-const DEFAULT_SUM_EUR = '5';
-const DEFAULT_SUM_PLN = '10';
+export enum CURRENCY_NAMES {
+  UAH = 'UAH',
+  EUR = 'EUR',
+  PLN = 'PLN',
+}
+
+export enum DEFAULT_SUMS {
+  UAH = '20',
+  EUR = '5',
+  PLN = '10',
+}
+
+export const DEFAULT_CURRENCY = CURRENCY_NAMES.UAH;
+export const DEFAULT_TYPE = PAYMENT_SUBSCRIPTIONS.ONE_TIME;
 
 export const MAX_DONATION_SUM = 10000000;
 export const MIN_DONATION_SUM = 1;
 
-export const useDonationData = (
-  selectedCurrency: CURRENCY,
-  setSelectedCurrency: (currency: CURRENCY) => void,
-  setSelectedSum: (sum: string) => void,
-  setSelectedType: (type: PAYMENT_SUBSCRIPTION) => void
-  // eslint-disable-next-line max-params
-) => {
+interface IUseDonationData {
+  selectedCurrency: CURRENCY_NAMES;
+  setSelectedCurrency: (currency: CURRENCY_NAMES) => void;
+  setSelectedSum: (sum: string) => void;
+  setSelectedType: (type: PAYMENT_SUBSCRIPTIONS) => void;
+}
+
+export const useDonationData = ({
+  selectedCurrency,
+  setSelectedCurrency,
+  setSelectedSum,
+  setSelectedType,
+}: IUseDonationData) => {
   const translations = useTranslations('homepage.helpNowSection');
 
-  const CURRENCY_VALUES: IPaymentButton[] = [
-    {
-      variant: 'pay',
-      size: 'medium',
-      icon: 'uah',
-      value: 'UAH',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      icon: 'eur',
-      value: 'EUR',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      icon: 'zloty',
-      value: 'PLN',
-    },
-  ];
-
-  const DONATE_SUM: IPaymentButton[] = [
-    {
-      variant: 'pay',
-      size: 'medium',
-      value:
-        selectedCurrency === DEFAULT_CURRENCY
-          ? '20'
-          : selectedCurrency === 'EUR'
-            ? '5'
-            : '10',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      value:
-        selectedCurrency === DEFAULT_CURRENCY
-          ? '50'
-          : selectedCurrency === 'EUR'
-            ? '10'
-            : '15',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      value:
-        selectedCurrency === DEFAULT_CURRENCY
-          ? '100'
-          : selectedCurrency === 'EUR'
-            ? '50'
-            : '80',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      value: translations('custom_sum'),
-    },
-  ];
-
-  const DONATE_TYPE: IPaymentButton[] = [
-    {
-      variant: 'pay',
-      size: 'medium',
-      value: 'ONE_TIME',
-    },
-    {
-      variant: 'pay',
-      size: 'medium',
-      value: 'SUBSCRIPTION',
-    },
-  ];
-  const handleCurrencyChange = (value: CURRENCY) => {
-    setSelectedCurrency(value);
-    if (value === 'EUR') {
-      setSelectedSum(DEFAULT_SUM_EUR);
-    } else if (value === 'PLN') {
-      setSelectedSum(DEFAULT_SUM_PLN);
-    } else {
-      setSelectedSum(DEFAULT_SUM_UAH);
+  const getSumValue = (
+    uahValue: string,
+    eurValue: string,
+    plnValue: string
+  ) => {
+    switch (selectedCurrency) {
+      case CURRENCY_NAMES.UAH:
+        return uahValue;
+      case CURRENCY_NAMES.EUR:
+        return eurValue;
+      case CURRENCY_NAMES.PLN:
+        return plnValue;
+      default:
+        return '';
     }
   };
 
-  const handleSumChange = (value: string) => {
-    setSelectedSum(value);
-    // If (isValideDonateSum(value, REG_EXP_DONATION_NUMBER)) {
-    //   SetSelectedSum(value);
-    // } else {
-    //   // eslint-disable-next-line no-console
-    //   Console.error('Invalid donation amount:', value);
+  const createPaymentButton = (
+    value: string,
+    icon?: IPaymentButton['icon']
+  ): IPaymentButton => ({
+    icon,
+    value,
+    variant: 'pay',
+    size: 'medium',
+  });
+
+  const currencyButtonsData: IPaymentButton[] = [
+    createPaymentButton(CURRENCY_NAMES.UAH, 'uah'),
+    createPaymentButton(CURRENCY_NAMES.EUR, 'eur'),
+    createPaymentButton(CURRENCY_NAMES.PLN, 'zloty'),
+  ];
+  const sumButtonsData: IPaymentButton[] = [
+    createPaymentButton(getSumValue('20', '5', '10')),
+    createPaymentButton(getSumValue('50', '10', '15')),
+    createPaymentButton(getSumValue('100', '50', '80')),
+    createPaymentButton(translations('custom_sum')),
+  ];
+  const typeButtonsData: IPaymentButton[] = [
+    createPaymentButton(PAYMENT_SUBSCRIPTIONS.ONE_TIME),
+    createPaymentButton(PAYMENT_SUBSCRIPTIONS.SUBSCRIPTION),
+  ];
+
+  const handleCurrencyChange = (value: string) => {
+    const newCurrency = isCurrencyValue(value) ? value : DEFAULT_CURRENCY;
+    setSelectedCurrency(newCurrency);
+    setSelectedSum(DEFAULT_SUMS[newCurrency]);
   };
 
-  const handlePaymentTypeChange = (value: PAYMENT_SUBSCRIPTION) => {
-    setSelectedType(value);
+  const handleSumChange = (value: string) => {
+    if (isNumPositiveInt(value)) {
+      setSelectedSum(value);
+    }
+  };
+
+  const handlePaymentTypeChange = (value: string) => {
+    const newType = isPaymentSubscription(value) ? value : DEFAULT_TYPE;
+    setSelectedType(newType);
   };
 
   return {
-    CURRENCY_VALUES,
-    DONATE_SUM,
-    DONATE_TYPE,
+    currencyButtonsData,
+    sumButtonsData,
+    typeButtonsData,
     handleCurrencyChange,
     handleSumChange,
     handlePaymentTypeChange,
