@@ -1,4 +1,4 @@
-import { PAYMENT_SUBSCRIPTIONS } from '../hooks/useDonationData';
+import { PAYMENT_SUBSCRIPTIONS } from '@/constants/payment.constant';
 import { useTranslations } from 'next-intl';
 
 export const getTranslatedPaymentType = (value: string) => {

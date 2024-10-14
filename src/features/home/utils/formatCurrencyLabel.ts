@@ -1,4 +1,4 @@
-import { CURRENCY_NAMES } from '../hooks/useDonationData';
+import { CURRENCY_NAMES } from '@/constants/payment.constant';
 import { useTranslations } from 'next-intl';
 
 export const formatCurrencyLabel = (

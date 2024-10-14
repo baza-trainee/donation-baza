@@ -1,4 +1,4 @@
-import { PAYMENT_SUBSCRIPTIONS } from '../hooks/useDonationData';
+import { PAYMENT_SUBSCRIPTIONS } from '@/constants/payment.constant';
 
 export default function isPaymentSubscription(
   value: string
