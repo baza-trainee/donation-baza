@@ -16,10 +16,15 @@
     left: 120px;
     top: 170px;
 
+    // background: linear-gradient(
+    //   88.42deg,
+    //   rgba(36, 27, 7, 0.4) 3.16%,
+    //   rgba(226, 207, 192, 0.4) 148.59%
+    // );
     background: linear-gradient(
-      88.42deg,
-      rgba(36, 27, 7, 0.4) 3.16%,
-      rgba(226, 207, 192, 0.4) 148.59%
+      60deg,
+      rgba(17, 74, 62, 0.8) 3.16%,
+      #ffffff00 148.59%
     );
     border-radius: 1.25rem; //20px;
     padding: 0.68rem; //11px;
@@ -27,7 +32,6 @@
 
     .header {
       @include text-h2;
-      // color: $white-text;
     }
     .aboveHeader {
       @include text-big-button;
@@ -37,6 +41,28 @@
     .text {
       @include text-big-button;
       padding-bottom: 0.87rem;
+    }
+    // /////////////////
+    @media (max-width: $small-desktop) {
+      left: 40px;
+      top: 140px;
+    }
+
+    @media (max-width: $tablet) {
+      width: 70%;
+      height: auto;
+      left: 40px;
+      top: 160px;
+
+      .header {
+        @include text-card-title;
+      }
+      .aboveHeader {
+        @include text-accent;
+      }
+      .text {
+        @include text-extra-small;
+      }
     }
   }
 
@@ -49,6 +75,9 @@
       color: $white-text;
       font-size: 0.875rem;
       font-weight: 600;
+    }
+    @media (max-width: $small-desktop) {
+      right: 40px;
     }
   }
 }
