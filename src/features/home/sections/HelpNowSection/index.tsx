@@ -8,17 +8,17 @@ import {
   type PAYMENT_SUBSCRIPTION,
   useDonationData,
 } from '../../hooks/useDonationData';
-import { useLocale, useTranslations } from 'next-intl';
 import Button from '@/components/ui/Button';
 import { formatCurrencyLabel } from '../../utils/formatCurrencyLabel';
 import { getTranslatedPaymentType } from '../../utils/getTranslatedPaymentType';
 import styles from './HelpNowFormSection.module.scss';
-import usePaymentHandler from '@/hooks/usePayment';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+// Import usePaymentHandler from '@/hooks/usePayment';
 
 const HelpNowSection = () => {
-  const locale = useLocale();
-  const { handlePayment } = usePaymentHandler();
+  // Const locale = useLocale();
+  // Const { handlePayment } = usePaymentHandler();
   const translations = useTranslations('homepage.helpNowSection');
   const [selectedCurrency, setSelectedCurrency] =
     useState<CURRENCY>(DEFAULT_CURRENCY);
