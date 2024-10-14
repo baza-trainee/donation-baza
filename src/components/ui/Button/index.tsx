@@ -12,7 +12,7 @@ export interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     | 'pay'
     | 'navigation';
   size: 'small' | 'medium' | 'large';
-  icon?: 'uah' | 'zloty' | 'eur';
+  icon?: 'uah' | 'pln' | 'eur';
   isActive?: boolean;
 }
 
@@ -36,7 +36,7 @@ const Button: React.FC<IButton> = ({
             alt="uah"
           />
         );
-      case 'zloty':
+      case 'pln':
         return (
           <Image
             src={'/svg/zloty-icon.svg'}

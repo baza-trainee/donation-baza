@@ -11,7 +11,7 @@ export default function ButtonsExample() {
         </Button>
         <Button variant="pay" size="medium" icon="uah"></Button>
         <Button variant="pay" size="medium" icon="eur"></Button>
-        <Button variant="pay" size="medium" icon="zloty"></Button>
+        <Button variant="pay" size="medium" icon="pln"></Button>
       </div>
       <div className={styles.buttonGroup}>
         <span>primary (header) button</span>
