@@ -8,14 +8,17 @@ import {
   type PAYMENT_SUBSCRIPTION,
   useDonationData,
 } from '../../hooks/useDonationData';
+import { useLocale, useTranslations } from 'next-intl';
 import Button from '@/components/ui/Button';
 import { formatCurrencyLabel } from '../../utils/formatCurrencyLabel';
 import { getTranslatedPaymentType } from '../../utils/getTranslatedPaymentType';
 import styles from './HelpNowFormSection.module.scss';
+import usePaymentHandler from '@/hooks/usePayment';
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
 
 const HelpNowSection = () => {
+  const locale = useLocale();
+  const { handlePayment } = usePaymentHandler();
   const translations = useTranslations('homepage.helpNowSection');
   const [selectedCurrency, setSelectedCurrency] =
     useState<CURRENCY>(DEFAULT_CURRENCY);
@@ -37,13 +40,33 @@ const HelpNowSection = () => {
     setSelectedType
   );
 
+  // Const handleSubmit = async (event: React.FormEvent) => {
+  //   Event.preventDefault();
+
+  //   // eslint-disable-next-line no-console
+  //   Console.log('Submitting payment:', {
+  //     PaymentAmount: selectedSum,
+  //     Currency: selectedCurrency,
+  //     Type: selectedType,
+  //     Lang: locale,
+  //   });
+
+  //   Await handlePayment({
+  //     PaymentAmount: selectedSum,
+  //     Currency: selectedCurrency,
+  //     Type: selectedType,
+  //     Lang: locale,
+  //   });
+  // };
+
   return (
     <section className={styles.container}>
       <header className={styles.header}>
         <h2 className={styles.title}>{translations('title')}</h2>
         <h3 className={styles.subtitle}>{translations('subtitle')}</h3>
       </header>
-      <div className={styles.paymentsWrapper}>
+      {/* <form className={styles.paymentsWrapper} onSubmit={handleSubmit}> */}
+      <form className={styles.paymentsWrapper}>
         <div className={styles.currency}>
           {CURRENCY_VALUES.map((item, idx) => (
             <Button
@@ -86,10 +109,15 @@ const HelpNowSection = () => {
             </Button>
           ))}
         </div>
-      </div>
-      <Button variant="secondary" size="medium" className={styles.button}>
-        {translations('donate_btn')}
-      </Button>
+        <Button
+          variant="secondary"
+          size="medium"
+          className={styles.button}
+          type="submit"
+        >
+          {translations('donate_btn')}
+        </Button>
+      </form>
     </section>
   );
 };
