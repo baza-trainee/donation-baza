@@ -1,6 +1,6 @@
 'use client';
 
-import HelpNowForm from './forms/HelpNowForm';
+import HelpNowForm from './form/HelpNowForm';
 import styles from './HelpNowSection.module.scss';
 import { useTranslations } from 'next-intl';
 

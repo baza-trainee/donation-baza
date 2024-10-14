@@ -1,12 +1,12 @@
-import { PAYMENT_SUBSCRIPTIONS } from '@/constants/payment.constant';
+import { REGULAR_MODES } from '@/constants/payment.constant';
 import { useTranslations } from 'next-intl';
 
 export const getTranslatedPaymentType = (value: string) => {
   const translations = useTranslations('homepage.helpNowSection.payment_type');
   switch (value) {
-    case PAYMENT_SUBSCRIPTIONS.ONE_TIME:
+    case REGULAR_MODES.NONE:
       return translations('one_time');
-    case PAYMENT_SUBSCRIPTIONS.SUBSCRIPTION:
+    case REGULAR_MODES.MONTHLY:
       return translations('monthly');
     default:
       return value;

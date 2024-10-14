@@ -3,6 +3,7 @@ export enum CURRENCY_NAMES {
   EUR = 'EUR',
   PLN = 'PLN',
 }
+
 export const DONATION_AMOUNTS = {
   MIN: {
     [CURRENCY_NAMES.UAH]: '20',
@@ -20,19 +21,18 @@ export const DONATION_AMOUNTS = {
     [CURRENCY_NAMES.PLN]: '80',
   },
 };
-export enum DEFAULT_SUMS {
+
+export enum DEFAULT_AMOUNTS {
   UAH = '20',
   EUR = '5',
   PLN = '10',
 }
-export const MAX_DONATION_SUM = 10000000;
-export const MIN_DONATION_SUM = 1;
 
 export const DEFAULT_CURRENCY = CURRENCY_NAMES.UAH;
 
-export enum PAYMENT_SUBSCRIPTIONS {
-  ONE_TIME = 'ONE_TIME',
-  SUBSCRIPTION = 'SUBSCRIPTION',
+export enum REGULAR_MODES {
+  NONE = 'NONE',
+  MONTHLY = 'MONTHLY',
 }
 
-export const DEFAULT_TYPE = PAYMENT_SUBSCRIPTIONS.ONE_TIME;
+export const DEFAULT_TYPE = REGULAR_MODES.NONE;
