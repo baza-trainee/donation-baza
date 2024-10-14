@@ -14,11 +14,8 @@ import { getTranslatedPaymentType } from '../../utils/getTranslatedPaymentType';
 import styles from './HelpNowFormSection.module.scss';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-// Import usePaymentHandler from '@/hooks/usePayment';
 
-const HelpNowSection = () => {
-  // Const locale = useLocale();
-  // Const { handlePayment } = usePaymentHandler();
+const HelpNowSection: React.FC = () => {
   const translations = useTranslations('homepage.helpNowSection');
   const [selectedCurrency, setSelectedCurrency] =
     useState<CURRENCY_NAMES>(DEFAULT_CURRENCY);
@@ -40,25 +37,6 @@ const HelpNowSection = () => {
     setSelectedType,
   });
 
-  // Const handleSubmit = async (event: React.FormEvent) => {
-  //   Event.preventDefault();
-
-  //   // eslint-disable-next-line no-console
-  //   Console.log('Submitting payment:', {
-  //     PaymentAmount: selectedSum,
-  //     Currency: selectedCurrency,
-  //     Type: selectedType,
-  //     Lang: locale,
-  //   });
-
-  //   Await handlePayment({
-  //     PaymentAmount: selectedSum,
-  //     Currency: selectedCurrency,
-  //     Type: selectedType,
-  //     Lang: locale,
-  //   });
-  // };
-
   return (
     <section className={styles.container}>
       <header className={styles.header}>
@@ -67,46 +45,76 @@ const HelpNowSection = () => {
       </header>
       {/* <form className={styles.paymentsWrapper} onSubmit={handleSubmit}> */}
       <form className={styles.paymentsWrapper}>
-        <div className={styles.currency}>
+        <fieldset id="currency" name="currency" className={styles.currency}>
           {currencyButtonsData.map((item, idx) => (
-            <Button
-              variant={item.variant}
-              value={item.value}
-              size={item.size}
-              icon={item.icon}
-              key={idx}
-              onClick={() => handleCurrencyChange(item.value)}
-              isActive={selectedCurrency === item.value}
-            />
+            <label key={idx}>
+              <input
+                type="radio"
+                name="currency"
+                value={item.value}
+                checked={selectedCurrency === item.value}
+                className={styles.input}
+              />
+              <Button
+                type="button"
+                variant={item.variant}
+                value={item.value}
+                size={item.size}
+                icon={item.icon}
+                key={idx}
+                onClick={() => handleCurrencyChange(item.value)}
+                isActive={selectedCurrency === item.value}
+              />
+            </label>
           ))}
-        </div>
-        <div className={styles.type}>
+        </fieldset>
+        <fieldset id="type" name="type" className={styles.type}>
           {typeButtonsData.map((item, idx) => (
-            <Button
-              variant={item.variant}
-              size={item.size}
-              key={idx}
-              onClick={() => handlePaymentTypeChange(item.value)}
-              isActive={selectedType === item.value}
-            >
-              {getTranslatedPaymentType(item.value)}
-            </Button>
+            <label key={idx}>
+              <input
+                type="radio"
+                name="type"
+                value={item.value}
+                checked={selectedType === item.value}
+                className={styles.input}
+              />
+              <Button
+                type="button"
+                variant={item.variant}
+                size={item.size}
+                key={idx}
+                onClick={() => handlePaymentTypeChange(item.value)}
+                isActive={selectedType === item.value}
+              >
+                {getTranslatedPaymentType(item.value)}
+              </Button>
+            </label>
           ))}
-        </div>
-        <div className={styles.sum}>
+        </fieldset>
+        <fieldset id="sum" name="sum" className={styles.sum}>
           {sumButtonsData.map((item, idx) => (
-            <Button
-              variant={item.variant}
-              size={item.size}
-              key={idx}
-              value={item.value}
-              onClick={() => handleSumChange(item.value)}
-              isActive={selectedSum === item.value}
-            >
-              {formatCurrencyLabel(selectedCurrency, item.value)}
-            </Button>
+            <label key={idx}>
+              <input
+                type="radio"
+                name="sum"
+                value={item.value}
+                checked={selectedSum === item.value}
+                className={styles.input}
+              />
+              <Button
+                type="button"
+                variant={item.variant}
+                size={item.size}
+                key={idx}
+                value={item.value}
+                onClick={() => handleSumChange(item.value)}
+                isActive={selectedSum === item.value}
+              >
+                {formatCurrencyLabel(selectedCurrency, item.value)}
+              </Button>
+            </label>
           ))}
-        </div>
+        </fieldset>
         <Button
           variant="secondary"
           size="medium"

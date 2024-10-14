@@ -23,6 +23,7 @@
     .currency,
     .type,
     .sum {
+      border: none;
       display: inline-flex;
       gap: 8px;
     }
@@ -32,5 +33,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .input {
+    display: none;
   }
 }
