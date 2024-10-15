@@ -21,7 +21,6 @@ const ImageSlider: React.FC = () => {
 
   const images = [
     '/img/hero/mainPhoto.png',
-    '/img/hero/test1.png',
     '/img/hero/test2.png',
     '/img/hero/hero-test-img.png',
   ];

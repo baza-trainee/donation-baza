@@ -3,14 +3,12 @@
 
 .sliderContainer {
   position: relative;
-  width: 100%;
-  // height: 780px;
-  // height: auto;
+  max-height: 100vh; // *
   overflow: hidden;
 
   img {
     width: 100%;
-    height: auto;
+    height: 60vh; // ! це шоб банер був на екрані
     object-fit: cover;
   }
 }
