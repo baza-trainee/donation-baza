@@ -1,3 +1,5 @@
+import { locales } from '@/i18n/routing';
+
 export interface ILoginData {
   email: string;
   password: string;
@@ -51,3 +53,5 @@ export interface IEvent {
   imageId: string;
   createdAt: Date;
 }
+
+export type Locale = (typeof locales)[number];
