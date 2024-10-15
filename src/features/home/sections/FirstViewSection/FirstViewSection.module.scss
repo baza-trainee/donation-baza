@@ -7,8 +7,8 @@
   // background-image: url('/img/hero/mainPhoto.png');
   position: relative;
   width: 100%;
-  // height: 780px;
-  // height: auto;
+  height: 780px;
+  height: auto;
 
   .wrapper {
     width: 41.5rem; //665px;
@@ -100,6 +100,6 @@
   }
 
   @media (max-width: $mobile) {
-    height: 120vh;
+    // height: 120vh;
   }
 }
