@@ -1,10 +1,10 @@
 // Import React, { useEffect, useState } from 'react';
 // Import Image from 'next/image';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import React from 'react';
 import Slider from 'react-slick';
-// Import 'slick-carousel/slick/slick.css';
 // // не знаю чи це потрібно
-// Import 'slick-carousel/slick/slick-theme.css';
 // І це теж
 import styles from './ImageSlider.module.scss';
 
