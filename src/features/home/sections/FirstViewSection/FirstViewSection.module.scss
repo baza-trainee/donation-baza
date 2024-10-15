@@ -2,12 +2,13 @@
 @import '@/theme/mixins';
 
 .firstViewSection {
-  background-size: cover;
-  background-position: center;
-  height: 780px;
-  width: 100%;
+  // background-size: cover;
+  // background-position: center;
+  // background-image: url('/img/hero/mainPhoto.png');
   position: relative;
-  background-image: url('/img/hero/mainPhoto.png');
+  width: 100%;
+  // height: 780px;
+  // height: auto;
 
   .wrapper {
     width: 41.5rem; //665px;
@@ -46,6 +47,19 @@
     @media (max-width: $small-desktop) {
       left: 40px;
       top: 140px;
+      width: 35.5rem; //565px;
+      height: min-content;
+
+      .header {
+        font-size: 2rem;
+      }
+      .aboveHeader {
+        @include text-big-button; //24px
+        text-align: right;
+      }
+      .text {
+        @include text-medium-button; //20px
+      }
     }
 
     @media (max-width: $tablet) {
@@ -76,8 +90,16 @@
       font-size: 0.875rem;
       font-weight: 600;
     }
+
     @media (max-width: $small-desktop) {
       right: 40px;
     }
+    @media (max-width: $tablet) {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    height: 120vh;
   }
 }

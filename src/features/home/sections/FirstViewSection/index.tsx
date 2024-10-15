@@ -1,6 +1,6 @@
 'use client';
 // Import { useEffect, useState } from 'react';
-import ImageSlider from '@/components/common/Slider';
+import ImageSlider from '@/features/home/sections/FirstViewSection/components/ImageSlider';
 import styles from './FirstViewSection.module.scss';
 
 const FirstViewSection: React.FC = () => {
