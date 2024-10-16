@@ -24,6 +24,21 @@
           "imageAlt": "lottery"
         }
       }
+    },
+    "helpNowSection": {
+      "title": "Help today",
+      "subtitle": "Every hryvnia matters. Join in good deeds!",
+      "payment_type": {
+        "monthly": "Monthly subscription",
+        "one_time": "One-time payment"
+      },
+      "payment_sum_label": {
+        "uah": "uah",
+        "eur": "euro",
+        "zl": "pln"
+      },
+      "custom_sum": "other amount",
+      "donate_btn": "Donate to Baza"
     }
   },
   "common": {
