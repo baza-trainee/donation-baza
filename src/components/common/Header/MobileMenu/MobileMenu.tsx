@@ -51,6 +51,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
             );
           })}
         </ul>
+
         <Button
           variant="primary"
           size="small"
@@ -59,6 +60,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         >
           {translation('supportBtn')}
         </Button>
+
         <LanguageSwitcher />
       </div>
     </>
