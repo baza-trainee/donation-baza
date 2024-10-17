@@ -14,7 +14,7 @@ export const ApiContract = contract.router({
   // User endpoints
   createUser: {
     method: 'POST',
-    path: 'api/users',
+    path: '/api/users',
     responses: {
       201: UserSchema,
     },
@@ -24,7 +24,7 @@ export const ApiContract = contract.router({
 
   getUser: {
     method: 'GET',
-    path: 'api/users/:id',
+    path: '/api/users/:id',
     responses: {
       200: UserSchema.nullable(),
     },
@@ -54,7 +54,7 @@ export const ApiContract = contract.router({
   // Document endpoints
   createDocument: {
     method: 'POST',
-    path: 'api/documents',
+    path: '/api/documents',
     responses: {
       201: DocumentSchema,
     },
@@ -63,7 +63,7 @@ export const ApiContract = contract.router({
   },
   getDocument: {
     method: 'GET',
-    path: 'api/documents/:id',
+    path: '/api/documents/:id',
     responses: {
       200: DocumentSchema.nullable(),
     },
@@ -73,7 +73,7 @@ export const ApiContract = contract.router({
   // Contact endpoints
   updateContacts: {
     method: 'PUT',
-    path: 'api/contacts/:id',
+    path: '/api/contacts/:id',
     responses: {
       200: ContactSchema,
     },
@@ -83,7 +83,7 @@ export const ApiContract = contract.router({
 
   getContacts: {
     method: 'GET',
-    path: 'api/contacts/:id',
+    path: '/api/contacts/:id',
     responses: {
       200: ContactSchema.nullable(),
     },
@@ -93,7 +93,7 @@ export const ApiContract = contract.router({
   // Event endpoints
   createEvent: {
     method: 'POST',
-    path: 'api/events',
+    path: '/api/events',
     responses: {
       201: EventSchema,
     },
@@ -103,7 +103,7 @@ export const ApiContract = contract.router({
 
   getEvents: {
     method: 'GET',
-    path: 'api/events',
+    path: '/api/events',
     responses: {
       200: z.array(EventSchema),
     },
