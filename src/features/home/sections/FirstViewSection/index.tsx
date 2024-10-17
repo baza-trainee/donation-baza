@@ -1,5 +1,6 @@
 'use client';
 // Import { useEffect, useState } from 'react';
+import ImageSlider from '@/features/home/sections/FirstViewSection/components/ImageSlider';
 import styles from './FirstViewSection.module.scss';
 
 const FirstViewSection: React.FC = () => {
@@ -26,6 +27,7 @@ const FirstViewSection: React.FC = () => {
       //      BackgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
       //    }}
     >
+      <ImageSlider />
       {/* Контент сторінки */}
       <div className={styles.wrapper}>
         <h1 className={styles.header}>Культура благочинності -</h1>
