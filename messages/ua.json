@@ -24,6 +24,21 @@
           "imageAlt": "лотерея"
         }
       }
+    },
+    "helpNowSection": {
+      "title": "Допоможи сьогодні",
+      "subtitle": "Кожна гривня має значення. Долучайся до добрих справ!",
+      "payment_type": {
+        "monthly": "Щомісячна підписка",
+        "one_time": "Одноразовий платіж"
+      },
+      "payment_sum_label": {
+        "uah": "грн",
+        "eur": "євро",
+        "zl": "злотих"
+      },
+      "custom_sum": "інша сума",
+      "donate_btn": "Задонатити Baza"
     }
   },
   "common": {

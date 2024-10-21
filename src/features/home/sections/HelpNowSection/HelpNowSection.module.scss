@@ -1,0 +1,16 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.container {
+  @include section-padding;
+  .header {
+    text-align: center;
+    .title {
+      @include text-h2;
+    }
+    .subtitle {
+      @include text-subtitle;
+      margin-top: 16px;
+    }
+  }
+}

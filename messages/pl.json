@@ -24,6 +24,21 @@
           "imageAlt": "loteria"
         }
       }
+    },
+    "helpNowSection": {
+      "title": "Pomóż dzisiaj",
+      "subtitle": "Każda hrywna ma znaczenie. Dołącz do dobrych uczynków!",
+      "payment_type": {
+        "monthly": "Subskrypcja miesięczna",
+        "one_time": "Płatność jednorazowa"
+      },
+      "payment_sum_label": {
+        "uah": "uah",
+        "eur": "euro",
+        "zl": "zł"
+      },
+      "custom_sum": "inna kwota",
+      "donate_btn": "Wspomóż Bazę"
     }
   },
   "common": {
