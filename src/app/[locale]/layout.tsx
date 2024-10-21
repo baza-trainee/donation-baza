@@ -8,7 +8,6 @@ import { NextIntlClientProvider } from 'next-intl';
 import QueryClientProvider from '@/components/providers/QueryClientProvider';
 import React from 'react';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import SessionWrapper from '@/components/providers/SessionProvider';
 import { fonts } from '@/theme/fonts';
 import { getMessages } from 'next-intl/server';
 
@@ -30,20 +29,18 @@ export default async function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="16x16" />
       </head>
-      <SessionWrapper>
-        <ModalProvider>
-          <body>
-            <NextIntlClientProvider messages={messages} locale={locale}>
-              <QueryClientProvider>
-                <Header />
-                {children}
-                <Footer />
-                <ReactQueryDevtools initialIsOpen={false} />
-              </QueryClientProvider>
-            </NextIntlClientProvider>
-          </body>
-        </ModalProvider>
-      </SessionWrapper>
+      <ModalProvider>
+        <body>
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            <QueryClientProvider>
+              <Header />
+              {children}
+              <Footer />
+              <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
+          </NextIntlClientProvider>
+        </body>
+      </ModalProvider>
     </html>
   );
 }

@@ -2,25 +2,13 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { getContacts } from '@/utils/api/contacts';
-import { getDocuments } from '@/utils/api/documents';
-import { queryKeys } from '@/constants/queryKeys';
+import { documents } from '@/constants/documents';
 import styles from './Footer.module.scss';
 import useNavLinks from '@/hooks/useNavLinks';
-import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 
 const Footer: React.FC = () => {
   const translate = useTranslations('common');
-
-  const { data: documents } = useQuery({
-    queryKey: [queryKeys.documents.GET_DOCUMENTS],
-    queryFn: getDocuments,
-  });
-  const { data: contacts } = useQuery({
-    queryKey: [queryKeys.contacts.GET_CONTACTS],
-    queryFn: getContacts,
-  });
 
   const links = useNavLinks();
   return (
@@ -51,7 +39,9 @@ const Footer: React.FC = () => {
             {documents &&
               documents.map((doc) => (
                 <li key={doc.key}>
-                  <Link href={doc.url}>{translate(`docs.${doc.key}`)}</Link>
+                  <Link href={doc.url} target="_blank">
+                    {translate(`docs.${doc.key}`)}
+                  </Link>
                 </li>
               ))}
           </ul>
@@ -61,42 +51,49 @@ const Footer: React.FC = () => {
           <div className={styles.footerContacts}>
             <ul>
               <li>
-                <a href={`tel:${contacts?.phone1}`}>
+                <a href={`tel:+380636286630`}>
                   <Image
                     src="/svg/phone-icon.svg"
                     alt={translate('footer.phoneAlt')}
                     width={24}
                     height={24}
                   />
-                  {contacts?.phone1}
+                  +380636286630
                 </a>
               </li>
               <li>
-                <a href={`tel:${contacts?.phone2}`}>
+                <a
+                  href={`tel:+380675681788
+електронна пошта`}
+                >
                   <Image
                     src="/svg/phone-icon.svg"
                     alt={translate('footer.phoneAlt')}
                     width={24}
                     height={24}
                   />
-                  {contacts?.phone2}
+                  +380675681788
                 </a>
               </li>
               <li>
-                <a href={`mailto:${contacts?.email}`}>
+                <a href={`mailto:info@baza-trainee.tech`}>
                   <Image
                     src="/svg/new-mail-icon.svg"
                     alt={translate('footer.emailAlt')}
                     width={24}
                     height={24}
                   />
-                  {contacts?.email}
+                  info@baza-trainee.tech
                 </a>
               </li>
             </ul>
 
             <div className={styles.footerSocial}>
-              <a href={contacts?.linkedin} target="_blank" rel="noreferrer">
+              <a
+                href="https://www.linkedin.com/company/baza-trainee-ukraine/posts/?feedView=all"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image
                   src="/svg/linkedin.svg"
                   alt={translate('footer.linkedinAlt')}
@@ -105,7 +102,11 @@ const Footer: React.FC = () => {
                 />
               </a>
 
-              <a href={contacts?.facebook} target="_blank" rel="noreferrer">
+              <a
+                href="https://www.facebook.com/BazaTraineeUkraine"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image
                   src="/svg/facebook.svg"
                   alt={translate('footer.facebookAlt')}
@@ -114,7 +115,11 @@ const Footer: React.FC = () => {
                 />
               </a>
 
-              <a href={contacts?.telegram} target="_blank" rel="noreferrer">
+              <a
+                href="https://t.me/+CBXkAJlsCy83ZDYy"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Image
                   src="/svg/telegram.svg"
                   alt={translate('footer.telegramAlt')}
