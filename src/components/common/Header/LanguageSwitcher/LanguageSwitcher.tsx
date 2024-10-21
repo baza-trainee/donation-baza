@@ -47,6 +47,7 @@ const LanguageSwitcher: React.FC = () => {
           className={`${styles.dropdown} ${isOpen ? styles.up : ''}`}
         />
       </button>
+
       {isOpen && (
         <ul className={styles.languageDropdown}>
           {remainingLocales.map((locale) => (
