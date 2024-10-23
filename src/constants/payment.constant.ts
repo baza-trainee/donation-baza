@@ -13,12 +13,12 @@ export const DONATION_AMOUNTS = {
   AVG: {
     [CURRENCY_NAMES.UAH]: '50',
     [CURRENCY_NAMES.EUR]: '10',
-    [CURRENCY_NAMES.PLN]: '15',
+    [CURRENCY_NAMES.PLN]: '20',
   },
   MAX: {
     [CURRENCY_NAMES.UAH]: '100',
-    [CURRENCY_NAMES.EUR]: '50',
-    [CURRENCY_NAMES.PLN]: '80',
+    [CURRENCY_NAMES.EUR]: '20',
+    [CURRENCY_NAMES.PLN]: '30',
   },
 };
 
