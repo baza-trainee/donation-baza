@@ -1,3 +1,5 @@
+import { Locale } from '@/types/common.types';
+
 export enum CURRENCY_NAMES {
   UAH = 'UAH',
   EUR = 'EUR',
@@ -27,6 +29,12 @@ export enum DEFAULT_AMOUNTS {
   EUR = '5',
   PLN = '10',
 }
+
+export const localeCurrencyMap: Record<Locale, CURRENCY_NAMES> = {
+  en: CURRENCY_NAMES.EUR,
+  ua: CURRENCY_NAMES.UAH,
+  pl: CURRENCY_NAMES.PLN,
+};
 
 export const DEFAULT_CURRENCY = CURRENCY_NAMES.UAH;
 
