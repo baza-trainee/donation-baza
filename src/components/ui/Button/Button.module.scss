@@ -1,7 +1,6 @@
 @import '@/theme/variables';
 @import '@/theme/mixins';
-// variant: 'primary' | 'secondary' | 'outline' | 'underline' | 'pay';
-// size: 'small' | 'medium' | 'large';
+
 .flex {
   display: flex;
   align-items: center;
@@ -13,6 +12,7 @@
   border: none;
   box-sizing: border-box;
   transition: all 0.3s ease;
+  white-space: nowrap;
 
   & > * {
     @include text-accent;
