@@ -6,7 +6,11 @@ import { useState } from 'react';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
-function PDFViewer() {
+interface PDFViewerProps {
+  file: string;
+}
+
+const PDFViewer: React.FC<PDFViewerProps> = ({ file }) => {
   const [pages, setPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState<number>(1);
 
@@ -16,10 +20,7 @@ function PDFViewer() {
 
   return (
     <div>
-      <Document
-        file="/docs/privacy_policy.pdf"
-        onLoadSuccess={onDocumentLoadSuccess}
-      >
+      <Document {...{ file }} onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber} />
       </Document>
       <p>
@@ -35,6 +36,6 @@ function PDFViewer() {
       </div>
     </div>
   );
-}
+};
 
 export default PDFViewer;

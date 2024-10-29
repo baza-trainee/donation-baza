@@ -10,13 +10,14 @@ import PDFViewer from '@/components/common/PDFViewer/PDFViewer';
 import QASection from '@/features/home/sections/QASection';
 import SecondViewSection from '@/features/home/sections/SecondViewSection';
 import TextExample from '@/components/examples/TextExample';
+import { documents } from '@/constants/documents';
 
 export default function Home() {
   return (
     <>
       <FirstViewSection />
       <BannerSection />
-      <PDFViewer />
+      <PDFViewer file={documents[0].url} />
       <SecondViewSection />
       <QASection />
       <HelpNowSection />
