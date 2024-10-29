@@ -13,6 +13,7 @@ import HelpNowFormFieldset from './HelpNowFormFieldset';
 import { Locale } from '@/types/common.types';
 import styles from './HelpNowForm.module.scss';
 import { useDonationButtonsData } from '@/features/home/hooks/useDonationButtonsData';
+import usePaymentHandler from '@/hooks/usePayment';
 
 const HelpNowForm: React.FC = () => {
   const currentLocale = useLocale() as Locale;
@@ -44,9 +45,25 @@ const HelpNowForm: React.FC = () => {
 
   const translations = useTranslations('homepage.helpNowSection');
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const { handlePayment } = usePaymentHandler();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Handle form submission logic here
+
+    // eslint-disable-next-line no-console
+    console.log('Payment data being sent:', {
+      paymentAmount: selectedAmount,
+      currency: selectedCurrency,
+      type: selectedRegularMode,
+      lang: currentLocale,
+    });
+
+    await handlePayment({
+      paymentAmount: selectedAmount,
+      currency: selectedCurrency,
+      type: selectedRegularMode,
+      lang: currentLocale,
+    });
   };
 
   return (
