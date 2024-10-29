@@ -39,8 +39,8 @@ export const localeCurrencyMap: Record<Locale, CURRENCY_NAMES> = {
 export const DEFAULT_CURRENCY = CURRENCY_NAMES.UAH;
 
 export enum REGULAR_MODES {
-  NONE = 'NONE',
-  MONTHLY = 'MONTHLY',
+  NONE = 'none',
+  MONTHLY = 'monthly',
 }
 
 export const DEFAULT_TYPE = REGULAR_MODES.NONE;
