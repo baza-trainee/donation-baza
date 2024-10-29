@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable camelcase */
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import ApplicationText from './ApplicationText/ApplicationText';
 import Button from '@/components/ui/Button';
@@ -5,6 +7,7 @@ import { IApplicationData } from '@/types/common.types';
 import TextArea from '@/components/ui/TextArea/TextArea';
 import TextInput from '@/components/ui/TextInput/TextInput';
 import { applicationScheme } from './applicationScheme';
+import emailjs from '@emailjs/browser';
 import styles from './ApplicationForm.module.scss';
 import { useModalContext } from '@/context/ModalContext';
 import { useState } from 'react';
@@ -30,12 +33,25 @@ const ApplicationForm = () => {
   });
 
   const onSubmit: SubmitHandler<IApplicationData> = async (values) => {
-    setIsProcessing(true);
-    // eslint-disable-next-line no-console
-    console.log(values);
-    await openModal('application_feedback');
-    setIsProcessing(false);
-    reset();
+    try {
+      setIsProcessing(true);
+      await emailjs.send(
+        process.env.EMAILJS_SERVICE_ID!,
+        process.env.EMAILJS_TEMPLATE_ID!,
+        {
+          to_name: 'Donation Baza',
+          from_name: values.name,
+          from_email: values.email,
+          message: values.message,
+        },
+        process.env.EMAILJS_PUBLIC_KEY!
+      );
+      setIsProcessing(false);
+      openModal('application_feedback');
+      reset();
+    } catch (error) {
+      console.error('Failed to send message:', error);
+    }
   };
 
   return (
