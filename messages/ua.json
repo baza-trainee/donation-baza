@@ -37,6 +37,10 @@
       "home": "Головна",
       "projects": "Проєкти",
       "safety": "Безпека"
+    },
+    "pdfViewer": {
+      "from": "з",
+      "page": "Cторінка"
     }
   },
   "homepage": {

@@ -4,6 +4,7 @@ import 'react-pdf/dist/Page/TextLayer.css';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { useEffect, useRef, useState } from 'react';
 import styles from './PDFViewer.module.scss';
+import { useTranslations } from 'next-intl';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
@@ -15,17 +16,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ file }) => {
   const [pages, setPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState<number>(1);
   const pageRef = useRef<HTMLDivElement>(null);
-
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-    setPages(numPages);
-  }
-
-  const changePage = (newPageNumber: number) => {
-    setPageNumber(newPageNumber);
-    if (pageRef.current) {
-      pageRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const translations = useTranslations('common.pdfViewer');
 
   useEffect(() => {
     const preventCopy = (ev: Event) => {
@@ -43,25 +34,34 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ file }) => {
     };
   }, []);
 
+  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
+    setPages(numPages);
+  }
+
+  const changePage = (newPageNumber: number) => {
+    setPageNumber(newPageNumber);
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div>
-      <div className={styles.wrapper}>
-        <article ref={pageRef}>
-          <Document {...{ file }} onLoadSuccess={onDocumentLoadSuccess}>
-            <Page pageNumber={pageNumber} />
-          </Document>
-        </article>
-        <div className={styles.pageIndicator}>
-          Page {pageNumber} of {pages}
-        </div>
-        <div className={styles.pagination}>
-          {pageNumber > 1 && (
-            <button onClick={() => changePage(pageNumber - 1)}>←</button>
-          )}
-          {pages && pageNumber + 1 <= pages && (
-            <button onClick={() => changePage(pageNumber + 1)}>→</button>
-          )}
-        </div>
+    <div className={styles.wrapper}>
+      <article ref={pageRef}>
+        <Document {...{ file }} onLoadSuccess={onDocumentLoadSuccess}>
+          <Page pageNumber={pageNumber} />
+        </Document>
+      </article>
+      <div className={styles.pageIndicator}>
+        {translations('page')} {pageNumber} {translations('from')} {pages}
+      </div>
+      <div className={styles.pagination}>
+        {pageNumber > 1 && (
+          <button onClick={() => changePage(pageNumber - 1)}>←</button>
+        )}
+        {pages && pageNumber + 1 <= pages && (
+          <button onClick={() => changePage(pageNumber + 1)}>→</button>
+        )}
       </div>
     </div>
   );

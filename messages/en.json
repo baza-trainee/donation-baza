@@ -37,6 +37,10 @@
       "home": "Home",
       "projects": "About",
       "safety": "Fundraisers"
+    },
+    "pdfViewer": {
+      "from": "of",
+      "page": "Page"
     }
   },
   "homepage": {

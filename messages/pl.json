@@ -37,6 +37,10 @@
       "home": "Strona główna",
       "projects": "O nas",
       "safety": "Zbiórki charytatywne"
+    },
+    "pdfViewer": {
+      "from": "z",
+      "page": "Strona"
     }
   },
   "homepage": {
