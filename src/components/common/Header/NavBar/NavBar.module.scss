@@ -4,6 +4,7 @@
 .nav {
   display: flex;
   @include text-small;
+  margin: 0 8px;
 
   .navList {
     list-style-type: none;
@@ -11,15 +12,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // }
+
     .navLink {
       color: $white-text;
       text-decoration: none;
-      //  padding-inline: 1.5rem;
-      padding-inline: clamp(0.5rem, 1.5vw, 1.5rem);
-
-      position: relative;
+      padding-inline: clamp(0.3rem, 2vw, 1.5rem);
       padding-bottom: 3px;
+      position: relative;
       text-wrap: nowrap;
 
       &::after {
@@ -35,6 +34,17 @@
 
       &:hover::after {
         width: 68%;
+      }
+
+      @media (max-width: $small-desktop) {
+        & {
+          padding-inline: clamp(0.3rem, 1.4vw, 1.2rem);
+        }
+      }
+      @media (max-width: 868px) {
+        & {
+          padding-inline: clamp(0.1rem, 0.5vw, 0.5rem);
+        }
       }
     }
   }
