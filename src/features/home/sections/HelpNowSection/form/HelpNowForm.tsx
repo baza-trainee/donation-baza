@@ -24,6 +24,7 @@ const HelpNowForm: React.FC = () => {
   const [selectedAmount, setSelectedAmount] = useState<string>(
     DEFAULT_AMOUNTS.UAH
   );
+  const [customAmount, setCustomAmount] = useState<string>('');
 
   useEffect(() => {
     const defaultCurrency =
@@ -41,6 +42,8 @@ const HelpNowForm: React.FC = () => {
       setSelectedRegularMode,
       selectedAmount,
       setSelectedAmount,
+      customAmount,
+      setCustomAmount,
     });
 
   const translations = useTranslations('homepage.helpNowSection');

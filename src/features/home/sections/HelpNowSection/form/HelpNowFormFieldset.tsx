@@ -7,6 +7,16 @@ const HelpNowFormFieldset: React.FC<{
   id: string;
   buttonsData: IPaymentButton[];
 }> = ({ id, buttonsData }) => {
+  const renderButton = (item: IPaymentButton, idx: number) => {
+    return item.icon ? (
+      <Button key={idx} {...item} />
+    ) : (
+      <Button key={idx} {...item}>
+        {item.label}
+      </Button>
+    );
+  };
+
   return (
     <fieldset id={id} name={id} className={styles.fieldset}>
       {buttonsData.map((item, idx) => (
@@ -18,12 +28,18 @@ const HelpNowFormFieldset: React.FC<{
             defaultChecked={item.isActive}
             className={styles.input}
           />
-          {item.icon ? (
-            <Button key={idx} {...item} />
+
+          {item.isCustomAmountBtn ? (
+            <input
+              type="text"
+              name={id}
+              value={item.value}
+              placeholder="Enter amount"
+              defaultValue=""
+              onChange={item.inputOnChange}
+            />
           ) : (
-            <Button key={idx} {...item}>
-              {item.label}
-            </Button>
+            renderButton(item, idx)
           )}
         </label>
       ))}

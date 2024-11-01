@@ -22,7 +22,9 @@ interface useDonationDataProps {
   selectedRegularMode: REGULAR_MODES;
   setSelectedRegularMode: (type: REGULAR_MODES) => void;
   selectedAmount: string;
-  setSelectedAmount: (sum: string) => void;
+  setSelectedAmount: (amount: string) => void;
+  customAmount: string;
+  setCustomAmount: (amount: string) => void;
 }
 
 export const useDonationButtonsData = ({
@@ -32,6 +34,8 @@ export const useDonationButtonsData = ({
   setSelectedRegularMode,
   selectedAmount,
   setSelectedAmount,
+  customAmount,
+  setCustomAmount,
 }: useDonationDataProps) => {
   const translations = useTranslations('homepage.helpNowSection');
 
@@ -41,11 +45,16 @@ export const useDonationButtonsData = ({
     setSelectedAmount(DEFAULT_AMOUNTS[newCurrency]);
   }, []);
 
-  const handleSumChange = useCallback((value: string) => {
-    if (isNumPositiveInt(value)) {
-      setSelectedAmount(value);
-    }
-  }, []);
+  const handleSumChange = useCallback(
+    (value: string) => {
+      if (value === customAmount) return;
+      setCustomAmount('');
+      if (isNumPositiveInt(value)) {
+        setSelectedAmount(value);
+      }
+    },
+    [customAmount]
+  );
 
   const handlePaymentTypeChange = useCallback((value: string) => {
     const newType = isPaymentSubscription(value) ? value : DEFAULT_TYPE;
@@ -58,6 +67,8 @@ export const useDonationButtonsData = ({
     icon,
     onClick,
     isActive,
+    inputOnChange,
+    isCustomAmountBtn,
   }: Omit<IPaymentButton, 'variant' | 'size'>): IPaymentButton => ({
     value,
     label,
@@ -67,6 +78,8 @@ export const useDonationButtonsData = ({
     variant: 'pay',
     size: 'medium',
     type: 'button',
+    inputOnChange,
+    isCustomAmountBtn,
   });
 
   const currencyButtonsData: IPaymentButton[] = Object.values(
@@ -96,9 +109,11 @@ export const useDonationButtonsData = ({
     }),
     createPaymentButton({
       label: translations('custom_sum'),
-      value: '0',
-      onClick: () => handleSumChange('0'),
-      isActive: selectedAmount === '0',
+      value: customAmount,
+      onClick: () => handleSumChange(customAmount),
+      inputOnChange: (event) => setCustomAmount(event.target.value),
+      isActive: selectedAmount === customAmount,
+      isCustomAmountBtn: true,
     }),
   ];
 
