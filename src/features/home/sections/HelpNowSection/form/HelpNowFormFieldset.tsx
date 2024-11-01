@@ -28,15 +28,14 @@ const HelpNowFormFieldset: React.FC<{
             defaultChecked={item.isActive}
             className={styles.input}
           />
-
           {item.isCustomAmountBtn ? (
             <input
               type="text"
               name={id}
-              value={item.value}
+              value={item.isActive ? item.value : ''}
               placeholder="Enter amount"
-              defaultValue=""
               onChange={item.inputOnChange}
+              className={styles.inputText}
             />
           ) : (
             renderButton(item, idx)

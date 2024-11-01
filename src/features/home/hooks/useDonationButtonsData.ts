@@ -47,13 +47,13 @@ export const useDonationButtonsData = ({
 
   const handleSumChange = useCallback(
     (value: string) => {
-      if (value === customAmount) return;
-      setCustomAmount('');
+      if (value === selectedAmount) return;
       if (isNumPositiveInt(value)) {
         setSelectedAmount(value);
+        setCustomAmount('');
       }
     },
-    [customAmount]
+    [selectedAmount]
   );
 
   const handlePaymentTypeChange = useCallback((value: string) => {
@@ -111,7 +111,11 @@ export const useDonationButtonsData = ({
       label: translations('custom_sum'),
       value: customAmount,
       onClick: () => handleSumChange(customAmount),
-      inputOnChange: (event) => setCustomAmount(event.target.value),
+      inputOnChange: (event) => {
+        const newCustomAmount = event.target.value;
+        setCustomAmount(newCustomAmount);
+        setSelectedAmount(newCustomAmount);
+      },
       isActive: selectedAmount === customAmount,
       isCustomAmountBtn: true,
     }),
