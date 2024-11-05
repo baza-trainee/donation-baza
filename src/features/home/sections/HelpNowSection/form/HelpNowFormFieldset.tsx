@@ -30,6 +30,9 @@ const HelpNowFormFieldset: React.FC<{
                 placeholder={item.label}
                 onChange={item.inputOnChange}
                 className={styles.input}
+                minLength={1}
+                maxLength={8}
+                required
               />
             </Button>
           ) : (
