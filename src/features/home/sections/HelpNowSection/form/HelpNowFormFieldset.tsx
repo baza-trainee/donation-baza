@@ -21,24 +21,28 @@ const HelpNowFormFieldset: React.FC<{
     <fieldset id={id} name={id} className={styles.fieldset}>
       {buttonsData.map((item, idx) => (
         <label key={idx}>
-          <input
-            type="radio"
-            name={id}
-            value={item.value}
-            defaultChecked={item.isActive}
-            className={styles.input}
-          />
           {item.isCustomAmountBtn ? (
-            <input
-              type="text"
-              name={id}
-              value={item.isActive ? item.value : ''}
-              placeholder="Enter amount"
-              onChange={item.inputOnChange}
-              className={styles.inputText}
-            />
+            <Button {...item}>
+              <input
+                type="text"
+                name={id}
+                value={item.value}
+                placeholder={item.label}
+                onChange={item.inputOnChange}
+                className={styles.input}
+              />
+            </Button>
           ) : (
-            renderButton(item, idx)
+            <>
+              <input
+                type="radio"
+                name={id}
+                value={item.value}
+                defaultChecked={item.isActive}
+                className={styles.input}
+              />
+              {renderButton(item, idx)}
+            </>
           )}
         </label>
       ))}

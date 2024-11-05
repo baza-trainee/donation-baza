@@ -17,6 +17,33 @@
   margin-left: auto;
   margin-right: auto;
 }
-.input {
+.input[type='radio'] {
   display: none;
 }
+.input[type='text'] {
+  field-sizing: content;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent !important;
+  border: none;
+  @include text-accent;
+
+  &::placeholder {
+    color: #030110;
+  }
+
+  &:focus,
+  &:active {
+    border: none;
+    outline: none;
+    background-color: transparent !important;
+  }
+
+  &:hover {
+    background-color: #f5e9df !important;
+  }
+}
+// input.input[type="text"]:-webkit-autofill {
+//       background-color: transparent !important;
+// }
