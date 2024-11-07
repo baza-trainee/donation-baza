@@ -14,25 +14,20 @@ const Page404: NextPage = () => {
     router.back();
   };
   return (
-    <section className={styles.wrapper}>
-      <div className={styles.container}>
-        <div className={styles.textContainer}>
-          <h1 className={styles.title}>404</h1>
-          <p className={styles.description}>{translate('first')}</p>
-          <p className={styles.description}>{translate('second')}</p>
-        </div>
-        <div className={styles.btnGroup}>
-          <Button variant="navigation" size="medium" onClick={handleGoBack}>
-            {translate('buttonGoBack')}
-          </Button>
-          <Button variant="navigation" size="medium">
-            <Link href="/">{translate('buttonGoHome')}</Link>
-          </Button>
-        </div>
+    <section className={styles.container}>
+      <div className={styles.textContainer}>
+        <h1 className={styles.title}>404</h1>
+        <p className={styles.description}>{translate('first')}</p>
+        <p className={styles.description}>{translate('second')}</p>
       </div>
-      <Link href="/" className={styles.link}>
-        {translate('goHome')}
-      </Link>
+      <div className={styles.btnGroup}>
+        <Button variant="outline" size="medium" onClick={handleGoBack}>
+          {translate('buttonGoBack')}
+        </Button>
+        <Button variant="primary" size="medium">
+          <Link href="/">{translate('buttonGoHome')}</Link>
+        </Button>
+      </div>
     </section>
   );
 };
