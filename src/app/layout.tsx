@@ -14,13 +14,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = Array.isArray(children) && children[0]?.props?.params?.locale;
+  const locale =
+    (Array.isArray(children) && children[0]?.props?.params?.locale) ||
+    routing.defaultLocale;
 
   return (
-    <html
-      lang={locale ?? routing.defaultLocale}
-      className={`${fonts.montserrat.variable}`}
-    >
+    <html lang={locale} className={`${fonts.montserrat.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="16x16" />
       </head>
