@@ -4,6 +4,7 @@ import Header from '@/components/common/Header';
 import type { Metadata } from 'next';
 import React from 'react';
 import RootProviders from '@/components/providers';
+import { fonts } from '@/theme/fonts';
 import { getMessages } from 'next-intl/server';
 
 export const metadata: Metadata = {
@@ -20,10 +21,17 @@ export default async function Layout({
 }>) {
   const messages = await getMessages();
   return (
-    <RootProviders messages={messages} locale={locale}>
-      <Header />
-      {children}
-      <Footer />
-    </RootProviders>
+    <html lang={locale} className={`${fonts.montserrat.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="16x16" />
+      </head>
+      <body>
+        <RootProviders messages={messages} locale={locale}>
+          <Header />
+          {children}
+          <Footer />
+        </RootProviders>
+      </body>
+    </html>
   );
 }
