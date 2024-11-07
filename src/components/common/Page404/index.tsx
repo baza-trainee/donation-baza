@@ -13,6 +13,7 @@ const Page404: NextPage = () => {
   const handleGoBack = () => {
     router.back();
   };
+
   return (
     <section className={styles.container}>
       <div className={styles.textContainer}>
@@ -24,9 +25,11 @@ const Page404: NextPage = () => {
         <Button variant="outline" size="medium" onClick={handleGoBack}>
           {translate('buttonGoBack')}
         </Button>
-        <Button variant="primary" size="medium">
-          <Link href="/">{translate('buttonGoHome')}</Link>
-        </Button>
+        <Link href="/">
+          <Button variant="primary" size="medium">
+            {translate('buttonGoHome')}
+          </Button>
+        </Link>
       </div>
     </section>
   );
