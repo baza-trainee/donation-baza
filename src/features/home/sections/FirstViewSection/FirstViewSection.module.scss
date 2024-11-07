@@ -12,6 +12,8 @@
   .wrapper {
     width: 41.5rem; //665px;
     height: 17.4rem; //279px;
+    height: fit-content;
+
     position: absolute;
     left: 120px;
     top: 170px;
@@ -27,7 +29,6 @@
 
     .header {
       @include text-h2;
-      // color: $white-text;
     }
     .aboveHeader {
       @include text-big-button;
@@ -36,7 +37,52 @@
     }
     .text {
       @include text-big-button;
-      padding-bottom: 0.87rem;
+
+      &:first-of-type {
+        padding-bottom: 0.87rem;
+      }
+    }
+
+    @media (max-width: $small-desktop) {
+      & {
+        left: 40px;
+      }
+    }
+    @media (max-width: $tablet) {
+      & {
+        top: 170px;
+        width: 70%;
+        height: fit-content;
+
+        .header {
+          @include text-card-title;
+        }
+        .aboveHeader {
+          @include text-accent;
+        }
+        .text {
+          @include text-small;
+        }
+      }
+    }
+
+    @media (max-width: $mobile) {
+      & {
+        left: 20px;
+        top: 170px;
+        width: 85%;
+        height: fit-content;
+
+        .header {
+          @include text-card-title;
+        }
+        .aboveHeader {
+          @include text-accent;
+        }
+        .text {
+          @include text-small;
+        }
+      }
     }
   }
 
@@ -49,6 +95,29 @@
       color: $white-text;
       font-size: 0.875rem;
       font-weight: 600;
+    }
+
+    @media (max-width: $small-desktop) {
+      & {
+        right: 64px;
+      }
+    }
+    @media (max-width: $tablet) {
+      & {
+        right: 40px;
+      }
+    }
+    @media (max-width: $mobile) {
+      & {
+        right: 20px;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+    & {
+      height: 595px;
+      // якщо середня висота смартфона з 16:9 – приблизно 747 пікселів, то це щоб банер повністю помістився
     }
   }
 }
