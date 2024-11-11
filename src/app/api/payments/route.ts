@@ -14,6 +14,9 @@ export async function POST(request: Request) {
     };
     const response = (await axios.post('https://api.wayforpay.com/api', body))
       .data;
+
+    // eslint-disable-next-line no-console
+    console.log(response);
     return NextResponse.json(response, { status: 200 });
   } catch (error) {
     return new NextResponse(`Can't get payment url ${error}`, { status: 500 });
