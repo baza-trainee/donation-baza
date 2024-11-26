@@ -1,7 +1,7 @@
 'use client';
-// Import { useEffect, useState } from 'react';
 import ImageSlider from '@/features/home/sections/FirstViewSection/components/ImageSlider';
 import styles from './FirstViewSection.module.scss';
+import { useState } from 'react';
 
 const FirstViewSection: React.FC = () => {
   //  Наразі закоментувала, бо не фетчу зображення
@@ -16,6 +16,12 @@ const FirstViewSection: React.FC = () => {
 
   //     FetchBackgroundImage();
   //   }, []);
+  const [author, setAuthor] = useState('© Анастасія Сусло, 2024');
+  const authors = [
+    '© Анастасія Сусло, 2024',
+    '© Анастасія Сусло, 2024',
+    '© Олена Ільєнко, 2024',
+  ];
 
   return (
     <section
@@ -27,7 +33,10 @@ const FirstViewSection: React.FC = () => {
       //      BackgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
       //    }}
     >
-      <ImageSlider />
+      <ImageSlider
+        authors={authors}
+        onSlideChange={(index: number) => setAuthor(authors[index])}
+      />
       {/* Контент сторінки */}
       <div className={styles.wrapper}>
         <h1 className={styles.header}>Культура благочинності -</h1>
@@ -40,7 +49,7 @@ const FirstViewSection: React.FC = () => {
       </div>
 
       <div className={styles.photoAutor}>
-        <p className={styles.autor}>© Анастасія Сусло, 2024</p>
+        <p className={styles.autor}>{author}</p>
       </div>
     </section>
   );

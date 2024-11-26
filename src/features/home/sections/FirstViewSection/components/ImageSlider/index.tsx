@@ -1,12 +1,18 @@
-// Import React, { useEffect, useState } from 'react';
-// Import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import React from 'react';
 import Slider from 'react-slick';
 import styles from './ImageSlider.module.scss';
 
-const ImageSlider: React.FC = () => {
+interface ImageSliderProps {
+  authors: string[];
+  onSlideChange: (index: number) => void;
+}
+
+const ImageSlider: React.FC<ImageSliderProps> = ({
+  authors,
+  onSlideChange,
+}) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -16,7 +22,8 @@ const ImageSlider: React.FC = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: 'linear',
-    // Arrows: true,
+    Arrows: true,
+    beforeChange: (current: number, next: number) => onSlideChange(next),
   };
 
   const images = [
@@ -30,7 +37,7 @@ const ImageSlider: React.FC = () => {
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index}>
-            <img src={image} alt="Image" />
+            <img src={image} alt={`Image ${index}`} />
           </div>
         ))}
       </Slider>
