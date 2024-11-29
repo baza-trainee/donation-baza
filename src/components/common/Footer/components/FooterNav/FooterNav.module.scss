@@ -1,0 +1,23 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.wrapper {
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    color: $white-text;
+  }
+  a:hover {
+    color: $background-two;
+  }
+  @media (max-width: $mobile) {
+    margin-bottom: 1.5rem;
+  }
+}

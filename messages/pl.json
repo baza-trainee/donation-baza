@@ -43,6 +43,10 @@
       "buttonGoHome": "Do strony głównej",
       "first": "Przepraszamy.",
       "second": "Strona, której szukasz, została przeniesiona lub usunięta."
+    },
+    "pdfViewer": {
+      "from": "z",
+      "page": "Strona"
     }
   },
   "homepage": {

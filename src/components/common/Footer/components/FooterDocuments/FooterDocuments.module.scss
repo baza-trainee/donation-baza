@@ -1,0 +1,35 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.wrapper {
+  @media (max-width: $mobile) {
+    margin-bottom: 1.5rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  span {
+    color: $white-text;
+    position: relative;
+    cursor: pointer;
+    display: inline;
+  }
+  span:hover {
+    color: $background-two;
+  }
+  span::after {
+    display: inline;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    right: 0;
+    height: 1px;
+    background-color: $white-text;
+  }
+  span:hover::after {
+    background-color: $white-text;
+  }
+}

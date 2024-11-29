@@ -15,7 +15,7 @@ const HelpNowFormFieldset: React.FC<{
             type="radio"
             name={id}
             value={item.value}
-            checked={item.isActive}
+            defaultChecked={item.isActive}
             className={styles.input}
           />
           {item.icon ? (
