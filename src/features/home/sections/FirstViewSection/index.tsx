@@ -4,18 +4,6 @@ import styles from './FirstViewSection.module.scss';
 import { useState } from 'react';
 
 const FirstViewSection: React.FC = () => {
-  //  Наразі закоментувала, бо не фетчу зображення
-  //   Const [backgroundImage, setBackgroundImage] = useState<string | null>(null);
-  //   UseEffect(() => {
-  //     // Запит на бекенд для отримання поточного URL фонової картинки
-  //     Const fetchBackgroundImage = async () => {
-  //       Const response = await fetch('/api/getBackgroundImage');
-  //       Const data = await response.json();
-  //       SetBackgroundImage(data.imageUrl);
-  //     };
-
-  //     FetchBackgroundImage();
-  //   }, []);
   const [author, setAuthor] = useState('© Анастасія Сусло, 2024');
   const authors = [
     '© Анастасія Сусло, 2024',
@@ -24,15 +12,7 @@ const FirstViewSection: React.FC = () => {
   ];
 
   return (
-    <section
-      className={styles.firstViewSection}
-      //  Продовження логіки зверху
-      //  <section
-      //    ClassName={styles.firstViewSection}
-      //    Style={{
-      //      BackgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
-      //    }}
-    >
+    <section className={styles.firstViewSection}>
       <ImageSlider
         authors={authors}
         onSlideChange={(index: number) => setAuthor(authors[index])}

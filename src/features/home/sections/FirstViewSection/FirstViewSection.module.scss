@@ -11,7 +11,7 @@
   // height: auto;
 
   .wrapper {
-    width: 41.5rem; //665px;
+    width: 40.5rem;
     height: 17.4rem; //279px;
     position: absolute;
     left: 120px;
@@ -43,11 +43,11 @@
       @include text-big-button;
       padding-bottom: 0.87rem;
     }
-    // /////////////////
+    // wrapper s/////////////////
     @media (max-width: $small-desktop) {
       left: 40px;
-      top: 140px;
-      width: 35.5rem; //565px;
+      top: 116px;
+      width: 33.5rem; //565px;
       height: min-content;
 
       .header {
@@ -63,10 +63,9 @@
     }
 
     @media (max-width: $tablet) {
-      width: 70%;
+      width: 26rem;
       height: auto;
       left: 40px;
-      top: 160px;
 
       .header {
         @include text-card-title;
@@ -77,6 +76,12 @@
       .text {
         @include text-extra-small;
       }
+    }
+
+    @media (max-width: $mobile) {
+      left: 20px;
+      width: 85%;
+      width: 22rem;
     }
   }
 

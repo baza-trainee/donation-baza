@@ -65,19 +65,26 @@
     }
   }
   .supportButtonMobile {
+    display: none;
     margin-top: 20px;
     font-size: 20px;
-    display: block;
+    // display: block;
     white-space: nowrap;
+
+    @media (min-width: $mobile) {
+      display: block;
+    }
   }
 
   @media (min-width: $tablet) {
     display: none !important;
     width: 95%;
+    // width: 48rem;
   }
   @media (min-width: $mobile) {
-    // чомусь перебивають налаштування tablet
+    // чомусь перебивають налаштування tablet 95%
     width: 91%;
+    // width: 23.7rem !important; // пепребиває  tablet
     padding: 24px 20px 48px;
   }
 }
