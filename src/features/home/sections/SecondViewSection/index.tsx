@@ -27,6 +27,7 @@ const SecondViewSection = () => {
       </article>
 
       <div className={styles.picture}>
+        <h3 className={styles.preheader}>Важливість підтримки</h3>
         <Image
           src="/img/support-test-img.png"
           alt="Важливість підтримки"

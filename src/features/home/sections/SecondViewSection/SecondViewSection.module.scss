@@ -2,34 +2,78 @@
 @import '@/theme/mixins';
 
 .container {
+  position: relative;
   background-color: $background-one;
   padding: 100px 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 48px; 
+  gap: 48px;
 
-  @media (max-width: $small-desktop) {
-    padding: 80px 40px; 
-    gap: 7px;
-    .picture{ 
-      width: 439px; 
+  @media (max-width: $large-desktop) {
+    padding: 100px 120px;
+    gap: 30px;
+    .picture {
+      width: 708px;
       img {
-      width: 439px; 
-      
-      object-fit: cover;
-      object-position: right; 
+        width: 708px;
+        height: 464px;
+      }
+    }
+  }
+  @media (max-width: $small-desktop) {
+    padding: 80px 40px;
+    gap: 7px;
+    .picture {
+      width: 439px;
+      img {
+        width: 439px;
+        object-position: right;
+      }
+    }
+  }
+  @media (max-width: $tablet) {
+    padding: 60px 40px;
+
+    .picture {
+      width: 332px;
+      height: 464px;
+      img {
+        width: 332px;
+        object-position: 62% 100%;
+      }
+    }
+  }
+  @media (max-width: $mobile) {
+    padding: 40px 20px;
+    flex-direction: column-reverse;
+
+    .picture {
+      width: 380px;
+      height: auto;
+      margin-bottom: 24px;
+      img {
+        width: 380px;
+        height: 400px;
+        object-position: right;
+      }
     }
   }
 
-  }
-  
   .header {
-    @include text-h2;
+    font-size: 2rem;
+    font-weight: bold;
     text-align: center;
     margin-bottom: 40px;
     @media (max-width: $small-desktop) {
       @include text-subtitle;
+    }
+    @media (max-width: $tablet) {
+      @include text-big-button;
+      margin-bottom: 32px;
+    }
+    @media (max-width: $mobile) {
+      display: none;
     }
   }
 
@@ -37,32 +81,63 @@
     & > p {
       @include text-accent;
       margin-bottom: 24px;
+
       @media (max-width: $small-desktop) {
         @include text-small;
       }
+      @media (max-width: $tablet) {
+        @include text-extra-small;
+      }
+      @media (max-width: $mobile) {
+        font-size: 14px;
+        margin-bottom: 16px;
+      }
     }
-  } 
+  }
 
   .button {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
+
+    @media (max-width: $tablet) {
+      @include text-big-button;
+      margin-top: 32px;
+    }
+    @media (max-width: $mobile) {
+      font-size: 18px;
+      margin-top: 24px;
+    }
   }
-  
- .picture{
+
+  .picture {
     position: relative;
+    .preheader {
+      display: none;
+
+      @media (max-width: $mobile) {
+        display: block;
+        @include text-big-button;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+    }
     img {
-    object-fit: cover;
-    border-radius: 12px;
+      object-fit: cover;
+      border-radius: 12px;
     }
     .author {
       position: absolute;
-      bottom: 8px ;
+      bottom: 8px;
       right: 16px;
       font-size: 14px;
       color: $white-text;
+
+      @media (max-width: $tablet) {
+        font-size: 12px;
+        right: 8px;
+      }
     }
   }
-  
 }
