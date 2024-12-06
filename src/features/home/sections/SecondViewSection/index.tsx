@@ -5,12 +5,6 @@ import styles from './SecondViewSection.module.scss';
 const SecondViewSection = () => {
   return (
     <section className={styles.container}>
-      <Image
-        src="/img/support-test-img.png"
-        alt="Важливість підтримки"
-        width={549}
-        height={464}
-      />
       <article>
         <header className={styles.header}>Важливість підтримки</header>
         <div className={styles.content}>
@@ -31,6 +25,16 @@ const SecondViewSection = () => {
           Допомогти Baza
         </Button>
       </article>
+
+      <div className={styles.picture}>
+        <Image
+          src="/img/support-test-img.png"
+          alt="Важливість підтримки"
+          width={549}
+          height={464}
+        />
+        <p className={styles.author}>©Марина Федоренко, 2024</p>
+      </div>
     </section>
   );
 };

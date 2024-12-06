@@ -6,20 +6,42 @@
   padding: 100px 120px;
   display: flex;
   justify-content: space-between;
-  gap: 48px;
+  align-items: center;
+  gap: 48px; 
 
+  @media (max-width: $small-desktop) {
+    padding: 80px 40px; 
+    gap: 7px;
+    .picture{ 
+      width: 439px; 
+      img {
+      width: 439px; 
+      
+      object-fit: cover;
+      object-position: right; 
+    }
+  }
+
+  }
+  
   .header {
     @include text-h2;
     text-align: center;
     margin-bottom: 40px;
+    @media (max-width: $small-desktop) {
+      @include text-subtitle;
+    }
   }
 
   .content {
     & > p {
       @include text-accent;
       margin-bottom: 24px;
+      @media (max-width: $small-desktop) {
+        @include text-small;
+      }
     }
-  }
+  } 
 
   .button {
     display: block;
@@ -27,4 +49,20 @@
     margin-right: auto;
     margin-top: 40px;
   }
+  
+ .picture{
+    position: relative;
+    img {
+    object-fit: cover;
+    border-radius: 12px;
+    }
+    .author {
+      position: absolute;
+      bottom: 8px ;
+      right: 16px;
+      font-size: 14px;
+      color: $white-text;
+    }
+  }
+  
 }
