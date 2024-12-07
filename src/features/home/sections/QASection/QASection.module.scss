@@ -5,18 +5,97 @@
   background-color: $background-two;
   display: flex;
   gap: 48px;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 100px 120px;
+
+  @media (max-width: $desktop) {
+    padding: 80px 8%;
+  }
+
+  @media (max-width: $small-desktop) {
+    padding: 80px 40px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 60px 40px;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 40px 20px;
+  }
+
+  .imgWrapper {
+    position: relative;
+    width: 100%;
+
+    @media (min-width: $desktop) {
+      max-width: 586px;
+    }
+
+    .img {
+      border-radius: 0.75rem; //12px
+      width: 100%;
+
+      @media (max-width: $desktop) {
+        width: 486px;
+        height: 615px;
+      }
+
+      @media (max-width: $small-desktop) {
+        width: 714px;
+        height: 400px !important;
+        object-fit: cover;
+      }
+
+      @media (max-width: $mobile) {
+        width: 380px;
+        height: 400px;
+      }
+    }
+
+    .author {
+      color: $white-text;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0.01em;
+      position: absolute;
+      bottom: 8px;
+      right: 16px;
+      z-index: 2;
+    }
+  }
 
   .textWrapper {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    width: 43.125rem;
+    max-width: 708px;
+    @media (max-width: $desktop) {
+      max-width: 690px;
+    }
+    @media (max-width: $small-desktop) {
+      max-width: 736px;
+    }
+    @media (max-width: $tablet) {
+      max-width: 688px;
+    }
+    @media (max-width: $mobile) {
+      max-width: 380px;
+    }
 
     .header {
       @include text-h2;
       text-align: center;
+      @media (max-width: $small-desktop) {
+        @include text-subtitle;
+      }
+      @media (max-width: $tablet) {
+        @include text-card-title;
+      }
     }
   }
 }

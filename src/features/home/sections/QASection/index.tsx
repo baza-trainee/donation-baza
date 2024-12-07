@@ -6,7 +6,21 @@ import styles from './QASection.module.scss';
 const QASection: React.FC = () => {
   return (
     <div className={styles.container}>
-      <Image src="/img/faq-test-img.png" alt="faq" width={478} height={592} />
+      <div className={styles.imgWrapper}>
+        <Image
+          src="/img/faq-section.webp"
+          alt="faq"
+          width={1702}
+          height={2560}
+          className={styles.img}
+          style={{
+            width: '100%',
+            height: 'auto',
+          }}
+        />
+        <span className={styles.author}>©Анастасія Сусло, 2024</span>
+      </div>
+
       <div className={styles.textWrapper}>
         <h2 className={styles.header}>FAQ</h2>
         {faqContent.map((question, index) => (
