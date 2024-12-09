@@ -6,32 +6,46 @@ import styles from './HelpNowForm.module.scss';
 const HelpNowFormFieldset: React.FC<{
   id: string;
   buttonsData: IPaymentButton[];
-  onChange?: (value: string) => void;
-}> = ({ id, buttonsData, onChange }) => {
-  
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(event.target.value);
+}> = ({ id, buttonsData }) => {
+  const renderButton = (item: IPaymentButton, idx: number) => {
+    return item.icon ? (
+      <Button key={idx} {...item} />
+    ) : (
+      <Button key={idx} {...item}>
+        {item.label}
+      </Button>
+    );
   };
 
   return (
-    <fieldset id={id} name={id} className={styles.fieldset}>
+  <fieldset id={id} name={id} className={styles.fieldset}>
       {buttonsData.map((item, idx) => (
         <label key={idx}>
-          <input
-            type="radio"
-            name={id}
-            value={item.value}
-            checked={item.isActive}
-            onChange={handleChange}
-            defaultChecked={item.isActive}
-            className={styles.input}
-          />
-          {item.icon ? (
-            <Button key={idx} {...item} />
-          ) : (
-            <Button key={idx} {...item}>
-              {item.label}
+          {item.isCustomAmountBtn ? (
+            <Button {...item}>
+              <input
+                type="text"
+                name={id}
+                value={item.value}
+                placeholder={item.label}
+                onChange={item.inputOnChange}
+                className={styles.input}
+                minLength={1}
+                maxLength={8}
+                required
+              />
             </Button>
+          ) : (
+            <>
+              <input
+                type="radio"
+                name={id}
+                value={item.value}
+                defaultChecked={item.isActive}
+                className={styles.input}
+              />
+              {renderButton(item, idx)}
+            </>
           )}
         </label>
       ))}

@@ -4,8 +4,9 @@ import {
   DEFAULT_CURRENCY,
   DEFAULT_TYPE,
   REGULAR_MODES,
+  localeCurrencyMap,
 } from '@/constants/payment.constant';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import Button from '@/components/ui/Button';
 import HelpNowFormFieldset from './HelpNowFormFieldset';
@@ -23,6 +24,15 @@ const HelpNowForm: React.FC = () => {
   const [selectedAmount, setSelectedAmount] = useState<string>(
     DEFAULT_AMOUNTS.UAH
   );
+  const [customAmount, setCustomAmount] = useState<string>('');
+
+  useEffect(() => {
+    const defaultCurrency =
+      localeCurrencyMap[currentLocale] || DEFAULT_CURRENCY;
+    setSelectedCurrency(defaultCurrency);
+    const defaultAmount = DEFAULT_AMOUNTS[defaultCurrency];
+    setSelectedAmount(defaultAmount);
+  }, [currentLocale]);
 
   const { currencyButtonsData, typeButtonsData, sumButtonsData } =
     useDonationButtonsData({
@@ -32,6 +42,8 @@ const HelpNowForm: React.FC = () => {
       setSelectedRegularMode,
       selectedAmount,
       setSelectedAmount,
+      customAmount,
+      setCustomAmount,
     });
 
   const translations = useTranslations('homepage.helpNowSection');
@@ -52,7 +64,7 @@ const HelpNowForm: React.FC = () => {
     await handlePayment({
       paymentAmount: selectedAmount,
       currency: selectedCurrency,
-      type: 'none',
+      type: selectedRegularMode,
       lang: currentLocale,
     });
   };
