@@ -5,14 +5,10 @@ import Slider from 'react-slick';
 import styles from './ImageSlider.module.scss';
 
 interface ImageSliderProps {
-  authors: string[];
   onSlideChange: (index: number) => void;
 }
 
-const ImageSlider: React.FC<ImageSliderProps> = ({
-  authors,
-  onSlideChange,
-}) => {
+const ImageSlider: React.FC<ImageSliderProps> = ({ onSlideChange }) => {
   const settings = {
     dots: true,
     infinite: true,

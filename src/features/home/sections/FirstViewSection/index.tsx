@@ -14,7 +14,6 @@ const FirstViewSection: React.FC = () => {
   return (
     <section className={styles.firstViewSection}>
       <ImageSlider
-        authors={authors}
         onSlideChange={(index: number) => setAuthor(authors[index])}
       />
       {/* Контент сторінки */}
