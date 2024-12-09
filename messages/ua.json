@@ -12,7 +12,7 @@
       "linkedinAlt": "логотип LinkedIn",
       "logoAlt": "логотип",
       "phoneAlt": "телефон",
-      "rights": "Розроблено Baza Trainee Ukraine 2024 © Усі права захищено",
+      "rights": "Розроблено Baza Trainee Ukraine 2024 © Усі права захищені",
       "telegramAlt": "логотип Telegram"
     },
     "header": {
@@ -37,6 +37,16 @@
       "home": "Головна",
       "projects": "Проєкти",
       "safety": "Безпека"
+    },
+    "pageNotFound": {
+      "buttonGoBack": "Назад",
+      "buttonGoHome": "На головну",
+      "first": "Вибачте.",
+      "second": "Сторінка, яку ви шукаєте, переміщена або видалена."
+    },
+    "pdfViewer": {
+      "from": "з",
+      "page": "Cторінка"
     }
   },
   "homepage": {

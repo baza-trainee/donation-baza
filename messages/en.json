@@ -37,6 +37,16 @@
       "home": "Home",
       "projects": "About",
       "safety": "Fundraisers"
+    },
+    "pageNotFound": {
+      "buttonGoBack": "Go back",
+      "buttonGoHome": "Go home",
+      "first": "Sorry.",
+      "second": "The page you are looking for has been moved or deleted."
+    },
+    "pdfViewer": {
+      "from": "of",
+      "page": "Page"
     }
   },
   "homepage": {

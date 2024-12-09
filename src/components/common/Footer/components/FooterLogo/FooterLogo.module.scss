@@ -1,0 +1,12 @@
+@import '@/theme/variables';
+
+.wrapper {
+  color: $white-text;
+  img:hover {
+    content: url('/svg/logo-hover.svg');
+  }
+  @media (max-width: $mobile) {
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+  }
+}
