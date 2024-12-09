@@ -10,7 +10,7 @@
   padding: 10px 120px;
   font-family: $font-family-base;
   @include text-small;
-  // хедер став у свою позицію. чекає на картинку)
+
   position: absolute;
   top: 0;
   left: 0;
@@ -26,6 +26,9 @@
     @media (max-width: $tablet) {
       display: none;
     }
+  }
+  .languageSwitcher {
+    margin: 0 0 0 10px;
   }
   .burgerMenu {
     display: none;

@@ -8,6 +8,7 @@ const HelpNowFormFieldset: React.FC<{
   buttonsData: IPaymentButton[];
   onChange?: (value: string) => void;
 }> = ({ id, buttonsData, onChange }) => {
+  
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.value);
   };
@@ -22,6 +23,7 @@ const HelpNowFormFieldset: React.FC<{
             value={item.value}
             checked={item.isActive}
             onChange={handleChange}
+            defaultChecked={item.isActive}
             className={styles.input}
           />
           {item.icon ? (
