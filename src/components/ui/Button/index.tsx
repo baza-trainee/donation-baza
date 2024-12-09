@@ -55,7 +55,7 @@ const Button: React.FC<IButton> = ({
   };
   return (
     <button
-      className={`${styles.container} ${styles[variant]} ${styles[size]} ${isActive && styles.active} ${className && styles[className]}`}
+      className={`${styles.container} ${styles[variant]} ${styles[size]} ${isActive ? styles.active : ''} ${className}`}
       {...props}
     >
       {variant === 'pay' ? (

@@ -34,7 +34,11 @@ const Header: React.FC = () => {
           {translate('supportBtn')}
         </Button>
       </div>
-      <LanguageSwitcher />
+
+      <div className={styles.languageSwitcher}>
+        <LanguageSwitcher />
+      </div>
+
       {isMobileMenuOpen ? (
         <MobileMenu
           isMobileMenuOpen={isMobileMenuOpen}

@@ -1,84 +1,94 @@
 {
-  "homepage": {
-    "eventsSection": {
-      "title": "Wydarzenia",
-      "subtitle": "Wspieraj nas na swój sposób: Wybierz metodę darowizny",
-      "buttonText": "Czytaj więcej",
-      "events": {
-        "cardDonation": {
-          "title": "Darowizna na konto",
-          "description": "W każdy piątek w Twojej firmie można zbierać drobne po obiedzie. Nawet niewielkie kwoty zebranych środków mogą zmienić życie wielu osób. Po prostu zbierz pieniądze do specjalnej skrzynki lub przelej je na nasze konto.",
-          "image": "/img/events/events-1.webp",
-          "imageAlt": "dekoracje świąteczne"
-        },
-        "corporateFridays": {
-          "title": "Firmowe piątki",
-          "description": "W każdej firmie można zbierać drobne po wspólnym piątkowym jedzeniu pizzy lub czwartkowych owocach. Zazwyczaj firma w ten sposób wspiera zespół lub współpracownicy składają się na wspólny relaks. Pozostała kwota, zaokrąglona do 100-200 UAH, przekazana wojsku lub schronisku dla kotów, zapewnia niezbędne wsparcie. Jeśli 50 firm zrobi to co tydzień, zbiórka zostanie zakończona, a wydarzenie nabierze dodatkowego znaczenia.",
-          "image": "/img/events/events-2.webp",
-          "imageAlt": "Filiżanka cappuccino na tle parku miejskiego"
-        },
-        "weeklyLoteries": {
-          "title": "Cotygodniowe loterie",
-          "description": "Raz w tygodniu każda firma może organizować loterie charytatywne - losując drobne nagrody od ołówka lub jabłka po myszkę komputerową lub firmową naklejkę. Zebrana kwota, nawet w dziesiątkach hrywien, ale regularnie, może być przekazana na zbiórkę. Wybierz potwierdzoną zbiórkę na naszej stronie, ponieważ wszystkie mają autorów i raporty.",
-          "image": "/img/events/events-3.webp",
-          "imageAlt": "loteria"
-        }
-      }
-    },
-    "helpNowSection": {
-      "title": "Pomóż dzisiaj",
-      "subtitle": "Każda hrywna ma znaczenie. Dołącz do dobrych uczynków!",
-      "payment_type": {
-        "monthly": "Subskrypcja miesięczna",
-        "one_time": "Płatność jednorazowa"
-      },
-      "payment_sum_label": {
-        "uah": "uah",
-        "eur": "euro",
-        "zl": "zł"
-      },
-      "custom_sum": "inna kwota",
-      "donate_btn": "Wspomóż Bazę"
-    }
-  },
   "common": {
+    "docs": {
+      "accounting": "Księgowość",
+      "privacy_policy": "Polityka Prywatności",
+      "regulations": "Regulamin",
+      "terms_of_service": "Warunki Świadczenia Usług"
+    },
+    "footer": {
+      "emailAlt": "email",
+      "facebookAlt": "logo facebook",
+      "linkedinAlt": "logo linked in",
+      "logoAlt": "logotyp",
+      "phoneAlt": "telefon",
+      "rights": "Opracowane przez Baza Trainee Ukraina 2024 © Wszelkie prawa zastrzeżone",
+      "telegramAlt": "logo telegram"
+    },
+    "header": {
+      "burgerMenuAlt": "menu-burger",
+      "logoAlt": "logo",
+      "mobileMenu": {
+        "burgerMenuAlt": "menu-burger",
+        "closeBtnLabel": "zamknij menu mobilne",
+        "openMenuAriaLabel": "otwórz menu",
+        "supportBtn": "Wesprzyj Bazę"
+      },
+      "openMenuAriaLabel": "otwórz menu",
+      "supportBtn": "Wesprzyj Bazę"
+    },
+    "languageSwitcher": {
+      "dropDownButtonAriaLabel": "wybierz język",
+      "dropDownIconClosedAlt": "menu wyboru języka zamknięte",
+      "dropDownIconOpenedAlt": "menu wyboru języka otwarte"
+    },
     "nav": {
       "contacts": "Kontakty",
       "home": "Strona główna",
       "projects": "O nas",
       "safety": "Zbiórki charytatywne"
     },
-    "docs": {
-      "privacy_policy": "Polityka Prywatności",
-      "terms_of_service": "Warunki Świadczenia Usług",
-      "regulations": "Regulamin",
-      "accounting": "Księgowość"
+    "pageNotFound": {
+      "buttonGoBack": "Wróć",
+      "buttonGoHome": "Do strony głównej",
+      "first": "Przepraszamy.",
+      "second": "Strona, której szukasz, została przeniesiona lub usunięta."
     },
-    "footer": {
-      "rights": "Opracowane przez Baza Trainee Ukraina 2024 © Wszelkie prawa zastrzeżone",
-      "logoAlt": "logotyp",
-      "phoneAlt": "telefon",
-      "emailAlt": "email",
-      "linkedinAlt": "logo linked in",
-      "facebookAlt": "logo facebook",
-      "telegramAlt": "logo telegram"
+    "pdfViewer": {
+      "from": "z",
+      "page": "Strona"
+    }
+  },
+  "homepage": {
+    "eventsSection": {
+      "buttonText": "Czytaj więcej",
+      "events": {
+        "cardDonation": {
+          "description": "W każdy piątek w Twojej firmie można zbierać drobne po obiedzie. Nawet niewielkie kwoty zebranych środków mogą zmienić życie wielu osób. Po prostu zbierz pieniądze do specjalnej skrzynki lub przelej je na nasze konto.",
+          "image": "/img/events/events-1.webp",
+          "imageAlt": "dekoracje świąteczne",
+          "title": "Darowizna na konto"
+        },
+        "corporateFridays": {
+          "description": "W każdej firmie można zbierać drobne po wspólnym piątkowym jedzeniu pizzy lub czwartkowych owocach. Zazwyczaj firma w ten sposób wspiera zespół lub współpracownicy składają się na wspólny relaks. Pozostała kwota, zaokrąglona do 100-200 UAH, przekazana wojsku lub schronisku dla kotów, zapewnia niezbędne wsparcie. Jeśli 50 firm zrobi to co tydzień, zbiórka zostanie zakończona, a wydarzenie nabierze dodatkowego znaczenia.",
+          "image": "/img/events/events-2.webp",
+          "imageAlt": "Filiżanka cappuccino na tle parku miejskiego",
+          "title": "Firmowe piątki"
+        },
+        "weeklyLoteries": {
+          "description": "Raz w tygodniu każda firma może organizować loterie charytatywne - losując drobne nagrody od ołówka lub jabłka po myszkę komputerową lub firmową naklejkę. Zebrana kwota, nawet w dziesiątkach hrywien, ale regularnie, może być przekazana na zbiórkę. Wybierz potwierdzoną zbiórkę na naszej stronie, ponieważ wszystkie mają autorów i raporty.",
+          "image": "/img/events/events-3.webp",
+          "imageAlt": "loteria",
+          "title": "Cotygodniowe loterie"
+        }
+      },
+      "subtitle": "Wspieraj nas na swój sposób: Wybierz metodę darowizny",
+      "title": "Wydarzenia"
     },
-    "header": {
-      "logoAlt": "logo",
-      "supportBtn": "Wesprzyj Bazę",
-      "openMenuAriaLabel": "otwórz menu",
-      "burgerMenuAlt": "menu-burger",
-      "mobileMenu": {
-        "closeBtnLabel": "zamknij menu mobilne",
-        "supportBtn": "Wesprzyj Bazę",
-        "openMenuAriaLabel": "otwórz menu",
-        "burgerMenuAlt": "menu-burger"
-      }
-    },
-    "languageSwitcher": {
-      "dropDownButtonAriaLabel": "wybierz język",
-      "dropDownIconOpenedAlt": "menu wyboru języka otwarte",
-      "dropDownIconClosedAlt": "menu wyboru języka zamknięte"
+    "helpNowSection": {
+      "custom_sum": "inna kwota",
+      "donate_btn": "Wspomóż Bazę",
+      "payment_sum_label": {
+        "eur": "euro",
+        "uah": "uah",
+        "zl": "zł"
+      },
+      "payment_type": {
+        "monthly": "Subskrypcja miesięczna",
+        "one_time": "Płatność jednorazowa"
+      },
+      "subtitle": "Każda hrywna ma znaczenie. Dołącz do dobrych uczynków!",
+      "title": "Pomóż dzisiaj"
     }
   }
 }

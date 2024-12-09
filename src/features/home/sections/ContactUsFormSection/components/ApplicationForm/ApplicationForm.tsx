@@ -1,20 +1,16 @@
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import ApplicationText from './ApplicationText/ApplicationText';
 import Button from '@/components/ui/Button';
 import { IApplicationData } from '@/types/common.types';
 import TextArea from '@/components/ui/TextArea/TextArea';
 import TextInput from '@/components/ui/TextInput/TextInput';
 import { applicationScheme } from './applicationScheme';
-import { postApplication } from '@/utils/api/applications';
-import { queryKeys } from '@/constants/queryKeys';
 import styles from './ApplicationForm.module.scss';
 import { useModalContext } from '@/context/ModalContext';
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 const ApplicationForm = () => {
-  const queryClient = useQueryClient();
   const { openModal } = useModalContext();
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -33,28 +29,13 @@ const ApplicationForm = () => {
     },
   });
 
-  const { mutate } = useMutation({
-    mutationKey: [queryKeys.applications.ADD_APPLICATION],
-    mutationFn: postApplication,
-    onSuccess: () => {
-      setIsProcessing(false);
-      openModal('application_feedback');
-      reset();
-      queryClient.invalidateQueries({
-        queryKey: [queryKeys.applications.GET_APPLICATIONS],
-      });
-    },
-    onError: (error: unknown) => {
-      openModal('error_message');
-      // eslint-disable-next-line no-console
-      console.log(error);
-      setIsProcessing(false);
-    },
-  });
-
   const onSubmit: SubmitHandler<IApplicationData> = async (values) => {
     setIsProcessing(true);
-    await mutate(values);
+    // eslint-disable-next-line no-console
+    console.log(values);
+    await openModal('application_feedback');
+    setIsProcessing(false);
+    reset();
   };
 
   return (
