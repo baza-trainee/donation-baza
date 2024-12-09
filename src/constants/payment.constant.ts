@@ -1,3 +1,5 @@
+import { Locale } from '@/types/common.types';
+
 export enum CURRENCY_NAMES {
   UAH = 'UAH',
   EUR = 'EUR',
@@ -13,12 +15,12 @@ export const DONATION_AMOUNTS = {
   AVG: {
     [CURRENCY_NAMES.UAH]: '50',
     [CURRENCY_NAMES.EUR]: '10',
-    [CURRENCY_NAMES.PLN]: '15',
+    [CURRENCY_NAMES.PLN]: '20',
   },
   MAX: {
     [CURRENCY_NAMES.UAH]: '100',
-    [CURRENCY_NAMES.EUR]: '50',
-    [CURRENCY_NAMES.PLN]: '80',
+    [CURRENCY_NAMES.EUR]: '20',
+    [CURRENCY_NAMES.PLN]: '30',
   },
 };
 
@@ -28,11 +30,17 @@ export enum DEFAULT_AMOUNTS {
   PLN = '10',
 }
 
+export const localeCurrencyMap: Record<Locale, CURRENCY_NAMES> = {
+  en: CURRENCY_NAMES.EUR,
+  ua: CURRENCY_NAMES.UAH,
+  pl: CURRENCY_NAMES.PLN,
+};
+
 export const DEFAULT_CURRENCY = CURRENCY_NAMES.UAH;
 
 export enum REGULAR_MODES {
-  NONE = 'NONE',
-  MONTHLY = 'MONTHLY',
+  NONE = 'none',
+  MONTHLY = 'monthly',
 }
 
 export const DEFAULT_TYPE = REGULAR_MODES.NONE;
