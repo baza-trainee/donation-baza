@@ -2,15 +2,16 @@
 @import '@/theme/mixins';
 
 .firstViewSection {
-  background-size: cover;
-  background-position: center;
-  height: 780px;
-  width: 100%;
+  // background-size: cover;
+  // background-position: center;
+  // background-image: url('/img/hero/mainPhoto.png');
   position: relative;
-  background-image: url('/img/hero/mainPhoto.png');
+  width: 100%;
+  // height: 780px;
+  // height: auto;
 
   .wrapper {
-    width: 41.5rem; //665px;
+    width: 40.5rem;
     height: 17.4rem; //279px;
     height: fit-content;
 
@@ -18,10 +19,15 @@
     left: 120px;
     top: 170px;
 
+    // background: linear-gradient(
+    //   88.42deg,
+    //   rgba(36, 27, 7, 0.4) 3.16%,
+    //   rgba(226, 207, 192, 0.4) 148.59%
+    // );
     background: linear-gradient(
-      88.42deg,
-      rgba(36, 27, 7, 0.4) 3.16%,
-      rgba(226, 207, 192, 0.4) 148.59%
+      60deg,
+      rgba(17, 74, 62, 0.8) 3.16%,
+      #ffffff00 148.59%
     );
     border-radius: 1.25rem; //20px;
     padding: 0.68rem; //11px;
@@ -37,52 +43,47 @@
     }
     .text {
       @include text-big-button;
-
-      &:first-of-type {
-        padding-bottom: 0.87rem;
-      }
+      padding-bottom: 0.87rem;
     }
-
+    // wrapper s/////////////////
     @media (max-width: $small-desktop) {
-      & {
-        left: 40px;
+      left: 40px;
+      top: 116px;
+      width: 33.5rem; //565px;
+      height: min-content;
+
+      .header {
+        font-size: 2rem;
+      }
+      .aboveHeader {
+        @include text-big-button; //24px
+        text-align: right;
+      }
+      .text {
+        @include text-medium-button; //20px
       }
     }
-    @media (max-width: $tablet) {
-      & {
-        top: 170px;
-        width: 70%;
-        height: fit-content;
 
-        .header {
-          @include text-card-title;
-        }
-        .aboveHeader {
-          @include text-accent;
-        }
-        .text {
-          @include text-small;
-        }
+    @media (max-width: $tablet) {
+      width: 26rem;
+      height: auto;
+      left: 40px;
+
+      .header {
+        @include text-card-title;
+      }
+      .aboveHeader {
+        @include text-accent;
+      }
+      .text {
+        @include text-extra-small;
       }
     }
 
     @media (max-width: $mobile) {
-      & {
-        left: 20px;
-        top: 170px;
-        width: 85%;
-        height: fit-content;
-
-        .header {
-          @include text-card-title;
-        }
-        .aboveHeader {
-          @include text-accent;
-        }
-        .text {
-          @include text-small;
-        }
-      }
+      left: 20px;
+      width: 85%;
+      width: 22rem;
     }
   }
 
@@ -98,26 +99,14 @@
     }
 
     @media (max-width: $small-desktop) {
-      & {
-        right: 64px;
-      }
+      right: 40px;
     }
     @media (max-width: $tablet) {
-      & {
-        right: 40px;
-      }
-    }
-    @media (max-width: $mobile) {
-      & {
-        right: 20px;
-      }
+      font-size: 10px;
     }
   }
 
   @media (max-width: $mobile) {
-    & {
-      height: 595px;
-      // якщо середня висота смартфона з 16:9 – приблизно 747 пікселів, то це щоб банер повністю помістився
-    }
+    // height: 120vh;
   }
 }

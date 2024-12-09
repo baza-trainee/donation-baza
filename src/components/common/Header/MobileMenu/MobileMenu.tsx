@@ -22,6 +22,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   return (
     <>
       <div className={`${styles.mobileNav} ${isMobileMenuOpen && styles.open}`}>
+        <Image
+          alt={'logo'}
+          src="/svg/logo.svg"
+          width={80}
+          height={80}
+          className={styles.logo}
+        />
+
         <button
           className={styles.closeIconWrapper}
           aria-label={translation('mobileMenu.closeBtnLabel')}
@@ -53,7 +61,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         </ul>
 
         <Button
-          variant="primary"
+          // Variant="primary"
+          variant="outline"
           size="small"
           className={styles.supportButtonMobile}
           onClick={closeMobileMenu}
