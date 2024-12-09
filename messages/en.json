@@ -12,7 +12,7 @@
       "linkedinAlt": "linked in logo",
       "logoAlt": "logotype",
       "phoneAlt": "phone",
-      "rights": "Developed by Baza Trainee Ukraine 2024 © All rights reserved",
+      "rights": "Developed by Baza Trainee Ukraine 2024 \u00a9 All rights reserved",
       "telegramAlt": "telegram logo"
     },
     "header": {
@@ -50,6 +50,35 @@
     }
   },
   "homepage": {
+    "applicationSection": {
+      "form": {
+        "message": "Application",
+        "name": "Name",
+        "submit": "Submit",
+        "submitting": "Submitting"
+      },
+      "text": "If you need to raise funds, you can submit an application on the website, and we will help organize the fundraiser.",
+      "title": "Submit an Application",
+      "validation": {
+        "email": {
+          "invalid": "Enter a valid email",
+          "required": "Enter email",
+          "restricted_domain": "Domains .ru and .by are not allowed"
+        },
+        "message": {
+          "empty": "Message cannot be empty",
+          "max": "Please shorten your message to 300 characters",
+          "required": "Enter message"
+        },
+        "name": {
+          "empty": "Name cannot consist of only spaces",
+          "invalid_chars": "Name can only contain allowed characters",
+          "max": "Name must not exceed 30 characters",
+          "min": "Name must be at least 2 characters",
+          "required": "Enter name"
+        }
+      }
+    },
     "eventsSection": {
       "buttonText": "Read more",
       "events": {

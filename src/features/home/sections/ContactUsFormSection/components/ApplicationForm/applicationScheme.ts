@@ -5,29 +5,29 @@ import { z } from 'zod';
 export const applicationScheme = z.object({
   name: z
     .string()
-    .min(1, 'Введіть ім’я')
-    .min(2, 'Ім’я повинно мати не менше 2 знаків')
-    .max(30, 'Ім’я повинно бути не більше 30 знаків')
-    .regex(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ’'-\s]+$/, {
-      message: 'Ім’я може містити лише дозволені символи',
+    .min(1, 'validation.name.required')
+    .min(2, 'validation.name.min')
+    .max(30, 'validation.name.max')
+    .regex(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐąćęłńóśźżĄĆĘŁŃÓŚŹŻ''-\s]+$/, {
+      message: 'validation.name.invalid_chars',
     })
     .refine((value) => value.trim().length > 0, {
-      message: 'Ім’я не може складатися лише з пробілів',
+      message: 'validation.name.empty',
     }),
   email: z
     .string()
-    .min(1, 'Введіть email')
+    .min(1, 'validation.email.required')
     .regex(emailPattern, {
-      message: 'Введіть дійсний email',
+      message: 'validation.email.invalid',
     })
     .refine((value) => !restrictedDomains.test(value.split('@')[1]), {
-      message: 'Домени .ru і .by не дозволені',
+      message: 'validation.email.restricted_domain',
     }),
   message: z
     .string()
-    .min(1, 'Введіть повідомлення')
-    .max(300, 'Просимо скоротити ваше повідомлення до 300 знаків')
+    .min(1, 'validation.message.required')
+    .max(300, 'validation.message.max')
     .refine((value) => value.trim().length > 0, {
-      message: 'Повідомлення не може бути пустим',
+      message: 'validation.message.empty',
     }),
 });

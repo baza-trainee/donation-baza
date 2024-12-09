@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import Button from '@/components/ui/Button';
 import { IPaymentButton } from '@/features/home/types/payments.types';
 import React from 'react';
@@ -8,10 +9,11 @@ const HelpNowFormFieldset: React.FC<{
   buttonsData: IPaymentButton[];
 }> = ({ id, buttonsData }) => {
   const renderButton = (item: IPaymentButton, idx: number) => {
+    const { isCustomAmountBtn, inputOnChange, ...buttonProps } = item;
     return item.icon ? (
-      <Button key={idx} {...item} />
+      <Button key={idx} {...buttonProps} />
     ) : (
-      <Button key={idx} {...item}>
+      <Button key={idx} {...buttonProps}>
         {item.label}
       </Button>
     );
@@ -19,36 +21,40 @@ const HelpNowFormFieldset: React.FC<{
 
   return (
     <fieldset id={id} name={id} className={styles.fieldset}>
-      {buttonsData.map((item, idx) => (
-        <label key={idx}>
-          {item.isCustomAmountBtn ? (
-            <Button {...item}>
-              <input
-                type="text"
-                name={id}
-                value={item.value}
-                placeholder={item.label}
-                onChange={item.inputOnChange}
-                className={styles.input}
-                minLength={1}
-                maxLength={8}
-                required
-              />
-            </Button>
-          ) : (
-            <>
-              <input
-                type="radio"
-                name={id}
-                value={item.value}
-                defaultChecked={item.isActive}
-                className={styles.input}
-              />
-              {renderButton(item, idx)}
-            </>
-          )}
-        </label>
-      ))}
+      {buttonsData.map((item, idx) => {
+        const { isCustomAmountBtn, inputOnChange, ...buttonProps } = item;
+        return (
+          <label key={idx}>
+            {isCustomAmountBtn ? (
+              <Button {...buttonProps}>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[1-9][0-9]*"
+                  name={id}
+                  value={item.value}
+                  placeholder={item.label}
+                  onChange={inputOnChange}
+                  className={styles.input}
+                  minLength={1}
+                  maxLength={8}
+                />
+              </Button>
+            ) : (
+              <>
+                <input
+                  type="radio"
+                  name={id}
+                  value={item.value}
+                  defaultChecked={item.isActive}
+                  className={styles.input}
+                />
+                {renderButton(item, idx)}
+              </>
+            )}
+          </label>
+        );
+      })}
     </fieldset>
   );
 };

@@ -113,8 +113,10 @@ export const useDonationButtonsData = ({
       onClick: () => handleSumChange(customAmount),
       inputOnChange: (event) => {
         const newCustomAmount = event.target.value;
-        setCustomAmount(newCustomAmount);
-        setSelectedAmount(newCustomAmount);
+        if (newCustomAmount === '' || isNumPositiveInt(newCustomAmount)) {
+          setCustomAmount(newCustomAmount);
+          setSelectedAmount(newCustomAmount);
+        }
       },
       isActive: selectedAmount === customAmount,
       isCustomAmountBtn: true,
