@@ -6,7 +6,12 @@ import styles from './HelpNowForm.module.scss';
 const HelpNowFormFieldset: React.FC<{
   id: string;
   buttonsData: IPaymentButton[];
-}> = ({ id, buttonsData }) => {
+  onChange?: (value: string) => void;
+}> = ({ id, buttonsData, onChange }) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onChange?.(event.target.value);
+  };
+
   return (
     <fieldset id={id} name={id} className={styles.fieldset}>
       {buttonsData.map((item, idx) => (
@@ -16,6 +21,7 @@ const HelpNowFormFieldset: React.FC<{
             name={id}
             value={item.value}
             checked={item.isActive}
+            onChange={handleChange}
             className={styles.input}
           />
           {item.icon ? (

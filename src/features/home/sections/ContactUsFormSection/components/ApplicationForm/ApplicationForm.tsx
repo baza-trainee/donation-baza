@@ -1,5 +1,6 @@
-/* eslint-disable no-console */
 /* eslint-disable camelcase */
+/* eslint-disable no-console */
+
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import ApplicationText from './ApplicationText/ApplicationText';
 import Button from '@/components/ui/Button';
@@ -35,22 +36,27 @@ const ApplicationForm = () => {
   const onSubmit: SubmitHandler<IApplicationData> = async (values) => {
     try {
       setIsProcessing(true);
+
       await emailjs.send(
-        process.env.EMAILJS_SERVICE_ID!,
-        process.env.EMAILJS_TEMPLATE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
           to_name: 'Donation Baza',
           from_name: values.name,
           from_email: values.email,
           message: values.message,
         },
-        process.env.EMAILJS_PUBLIC_KEY!
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
+
       setIsProcessing(false);
       openModal('application_feedback');
       reset();
     } catch (error) {
+      setIsProcessing(false);
       console.error('Failed to send message:', error);
+    } finally {
+      setIsProcessing(false);
     }
   };
 

@@ -6,13 +6,16 @@ import {
   REGULAR_MODES,
 } from '@/constants/payment.constant';
 import React, { useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import Button from '@/components/ui/Button';
 import HelpNowFormFieldset from './HelpNowFormFieldset';
+import { Locale } from '@/types/common.types';
 import styles from './HelpNowForm.module.scss';
 import { useDonationButtonsData } from '@/features/home/hooks/useDonationButtonsData';
-import { useTranslations } from 'next-intl';
+import usePaymentHandler from '@/hooks/usePayment';
 
 const HelpNowForm: React.FC = () => {
+  const currentLocale = useLocale() as Locale;
   const [selectedCurrency, setSelectedCurrency] =
     useState<CURRENCY_NAMES>(DEFAULT_CURRENCY);
   const [selectedRegularMode, setSelectedRegularMode] =
@@ -33,16 +36,44 @@ const HelpNowForm: React.FC = () => {
 
   const translations = useTranslations('homepage.helpNowSection');
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const { handlePayment } = usePaymentHandler();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Handle form submission logic here
+
+    // eslint-disable-next-line no-console
+    console.log('Payment data being sent:', {
+      paymentAmount: selectedAmount,
+      currency: selectedCurrency,
+      type: selectedRegularMode,
+      lang: currentLocale,
+    });
+
+    await handlePayment({
+      paymentAmount: selectedAmount,
+      currency: selectedCurrency,
+      type: 'none',
+      lang: currentLocale,
+    });
   };
 
   return (
-    <form className={styles.paymentsWrapper} onSubmit={handleSubmit}>
-      <HelpNowFormFieldset id="currency" buttonsData={currencyButtonsData} />
-      <HelpNowFormFieldset id="regularMode" buttonsData={typeButtonsData} />
-      <HelpNowFormFieldset id="amount" buttonsData={sumButtonsData} />
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <HelpNowFormFieldset
+        id="currency"
+        buttonsData={currencyButtonsData}
+        onChange={(value) => setSelectedCurrency(value as CURRENCY_NAMES)}
+      />
+      <HelpNowFormFieldset
+        id="type"
+        buttonsData={typeButtonsData}
+        onChange={(value) => setSelectedRegularMode(value as REGULAR_MODES)}
+      />
+      <HelpNowFormFieldset
+        id="sum"
+        buttonsData={sumButtonsData}
+        onChange={setSelectedAmount}
+      />
       <Button
         variant="secondary"
         size="medium"

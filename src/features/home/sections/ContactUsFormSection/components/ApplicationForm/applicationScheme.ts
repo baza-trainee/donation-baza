@@ -1,3 +1,4 @@
+/* eslint-disable require-unicode-regexp */
 import { emailPattern, restrictedDomens } from '@/constants/regEx';
 import { z } from 'zod';
 
@@ -6,7 +7,13 @@ export const applicationScheme = z.object({
     .string()
     .min(1, 'Введіть ім’я')
     .min(2, 'Ім’я повинно мати не менше 2 знаків')
-    .max(30, 'Ім’я повинно бути не більше 30 знаків'),
+    .max(30, 'Ім’я повинно бути не більше 30 знаків')
+    .regex(/^[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ’'-\s]+$/, {
+      message: 'Ім’я може містити лише дозволені символи',
+    })
+    .refine((value) => value.trim().length > 0, {
+      message: 'Ім’я не може складатися лише з пробілів',
+    }),
   email: z
     .string()
     .min(1, 'Введіть email')
@@ -19,5 +26,8 @@ export const applicationScheme = z.object({
   message: z
     .string()
     .min(1, 'Введіть повідомлення')
-    .max(300, 'Просимо скоротити ваше повідомлення до 300 знаків'),
+    .max(300, 'Просимо скоротити ваше повідомлення до 300 знаків')
+    .refine((value) => value.trim().length > 0, {
+      message: 'Повідомлення не може бути пустим',
+    }),
 });
