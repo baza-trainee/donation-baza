@@ -11,7 +11,8 @@
   .header {
     @include text-card-title;
     display: flex;
-    padding: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
     @media (max-width: $small-desktop) {
       @include text-accent;
     }
@@ -60,7 +61,7 @@
 
   .children {
     @include text-main;
-    padding: 10px 8px 10px 83px;
+    padding: 10px 8px 0 83px;
     transition:
       max-height 0.6s ease-in-out,
       opacity 0.4s ease-in-out;
@@ -82,11 +83,13 @@
     &.childrenOpen {
       max-height: 500px;
       opacity: 1;
+      padding-bottom: 10px;
     }
 
     &.childrenClosed {
       max-height: 0;
       opacity: 0;
+      padding-bottom: 0;
     }
   }
 }
