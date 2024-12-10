@@ -1,15 +1,17 @@
 import Accordion from './components/Accordion';
 import Image from 'next/image';
-import { faqContent } from './locales/constants';
 import styles from './QASection.module.scss';
+import { useQaData } from './hooks/useQaData';
 
 const QASection: React.FC = () => {
+  const { header, imageAlt, imgAuthor, questions } = useQaData();
+
   return (
     <div className={styles.container}>
       <div className={styles.imgWrapper}>
         <Image
           src="/img/faq-section.webp"
-          alt="faq"
+          alt={imageAlt}
           width={1702}
           height={2560}
           className={styles.img}
@@ -18,18 +20,18 @@ const QASection: React.FC = () => {
             height: 'auto',
           }}
         />
-        <span className={styles.author}>©Анастасія Сусло, 2024</span>
+        <span className={styles.author}>{imgAuthor}</span>
       </div>
 
       <div className={styles.textWrapper}>
-        <h2 className={styles.header}>FAQ</h2>
-        {faqContent.map((question, index) => (
+        <h2 className={styles.header}>{header}</h2>
+        {questions.map((question, index) => (
           <Accordion
             key={index}
             questionNumber={question.questionNumber}
             title={question.title}
           >
-            {question.children}
+            {question.answer}
           </Accordion>
         ))}
       </div>
