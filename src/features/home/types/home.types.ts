@@ -4,3 +4,9 @@ export interface IEvent {
   image: string;
   imageAlt: string;
 }
+
+export interface IQuestion {
+  questionNumber: string;
+  title: string;
+  answer: string;
+}
