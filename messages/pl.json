@@ -12,7 +12,7 @@
       "linkedinAlt": "logo linked in",
       "logoAlt": "logotyp",
       "phoneAlt": "telefon",
-      "rights": "Opracowane przez Baza Trainee Ukraina 2024 © Wszelkie prawa zastrzeżone",
+      "rights": "Opracowane przez Baza Trainee Ukraina 2024 Wszelkie prawa zastrzeżone",
       "telegramAlt": "logo telegram"
     },
     "header": {
@@ -50,6 +50,35 @@
     }
   },
   "homepage": {
+    "applicationSection": {
+      "form": {
+        "message": "Wniosek",
+        "name": "Imię",
+        "submit": "Wyślij",
+        "submitting": "Wysyłanie"
+      },
+      "text": "Jeśli potrzebujesz zebrać fundusze, możesz złożyć wniosek na stronie, a my pomożemy zorganizować zbiórkę.",
+      "title": "Złóż Wniosek",
+      "validation": {
+        "email": {
+          "invalid": "Wpisz poprawny email",
+          "required": "Wpisz email",
+          "restricted_domain": "Domeny .ru i .by nie są dozwolone"
+        },
+        "message": {
+          "empty": "Wiadomość nie może być pusta",
+          "max": "Skróć wiadomość do 300 znaków",
+          "required": "Wpisz wiadomość"
+        },
+        "name": {
+          "empty": "Imię nie może składać się tylko ze spacji",
+          "invalid_chars": "Imię może zawierać tylko dozwolone znaki",
+          "max": "Imię nie może przekraczać 30 znaków",
+          "min": "Imię musi mieć co najmniej 2 znaki",
+          "required": "Wpisz imię"
+        }
+      }
+    },
     "eventsSection": {
       "buttonText": "Czytaj więcej",
       "events": {
