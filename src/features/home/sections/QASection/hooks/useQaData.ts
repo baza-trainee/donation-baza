@@ -19,7 +19,6 @@ type QaMessages = AbstractIntlMessages & {
 export const useQaData = () => {
   const translations = useTranslations('homepage.qASection');
   const header = translations('header');
-  // Const imageUrl = translations('imageUrl');
   const imageAlt = translations('imageAlt');
   const imgAuthor = translations('imgAuthor');
   const messages = useMessages() as QaMessages;
