@@ -29,5 +29,14 @@ export const useQaData = () => {
     answer: translations(`questions.${question}.answer`),
   }));
 
+  // Sort questions by questionNumber in ascending order
+  questions.sort((first, second) => {
+    // eslint-disable-next-line require-unicode-regexp
+    const aNumber = parseInt(first.questionNumber.replace(/\D/g, ''), 10);
+    // eslint-disable-next-line require-unicode-regexp
+    const bNumber = parseInt(second.questionNumber.replace(/\D/g, ''), 10);
+    return aNumber - bNumber;
+  });
+
   return { header, imageAlt, imgAuthor, questions };
 };
