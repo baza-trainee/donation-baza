@@ -10,10 +10,10 @@ const QASection: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.imgWrapper}>
         <Image
-          src="/img/faq-section.webp"
+          src="/img/faq-section.jpg"
           alt={imageAlt}
-          width={1702}
-          height={2560}
+          width={972}
+          height={1230}
           className={styles.img}
           style={{
             width: '100%',
