@@ -42,7 +42,7 @@ const EventCard: React.FC<EventCardProps> = ({
           loading="lazy"
           src={image}
           width={768}
-          height={800}
+          height={814}
           alt={imageAlt}
         />
       </div>
@@ -58,6 +58,7 @@ const EventCard: React.FC<EventCardProps> = ({
             type="button"
             onClick={() => setIsOpened((prevState) => !prevState)}
             aria-label="Читати далі"
+            className={styles.readMoreBtn}
           >
             {buttonText}
           </Button>
