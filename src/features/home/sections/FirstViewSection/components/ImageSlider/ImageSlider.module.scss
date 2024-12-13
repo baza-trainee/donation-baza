@@ -13,4 +13,25 @@
     height: 724px;
     object-fit: cover;
   }
+  //
+  // .slick-prev::before,
+  // .slick-next::before {
+  //   display: none !important;
+  // }
+  :global {
+    .slick-prev,
+    .slick-next {
+      &::before {
+        content: none !important;
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        opacity: 0 !important;
+      }
+
+      width: 0 !important;
+      height: 0 !important;
+    }
+  }
+  //
 }

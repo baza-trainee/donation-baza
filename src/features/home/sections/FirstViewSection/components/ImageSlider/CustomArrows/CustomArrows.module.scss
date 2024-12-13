@@ -1,0 +1,49 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.nextArrow,
+.prevArrow {
+  display: block;
+  position: absolute;
+  top: 67%;
+  z-index: 4;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+
+  //   width: 30px;
+  //   height: 19px;
+  //   color: rgb(255, 255, 255);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.nextArrow {
+  right: 135px;
+}
+
+.prevArrow {
+  left: 123px;
+}
+// ЦЕ ВСЕ 👇🏼 НЕ СПРАЦЮВАЛО
+// :global(.slick-prev):not(.CustomArrows_prevArrow),
+// :global(.slick-next):not(.CustomArrows_nextArrow) {
+//   display: none !important;
+// }
+// .slick-prev::before,
+// .slick-next::before {
+//   content: none !important;
+// }
+// :global(.slick-prev):not(.prevArrow),
+// :global(.slick-next):not(.nextArrow) {
+//   display: none !important;
+// }
+// :global(.slick-prev),
+// :global(.slick-next) {
+//   display: none !important;
+// }
+// :global(.slick-prev):not(.prevArrow),
+// :global(.slick-next):not(.nextArrow) {
+//   display: none !important;
+// }
