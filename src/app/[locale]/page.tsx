@@ -8,6 +8,7 @@ import HelpNowSection from '@/features/home/sections/HelpNowSection';
 import Modal from '@/components/common/Modal/Modal';
 import QASection from '@/features/home/sections/QASection';
 import SecondViewSection from '@/features/home/sections/SecondViewSection';
+import TestEvent from '@/features/home/sections/EventsSection/components/TestEvent/TestEvent';
 import TextExample from '@/components/examples/TextExample';
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <Modal modalKey="error_message">
         <ErrorMessage />
       </Modal>
+      <TestEvent />
       <EventsSection />
       <ButtonsExample />
       <TextExample />
