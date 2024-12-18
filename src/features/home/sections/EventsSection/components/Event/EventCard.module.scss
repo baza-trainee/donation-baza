@@ -3,11 +3,24 @@
 
 .wrapper {
   color: $black-text;
-  box-sizing: border-box;
-  &.wrapperOpened {
-    border: 1px solid $background-two;
-    border-radius: 12px;
+  // box-sizing: border-box;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  border-top: none;
+  border: 1px solid $background-two;
+  border-radius: 12px;
+  @media (max-width: $small-desktop) {
+    flex-direction: row;
+    width: 100%;
   }
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
+  // &.wrapperOpened {
+  //   border: 1px solid $background-two;
+  //   border-radius: 12px;
+  // }
   .backBtn {
     cursor: pointer;
     padding: 0;
@@ -25,6 +38,16 @@
     }
   }
   .imageContainer {
+    flex-shrink: 0;
+    @media (max-width: $small-desktop) {
+      width: 34%;
+    }
+    @media (max-width: $tablet) {
+      width: 46%;
+    }
+    @media (max-width: $mobile) {
+      width: auto;
+    }
     img {
       width: 100%;
       height: auto;
@@ -32,10 +55,17 @@
       border-top-left-radius: 12px;
       border-top-right-radius: 12px;
       animation: opacity 0.5s ease-in-out;
+      @media (max-width: $small-desktop) {
+        max-height: 302px;
+      }
     }
   }
   .description {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
     padding: 16px;
+    box-sizing: border-box;
     border: 1px solid $background-two;
     border-top: none;
     border-bottom-left-radius: 12px;
@@ -44,11 +74,18 @@
       border: none;
     }
     .textContainer {
+      flex-grow: 1;
       header {
         margin-bottom: 16px;
         text-align: center;
         h2 {
           @include text-card-title;
+        }
+        @media (max-width: $small-desktop) {
+          text-align: left;
+        }
+        @media (max-width: $mobile) {
+          text-align: center;
         }
       }
       .text {
@@ -78,9 +115,9 @@
           animation: liftText 0.6s ease-in-out;
         }
       }
-      .readMoreBtn {
-        margin-left: auto;
-      }
+    }
+    .readMoreBtn {
+      margin-left: auto;
     }
   }
 }

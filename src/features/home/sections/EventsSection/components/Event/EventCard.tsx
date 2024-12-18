@@ -46,23 +46,24 @@ const EventCard: React.FC<EventCardProps> = ({
           alt={imageAlt}
         />
       </div>
+
       <div className={styles.description}>
         <div className={styles.textContainer}>
           <header>
             <h2>{title}</h2>
           </header>
           <p className={`${styles.text} ${styles.closed}`}>{description}</p>
-          <Button
-            variant="underline"
-            size="small"
-            type="button"
-            onClick={() => setIsOpened((prevState) => !prevState)}
-            aria-label="Читати далі"
-            className={styles.readMoreBtn}
-          >
-            {buttonText}
-          </Button>
         </div>
+        <Button
+          variant="underline"
+          size="small"
+          type="button"
+          onClick={() => setIsOpened((prevState) => !prevState)}
+          aria-label="Читати далі"
+          className={styles.readMoreBtn}
+        >
+          {buttonText}
+        </Button>
       </div>
     </article>
   );

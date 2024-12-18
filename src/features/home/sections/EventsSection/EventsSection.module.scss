@@ -35,9 +35,16 @@
         }
       }
       .collection {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        // display: grid;
+        // grid-template-columns: repeat(3, 1fr);
+        display: flex;
         gap: 24px;
+
+        @media (max-width: $small-desktop) {
+          flex-direction: column;
+          // grid-template-columns: 1fr;
+          gap: 32px;
+        }
       }
     }
   }
