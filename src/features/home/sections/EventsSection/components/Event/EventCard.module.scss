@@ -80,7 +80,16 @@
         margin-bottom: 16px;
         text-align: center;
         h2 {
-          @include text-card-title;
+          @include text-accent;
+          font-weight: 600;
+          @media (max-width: $tablet) {
+            @include text-small;
+            font-weight: 600;
+            @media (max-width: $tablet) {
+              @include text-accent;
+              font-weight: 600;
+            }
+          }
         }
         @media (max-width: $small-desktop) {
           text-align: left;
@@ -92,9 +101,17 @@
       .text {
         @include text-accent;
         font-weight: 400;
-        letter-spacing: 0.02em;
         display: -webkit-box;
         margin-bottom: 14px;
+        @media (max-width: $small-desktop) {
+          @include small-desktop-main-text;
+        }
+        @media (max-width: $tablet) {
+          @include tablet-main-text;
+        }
+        @media (max-width: $mobile) {
+          @include mobile-main-text;
+        }
         &.closed {
           -webkit-box-orient: vertical;
           overflow: hidden;
@@ -119,6 +136,7 @@
     }
     .readMoreBtn {
       margin-left: auto;
+      font-weight: 600;
     }
   }
 }
