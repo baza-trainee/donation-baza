@@ -42,18 +42,16 @@
         }
       }
       .collection {
-        // display: grid;
-        // grid-template-columns: repeat(3, 1fr);
         display: flex;
         gap: 24px;
-        // max-height: 696px;
-
         @media (max-width: $small-desktop) {
           flex-direction: column;
-          // grid-template-columns: 1fr;
           gap: 32px;
-          // max-height: auto;
         }
+        //  @media (max-width: 500px) {
+        //   flex-direction: row;
+        //   gap: 32px;
+        // }
       }
     }
   }
