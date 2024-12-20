@@ -65,6 +65,9 @@
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
       }
+      @media (max-width: 650px) {
+        object-position: left;
+      }
       @media (max-width: $mobile) {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -123,20 +126,26 @@
         overflow: hidden;
         text-overflow: ellipsis;
         word-wrap: break-word;
-        max-height: 150px;
         line-clamp: 5;
         -webkit-line-clamp: 5;
         padding-bottom: 0;
         animation:
           unLiftText 0.6s ease-in-out,
           opacity 0.6s ease-in-out;
+        @media (max-width: $small-desktop) {
+          line-clamp: 6;
+          -webkit-line-clamp: 6;
+        }
+        @media (max-width: $tablet) {
+          line-clamp: 7;
+          -webkit-line-clamp: 7;
+        }
       }
+
       &.opened {
-        // height: auto;
         line-clamp: none;
         -webkit-line-clamp: none;
         margin-bottom: 0;
-        // animation: unliftText 0.6s ease-in-out;
       }
     }
   }

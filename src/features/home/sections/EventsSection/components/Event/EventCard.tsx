@@ -37,7 +37,7 @@ const EventCard: React.FC<EventCardProps> = ({
     <article className={styles.wrapper}>
       <div className={styles.imageContainer}>
         <Image
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          style={{ objectFit: 'cover' }}
           quality={90}
           loading="lazy"
           src={image}
