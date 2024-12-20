@@ -20,22 +20,37 @@
     border: 2px solid $background-two;
     border-radius: 12px;
   }
-  .backBtn {
-    cursor: pointer;
-    padding: 0;
-    border: 0;
-    background: none;
-    width: 40px;
-    height: 60px;
-    svg {
-      color: $black-text;
-      &:hover,
-      :active,
-      :focus {
-        color: $header;
+  .titleWrapper {
+    display: inline-flex;
+    gap: 16px;
+    align-items: center;
+    .title {
+      display: none;
+      @media (max-width: 1280px) {
+        display: block;
+      }
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+    .backBtn {
+      cursor: pointer;
+      padding: 0;
+      border: 0;
+      background: none;
+      width: 40px;
+      height: 60px;
+      svg {
+        color: $black-text;
+        &:hover,
+        :active,
+        :focus {
+          color: $header;
+        }
       }
     }
   }
+
   .imageContainer {
     margin: -1px;
     flex-shrink: 0;
@@ -85,12 +100,11 @@
     .textContainer {
       flex-grow: 1;
       header {
-        margin-bottom: 16px;
         text-align: center;
-        @media (max-width: $small-desktop) {
+        @media (max-width: 1280px) {
           text-align: left;
         }
-        @media (max-width: 500px) {
+        @media (max-width: 420px) {
           text-align: center;
         }
         h2 {
@@ -111,7 +125,8 @@
       @include text-accent;
       font-weight: 400;
       display: -webkit-box;
-      margin-bottom: 14px;
+      margin-top: 8px;
+      margin-bottom: 12px;
       @media (max-width: $small-desktop) {
         @include small-desktop-main-text;
       }
