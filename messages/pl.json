@@ -84,21 +84,21 @@
       "events": {
         "cardDonation": {
           "description": "W każdy piątek w Twojej firmie można zbierać drobne po obiedzie. Nawet niewielkie kwoty zebranych środków mogą zmienić życie wielu osób. Po prostu zbierz pieniądze do specjalnej skrzynki lub przelej je na nasze konto.",
-          "image": "/img/events/events-1.webp",
-          "imageAlt": "dekoracje świąteczne",
-          "title": "Darowizna na konto"
+          "image": "/img/events/events-lunch.jpg",
+          "imageAlt": "lunch z przyjaciółmi",
+          "title": "Drobne z obiadów"
         },
         "corporateFridays": {
-          "description": "W każdej firmie można zbierać drobne po wspólnym piątkowym jedzeniu pizzy lub czwartkowych owocach. Zazwyczaj firma w ten sposób wspiera zespół lub współpracownicy składają się na wspólny relaks. Pozostała kwota, zaokrąglona do 100-200 UAH, przekazana wojsku lub schronisku dla kotów, zapewnia niezbędne wsparcie. Jeśli 50 firm zrobi to co tydzień, zbiórka zostanie zakończona, a wydarzenie nabierze dodatkowego znaczenia.",
-          "image": "/img/events/events-2.webp",
-          "imageAlt": "Filiżanka cappuccino na tle parku miejskiego",
-          "title": "Firmowe piątki"
+          "description": "W każdą piątek w Twojej firmie można zbierać drobne po obiedzie. Nawet niewielkie kwoty mogą zmienić życie wielu osób. Wystarczy zebrać pieniądze do specjalnej skarbonki lub przelać je na nasze konto. Spróbujcie wprowadzić tę praktykę w całym zespole lub dziale. Nie zapomnijcie raz w miesiącu zdawać raport z wyników, a będziecie zaskoczeni, jak duża może być Wasza pomoc. Im większa firma, tym bardziej wrażliwy obiekt wsparcia. Wybierzcie schronisko dla zwierząt lub mały lokalny projekt, który chcecie wesprzeć, i poczujcie ich wdzięczność.",
+          "image": "/img/events/events-shared-donations.jpg",
+          "imageAlt": "spotkanie z przyjaciółmi",
+          "title": "Wspólna zbiórka podczas spotkań z przyjaciółmi"
         },
         "weeklyLoteries": {
-          "description": "Raz w tygodniu każda firma może organizować loterie charytatywne - losując drobne nagrody od ołówka lub jabłka po myszkę komputerową lub firmową naklejkę. Zebrana kwota, nawet w dziesiątkach hrywien, ale regularnie, może być przekazana na zbiórkę. Wybierz potwierdzoną zbiórkę na naszej stronie, ponieważ wszystkie mają autorów i raporty.",
-          "image": "/img/events/events-3.webp",
-          "imageAlt": "loteria",
-          "title": "Cotygodniowe loterie"
+          "description": "W każdy piątek w biurze można zorganizować losowanie przyjemnych drobiazgów lub użytecznych rzeczy: książki związanej z branżą, nowej myszki lub zestawu naklejek. Najważniejsze to regularność i korzyść dla odbiorcy. Po miesiącu zobacz, jak małe kwoty zamieniły się w dużą pomoc. Wybierz jeden projekt lub jeden kierunek i śledź jego postępy przez cały rok – od sezonu do sezonu.",
+          "image": "/img/events/events-office-auction.jpg",
+          "imageAlt": "aukcja w biurze",
+          "title": "Aukcja w biurze"
         }
       },
       "subtitle": "Wspieraj nas na swój sposób: Wybierz metodę darowizny",
