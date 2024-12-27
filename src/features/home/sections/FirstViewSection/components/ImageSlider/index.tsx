@@ -1,8 +1,8 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { SampleNextArrow, SamplePrevArrow } from './CustomArrows/CustomArrows';
+import Image from 'next/image';
 import React from 'react';
-// Import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import styles from './ImageSlider.module.scss';
 interface ImageSliderProps {
@@ -21,27 +21,28 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ onSlideChange }) => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     beforeChange: (current: number, next: number) => onSlideChange(next),
-    // CustomPaging: () => <div style={{ display: 'none' }} />,
   };
 
   const images = [
-    '/img/hero/mainPhoto.png',
-    '/img/hero/test2.png',
-    '/img/hero/hero-test-img.png',
+    '/img/hero/slide-00.jpg',
+    '/img/hero/slide-01.jpg',
+    '/img/hero/slide-02.jpg',
   ];
-  // UseEffect(() => {
-  //   Const slickArrows = document.querySelectorAll('.slick-prev::before, .slick-next::before');
-  //   SlickArrows.forEach((arrow) => {
-  //     (arrow as HTMLElement).style.content = 'none';
-  //   });
-  // }, []);
 
   return (
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index}>
-            <img src={image} alt={`Image ${index}`} />
+            <Image
+              src={image}
+              alt={`Image ${index}`}
+              width={1920}
+              height={1133}
+              layout="responsive"
+              objectFit="cover"
+              className={styles.sliderImage}
+            />
           </div>
         ))}
       </Slider>
