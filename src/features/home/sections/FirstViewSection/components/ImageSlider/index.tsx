@@ -34,7 +34,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ onSlideChange }) => {
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index}>
-            <Image src={image} alt={`Image ${index}`} objectFit="cover" />
+            <Image src={image} alt={`Image ${index}`} placeholder="blur" />
           </div>
         ))}
       </Slider>
