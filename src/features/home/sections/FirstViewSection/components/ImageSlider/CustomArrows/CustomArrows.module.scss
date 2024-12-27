@@ -3,12 +3,15 @@
 
 .nextArrow,
 .prevArrow {
-  display: block;
   position: absolute;
   top: 67%;
   z-index: 4;
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
+
+  @media screen and (max-width: $desktop) {
+    visibility: hidden;
+  }
 
   &:hover {
     transform: scale(1.1);
