@@ -43,6 +43,7 @@
       }
       .collection {
         display: flex;
+        align-items: flex-start;
         gap: 24px;
         @media (max-width: 1280px) {
           flex-direction: column;

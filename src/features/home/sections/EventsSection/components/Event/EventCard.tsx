@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowLeftWithoutDash } from '@/components/common/icons/ArrowLeftWithoutDash';
 import Button from '@/components/ui/Button';
 import { IEvent } from '@/features/home/types/home.types';
@@ -18,6 +18,23 @@ const EventCard: React.FC<EventCardProps> = ({
   buttonText,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
+  const [lineClamp, setLineClamp] = useState(5);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (titleRef.current) {
+      const titleElement = titleRef.current;
+      const lineHeight = parseFloat(
+        window.getComputedStyle(titleElement).lineHeight
+      );
+      const titleHeight = titleElement.offsetHeight;
+      const numberOfLines = Math.round(titleHeight / lineHeight);
+
+      if (numberOfLines > 1) {
+        setLineClamp(4);
+      }
+    }
+  }, [title]);
 
   const renderOpened = () => {
     return (
@@ -33,7 +50,7 @@ const EventCard: React.FC<EventCardProps> = ({
                 <ArrowLeftWithoutDash />
               </button>
               <header className={`${styles.title} ${styles.textContainer}`}>
-                <h2>{title}</h2>
+                <h2 ref={titleRef}>{title}</h2>
               </header>
             </div>
             <p className={`${styles.text} ${styles.opened}`}>{description}</p>
@@ -60,9 +77,17 @@ const EventCard: React.FC<EventCardProps> = ({
         <div className={styles.description}>
           <div className={styles.textContainer}>
             <header>
-              <h2>{title}</h2>
+              <h2 ref={titleRef}>{title}</h2>
             </header>
-            <p className={`${styles.text} ${styles.closed}`}>{description}</p>
+            <p
+              className={`${styles.text} ${styles.closed}`}
+              style={{
+                WebkitLineClamp: lineClamp,
+                lineClamp,
+              }}
+            >
+              {description}
+            </p>
           </div>
           <Button
             variant="underline"
