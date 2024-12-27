@@ -17,10 +17,9 @@ export const SampleNextArrow: React.FC<CustomArrowProps> = (props) => {
         style={{
           width: '30px',
           height: '19px',
+          objectFit: 'fill',
         }}
       />
-      {/* <Image alt={'next'} src="/svg/arrow-right.svg" width={34} height={24} /> */}
-      {/* Не відображається */}
     </div>
   );
 };
@@ -39,9 +38,9 @@ export const SamplePrevArrow: React.FC<CustomArrowProps> = (props) => {
         style={{
           width: '30px',
           height: '19px',
+          objectFit: 'fill',
         }}
       />
-      {/* <Image alt={'prev'} src="/svg/arrow-left.svg" width={34} height={24} /> */}
     </div>
   );
 };
