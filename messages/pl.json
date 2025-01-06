@@ -107,6 +107,7 @@
     "helpNowSection": {
       "custom_sum": "inna kwota",
       "donate_btn": "Wspomóż Bazę",
+      "imgAlt": "Ręce trzymające się nawzajem",
       "payment_sum_label": {
         "eur": "euro",
         "uah": "uah",
@@ -117,7 +118,7 @@
         "one_time": "Płatność jednorazowa"
       },
       "title-p-1": "Jesteśmy również wdzięczni za wsparcie Baza Trainee Ukraine.",
-      "title-p-2": "Dzięki temu możemy wspierać jeszcze więcej uczestników na drodze ich rozwoju zawodowego."
+      "title-p-2": "Dzięki temu możemy wspierać jeszcze więcej uczestników na\u00A0drodze ich rozwoju zawodowego."
     },
     "qASection": {
       "header": "FAQ",
@@ -130,25 +131,25 @@
           "questionNumber": "(01)",
           "title": "Jak mogę określić autentyczność prośby o pomoc?"
         },
-        "types_of_requests": {
-          "answer": "Osobiste — od konkretnej osoby, lokalne — od lokalnej społeczności, tematyczne — o stałe wsparcie projektu artystycznego, na przykład, lub rządowe. Można określić poziom projektu, widząc partnerów projektu.",
-          "questionNumber": "(02)",
-          "title": "Jakie istnieją typy próśb o pomoc?"
-        },
         "important_for_launching": {
           "answer": "Wyraźnie określony cel, którego opis nie wymaga dodatkowych pytań, przejrzystość raportu, możliwość kontrolowania procesu realizacji projektu — na przykład cel monobank, zadeklarowana i zebrana kwota.",
           "questionNumber": "(03)",
           "title": "Co jest najważniejsze przy uruchamianiu projektu charytatywnego?"
+        },
+        "informational_component_in_charity_project": {
+          "answer": "Bardzo ważna. Przejrzystość i klarowność informacji to pierwsze kroki projektu, które budują najważniejsze — zaufanie do organizacji.",
+          "questionNumber": "(05)",
+          "title": "Jak ważny jest aspekt informacyjny w projekcie charytatywnym?"
         },
         "project_does_not_involve_fundraising": {
           "answer": "Wtedy macie prawo żądać raportów zdjęciowych z wydarzeń projektu od organizatorów. Zyski reputacyjne są równie ważne jak wyniki finansowe.",
           "questionNumber": "(04)",
           "title": "A jeśli projekt nie zbiera funduszy, a koncentruje się na gromadzeniu wolontariuszy?"
         },
-        "informational_component_in_charity_project": {
-          "answer": "Bardzo ważna. Przejrzystość i klarowność informacji to pierwsze kroki projektu, które budują najważniejsze — zaufanie do organizacji.",
-          "questionNumber": "(05)",
-          "title": "Jak ważny jest aspekt informacyjny w projekcie charytatywnym?"
+        "types_of_requests": {
+          "answer": "Osobiste — od konkretnej osoby, lokalne — od lokalnej społeczności, tematyczne — o stałe wsparcie projektu artystycznego, na przykład, lub rządowe. Można określić poziom projektu, widząc partnerów projektu.",
+          "questionNumber": "(02)",
+          "title": "Jakie istnieją typy próśb o pomoc?"
         }
       }
     }

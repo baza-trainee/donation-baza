@@ -2,14 +2,59 @@
 @import '@/theme/mixins';
 
 .container {
-  @include flex-center;
+  display: flex;
+  justify-content: space-between;
   gap: 40px;
   padding: 100px 120px;
+  @media (min-width: $desktop) {
+    align-items: center;
+    padding: 100px 120px;
+  }
+  @media (max-width: 1280px) {
+    padding: 100px 80px;
+  }
+  @media (max-width: $small-desktop) {
+    padding: 80px 40px;
+  }
+  @media (max-width: $tablet) {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: $mobile) {
+    padding: 40px 20px;
+  }
   .sectionContent {
-    max-width: 689px;
+    @media (min-width: $large-desktop) {
+      max-width: 49%;
+      justify-content: center;
+    }
     .header h2 {
       text-align: center;
       @include text-card-title;
+      order: 1;
+    }
+  }
+  .imgContainer {
+    flex-shrink: 0;
+    width: 40.5%;
+    @media (max-width: $small-desktop) {
+      width: 35%;
+    }
+    @media (max-width: $tablet) {
+      width: 85%;
+    }
+
+    .image {
+      border-radius: 12px;
+      width: 100%;
+      height: auto;
+      @media (max-width: $tablet) {
+        max-height: 311px;
+        object-fit: cover;
+        object-position: center;
+      }
     }
   }
 }

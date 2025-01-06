@@ -13,18 +13,21 @@ const HelpNowSection: React.FC = () => {
       <div className={styles.sectionContent}>
         <header className={styles.header}>
           <h2 className={styles.title}>{translations('title-p-1')}</h2>
-          <h2> {translations('title-p-2')}</h2>
+          <h2>{translations('title-p-2')}</h2>
         </header>
         <HelpNowForm />
       </div>
-      <Image
-        src="/img/help-now-section.webp"
-        loading="lazy"
-        quality={90}
-        alt=""
-        width={486}
-        height={562}
-      />
+      <div className={styles.imgContainer}>
+        <Image
+          src="/img/help-now-section.jpg"
+          loading="lazy"
+          quality={90}
+          alt={translations('imgAlt')}
+          width={972}
+          height={1124}
+          className={styles.image}
+        />
+      </div>
     </section>
   );
 };
