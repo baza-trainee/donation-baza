@@ -1,16 +1,11 @@
-// Import Image from 'next/image';
 import type { CustomArrowProps } from 'react-slick';
 import React from 'react';
 import styles from './CustomArrows.module.scss';
 
 export const SampleNextArrow: React.FC<CustomArrowProps> = (props) => {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
-    <div
-      className={`${className} ${styles.nextArrow}`}
-      style={{ ...style }}
-      onClick={onClick}
-    >
+    <div className={styles.nextArrow} onClick={onClick}>
       <img
         src="/svg/arrow-right.svg"
         alt="Next"
@@ -25,13 +20,9 @@ export const SampleNextArrow: React.FC<CustomArrowProps> = (props) => {
 };
 
 export const SamplePrevArrow: React.FC<CustomArrowProps> = (props) => {
-  const { className, style, onClick } = props;
+  const { onClick } = props;
   return (
-    <div
-      className={`${className} ${styles.prevArrow}`}
-      style={{ ...style }}
-      onClick={onClick}
-    >
+    <div className={styles.prevArrow} onClick={onClick}>
       <img
         src="/svg/arrow-left.svg"
         alt="Previous"
