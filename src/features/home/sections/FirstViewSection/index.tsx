@@ -16,7 +16,6 @@ const FirstViewSection: React.FC = () => {
       <ImageSlider
         onSlideChange={(index: number) => setAuthor(authors[index])}
       />
-      {/* Контент сторінки */}
       <div className={styles.wrapper}>
         <h1 className={styles.header}>Культура благочинності -</h1>
         <h2 className={styles.aboveHeader}>це не про внески і донати.</h2>
@@ -26,7 +25,6 @@ const FirstViewSection: React.FC = () => {
         </p>
         <p className={styles.text}>Це історія про українців.</p>
       </div>
-
       <div className={styles.photoAutor}>
         <p className={styles.autor}>{author}</p>
       </div>
