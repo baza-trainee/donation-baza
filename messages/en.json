@@ -101,7 +101,7 @@
           "title": "Office auction"
         }
       },
-      "subtitle": "Support us your way: Choose your donation method",
+      "subtitle": "Support in your own way: Choose your donation method",
       "title": "Events"
     },
     "helpNowSection": {
@@ -130,25 +130,25 @@
           "questionNumber": "(01)",
           "title": "How can I determine the authenticity of a request for help?"
         },
-        "types_of_requests": {
-          "answer": "Personal — from an individual, local — from a community, thematic — for ongoing support of an art project, for example, or governmental. You can determine the project's scale by identifying its partners.",
-          "questionNumber": "(02)",
-          "title": "What types of requests for help exist?"
-        },
         "important_for_launching": {
           "answer": "A clearly defined goal, the description of which requires no further questions, transparency in reporting, and the ability to monitor the project's progress – for example, the target of a donation box, the stated and collected amount.",
           "questionNumber": "(03)",
           "title": "What is the most important when launching a charity project?"
+        },
+        "informational_component_in_charity_project": {
+          "answer": "It is crucial. Transparency and clarity of information are the first steps of the project that build the most important factor – trust in the organization.",
+          "questionNumber": "(05)",
+          "title": "How important is the informational component in a charity project?"
         },
         "project_does_not_involve_fundraising": {
           "answer": "In that case, you have the right to request photo reports of the project's activities from the organizers. Reputational gains are just as important as financial results.",
           "questionNumber": "(04)",
           "title": "What if the project does not involve fundraising but focuses on gathering volunteers?"
         },
-        "informational_component_in_charity_project": {
-          "answer": "It is crucial. Transparency and clarity of information are the first steps of the project that build the most important factor – trust in the organization.",
-          "questionNumber": "(05)",
-          "title": "How important is the informational component in a charity project?"
+        "types_of_requests": {
+          "answer": "Personal — from an individual, local — from a community, thematic — for ongoing support of an art project, for example, or governmental. You can determine the project's scale by identifying its partners.",
+          "questionNumber": "(02)",
+          "title": "What types of requests for help exist?"
         }
       }
     }
