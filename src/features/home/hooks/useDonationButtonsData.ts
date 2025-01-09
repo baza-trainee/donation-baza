@@ -125,16 +125,16 @@ export const useDonationButtonsData = ({
 
   const typeButtonsData: IPaymentButton[] = [
     createPaymentButton({
-      label: getTranslatedPaymentType(REGULAR_MODES.NONE),
-      value: REGULAR_MODES.NONE,
-      onClick: () => handlePaymentTypeChange(REGULAR_MODES.NONE),
-      isActive: selectedRegularMode === REGULAR_MODES.NONE,
-    }),
-    createPaymentButton({
       label: getTranslatedPaymentType(REGULAR_MODES.MONTHLY),
       value: REGULAR_MODES.MONTHLY,
       isActive: selectedRegularMode === REGULAR_MODES.MONTHLY,
       onClick: () => handlePaymentTypeChange(REGULAR_MODES.MONTHLY),
+    }),
+    createPaymentButton({
+      label: getTranslatedPaymentType(REGULAR_MODES.NONE),
+      value: REGULAR_MODES.NONE,
+      onClick: () => handlePaymentTypeChange(REGULAR_MODES.NONE),
+      isActive: selectedRegularMode === REGULAR_MODES.NONE,
     }),
   ];
 
