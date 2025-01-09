@@ -17,7 +17,7 @@ const SlideDescription: React.FC<IProps> = ({
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.header}>{header}</h1>
-      <h2 className={styles.aboveHeader}>{subheader}</h2>
+      <h2 className={styles.subheader}>{subheader}</h2>
       <p className={styles.text}>{textTop}</p>
       <p className={styles.text}>{textBottom}</p>
     </div>

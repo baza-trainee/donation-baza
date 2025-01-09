@@ -15,51 +15,79 @@
   border-radius: 1.25rem;
   padding: 0.68rem;
   color: $white-text;
-  .header {
-    @include text-h2;
-  }
-  .aboveHeader {
-    @include text-big-button;
-    text-align: right;
-    padding-bottom: 0.87rem;
-  }
-  .text {
-    @include text-big-button;
-    padding-bottom: 0.87rem;
+  @media (max-width: $small-medium-desktop) {
+    left: 80px;
+    top: 140px;
+    width: 645px;
+    box-sizing: border-box;
   }
   @media (max-width: $small-desktop) {
     left: 40px;
     top: 116px;
-    width: 33.5rem;
+    width: 33.875rem;
     height: min-content;
-    .header {
-      font-size: 2rem;
-    }
-    .aboveHeader {
-      @include text-big-button;
-      text-align: right;
-    }
-    .text {
-      @include text-medium-button;
-    }
   }
   @media (max-width: $tablet) {
-    width: 26rem;
+    width: 26.375rem;
+    width: clamp(24rem, 55vw, 26.375rem);
     height: auto;
     left: 40px;
-    .header {
-      @include text-card-title;
-    }
-    .aboveHeader {
-      @include text-accent;
-    }
-    .text {
-      @include text-extra-small;
-    }
   }
   @media (max-width: $mobile) {
     left: 20px;
-    width: 85%;
-    width: 22rem;
+    max-width: 24rem;
+  }
+}
+.header {
+  @include text-h2;
+  @media (max-width: $small-medium-desktop) {
+    font-size: 2.5rem; // 48px / 16
+  }
+  @media (max-width: $small-desktop) {
+    font-size: 2.25rem;
+  }
+  @media (max-width: $tablet) {
+    @include text-card-title;
+  }
+}
+.subheader {
+  @include text-big-button;
+  text-align: right;
+  padding-bottom: 0.87rem;
+  @media (max-width: $small-medium-desktop) {
+    @include text-medium-button;
+    margin-top: -12px;
+    padding-right: 5px;
+    letter-spacing: 0.02rem;
+  }
+  @media (max-width: $small-desktop) {
+    @include text-small;
+    text-align: right;
+    margin-top: -8px;
+    padding-right: 0px;
+  }
+  @media (max-width: $tablet) {
+    @include tablet-main-text;
+    font-weight: 600;
+    margin-top: -2px;
+  }
+  @media (max-width: $mobile) {
+    margin-top: -5px;
+  }
+}
+.text {
+  @include text-big-button;
+  padding-bottom: 0.87rem;
+  @media (max-width: $small-medium-desktop) {
+    @include text-medium-button;
+    margin-top: -8px;
+    padding-right: 5px;
+  }
+  @media (max-width: $small-desktop) {
+    @include text-small;
+    margin-top: -4px;
+  }
+  @media (max-width: $tablet) {
+    @include text-extra-small;
   }
 }
