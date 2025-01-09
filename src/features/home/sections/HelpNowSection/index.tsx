@@ -10,13 +10,12 @@ const HelpNowSection: React.FC = () => {
 
   return (
     <section className={styles.container}>
-      <div className={styles.sectionContent}>
-        <header className={styles.header}>
-          <h2 className={styles.title}>{translations('title-p-1')}</h2>
-          <h2>{translations('title-p-2')}</h2>
-        </header>
-        <HelpNowForm />
-      </div>
+      {/* <div className={styles.sectionContent}> */}
+      <header className={styles.header}>
+        <h2 className={styles.title}>{translations('title-p-1')}</h2>
+        <h2>{translations('title-p-2')}</h2>
+      </header>
+
       <div className={styles.imgContainer}>
         <Image
           src="/img/help-now-section.jpg"
@@ -28,6 +27,9 @@ const HelpNowSection: React.FC = () => {
           className={styles.image}
         />
       </div>
+
+      <HelpNowForm />
+      {/* </div> */}
     </section>
   );
 };
