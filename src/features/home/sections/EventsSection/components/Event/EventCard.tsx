@@ -62,7 +62,7 @@ const EventCard: React.FC<EventCardProps> = ({
 
   const renderClosed = () => {
     return (
-      <article className={styles.wrapper}>
+      <article className={`${styles.wrapper} ${styles.wrapperClosed}`}>
         <div className={styles.imageContainer}>
           <Image
             style={{ objectFit: 'cover' }}

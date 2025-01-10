@@ -19,6 +19,10 @@
   &.wrapperOpened {
     border: 2px solid $background-two;
     border-radius: 12px;
+    align-self: stretch;
+  }
+  &.wrapperClosed {
+    align-self: flex-start;
   }
   .titleWrapper {
     display: inline-flex;
@@ -160,6 +164,7 @@
       }
 
       &.opened {
+        align-self: flex-start;
         line-clamp: none;
         -webkit-line-clamp: none;
         margin-bottom: 0;
