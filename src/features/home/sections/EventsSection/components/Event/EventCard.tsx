@@ -36,75 +36,78 @@ const EventCard: React.FC<EventCardProps> = ({
     }
   }, [title]);
 
-  const renderOpened = () => {
+  const renderOpenedDescription = () => {
     return (
-      <article className={`${styles.wrapper} ${styles.wrapperOpened}`}>
-        <div className={`${styles.description} ${styles.descriptionOpened}`}>
-          <div className={styles.textContainer}>
-            <div className={styles.titleWrapper}>
-              <button
-                className={styles.backBtn}
-                type="button"
-                onClick={() => setIsOpened((prevState) => !prevState)}
-              >
-                <ArrowLeftWithoutDash />
-              </button>
-              <header className={`${styles.title} ${styles.textContainer}`}>
-                <h2 ref={titleRef}>{title}</h2>
-              </header>
-            </div>
-            <p className={`${styles.text} ${styles.opened}`}>{description}</p>
-          </div>
-        </div>
-      </article>
-    );
-  };
-
-  const renderClosed = () => {
-    return (
-      <article className={`${styles.wrapper} ${styles.wrapperClosed}`}>
-        <div className={styles.imageContainer}>
-          <Image
-            style={{ objectFit: 'cover' }}
-            quality={90}
-            loading="lazy"
-            src={image}
-            width={768}
-            height={814}
-            alt={imageAlt}
-          />
-        </div>
-        <div className={styles.description}>
-          <div className={styles.textContainer}>
-            <header>
-              <h2 ref={titleRef}>{title}</h2>
-            </header>
-            <p
-              className={`${styles.text} ${styles.closed}`}
-              style={{
-                WebkitLineClamp: lineClamp,
-                lineClamp,
-              }}
-            >
-              {description}
-            </p>
-          </div>
-          <Button
-            variant="underline"
-            size="small"
+      <>
+        <div className={styles.titleWrapper}>
+          <button
+            className={styles.backBtn}
             type="button"
             onClick={() => setIsOpened((prevState) => !prevState)}
-            aria-label="Читати далі"
-            className={styles.readMoreBtn}
           >
-            {buttonText}
-          </Button>
+            <ArrowLeftWithoutDash />
+          </button>
+          <header className={`${styles.title} ${styles.textContainer}`}>
+            <h2 ref={titleRef}>{title}</h2>
+          </header>
         </div>
-      </article>
+        <p className={`${styles.text} ${styles.opened}`}>{description}</p>
+      </>
     );
   };
 
-  return isOpened ? renderOpened() : renderClosed();
+  return (
+    <article
+      className={`${styles.wrapper} ${isOpened ? styles.wrapperOpened : styles.wrapperClosed}`}
+    >
+      <div className={`${styles.imageContainer}`}>
+        <Image
+          style={{ objectFit: 'cover' }}
+          quality={90}
+          loading="lazy"
+          src={image}
+          width={768}
+          height={814}
+          alt={imageAlt}
+        />
+      </div>
+
+      <div
+        className={`${styles.description} ${isOpened ? styles.descriptionOpened : ''}`}
+      >
+        <div className={styles.textContainer}>
+          {isOpened ? (
+            renderOpenedDescription()
+          ) : (
+            <>
+              <header>
+                <h2 ref={titleRef}>{title}</h2>
+              </header>
+              <p
+                className={`${styles.text} ${styles.closed}`}
+                style={{
+                  WebkitLineClamp: lineClamp,
+                  lineClamp,
+                }}
+              >
+                {description}
+              </p>
+              <Button
+                variant="underline"
+                size="small"
+                type="button"
+                onClick={() => setIsOpened((prevState) => !prevState)}
+                aria-label="Читати далі"
+                className={styles.readMoreBtn}
+              >
+                {buttonText}
+              </Button>
+            </>
+          )}
+        </div>
+      </div>
+    </article>
+  );
 };
 
 export default EventCard;

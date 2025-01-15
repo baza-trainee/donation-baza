@@ -41,9 +41,13 @@
           font-weight: 600;
         }
       }
+
       .collection {
         display: flex;
         gap: 24px;
+        align-items: stretch;
+        flex-direction: row;
+
         @media (max-width: 1280px) {
           flex-direction: column;
           gap: 32px;
