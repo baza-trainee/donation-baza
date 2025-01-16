@@ -3,15 +3,21 @@
 
 .container {
   width: auto;
-  max-height: 80px;
   padding: 9px 120px 10px;
   background-color: $background-reserved;
-  position: relative;
-  top: -4px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: $font-family-base;
+  @media (max-width: 1280px) {
+    padding: 9px 80px 10px;
+  }
+  @media (max-width: $small-desktop) {
+    padding: 8px 40px 8px;
+  }
+  @media (max-width: 680px) {
+    display: none;
+  }
   .iconBell {
     display: flex;
     align-items: center;
@@ -21,6 +27,9 @@
     width: auto;
     overflow: hidden;
     margin-left: 27px;
+    @media (max-width: $tablet) {
+      margin-left: 5px;
+    }
     .text {
       font-size: 28px;
       font-weight: 600;
@@ -28,6 +37,12 @@
       white-space: nowrap;
       display: inline-block;
       animation: scrollingText var(--duration) linear infinite;
+      @media (max-width: 1280px) {
+        font-size: 24px;
+      }
+      @media (max-width: $tablet) {
+        font-size: 20px;
+      }
       & > span {
         padding-right: 2.5rem;
       }
@@ -45,27 +60,5 @@
   }
   to {
     transform: translate(calc(-1 * var(--text-width)), 0);
-  }
-}
-
-@media (max-width: $small-desktop) {
-  .container {
-    padding: 8px 64px;
-  }
-}
-
-@media (max-width: $tablet) {
-  .container {
-    padding: 8px 40px;
-    .text {
-      font-weight: 600;
-      font-size: 1.25rem;
-    }
-  }
-}
-
-@media (max-width: $mobile) {
-  .container {
-    display: none;
   }
 }
