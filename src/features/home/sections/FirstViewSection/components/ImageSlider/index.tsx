@@ -22,7 +22,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ onSlideChange }) => {
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     pauseonhover: true,
     autoplaySpeed: 3000,
     cssEase: 'linear',
