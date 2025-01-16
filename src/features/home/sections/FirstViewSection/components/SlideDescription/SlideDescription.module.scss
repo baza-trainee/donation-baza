@@ -28,14 +28,14 @@
     height: min-content;
   }
   @media (max-width: $tablet) {
-    width: 26.375rem;
     width: clamp(24rem, 55vw, 26.375rem);
     height: auto;
     left: 40px;
   }
   @media (max-width: $mobile) {
     left: 20px;
-    max-width: 24rem;
+    right: 20px;
+    width: initial;
   }
 }
 .header {
@@ -48,6 +48,11 @@
   }
   @media (max-width: $tablet) {
     @include text-card-title;
+  }
+  @media (max-width: $mobile) {
+    @include text-card-title;
+    font-size: 1.4rem;
+    letter-spacing: 0.05rem;
   }
 }
 .subheader {
@@ -72,7 +77,8 @@
     margin-top: -2px;
   }
   @media (max-width: $mobile) {
-    margin-top: -5px;
+    font-size: 1.125rem; // 18px / 16
+    margin-top: -4px;
   }
 }
 .text {
@@ -89,5 +95,9 @@
   }
   @media (max-width: $tablet) {
     @include text-extra-small;
+  }
+  @media (max-width: $mobile) {
+    font-size: 1.125rem; // 18px / 16
+    padding-bottom: 0.6rem;
   }
 }
