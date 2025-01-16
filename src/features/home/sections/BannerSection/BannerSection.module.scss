@@ -4,7 +4,7 @@
 .container {
   width: auto;
   max-height: 80px;
-  padding: 8px 120px;
+  padding: 9px 120px 10px;
   background-color: $background-reserved;
   position: relative;
   top: -4px;
@@ -15,13 +15,14 @@
   .iconBell {
     display: flex;
     align-items: center;
-    padding-inline: 10px;
+    padding-inline: 7px;
   }
   .collection {
     width: auto;
     overflow: hidden;
+    margin-left: 27px;
     .text {
-      font-size: 1.875rem; //30px;
+      font-size: 28px;
       font-weight: 600;
       color: $white-text;
       white-space: nowrap;
@@ -66,21 +67,5 @@
 @media (max-width: $mobile) {
   .container {
     display: none;
-    // padding: 20px;
-    // flex-wrap: wrap;
-    // max-height: max-content;
-    // .collection {
-    //   order: -1;
-    //   width: 100%;
-    //   .text {
-    //     font-weight: 600;
-    //     font-size: 1rem;
-    //     margin-bottom: 2rem;
-    //     animation-duration: calc(var(--duration) * 1.8);
-    //     & > span {
-    //       padding-right: 1rem;
-    //     }
-    //   }
-    // }
   }
 }
