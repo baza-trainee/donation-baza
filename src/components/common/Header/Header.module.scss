@@ -40,22 +40,12 @@
     }
     .languageSwitcher {
       margin: 0 0 0 10px;
+      @media (max-width: $tablet) {
+        display: none;
+      }
     }
   }
 
-  .burgerMenu {
-    display: none;
-    background: none;
-    border: none;
-    outline: none;
-    &:hover {
-      cursor: pointer;
-    }
-    @media (max-width: $tablet) {
-      display: flex;
-      align-items: center;
-    }
-  }
   @media (max-width: $small-desktop) {
     padding: 10px 40px;
   }
@@ -67,20 +57,28 @@
     .supportButtonWrapper {
       display: none;
     }
-    .supportButtonMobile {
-      margin-bottom: 1.25rem;
-    }
     .dropdownMobile {
       transition: transform 0.3s ease;
       &.up {
         transform: rotate(180deg);
       }
     }
-    .languageSwitcher {
-      display: none;
-    }
   }
   @media (max-width: $mobile) {
     padding: 10px 20px;
+  }
+}
+
+.burgerMenu {
+  display: none;
+  background: none;
+  border: none;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+  @media (max-width: $tablet) {
+    display: flex;
+    align-items: center;
   }
 }
