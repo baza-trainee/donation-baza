@@ -1,13 +1,14 @@
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
+import Picture from '/public/img/support-test-img.png';
 import styles from './SecondViewSection.module.scss';
 
 const SecondViewSection = () => {
   return (
     <section className={styles.container}>
-      <article>
+      <article className={styles.article}>
         <header className={styles.header}>Важливість підтримки</header>
-        <div className={styles.content}>
+        <div className={styles.text}>
           <p>
             Ознака розвиненого суспільства — благодійність приватна, локальна,
             корпоративна або на рівні держави.
@@ -26,13 +27,12 @@ const SecondViewSection = () => {
         </Button>
       </article>
 
-      <div className={styles.picture}>
+      <div className={styles.pictureСontainer}>
         <h3 className={styles.preheader}>Важливість підтримки</h3>
         <Image
-          src="/img/support-test-img.png"
+          src={Picture}
           alt="Важливість підтримки"
-          width={549}
-          height={464}
+          className={styles.image}
         />
         <p className={styles.author}>©Марина Федоренко, 2024</p>
       </div>
