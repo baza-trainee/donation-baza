@@ -79,6 +79,10 @@
         }
       }
     },
+    "bannerSection": {
+      "buttonText": "Donate now",
+      "text": "Military fundraiser for the 44th Brigade!"
+    },
     "eventsSection": {
       "buttonText": "Read more",
       "events": {

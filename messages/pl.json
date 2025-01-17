@@ -79,6 +79,10 @@
         }
       }
     },
+    "bannerSection": {
+      "buttonText": "Wesprzyj zbiórkę",
+      "text": "Zbiórka wojskowa dla 44 Brygady!"
+    },
     "eventsSection": {
       "buttonText": "Czytaj więcej",
       "events": {

@@ -79,6 +79,10 @@
         }
       }
     },
+    "bannerSection": {
+      "buttonText": "Підтримати збір",
+      "text": "Військовий збір для 44 бригади!"
+    },
     "eventsSection": {
       "buttonText": "Читати далі",
       "events": {
