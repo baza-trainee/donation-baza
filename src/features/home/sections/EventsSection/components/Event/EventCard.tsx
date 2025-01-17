@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowLeftWithoutDash } from '@/components/common/icons/ArrowLeftWithoutDash';
 import Button from '@/components/ui/Button';
 import { IEvent } from '@/features/home/types/home.types';
@@ -18,53 +18,93 @@ const EventCard: React.FC<EventCardProps> = ({
   buttonText,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
-  return isOpened ? (
-    <article className={`${styles.wrapper} ${styles.wrapperOpened}`}>
-      <div className={`${styles.description} ${styles.descriptionOpened}`}>
-        <button
-          className={styles.backBtn}
-          type="button"
-          onClick={() => setIsOpened((prevState) => !prevState)}
-        >
-          <ArrowLeftWithoutDash />
-        </button>
-        <div className={styles.textContainer}>
-          <p className={`${styles.text} ${styles.opened}`}>{description}</p>
+  const [lineClamp, setLineClamp] = useState(5);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    if (titleRef.current) {
+      const titleElement = titleRef.current;
+      const lineHeight = parseFloat(
+        window.getComputedStyle(titleElement).lineHeight
+      );
+      const titleHeight = titleElement.offsetHeight;
+      const numberOfLines = Math.round(titleHeight / lineHeight);
+
+      if (numberOfLines > 1) {
+        setLineClamp(4);
+      }
+    }
+  }, [title]);
+
+  const renderOpened = () => {
+    return (
+      <article className={`${styles.wrapper} ${styles.wrapperOpened}`}>
+        <div className={`${styles.description} ${styles.descriptionOpened}`}>
+          <div className={styles.textContainer}>
+            <div className={styles.titleWrapper}>
+              <button
+                className={styles.backBtn}
+                type="button"
+                onClick={() => setIsOpened((prevState) => !prevState)}
+              >
+                <ArrowLeftWithoutDash />
+              </button>
+              <header className={`${styles.title} ${styles.textContainer}`}>
+                <h2 ref={titleRef}>{title}</h2>
+              </header>
+            </div>
+            <p className={`${styles.text} ${styles.opened}`}>{description}</p>
+          </div>
         </div>
-      </div>
-    </article>
-  ) : (
-    <article className={styles.wrapper}>
-      <div className={styles.imageContainer}>
-        <Image
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-          quality={90}
-          loading="lazy"
-          src={image}
-          width={768}
-          height={800}
-          alt={imageAlt}
-        />
-      </div>
-      <div className={styles.description}>
-        <div className={styles.textContainer}>
-          <header>
-            <h2>{title}</h2>
-          </header>
-          <p className={`${styles.text} ${styles.closed}`}>{description}</p>
+      </article>
+    );
+  };
+
+  const renderClosed = () => {
+    return (
+      <article className={`${styles.wrapper} ${styles.wrapperClosed}`}>
+        <div className={styles.imageContainer}>
+          <Image
+            style={{ objectFit: 'cover' }}
+            quality={90}
+            loading="lazy"
+            src={image}
+            width={768}
+            height={814}
+            alt={imageAlt}
+          />
+        </div>
+        <div className={styles.description}>
+          <div className={styles.textContainer}>
+            <header>
+              <h2 ref={titleRef}>{title}</h2>
+            </header>
+            <p
+              className={`${styles.text} ${styles.closed}`}
+              style={{
+                WebkitLineClamp: lineClamp,
+                lineClamp,
+              }}
+            >
+              {description}
+            </p>
+          </div>
           <Button
             variant="underline"
             size="small"
             type="button"
             onClick={() => setIsOpened((prevState) => !prevState)}
             aria-label="Читати далі"
+            className={styles.readMoreBtn}
           >
             {buttonText}
           </Button>
         </div>
-      </div>
-    </article>
-  );
+      </article>
+    );
+  };
+
+  return isOpened ? renderOpened() : renderClosed();
 };
 
 export default EventCard;

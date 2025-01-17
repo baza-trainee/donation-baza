@@ -2,89 +2,81 @@
 @import '@/theme/mixins';
 
 .mobileNav {
-  display: none;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-
-  height: max-content;
   background-color: $footer;
   justify-content: flex-start;
   flex-direction: column;
   align-items: flex-start;
-  padding: 24px 40px 48px;
+  padding: 24px 40px 27px;
   z-index: 3;
   transition: 0.3s ease;
   border-bottom: $white-text 3px solid;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  display: flex;
+  @media (max-width: $mobile) {
+    padding: 24px 20px 45px;
+  }
+}
 
-  &.open {
-    display: flex;
-    width: 95%;
-  }
+.logo {
+  margin-bottom: 30px;
+}
 
-  .logo {
-    margin-bottom: 30px;
+.closeIconWrapper {
+  position: absolute;
+  top: 31px;
+  right: 47px;
+  background: none;
+  border: none;
+  outline: none;
+  @media (max-width: $mobile) {
+    right: 27px;
   }
-  .closeIconWrapper {
-    position: absolute;
-    top: 24px;
-    right: 40px;
-    background: none;
-    border: none;
-    outline: none;
-    &:hover {
-      cursor: pointer;
-      filter: $background-two;
-    }
+  &:hover {
+    cursor: pointer;
+    filter: $background-two;
+  }
+}
 
-    .closeIcon {
-      filter: brightness(0) invert(1);
-      &:hover {
-        cursor: pointer;
-      }
-    }
-    @media (min-width: $mobile) {
-      right: 20px;
-    }
+.closeIcon {
+  filter: brightness(0) invert(1);
+  &:hover {
+    cursor: pointer;
   }
+}
 
-  .navList {
-    list-style-type: none;
-    .navItem {
-      margin: 0 0 1rem 0;
-      .navLink {
-        color: $white-text;
-      }
-      .navLink:hover,
-      .navLink:focus {
-        color: $background-two;
-      }
-    }
-  }
-  .supportButtonMobile {
-    display: none;
-    margin-top: 20px;
-    font-size: 20px;
-    // display: block;
-    white-space: nowrap;
+.navList {
+  list-style-type: none;
+}
 
-    @media (min-width: $mobile) {
-      display: block;
-    }
+.navItem {
+  margin: 0 0 1.57rem 0;
+  .navLink {
+    color: $white-text;
+    @include text-small;
+    font-weight: 600;
+    font-size: 1rem;
   }
+  .navLink:hover,
+  .navLink:focus {
+    color: $background-two;
+  }
+}
 
-  @media (min-width: $tablet) {
-    display: none !important;
-    width: 95%;
-    // width: 48rem;
+.supportButtonMobileContainer {
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+    margin-top: 5px;
   }
-  @media (min-width: $mobile) {
-    // чомусь перебивають налаштування tablet 95%
-    width: 91%;
-    // width: 23.7rem !important; // пепребиває  tablet
-    padding: 24px 20px 48px;
-  }
+}
+
+.supportButtonMobile {
+  font-size: 20px;
+  white-space: nowrap;
+  padding: 12px 24px !important;
 }

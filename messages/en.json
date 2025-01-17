@@ -22,10 +22,10 @@
         "burgerMenuAlt": "burger menu",
         "closeBtnLabel": "close mobile menu",
         "openMenuAriaLabel": "open menu",
-        "supportBtn": "Support Baza"
+        "supportBtn": "Contribute"
       },
       "openMenuAriaLabel": "open menu",
-      "supportBtn": "Support Baza"
+      "supportBtn": "Contribute"
     },
     "languageSwitcher": {
       "dropDownButtonAriaLabel": "select language",
@@ -79,29 +79,33 @@
         }
       }
     },
+    "bannerSection": {
+      "buttonText": "Donate now",
+      "text": "Military fundraiser for the 44th Brigade!"
+    },
     "eventsSection": {
       "buttonText": "Read more",
       "events": {
         "cardDonation": {
-          "description": "Every Friday at your company, you can collect small change after lunch. Even small amounts of these funds can change the lives of many people. Just collect the money in a special box or transfer it to our account.",
-          "image": "/img/events/events-1.webp",
-          "imageAlt": "Christmas decorations",
-          "title": "Donation to card"
+          "description": "Every Friday your company can collect small change after lunch. Even small amounts of money can change the lives of many people. Simply collect the funds in a special box or transfer them to our account. Try practicing this with your whole team or department. Don’t forget to report the results once a month, and you'll be amazed at how significant your help can be. The larger the company, the more vulnerable the object of support. Choose an animal shelter or a small local project to support and feel their gratitude.",
+          "image": "/img/events/events-lunch.jpg",
+          "imageAlt": "lunch with friends",
+          "title": "Small change from lunches"
         },
         "corporateFridays": {
-          "description": "In every company, you can collect small change after a shared pizza on Friday or a fruit Thursday. Usually, the company either supports the team this way, or colleagues pool their money to relax together. The leftover amount, rounded up to 100-200 UAH, transferred to the military or a cat shelter, provides essential support. If 50 companies do this every week, the collection will be completed, and the event will gain additional meaning.",
-          "image": "/img/events/events-2.webp",
-          "imageAlt": "A cup of cappuccino against the backdrop of a city park",
-          "title": "Corporate Fridays"
+          "description": "Make it a habit to contribute the change from your coffee or pizza to a single card or a jointly chosen fund. Even a few euro will unite your company into a team, and meetings will become warmer and more meaningful. Choose a project that is close to you mentally or professionally. Support a small pet project with funds for technical equipment or a local art community. Focus on projects with long-term impact, and one day you will be able to say: 'I am part of it too!'",
+          "image": "/img/events/events-shared-donations.jpg",
+          "imageAlt": "meeting with friends",
+          "title": "Shared donations during meetings with friends"
         },
         "weeklyLoteries": {
-          "description": "Once a week, each company can hold charitable lotteries – raffling small items from a pencil or apple to a computer mouse or branded sticker. The amount collected, even in tens of hryvnias but consistent, can be transferred to a fundraiser. Choose a verified fundraiser on our site, as they all have authors and reports.",
-          "image": "/img/events/events-3.webp",
-          "imageAlt": "lottery",
-          "title": "Weekly lotteries"
+          "description": "Every Friday in the office, you can organize a giveaway of small pleasant items or useful things: a book related to your field, a new mouse, or a set of stickers. The main thing is consistency and usefulness for the recipient. After a month, see how small amounts have turned into significant help. Choose one project or one direction and track its progress throughout the year – from season to season.",
+          "image": "/img/events/events-office-auction.jpg",
+          "imageAlt": "office auction",
+          "title": "Office auction"
         }
       },
-      "subtitle": "Support us your way: Choose your donation method",
+      "subtitle": "Support in your own way: Choose your donation method",
       "title": "Events"
     },
     "firstViewSection": {

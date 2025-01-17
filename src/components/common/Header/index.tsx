@@ -29,14 +29,19 @@ const Header: React.FC = () => {
         className={styles.logo}
       />
       <NavBar />
-      <div className={styles.supportButtonWrapper}>
-        <Button variant="primary" size="small" className={styles.supportButton}>
-          {translate('supportBtn')}
-        </Button>
-      </div>
-
-      <div className={styles.languageSwitcher}>
-        <LanguageSwitcher />
+      <div className={styles.rightSide}>
+        <div className={styles.supportButtonWrapper}>
+          <Button
+            variant="primary"
+            size="small"
+            className={styles.supportButton}
+          >
+            {translate('supportBtn')}
+          </Button>
+        </div>
+        <div className={styles.languageSwitcher}>
+          <LanguageSwitcher />
+        </div>
       </div>
 
       {isMobileMenuOpen ? (

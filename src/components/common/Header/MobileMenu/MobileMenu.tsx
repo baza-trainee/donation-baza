@@ -20,48 +20,47 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   const translation = useTranslations('common.header');
   const links = useNavLinks();
   return (
-    <>
-      <div className={`${styles.mobileNav} ${isMobileMenuOpen && styles.open}`}>
+    <div className={`${styles.mobileNav} ${isMobileMenuOpen && styles.open}`}>
+      <Image
+        alt={'logo'}
+        src="/svg/logo.svg"
+        width={80}
+        height={80}
+        className={styles.logo}
+      />
+
+      <button
+        className={styles.closeIconWrapper}
+        aria-label={translation('mobileMenu.closeBtnLabel')}
+        onClick={closeMobileMenu}
+      >
         <Image
-          alt={'logo'}
-          src="/svg/logo.svg"
-          width={80}
-          height={80}
-          className={styles.logo}
+          alt={translation('mobileMenu.closeBtnLabel')}
+          src="/svg/close.svg"
+          width={30}
+          height={30}
+          className={styles.closeIcon}
         />
+      </button>
 
-        <button
-          className={styles.closeIconWrapper}
-          aria-label={translation('mobileMenu.closeBtnLabel')}
-          onClick={closeMobileMenu}
-        >
-          <Image
-            alt={translation('mobileMenu.closeBtnLabel')}
-            src="/svg/close.svg"
-            width={30}
-            height={30}
-            className={styles.closeIcon}
-          />
-        </button>
+      <ul className={styles.navList}>
+        {links.map((link) => {
+          return (
+            <li className={styles.navItem} key={link.href}>
+              <Link
+                href={link.href}
+                className={styles.navLink}
+                onClick={closeMobileMenu}
+              >
+                {link.label}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
 
-        <ul className={styles.navList}>
-          {links.map((link) => {
-            return (
-              <li className={styles.navItem} key={link.href}>
-                <Link
-                  href={link.href}
-                  className={styles.navLink}
-                  onClick={closeMobileMenu}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-
+      <div className={styles.supportButtonMobileContainer}>
         <Button
-          // Variant="primary"
           variant="outline"
           size="small"
           className={styles.supportButtonMobile}
@@ -69,10 +68,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
         >
           {translation('supportBtn')}
         </Button>
-
-        <LanguageSwitcher />
       </div>
-    </>
+    </div>
   );
 };
 export default MobileMenu;

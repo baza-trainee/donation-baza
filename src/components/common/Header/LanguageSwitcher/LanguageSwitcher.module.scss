@@ -90,7 +90,7 @@
           li {
             color: $white-text;
             cursor: pointer;
-            line-height: 100%;
+            line-height: 122%;
 
             &:hover {
               color: $active-buttons;
@@ -112,24 +112,11 @@
 
     li {
       color: $white-text;
-      line-height: 100%;
+      line-height: 122%;
 
       &:hover {
         color: $active-buttons;
       }
     }
   }
-
-  // @media (max-width: $tablet) {
-  //   // display: none;
-  //   display: block;
-  // }
-
-  // @media (max-width: $tablet) {
-  //    &{
-  //       position: relative;
-  //       display: inline-block;
-  //       // padding: 0.5rem 0.5rem 0.5rem 0;
-  //    }
-  // }
 }
