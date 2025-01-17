@@ -6,17 +6,18 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 const FirstViewSection: React.FC = () => {
-  const authors = [
-    '© Анастасія Сусло, 2024',
-    '© Анастасія Сусло, 2024',
-    '© Олена Ільєнко, 2024',
-  ];
-  const [author, setAuthor] = useState(authors[0]);
   const translation = useTranslations('homepage.firstViewSection');
   const header = translation('header');
   const subheader = translation('subheader');
   const textTop = translation('textTop');
   const textBottom = translation('textBottom');
+  const authors = [
+    translation('imgAuthor-1'),
+    translation('imgAuthor-1'),
+    translation('imgAuthor-2'),
+  ];
+  const [author, setAuthor] = useState(authors[0]);
+
   return (
     <section className={styles.firstViewSection}>
       <ImageSlider onSlideChange={(idx) => setAuthor(authors[idx])} />
