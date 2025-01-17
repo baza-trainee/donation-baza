@@ -4,68 +4,6 @@
 .firstViewSection {
   position: relative;
   width: 100%;
-  .wrapper {
-    width: 40.5rem;
-    height: fit-content;
-    position: absolute;
-    left: 120px;
-    top: 170px;
-    background: linear-gradient(
-      88.42deg,
-      rgba(36, 27, 7, 0.4) 3.16%,
-      rgba(226, 207, 192, 0.4) 148.59%
-    );
-    border-radius: 1.25rem;
-    padding: 0.68rem;
-    color: $white-text;
-    .header {
-      @include text-h2;
-    }
-    .aboveHeader {
-      @include text-big-button;
-      text-align: right;
-      padding-bottom: 0.87rem;
-    }
-    .text {
-      @include text-big-button;
-      padding-bottom: 0.87rem;
-    }
-    @media (max-width: $small-desktop) {
-      left: 40px;
-      top: 116px;
-      width: 33.5rem;
-      height: min-content;
-      .header {
-        font-size: 2rem;
-      }
-      .aboveHeader {
-        @include text-big-button;
-        text-align: right;
-      }
-      .text {
-        @include text-medium-button;
-      }
-    }
-    @media (max-width: $tablet) {
-      width: 26rem;
-      height: auto;
-      left: 40px;
-      .header {
-        @include text-card-title;
-      }
-      .aboveHeader {
-        @include text-accent;
-      }
-      .text {
-        @include text-extra-small;
-      }
-    }
-    @media (max-width: $mobile) {
-      left: 20px;
-      width: 85%;
-      width: 22rem;
-    }
-  }
   .photoAutor {
     position: absolute;
     bottom: 1rem;
