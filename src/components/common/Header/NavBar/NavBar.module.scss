@@ -4,54 +4,46 @@
 .nav {
   display: flex;
   @include text-small;
-  margin: 0 8px;
+  margin: 0;
+}
 
-  .navList {
-    list-style-type: none;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navList {
+  list-style-type: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
 
-    .navLink {
-      color: $white-text;
-      text-decoration: none;
-      padding-inline: clamp(0.3rem, 2vw, 1.5rem);
-      padding-bottom: 3px;
-      position: relative;
-      text-wrap: nowrap;
-
-      &::after {
-        content: '';
-        position: absolute;
-        left: 20px;
-        bottom: 0;
-        width: 0;
-        height: 1px;
-        background-color: $background-two;
-        transition: width 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-      }
-
-      &:hover::after {
-        width: 68%;
-      }
-
-      @media (max-width: $small-desktop) {
-        & {
-          padding-inline: clamp(0.3rem, 1.4vw, 1.2rem);
-        }
-      }
-      @media (max-width: 868px) {
-        & {
-          padding-inline: clamp(0.1rem, 0.5vw, 0.5rem);
-        }
-      }
-    }
+.navLink {
+  color: $white-text;
+  text-decoration: none;
+  padding-inline: clamp(0.3rem, 2vw, 1.5rem);
+  padding-bottom: 3px;
+  position: relative;
+  text-wrap: nowrap;
+  @media (max-width: 1280px) {
+    padding-inline: 16px;
+  }
+  @media (max-width: $small-desktop) {
+    padding-inline: clamp(11px, 1.6vw, 16px);
   }
 
-  @media (max-width: $tablet) {
-    & {
-      display: none;
-    }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: $background-two;
+    transition: width 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  }
+
+  &:hover::after {
+    width: 68%;
   }
 }
