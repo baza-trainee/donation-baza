@@ -23,13 +23,14 @@
   @media (max-width: $tablet) {
     padding: 60px 40px;
   }
-  @media (max-width: $mobile) {
-    padding: 40px 20px;
+  @media (max-width: 720px) {
     flex-direction: column-reverse;
     align-items: baseline;
+    @media (max-width: $mobile) {
+      padding: 40px 20px;
+    }
   }
 }
-
 .article {
   width: 611px;
   flex-shrink: 0;
@@ -37,37 +38,34 @@
     width: 586px;
   }
   @media (max-width: 1280px) {
-    width: 550px;
+    width: 49.5%;
   }
   @media (max-width: $small-desktop) {
-    width: 481px;
+    width: 51%;
   }
-  @media (max-width: $tablet) {
-    width: 336px;
+  @media (max-width: 925px) {
+    width: 49%;
   }
-  @media (max-width: $mobile) {
+  @media (max-width: 720px) {
     width: auto;
   }
 }
-
 .header {
   @include text-h2;
   text-align: center;
   margin-bottom: 40px;
   white-space: nowrap;
-
   @media (max-width: $small-desktop) {
     @include text-subtitle;
   }
-  @media (max-width: $tablet) {
+  @media (max-width: 925px) {
     @include text-big-button;
     margin-bottom: 32px;
   }
-  @media (max-width: $mobile) {
+  @media (max-width: 720px) {
     display: none;
   }
 }
-
 .text {
   & > p {
     @include text-accent;
@@ -76,23 +74,24 @@
       font-weight: 400;
     }
     @media (max-width: 1280px) {
-      line-height: 134%;
+      line-height: 150%;
       margin-bottom: 24px;
+      font-size: 18px;
+      letter-spacing: 0.027em;
     }
-
     @media (max-width: $small-desktop) {
       @include text-small;
+      font-weight: 400;
     }
-    @media (max-width: $tablet) {
+    @media (max-width: 925px) {
       @include text-extra-small;
     }
-    @media (max-width: $mobile) {
+    @media (max-width: 720px) {
       font-size: 14px;
       margin-bottom: 16px;
     }
   }
 }
-
 .button {
   display: block;
   margin-left: auto;
@@ -103,29 +102,20 @@
     @include text-big-button;
     margin-top: 32px;
   }
-  @media (max-width: $mobile) {
+  @media (max-width: 720px) {
     font-size: 18px !important;
     margin-top: 24px;
   }
 }
-
 .pictureСontainer {
   position: relative;
   flex: 1;
-  display: flex; /* Flexbox для внутренних элементов */
-  flex-direction: column; /* Выравнивание содержимого по вертикали */
-  justify-content: space-between; /* Распределение содержимого */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
   max-height: 490px;
-  @media (max-width: $desktop) {
-  }
-  @media (max-width: $small-desktop) {
-    max-width: 439px;
-  }
-  @media (max-width: $tablet) {
-    max-width: 100%;
-  }
-  @media (max-width: $mobile) {
+  @media (max-width: 720px) {
     width: auto;
     height: auto;
     margin-bottom: 24px;
@@ -140,23 +130,23 @@
       object-position: 75% 50%;
     }
     @media (max-width: $small-desktop) {
+      object-position: 100% 50%;
     }
-    @media (max-width: $tablet) {
-      height: 464px;
-      object-position: 62% 100%;
+    @media (max-width: 925px) {
+      object-position: 58% 100%;
+    }
+    @media (max-width: 720px) {
+      object-position: right;
+      height: 450px;
     }
     @media (max-width: $mobile) {
-      width: 380px;
       height: 400px;
-      object-position: right;
     }
   }
 }
-
 .preheader {
   display: none;
-
-  @media (max-width: $mobile) {
+  @media (max-width: 720px) {
     display: block;
     @include text-big-button;
     text-align: center;
@@ -164,7 +154,6 @@
     white-space: nowrap;
   }
 }
-
 .author {
   position: absolute;
   bottom: 22px;
@@ -179,7 +168,7 @@
   @media (max-width: $tablet) {
     right: 18px;
   }
-  @media (max-width: $mobile) {
+  @media (max-width: 720px) {
     right: 8px;
   }
 }
