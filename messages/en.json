@@ -151,6 +151,14 @@
           "title": "What types of requests for help exist?"
         }
       }
+    },
+    "secondViewSection": {
+      "button": "Help Baza",
+      "copyright": "© Maryna Fedorenko, 2024",
+      "firstParagraph": "A sign of a developed society is private, local, corporate, or state-level charity.",
+      "header": "The Importance of Support",
+      "secondParagraph": "Transparency, involvement, control — these are the three pillars of modern charity.",
+      "thirdParagraph": "Regular small contributions bring the community together, support vulnerable groups, and also oversee the recipients of aid."
     }
   }
 }
