@@ -21,12 +21,12 @@ interface ImageSliderProps {
 const ImageSlider: React.FC<ImageSliderProps> = ({ onSlideChange }) => {
   const settings = {
     infinite: true,
-    speed: 600,
+    speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     pauseonhover: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     cssEase: 'linear',
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
