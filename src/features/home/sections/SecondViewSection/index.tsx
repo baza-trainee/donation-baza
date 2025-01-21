@@ -22,8 +22,9 @@ const SecondViewSection = () => {
         </article>
       </div>
       <div className={styles.right}>
+        <h3 className={styles.preheader}>{translate('header')}</h3>
+
         <div className={styles.pictureСontainer}>
-          <h3 className={styles.preheader}>{translate('header')}</h3>
           <Image
             src={Picture}
             alt={translate('header')}
