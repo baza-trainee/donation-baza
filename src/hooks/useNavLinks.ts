@@ -6,8 +6,8 @@ const useNavLinks = () => {
   const links = [
     { label: translation('home'), href: '/' },
     { label: translation('projects'), href: '/projects' },
-    { label: translation('contacts'), href: '/contacts' },
     { label: translation('safety'), href: '/safety' },
+    { label: translation('contacts'), href: '/contacts' },
   ];
 
   return links;

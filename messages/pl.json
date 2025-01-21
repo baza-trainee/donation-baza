@@ -22,10 +22,10 @@
         "burgerMenuAlt": "menu-burger",
         "closeBtnLabel": "zamknij menu mobilne",
         "openMenuAriaLabel": "otwórz menu",
-        "supportBtn": "Wesprzyj Bazę"
+        "supportBtn": "Wesprzyj zbiórkę"
       },
       "openMenuAriaLabel": "otwórz menu",
-      "supportBtn": "Wesprzyj Bazę"
+      "supportBtn": "Wesprzyj Baza"
     },
     "languageSwitcher": {
       "dropDownButtonAriaLabel": "wybierz język",
@@ -79,6 +79,10 @@
         }
       }
     },
+    "bannerSection": {
+      "buttonText": "Wesprzyj zbiórkę",
+      "text": "Zbiórka wojskowa dla 44 Brygady!"
+    },
     "eventsSection": {
       "buttonText": "Czytaj więcej",
       "events": {
@@ -103,6 +107,14 @@
       },
       "subtitle": "Wspieraj na swój sposób: Wybierz metodę darowizny",
       "title": "Wydarzenia"
+    },
+    "firstViewSection": {
+      "header": "Kultura dobroczynności —",
+      "imgAuthor-1": "\u00a9Anastasia Suslo, 2024",
+      "imgAuthor-2": "\u00a9Olena Ilyienko, 2024",
+      "subheader": "to nie chodzi o składki i datki.",
+      "textBottom": "To historia o Ukraińcach.",
+      "textTop": "To historia o społeczności, gdzie każdy czuje się silny lub wspierany, gdzie każdy może chronić lub być chronionym."
     },
     "helpNowSection": {
       "custom_sum": "inna kwota",

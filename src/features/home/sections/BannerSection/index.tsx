@@ -3,11 +3,13 @@ import { useEffect, useRef } from 'react';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
 import styles from './BannerSection.module.scss';
+import { useTranslations } from 'next-intl';
 
 const BannerSection: React.FC = () => {
-  const banner = 'Військовий збір для 44 бригади!';
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const translate = useTranslations('homepage.bannerSection');
+  const banner = translate('text');
 
   useEffect(() => {
     if (containerRef.current && textRef.current) {
@@ -50,7 +52,7 @@ const BannerSection: React.FC = () => {
           size="medium"
           className={styles.supportButton}
         >
-          Підтримати збір
+          {translate('buttonText')}
         </Button>
       </div>
     </div>

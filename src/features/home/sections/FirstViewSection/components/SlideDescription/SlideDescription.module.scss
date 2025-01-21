@@ -1,0 +1,114 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.wrapper {
+  width: 40.5rem;
+  height: fit-content;
+  position: absolute;
+  margin-left: 120px;
+  margin-top: 170px;
+  background: linear-gradient(
+    88.42deg,
+    rgba(36, 27, 7, 0.4) 3.16%,
+    rgba(226, 207, 192, 0.4) 148.59%
+  );
+  border-radius: 1.25rem;
+  padding: 0.68rem;
+  color: $white-text;
+  @media (max-width: $small-medium-desktop) {
+    margin-left: 80px;
+    margin-top: 140px;
+    width: 645px;
+    box-sizing: border-box;
+  }
+  @media (max-width: $small-desktop) {
+    margin-left: 40px;
+    margin-top: 116px;
+    width: 33.875rem;
+    height: min-content;
+  }
+  @media (max-width: $tablet) {
+    width: clamp(24rem, 55vw, 26.375rem);
+    height: auto;
+    margin-left: 40px;
+  }
+  @media (max-width: $mobile) {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: initial;
+  }
+  &.backgroundTwo {
+    background: linear-gradient(
+      88.42deg,
+      rgba(24, 27, 6, 0.4) 0%,
+      rgba(226, 207, 192, 0.4) 100%
+    );
+  }
+  &.backgroundThree {
+    background: rgba(195, 207, 207, 0.4);
+    color: $black-text;
+  }
+  .header {
+    @include text-h2;
+    @media (max-width: $small-medium-desktop) {
+      font-size: 2.5rem; // 48px / 16
+    }
+    @media (max-width: $small-desktop) {
+      font-size: 2.25rem;
+    }
+    @media (max-width: $tablet) {
+      @include text-card-title;
+    }
+    @media (max-width: $mobile) {
+      @include text-card-title;
+      font-size: 1.4rem;
+      letter-spacing: 0.05rem;
+    }
+  }
+  .subheader {
+    @include text-big-button;
+    text-align: right;
+    padding-bottom: 0.87rem;
+    @media (max-width: $small-medium-desktop) {
+      @include text-medium-button;
+      margin-top: -12px;
+      padding-right: 5px;
+      letter-spacing: 0.02rem;
+    }
+    @media (max-width: $small-desktop) {
+      @include text-small;
+      text-align: right;
+      margin-top: -8px;
+      padding-right: 0px;
+    }
+    @media (max-width: $tablet) {
+      @include tablet-main-text;
+      font-weight: 600;
+      margin-top: -2px;
+    }
+    @media (max-width: $mobile) {
+      font-size: 1.125rem; // 18px / 16
+      margin-top: -4px;
+    }
+  }
+  .text {
+    @include text-big-button;
+    padding-bottom: 0.87rem;
+    @media (max-width: $small-medium-desktop) {
+      @include text-medium-button;
+      margin-top: -8px;
+      padding-right: 5px;
+    }
+    @media (max-width: $small-desktop) {
+      @include text-small;
+      margin-top: -4px;
+    }
+    @media (max-width: $tablet) {
+      @include text-extra-small;
+    }
+    @media (max-width: $mobile) {
+      font-size: 1.125rem; // 18px / 16
+      padding-bottom: 0.6rem;
+    }
+  }
+}

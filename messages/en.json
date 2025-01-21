@@ -22,10 +22,10 @@
         "burgerMenuAlt": "burger menu",
         "closeBtnLabel": "close mobile menu",
         "openMenuAriaLabel": "open menu",
-        "supportBtn": "Support Baza"
+        "supportBtn": "Contribute"
       },
       "openMenuAriaLabel": "open menu",
-      "supportBtn": "Support Baza"
+      "supportBtn": "Contribute"
     },
     "languageSwitcher": {
       "dropDownButtonAriaLabel": "select language",
@@ -79,6 +79,10 @@
         }
       }
     },
+    "bannerSection": {
+      "buttonText": "Donate now",
+      "text": "Military fundraiser for the 44th Brigade!"
+    },
     "eventsSection": {
       "buttonText": "Read more",
       "events": {
@@ -103,6 +107,14 @@
       },
       "subtitle": "Support in your own way: Choose your donation method",
       "title": "Events"
+    },
+    "firstViewSection": {
+      "header": "The culture of charity —",
+      "imgAuthor-1": "\u00a9Anastasia Suslo, 2024",
+      "imgAuthor-2": "\u00a9Olena Ilyienko, 2024",
+      "subheader": "it's not about contributions and donations.",
+      "textBottom": "It's a story about Ukrainians.",
+      "textTop": "It's a story about a community where everyone feels strong or supported, where everyone can protect or be protected."
     },
     "helpNowSection": {
       "custom_sum": "other amount",
