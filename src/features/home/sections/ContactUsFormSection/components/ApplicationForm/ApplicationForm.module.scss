@@ -2,29 +2,68 @@
 @import '@/theme/mixins';
 
 .applicationForm {
-  @include flex-center-col;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  gap: 1.5rem;
-
+  align-items: center;
   .applicationFormContent {
     width: 100%;
     display: flex;
     @media screen and (max-width: $small-desktop) {
       flex-direction: column;
     }
-
     .applicationFormInputs {
       @include flex-center-col;
-      width: 50%;
-      gap: 1rem;
+      width: 100%;
+      gap: 24px;
+      @media screen and (max-width: $small-medium-desktop) {
+        padding: 0 45px;
+      }
       @media screen and (max-width: $small-desktop) {
-        width: 100%;
+        box-sizing: border-box;
+        padding: 0 24px;
+      }
+      @media screen and (max-width: $tablet) {
+        padding: 0 16%;
+      }
+      @media screen and (max-width: 732px) {
+        padding: 0;
+      }
+      input {
+        height: 47px;
+        padding: 10px 16px;
+        outline: none;
+        border: none;
+        &::placeholder {
+          color: $secondary;
+          @include text-small;
+          @media screen and (max-width: $desktop) {
+            font-size: 14px;
+          }
+        }
+      }
+      textarea {
+        height: 143px;
+        outline: none;
+        border: none;
+        padding: 10px 16px;
+        color: $black-text;
+        @include text-small;
+        &::placeholder {
+          color: $secondary;
+          @include text-small;
+          @media screen and (max-width: $desktop) {
+            font-size: 14px;
+          }
+        }
       }
     }
   }
-
   .applicationFormButton {
     @include button(10.1rem, 3.4rem);
-    margin-top: 44px;
+    margin-top: 40px;
+    @media screen and (max-width: 732px) {
+      margin-top: 23px;
+    }
   }
 }

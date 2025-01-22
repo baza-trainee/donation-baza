@@ -5,6 +5,7 @@ const ApplicationText = () => {
   const translations = useTranslations('homepage.applicationSection');
   return (
     <div className={styles.applicationTextWrapper}>
+      <h2 className={styles.applicationTitle}>{translations('title')}</h2>
       <p className={styles.applicationTextContent}>{translations('text')}</p>
     </div>
   );

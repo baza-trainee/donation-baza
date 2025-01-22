@@ -2,20 +2,84 @@
 @import '@/theme/mixins';
 
 .applicationWrapper {
-  @include flex-center-col;
+  display: flex;
+  justify-content: space-between;
   @include section-padding;
-  gap: 44px;
+  gap: 146px;
   background-color: $background-two;
-
-  @media screen and (max-width: $mobile) {
+  align-items: center;
+  @media screen and (max-width: $desktop) {
+    gap: 24px;
+  }
+  @media screen and (max-width: $small-medium-desktop) {
     gap: 20px;
   }
-
-  .applicationTitle {
-    @include text-h2;
-
-    @media screen and (max-width: $mobile) {
-      @include text-card-title;
+  @media screen and (max-width: $tablet) {
+    flex-direction: column;
+  }
+  .left {
+    flex: 1.22 1;
+    @media screen and (max-width: $desktop) {
+      flex: 1 1;
+    }
+    @media screen and (max-width: $small-desktop) {
+      flex: 0.813 1;
+    }
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+    .imageWrapper {
+      width: 100%;
+      height: 0;
+      position: relative;
+      padding-top: 85%;
+      overflow: hidden;
+      @media screen and (max-width: $desktop) {
+        padding-top: 102.6%;
+      }
+      @media screen and (max-width: $small-medium-desktop) {
+        padding-top: 105.6%;
+      }
+      @media screen and (max-width: $small-desktop) {
+        padding-top: 135%;
+      }
+      img {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+    }
+  }
+  .top {
+    display: none;
+    @media screen and (max-width: $tablet) {
+      display: block;
+    }
+    .imageWrapper {
+      width: 100%;
+      height: 0;
+      position: relative;
+      padding-top: 100%;
+      overflow: hidden;
+      img {
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+    }
+  }
+  .right {
+    flex: 1 1;
+    @media screen and (max-width: $tablet) {
+      flex: 1 1;
     }
   }
 }
