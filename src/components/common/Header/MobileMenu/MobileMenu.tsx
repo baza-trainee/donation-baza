@@ -66,7 +66,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           className={styles.supportButtonMobile}
           onClick={closeMobileMenu}
         >
-          {translation('supportBtn')}
+          {translation('mobileMenu.supportBtn')}
         </Button>
       </div>
     </div>
