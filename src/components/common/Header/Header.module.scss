@@ -66,6 +66,8 @@
   }
   @media (max-width: $mobile) {
     padding: 10px 20px;
+    position: static;
+    background-color: $footer;
   }
 }
 
