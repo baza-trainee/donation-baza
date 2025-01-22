@@ -19,7 +19,9 @@ const EventCard: React.FC<EventCardProps> = ({
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [lineClamp, setLineClamp] = useState(5);
+  const [savedHeight, setSavedHeight] = useState(0);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const articleRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (titleRef.current) {
@@ -56,9 +58,22 @@ const EventCard: React.FC<EventCardProps> = ({
     );
   };
 
+  const handleOpen = () => {
+    if (articleRef.current) {
+      const articleElemnt = articleRef.current;
+      const articleHeight = articleElemnt.offsetHeight;
+      if (!isOpened) {
+        setSavedHeight(articleHeight);
+      }
+      setIsOpened((prevState) => !prevState);
+    }
+  };
+
   return (
     <article
+      ref={articleRef}
       className={`${styles.wrapper} ${isOpened ? styles.wrapperOpened : styles.wrapperClosed}`}
+      style={{ height: isOpened ? `${savedHeight}px` : '' }}
     >
       <div className={`${styles.imageContainer}`}>
         <Image
@@ -73,7 +88,7 @@ const EventCard: React.FC<EventCardProps> = ({
       </div>
 
       <div
-        className={`${styles.description} ${isOpened ? styles.descriptionOpened : ''}`}
+        className={`${styles.description} ${isOpened ? styles.descriptionOpened : styles.descriptionClosed}`}
       >
         <div className={styles.textContainer}>
           {isOpened ? (
@@ -96,7 +111,7 @@ const EventCard: React.FC<EventCardProps> = ({
                 variant="underline"
                 size="small"
                 type="button"
-                onClick={() => setIsOpened((prevState) => !prevState)}
+                onClick={handleOpen}
                 aria-label="Читати далі"
                 className={styles.readMoreBtn}
               >

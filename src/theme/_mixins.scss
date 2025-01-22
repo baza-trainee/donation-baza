@@ -163,10 +163,33 @@
   gap: 24px;
   margin: 0 120px;
 
+  @media (max-width: 1431px) {
+    margin: 0 90px;
+  }
+
+  @media (max-width: 1351px) {
+    margin: 0 70px;
+  }
+
+  @media (max-width: 1371px) {
+    margin: 0 60px;
+  }
+
+  @media (max-width: 1280px) {
+    margin: 0 70px;
+  }
+
+  @media (max-width: 1144px) {
+    margin: 0 60px;
+  }
+
+  @media (max-width: 1103px) {
+    margin: 0 40px;
+  }
+
   @media (max-width: $small-desktop) {
     grid-template-columns: repeat(8, 1fr);
     gap: 16px;
-    margin: 0 40px;
   }
 
   @media (max-width: $mobile) {

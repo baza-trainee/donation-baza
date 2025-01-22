@@ -9,31 +9,23 @@
   border-top: none;
   border: 2px solid $background-two;
   border-radius: 12px;
-  position: relative;
-  @media (max-width: 1280px) {
+  box-sizing: border-box;
+
+  @media (max-width: 1327px) {
     flex-direction: row;
     width: 100%;
   }
 
-  @media (max-width: 510px) {
+  @media (max-width: 547px) {
     flex-direction: column;
   }
 
   &.wrapperOpened {
-    border: 2px solid $background-two;
     border-radius: 12px;
     align-self: stretch;
 
-    @media (min-width: 1280px) {
-      .imageContainer {
-        display: none;
-      }
-    }
-
-    @media (max-width: 1280px) {
-      .imageContainer {
-        opacity: 0;
-      }
+    .imageContainer {
+      display: none;
     }
   }
 
@@ -65,6 +57,7 @@
       background: none;
       width: 24px;
       height: 36px;
+      margin-bottom: 8px;
 
       @media (max-width: 1280px) {
         width: 40px;
@@ -87,25 +80,31 @@
     margin: -1px;
     flex-shrink: 0;
 
-    @media (max-width: 1280px) {
-      width: 44%;
-      height: 310px;
+    @media (min-width: $large-desktop) {
+      height: 407px !important;
     }
 
-    @media (max-width: $small-desktop) {
+    @media (max-width: 1327px) {
+      width: 41%;
+      height: 309px !important;
+    }
+
+    @media (max-width: 1024px) {
+      margin: 0;
       width: 34%;
-      height: auto;
+      height: 302px !important;
     }
 
     @media (max-width: $tablet) {
       width: 46%;
+      height: 306px !important;
     }
 
     @media (max-width: 560px) {
       width: 48%;
     }
 
-    @media (max-width: 510px) {
+    @media (max-width: 547px) {
       width: auto;
     }
 
@@ -137,13 +136,31 @@
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    padding: 16px;
 
     &.descriptionOpened {
       border: none;
+      padding: 12px;
 
-      @media (max-width: 1280px) {
-        position: absolute;
+      @media (max-width: 1327px) {
+        padding-top: 24px;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      @media (max-width: $small-desktop) {
+        padding: 16px;
+      }
+    }
+
+    &.descriptionClosed {
+      padding: 16px;
+
+      @media (max-width: 1327px) {
+        padding: 24px;
+      }
+
+      @media (max-width: 1143px) {
+        padding: 16px;
       }
     }
 
@@ -153,22 +170,19 @@
       header {
         text-align: center;
 
-        @media (max-width: 1280px) {
+        @media (max-width: 1327px) {
           text-align: left;
         }
 
-        @media (max-width: 510px) {
+        @media (max-width: 547px) {
           text-align: center;
         }
 
         h2 {
           @include text-accent;
           font-weight: 600;
+
           @media (max-width: $tablet) {
-            @include text-accent;
-            font-weight: 600;
-          }
-          @media (max-width: 560px) {
             @include text-small;
             font-weight: 600;
           }
@@ -180,13 +194,11 @@
       @include text-accent;
       font-weight: 400;
       display: -webkit-box;
-      margin-top: 8px;
-      margin-bottom: 12px;
 
-      @media (max-width: $small-desktop) {
+      @media (max-width: 1063px) {
         @include small-desktop-main-text;
       }
-      @media (max-width: $tablet) {
+      @media (max-width: 837px) {
         @include tablet-main-text;
       }
       @media (max-width: $mobile) {
@@ -201,6 +213,8 @@
         line-clamp: 5;
         -webkit-line-clamp: 5;
         padding-bottom: 0;
+        margin-top: 8px;
+        margin-bottom: 12px;
         animation:
           unLiftText 0.6s ease-in-out,
           opacity 0.6s ease-in-out;
@@ -209,14 +223,19 @@
           line-clamp: 6 !important;
           -webkit-line-clamp: 6 !important;
         }
+
         @media (max-width: $tablet) {
           line-clamp: 7 !important;
           -webkit-line-clamp: 7 !important;
         }
+
+        @media (max-width: 560px) {
+          line-clamp: 6 !important;
+          -webkit-line-clamp: 6 !important;
+        }
       }
 
       &.opened {
-        align-self: flex-start;
         line-clamp: none;
         -webkit-line-clamp: none;
         margin-bottom: 0;
@@ -227,11 +246,6 @@
   .readMoreBtn {
     margin-left: auto;
     font-weight: 600;
-    @media (max-width: 1280px) {
-      position: absolute;
-      bottom: 24px;
-      right: 24px;
-    }
   }
 }
 
