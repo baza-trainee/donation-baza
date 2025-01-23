@@ -163,6 +163,14 @@
           "title": "Jakie istnieją typy próśb o pomoc?"
         }
       }
+    },
+    "secondViewSection": {
+      "button": "Pomóż Baza",
+      "copyright": "© Maryna Fedorenko, 2024",
+      "firstParagraph": "Znakiem rozwiniętego społeczeństwa jest działalność charytatywna: prywatna, lokalna, korporacyjna lub na poziomie państwa.",
+      "header": "Znaczenie wsparcia",
+      "secondParagraph": "Przejrzystość, zaangażowanie, kontrola — to trzy filary nowoczesnej działalności charytatywnej.",
+      "thirdParagraph": "Regularne drobne wpłaty jednoczą społeczność, wspierają grupy wrażliwe oraz nadzorują odbiorców pomocy."
     }
   }
 }
