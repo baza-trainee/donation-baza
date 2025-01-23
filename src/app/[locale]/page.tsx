@@ -16,13 +16,13 @@ export default function Home() {
       <FirstViewSection />
       <BannerSection />
       <SecondViewSection />
+      <EventsSection />
       <QASection />
       {/* <HelpNowSection /> */}
       <ContactUsFormSection />
       <Modal modalKey="error_message">
         <ErrorMessage />
       </Modal>
-      {/* <EventsSection /> */}
       {/* <ButtonsExample /> */}
       {/* <TextExample /> */}
     </>

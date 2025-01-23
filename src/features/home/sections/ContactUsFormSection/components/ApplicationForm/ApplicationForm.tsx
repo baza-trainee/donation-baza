@@ -2,7 +2,6 @@
 /* eslint-disable camelcase */
 
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import ApplicationText from './ApplicationText/ApplicationText';
 import Button from '@/components/ui/Button';
 import { IApplicationData } from '@/types/common.types';
 import TextArea from '@/components/ui/TextArea/TextArea';
@@ -64,7 +63,6 @@ const ApplicationForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.applicationForm}>
       <div className={styles.applicationFormContent}>
-        <ApplicationText />
         <div className={styles.applicationFormInputs}>
           <Controller
             name="name"
@@ -75,7 +73,7 @@ const ApplicationForm = () => {
                 errorText={
                   errors.name?.message && translations(errors.name?.message)
                 }
-                placeholder={`${translations('form.name')} *`}
+                placeholder={`${translations('form.name')}`}
                 title="name"
               />
             )}
@@ -89,7 +87,7 @@ const ApplicationForm = () => {
                 errorText={
                   errors.email?.message && translations(errors.email?.message)
                 }
-                placeholder="Email *"
+                placeholder="Email"
                 title="email"
               />
             )}
@@ -104,7 +102,7 @@ const ApplicationForm = () => {
                   errors.message?.message &&
                   translations(errors.message?.message)
                 }
-                placeholder={`${translations('form.message')} *`}
+                placeholder={`${translations('form.message')}`}
                 title="message"
               />
             )}
@@ -114,7 +112,7 @@ const ApplicationForm = () => {
       <Button
         type="submit"
         variant="primary"
-        size="medium"
+        size="small"
         className={styles.applicationFormButton}
       >
         {isProcessing

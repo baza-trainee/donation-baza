@@ -2,28 +2,69 @@
 @import '@/theme/mixins';
 
 .applicationTextWrapper {
-  width: 50%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 52px;
+  @media screen and (max-width: $desktop) {
+    padding: 0 16px;
+  }
+  @media screen and (max-width: $small-medium-desktop) {
+    margin-bottom: 32px;
+  }
   @media screen and (max-width: $small-desktop) {
     width: 100%;
+    margin-top: 0;
+    margin-bottom: 44px;
+    padding: 0;
   }
-
-  .applicationTextContent {
-    width: 27.6rem;
-    @include text-accent;
-
-    @media screen and (max-width: $small-desktop) {
-      width: 651px;
-      text-align: center;
-      margin-bottom: 46px;
-      @include text-small;
+  @media screen and (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+  @media screen and (max-width: $mobile) {
+    margin-bottom: 24px;
+  }
+  .applicationTitle {
+    @include text-h2;
+    margin-bottom: 16px;
+    text-align: center;
+    text-wrap: nowrap;
+    @media screen and (max-width: $small-medium-desktop) {
+      font-size: clamp(28px, 2.91vw, 36px);
     }
-
+    @media screen and (max-width: $small-desktop) {
+      font-size: clamp(28px, 28px, 28px);
+    }
+    @media screen and (max-width: $tablet) {
+      @include text-card-title;
+    }
     @media screen and (max-width: $mobile) {
-      width: 372px;
-      text-align: center;
-      margin-bottom: 46px;
+      margin-bottom: 5px;
+    }
+  }
+  .applicationTextContent {
+    @include text-accent;
+    text-align: center;
+    @media screen and (max-width: $small-medium-desktop) {
+      padding: 0 28px;
+      @include text-small;
+      letter-spacing: 0.02em;
+      font-weight: 400;
+    }
+    @media screen and (max-width: $small-medium-desktop) {
+      padding: 0 44px;
+    }
+    @media screen and (max-width: $tablet) {
+      @include text-small;
+      padding: 0 20%;
+    }
+    @media screen and (max-width: 732px) {
+      padding: 0 6%;
+    }
+    @media screen and (max-width: $mobile) {
+      padding: 0;
       @include text-extra-small;
     }
   }
