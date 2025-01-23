@@ -1,0 +1,35 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+.container {
+  .wrapper {
+    padding: 60px 120px;
+    position: relative;
+    top: 100px;
+
+    h2 {
+      @include text-h2;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .secondWrapper {
+    margin-top: 100px;
+    height: 154px;
+    background-image: url('/img/securityFrame.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      text-align: center;
+      color: $white-text;
+      @include text-subtitle;
+      margin: 0 auto;
+      width: 962px;
+    }
+  }
+}
