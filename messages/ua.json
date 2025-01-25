@@ -32,6 +32,12 @@
       "dropDownIconClosedAlt": "меню вибору мови закрите",
       "dropDownIconOpenedAlt": "меню вибору мови відкрите"
     },
+    "modal": {
+      "applicationFeedback": {
+        "header": "Дякуємо за звернення.",
+        "text": "Ваша заявка буде розглянута протягом доби."
+      }
+    },
     "nav": {
       "contacts": "Контакти",
       "home": "Головна",
