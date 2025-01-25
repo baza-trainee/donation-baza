@@ -32,6 +32,12 @@
       "dropDownIconClosedAlt": "menu wyboru języka zamknięte",
       "dropDownIconOpenedAlt": "menu wyboru języka otwarte"
     },
+    "modal": {
+      "applicationFeedback": {
+        "header": "Dziękujemy za kontakt.",
+        "text": "Twój wniosek zostanie rozpatrzony w ciągu 24 godzin."
+      }
+    },
     "nav": {
       "contacts": "Kontakty",
       "home": "Strona główna",

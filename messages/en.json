@@ -32,6 +32,12 @@
       "dropDownIconClosedAlt": "language selection menu closed",
       "dropDownIconOpenedAlt": "language selection menu open"
     },
+    "modal": {
+      "applicationFeedback": {
+        "header": "Thank you for your application.",
+        "text": "Your application will be reviewed within 24 hours."
+      }
+    },
     "nav": {
       "contacts": "Contacts",
       "home": "Home",
