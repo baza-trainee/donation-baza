@@ -8,11 +8,11 @@ export const documents = [
     url: '/docs/terms_of_service.pdf',
   },
   {
-    key: 'accounting',
+    key: 'regulations',
     url: '/docs/terms_of_service.pdf',
   },
   {
-    key: 'regulations',
+    key: 'accounting',
     url: '/docs/terms_of_service.pdf',
   },
 ];

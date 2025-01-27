@@ -16,7 +16,7 @@ export const FooterContacts: React.FC = () => {
               width={24}
               height={24}
             />
-            +380636286630
+            +380 63 628 66 30
           </a>
         </li>
         <li>
@@ -30,7 +30,7 @@ export const FooterContacts: React.FC = () => {
               width={24}
               height={24}
             />
-            +380675681788
+            +380 67 568 17 88
           </a>
         </li>
         <li>
