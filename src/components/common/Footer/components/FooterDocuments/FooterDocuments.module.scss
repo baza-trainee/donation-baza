@@ -2,8 +2,9 @@
 @import '@/theme/mixins';
 
 .wrapper {
-  @media (max-width: $mobile) {
-    margin-bottom: 1.5rem;
+  align-self: flex-start;
+  @media (max-width: 600px) {
+    margin-bottom: 16px;
   }
   ul {
     display: flex;
@@ -11,10 +12,11 @@
     gap: 1rem;
   }
   span {
+    display: inline-block;
+    height: 36px;
     color: $white-text;
     position: relative;
     cursor: pointer;
-    display: inline;
   }
   span:hover {
     color: $background-two;
@@ -24,12 +26,37 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: 0;
     right: 0;
     height: 1px;
     background-color: $white-text;
   }
   span:hover::after {
     background-color: $white-text;
+  }
+}
+
+@media screen and (max-width: $small-medium-desktop) {
+  .wrapper {
+    ul {
+      margin-top: 12px;
+      span {
+        height: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .wrapper {
+    ul {
+      gap: 8px;
+      margin-top: 0;
+      span {
+        display: inline-flex;
+        align-items: center;
+        height: 36px;
+      }
+    }
   }
 }
