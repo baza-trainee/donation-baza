@@ -67,5 +67,8 @@
       padding: 0;
       @include text-extra-small;
     }
+    @media screen and (max-width: 388px) {
+      font-size: 0.9rem;
+    }
   }
 }
