@@ -24,19 +24,44 @@ const EventCard: React.FC<EventCardProps> = ({
   const articleRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (titleRef.current) {
-      const titleElement = titleRef.current;
-      const lineHeight = parseFloat(
-        window.getComputedStyle(titleElement).lineHeight
-      );
-      const titleHeight = titleElement.offsetHeight;
-      const numberOfLines = Math.round(titleHeight / lineHeight);
+    const updateLineClamp = () => {
+      const screenWidth = window.innerWidth;
 
-      if (numberOfLines > 1) {
-        setLineClamp(4);
+      if (titleRef.current) {
+        const titleElement = titleRef.current;
+        const lineHeight = parseFloat(
+          window.getComputedStyle(titleElement).lineHeight
+        );
+        const titleHeight = titleElement.offsetHeight;
+        const numberOfLines = Math.round(titleHeight / lineHeight);
+
+        const getLineClamp = () => {
+          if (screenWidth <= 768) {
+            return numberOfLines > 1 ? 6 : 7;
+          } else if (screenWidth <= 1024) {
+            return numberOfLines > 1 ? 5 : 6;
+          } else if (screenWidth <= 1280) {
+            return 5;
+          }
+          return numberOfLines > 1 ? 4 : 5;
+        };
+
+        const newLineClamp = getLineClamp();
+
+        if (newLineClamp !== lineClamp) {
+          setLineClamp(newLineClamp);
+        }
       }
-    }
-  }, [title]);
+    };
+
+    updateLineClamp();
+
+    window.addEventListener('resize', updateLineClamp);
+
+    return () => {
+      window.removeEventListener('resize', updateLineClamp);
+    };
+  }, [lineClamp, title]);
 
   const renderOpenedDescription = () => {
     return (
