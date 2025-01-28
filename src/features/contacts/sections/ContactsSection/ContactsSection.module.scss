@@ -1,0 +1,25 @@
+@import '@/theme/variables.scss';
+@import '@/theme/mixins.scss';
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  padding: 200px 242px 100px;
+  justify-content: space-between;
+  background-color: $background-one;
+}
+
+.leftColumn {
+  flex: 1;
+  align-self: center;
+}
+
+.rightColumn {
+  flex: 1;
+}
+
+@media (max-width: $mobile) {
+  .layout {
+    flex-direction: column;
+  }
+}
