@@ -2,14 +2,15 @@
 @import '@/theme/mixins';
 .card {
   box-sizing: border-box;
-  /* Auto layout */
   display: flex;
   flex-direction: row;
   align-items: center;
+
   padding: 24px;
   margin-bottom: 24px;
   gap: 26px;
-  width: 538px;
+  width: 464px;
+  height: 189px;
 
   background: #fffbf8;
   border: 1px solid #a6b7a9;
@@ -43,10 +44,61 @@
   }
 
   .description {
-    @include text-main;
-
-    font-size: 16px;
-    font-weight: 400;
+    @include text-accent;
     margin: 0;
+  }
+
+  @media (max-width: $small-desktop) {
+    margin-bottom: 10px;
+    gap: 35px;
+
+    .iconContainer {
+      top: -8%;
+
+      .icon {
+        top: 19%;
+        left: 18%;
+      }
+    }
+
+    .description {
+      @include text-small;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    width: 336px;
+    height: 150px;
+    padding: 16px 4px 8px;
+    gap: 23px;
+    margin-bottom: 8px;
+
+    .iconContainer {
+      width: 100px;
+      height: 100px;
+      top: -11%;
+      left: 1%;
+
+      .iconContainerTwo {
+        width: 100px;
+        height: 100px;
+        top: 7%;
+        left: 6%;
+
+        .icon {
+          width: 60px;
+          height: 60px;
+          top: 21%;
+          left: 21%;
+        }
+      }
+    }
+
+    .description {
+      @include mobile-h5;
+      font-weight: 600;
+      position: relative;
+      top: -3%;
+    }
   }
 }
