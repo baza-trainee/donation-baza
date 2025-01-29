@@ -1,5 +1,4 @@
 'use client';
-// Import Image from 'next/image';
 import React from 'react';
 import SecurityCard from './SecurityCard/SecurityCard';
 import styles from './safety.module.scss';
