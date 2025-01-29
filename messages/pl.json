@@ -55,6 +55,10 @@
       "page": "Strona"
     }
   },
+  "contactspage": {
+    "address": "ul. Petropavlivska 15, Kijów, 04086, Ukraina",
+    "title": "Kontakty"
+  },
   "homepage": {
     "applicationSection": {
       "form": {

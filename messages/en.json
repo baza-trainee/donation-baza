@@ -55,6 +55,10 @@
       "page": "Page"
     }
   },
+  "contactspage": {
+    "address": "15 Petropavlivska str., Kyiv, 04086, Ukraine",
+    "title": "Contacts"
+  },
   "homepage": {
     "applicationSection": {
       "form": {
