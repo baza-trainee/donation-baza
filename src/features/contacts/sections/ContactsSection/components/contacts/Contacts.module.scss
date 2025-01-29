@@ -45,3 +45,42 @@
     margin: 0;
   }
 }
+
+@media (max-width: $small-desktop) {
+  .title {
+    font-size: 2rem;
+  }
+  .list {
+    li {
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+  .social {
+    gap: 24px;
+  }
+}
+
+@media (max-width: $tablet) {
+  .title {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+  .list {
+    li {
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .title {
+    margin-bottom: 40px;
+  }
+  .list {
+    margin-bottom: 36px;
+  }
+}

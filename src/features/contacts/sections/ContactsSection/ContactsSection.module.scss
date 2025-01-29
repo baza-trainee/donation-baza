@@ -18,8 +18,54 @@
   flex: 1;
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $desktop) {
+  .layout {
+    padding: 200px 220px 100px;
+  }
+  .rightColumn {
+    flex: 1.55;
+  }
+}
+
+@media (max-width: $small-medium-desktop) {
+  .layout {
+    padding: 200px 80px 100px;
+  }
+}
+
+@media (max-width: $small-desktop) {
+  .layout {
+    padding: 178px 10% 80px;
+  }
+  .rightColumn {
+    flex: 1.3;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: $tablet) {
+  .layout {
+    padding: 160px 40px 52px;
+    gap: 20px;
+  }
+  .rightColumn {
+    flex: 0.95;
+  }
+}
+
+@media (max-width: 680px) {
   .layout {
     flex-direction: column;
+    padding: 160px 60px 60px;
+  }
+  .leftColumn {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .layout {
+    padding: 60px 20px 60px;
   }
 }
