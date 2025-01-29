@@ -7,10 +7,9 @@
   align-items: center;
 
   padding: 24px;
-  margin-bottom: 24px;
-  gap: 26px;
-  width: 464px;
-  height: 189px;
+  gap: 32px;
+  width: 538px;
+  height: 186px;
 
   background: #fffbf8;
   border: 1px solid #a6b7a9;
@@ -22,6 +21,7 @@
     background: #f7a400;
     box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.25);
     position: relative;
+    top: -9px;
     width: 120px;
     height: 120px;
 
@@ -37,8 +37,8 @@
 
       .icon {
         position: relative;
-        top: 17%;
-        left: 16%;
+        top: 19%;
+        left: 18%;
       }
     }
   }
@@ -49,11 +49,12 @@
   }
 
   @media (max-width: $small-desktop) {
-    margin-bottom: 10px;
-    gap: 35px;
+    width: 464px;
+    margin-bottom: 8px;
+    gap: 33px;
 
     .iconContainer {
-      top: -8%;
+      top: -5%;
 
       .icon {
         top: 19%;
@@ -99,6 +100,29 @@
       font-weight: 600;
       position: relative;
       top: -3%;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    width: 380px;
+    height: 150px;
+    padding: 16px 8px;
+    gap: 23px;
+    margin-bottom: 0;
+
+    .iconContainer {
+      top: -6%;
+      left: 0;
+
+      .icon {
+        top: 18%;
+        left: 19%;
+      }
+    }
+
+    .description {
+      @include text-extra-small;
+      top: 1%;
     }
   }
 }

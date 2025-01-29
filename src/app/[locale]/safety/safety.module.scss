@@ -15,12 +15,21 @@
     ul {
       box-sizing: border-box;
       display: grid;
-      grid-template-columns: 538px 538px;
-      justify-content: space-between;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+      grid-column-gap: 40px;
+      column-gap: 125px;
+      grid-row-gap: 6px;
+      row-gap: 24px;
+    }
 
-      @media (max-width: $large-desktop) {
-        justify-content: space-evenly;
+    @media (min-width: $large-desktop) {
+      padding: 60px 242px;
+      ul {
+        column-gap: 120px;
       }
+    }
+    @media (min-width: $desktop) {
     }
 
     @media (max-width: $small-desktop) {
@@ -39,8 +48,7 @@
       }
 
       ul {
-        grid-template-columns: 464px 464px;
-        gap: 14px;
+        gap: 16px;
       }
     }
 
@@ -59,10 +67,28 @@
         gap: 16px;
       }
     }
-  }
 
+    @media (max-width: $mobile) {
+      padding: 40px 20px;
+      top: 0;
+
+      h2 {
+        @include text-big-button;
+        width: 300px;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      ul {
+        grid-template-columns: 1fr;
+        position: relative;
+        top: 46px;
+      }
+    }
+  }
+  // ////////////////////////////
   .secondWrapper {
-    margin-top: 100px;
+    margin-top: 139px;
     height: 154px;
     background-image: url('/img/securityFrame.png');
     display: flex;
@@ -74,16 +100,22 @@
       @include text-subtitle;
       margin: 0 auto;
       padding-left: 15px;
-      width: 962px;
+      max-width: 962px;
     }
+
     @media (max-width: $large-desktop) {
       background-image: url('/img/securityFrame1680.jpg');
+      background-size: 101% 117%;
+    }
+    @media (max-width: $desktop) {
+      background-image: url('/img/securityFrame.png');
+      background-size: auto 100%;
     }
     @media (max-width: $small-desktop) {
       background-image: url('/img/securityFrame1024.jpg');
-      margin-top: 76px;
+      margin-top: 92px;
       height: 140px;
-      background-size: 101% 134%;
+      background-size: 102% 128%;
 
       p {
         width: 698px;
@@ -101,6 +133,12 @@
         width: 541px;
         @include text-medium-button;
         margin-left: 40px;
+      }
+    }
+    @media (max-width: $mobile) {
+      margin-top: 56px;
+      p {
+        @include text-small;
       }
     }
   }
