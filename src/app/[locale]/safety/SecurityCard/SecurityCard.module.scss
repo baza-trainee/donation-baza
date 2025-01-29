@@ -1,128 +1,147 @@
 @import '@/theme/variables';
 @import '@/theme/mixins';
-.card {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  padding: 24px;
-  gap: 32px;
-  width: 538px;
-  height: 186px;
-
-  background: #fffbf8;
-  border: 1px solid #a6b7a9;
-  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-
-  .iconContainer {
-    border-radius: 60px;
-    background: #f7a400;
-    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.25);
+.container {
+  .wrapper {
+    padding: 60px 120px;
     position: relative;
-    top: -9px;
-    width: 120px;
-    height: 120px;
+    top: 100px;
 
-    .iconContainerTwo {
-      position: relative;
-      top: 5%;
-      left: 5%;
-      background: #a6b7a9;
-      box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.25);
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+    h2 {
+      @include text-h2;
+      text-align: center;
+      margin-bottom: 40px;
+      padding-left: 15px;
+    }
+    ul {
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+      grid-column-gap: 40px;
+      column-gap: 125px;
+      grid-row-gap: 6px;
+      row-gap: 24px;
+    }
 
-      .icon {
+    @media (min-width: $large-desktop) {
+      padding: 60px 242px;
+      ul {
+        column-gap: 120px;
+      }
+    }
+    @media (max-width: 1356px) {
+      padding: 80px 40px;
+      ul {
+        column-gap: 4%;
+      }
+    }
+
+    @media (max-width: $small-desktop) {
+      h2 {
+        width: 944px;
+        height: 48px;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 150%;
+        text-align: center;
+        letter-spacing: 0.01em;
+        padding-left: 0;
+        margin-bottom: 32px;
+      }
+
+      ul {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      padding: 60px 40px;
+
+      h2 {
+        @include text-big-button;
+        margin-bottom: 13px;
+        width: auto;
+        padding-left: 15px;
+      }
+
+      ul {
+        grid-template-columns: 336px 336px;
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      padding: 40px 20px;
+      top: 0;
+
+      h2 {
+        @include text-big-button;
+        width: 300px;
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      ul {
+        grid-template-columns: 1fr;
         position: relative;
-        top: 19%;
-        left: 18%;
+        top: 46px;
       }
     }
   }
+  // ////////////////////////////
+  .secondWrapper {
+    margin-top: 139px;
+    height: 154px;
+    background-image: url('/img/securityFrame.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      text-align: center;
+      color: $white-text;
+      @include text-subtitle;
+      margin: 0 auto;
+      padding-left: 15px;
+      max-width: 962px;
+    }
 
-  .description {
-    @include text-accent;
-    margin: 0;
-  }
+    @media (max-width: $large-desktop) {
+      background-image: url('/img/securityFrame1680.jpg');
+      background-size: 101% 117%;
+    }
+    @media (max-width: $desktop) {
+      background-image: url('/img/securityFrame.png');
+      background-size: auto 100%;
+    }
+    @media (max-width: $small-desktop) {
+      background-image: url('/img/securityFrame1024.jpg');
+      margin-top: 92px;
+      height: 140px;
+      background-size: 102% 128%;
 
-  @media (max-width: $small-desktop) {
-    width: 464px;
-    margin-bottom: 8px;
-    gap: 33px;
-
-    .iconContainer {
-      top: -5%;
-
-      .icon {
-        top: 19%;
-        left: 18%;
+      p {
+        width: 698px;
+        padding-left: 0;
+        margin-left: 12%;
       }
     }
+    @media (max-width: $tablet) {
+      background-image: url('/img/securityFrame768.jpg');
+      background-size: 102% 152%;
+      margin-top: 91px;
+      height: 120px;
 
-    .description {
-      @include text-small;
-    }
-  }
-
-  @media (max-width: $tablet) {
-    width: 336px;
-    height: 150px;
-    padding: 16px 4px 8px;
-    gap: 23px;
-    margin-bottom: 8px;
-
-    .iconContainer {
-      width: 100px;
-      height: 100px;
-      top: -11%;
-      left: 1%;
-
-      .iconContainerTwo {
-        width: 100px;
-        height: 100px;
-        top: 7%;
-        left: 6%;
-
-        .icon {
-          width: 60px;
-          height: 60px;
-          top: 21%;
-          left: 21%;
-        }
+      p {
+        width: 541px;
+        @include text-medium-button;
+        margin-left: 40px;
       }
     }
-
-    .description {
-      @include mobile-h5;
-      font-weight: 600;
-      position: relative;
-      top: -3%;
-    }
-  }
-
-  @media (max-width: $mobile) {
-    width: 380px;
-    height: 150px;
-    padding: 16px 8px;
-    gap: 23px;
-    margin-bottom: 0;
-
-    .iconContainer {
-      top: -6%;
-      left: 0;
-
-      .icon {
-        top: 18%;
-        left: 19%;
+    @media (max-width: $mobile) {
+      margin-top: 56px;
+      p {
+        @include text-small;
       }
-    }
-
-    .description {
-      @include text-extra-small;
-      top: 1%;
     }
   }
 }

@@ -29,12 +29,14 @@
         column-gap: 120px;
       }
     }
-    @media (min-width: $desktop) {
+    @media (max-width: 1356px) {
+      padding: 80px 40px;
+      ul {
+        column-gap: 4%;
+      }
     }
 
     @media (max-width: $small-desktop) {
-      padding: 80px 40px;
-
       h2 {
         width: 944px;
         height: 48px;
