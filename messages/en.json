@@ -88,19 +88,28 @@
       "events": {
         "cardDonation": {
           "description": "Every Friday your company can collect small change after lunch. Even small amounts of money can change the lives of many people. Simply collect the funds in a special box or transfer them to our account. Try practicing this with your whole team or department. Don’t forget to report the results once a month, and you'll be amazed at how significant your help can be. The larger the company, the more vulnerable the object of support. Choose an animal shelter or a small local project to support and feel their gratitude.",
-          "image": "/img/events/events-lunch.jpg",
+          "image": {
+            "large": "/img/events/events-lunch.jpg",
+            "small": "/img/events/events-lunch-560px.jpg"
+          },
           "imageAlt": "lunch with friends",
           "title": "Small change from lunches"
         },
         "corporateFridays": {
           "description": "Make it a habit to contribute the change from your coffee or pizza to a single card or a jointly chosen fund. Even a few euro will unite your company into a team, and meetings will become warmer and more meaningful. Choose a project that is close to you mentally or professionally. Support a small pet project with funds for technical equipment or a local art community. Focus on projects with long-term impact, and one day you will be able to say: 'I am part of it too!'",
-          "image": "/img/events/events-shared-donations.jpg",
+          "image": {
+            "large": "/img/events/events-shared-donations.jpg",
+            "small": "/img/events/events-shared-donations-560px.jpg"
+          },
           "imageAlt": "meeting with friends",
           "title": "Shared donations during meetings with friends"
         },
         "weeklyLoteries": {
           "description": "Every Friday in the office, you can organize a giveaway of small pleasant items or useful things: a book related to your field, a new mouse, or a set of stickers. The main thing is consistency and usefulness for the recipient. After a month, see how small amounts have turned into significant help. Choose one project or one direction and track its progress throughout the year – from season to season.",
-          "image": "/img/events/events-office-auction.jpg",
+          "image": {
+            "large": "/img/events/events-office-auction.jpg",
+            "small": "/img/events/events-office-auction-560px.jpg"
+          },
           "imageAlt": "office auction",
           "title": "Office auction"
         }

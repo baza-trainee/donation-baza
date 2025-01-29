@@ -88,19 +88,28 @@
       "events": {
         "cardDonation": {
           "description": "W każdy piątek w Twojej firmie można zbierać drobne po obiedzie. Nawet niewielkie kwoty zebranych środków mogą zmienić życie wielu osób. Po prostu zbierz pieniądze do specjalnej skrzynki lub przelej je na nasze konto.",
-          "image": "/img/events/events-lunch.jpg",
+          "image": {
+            "large": "/img/events/events-lunch.jpg",
+            "small": "/img/events/events-lunch-560px.jpg"
+          },
           "imageAlt": "lunch z przyjaciółmi",
           "title": "Drobne z obiadów"
         },
         "corporateFridays": {
           "description": "W każdą piątek w Twojej firmie można zbierać drobne po obiedzie. Nawet niewielkie kwoty mogą zmienić życie wielu osób. Wystarczy zebrać pieniądze do specjalnej skarbonki lub przelać je na nasze konto. Spróbujcie wprowadzić tę praktykę w całym zespole lub dziale. Nie zapomnijcie raz w miesiącu zdawać raport z wyników, a będziecie zaskoczeni, jak duża może być Wasza pomoc. Im większa firma, tym bardziej wrażliwy obiekt wsparcia. Wybierzcie schronisko dla zwierząt lub mały lokalny projekt, który chcecie wesprzeć, i poczujcie ich wdzięczność.",
-          "image": "/img/events/events-shared-donations.jpg",
+          "image": {
+            "large": "/img/events/events-shared-donations.jpg",
+            "small": "/img/events/events-shared-donations-560px.jpg"
+          },
           "imageAlt": "spotkanie z przyjaciółmi",
           "title": "Wspólna zbiórka podczas spotkań z przyjaciółmi"
         },
         "weeklyLoteries": {
           "description": "W każdy piątek w biurze można zorganizować losowanie przyjemnych drobiazgów lub użytecznych rzeczy: książki związanej z branżą, nowej myszki lub zestawu naklejek. Najważniejsze to regularność i korzyść dla odbiorcy. Po miesiącu zobacz, jak małe kwoty zamieniły się w dużą pomoc. Wybierz jeden projekt lub jeden kierunek i śledź jego postępy przez cały rok – od sezonu do sezonu.",
-          "image": "/img/events/events-office-auction.jpg",
+          "image": {
+            "large": "/img/events/events-office-auction.jpg",
+            "small": "/img/events/events-office-auction-560px.jpg"
+          },
           "imageAlt": "aukcja w biurze",
           "title": "Aukcja w biurze"
         }
