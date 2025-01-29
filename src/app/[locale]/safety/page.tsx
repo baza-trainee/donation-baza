@@ -65,6 +65,13 @@ const SecurityPage: React.FC = () => {
               description={card.description}
             />
           ))}
+          {cards.map((card, index) => (
+            <SecurityCard
+              key={index}
+              icon={card.icon}
+              description={card.description}
+            />
+          ))}
         </ul>
       </div>
 
@@ -76,4 +83,5 @@ const SecurityPage: React.FC = () => {
     </div>
   );
 };
+
 export default SecurityPage;
