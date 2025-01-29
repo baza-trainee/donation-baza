@@ -167,6 +167,10 @@
       @media (max-width: $small-desktop) {
         padding: 16px;
       }
+
+      @media (max-width: 560px) {
+        padding-top: 0;
+      }
     }
 
     .textContainer {

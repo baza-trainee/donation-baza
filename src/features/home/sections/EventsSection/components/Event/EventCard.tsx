@@ -8,6 +8,7 @@ import styles from './EventCard.module.scss';
 
 export interface EventCardProps extends IEvent {
   buttonText: string;
+  screenWidth: number;
 }
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -16,6 +17,7 @@ const EventCard: React.FC<EventCardProps> = ({
   image,
   imageAlt,
   buttonText,
+  screenWidth,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [lineClamp, setLineClamp] = useState(5);
@@ -25,8 +27,6 @@ const EventCard: React.FC<EventCardProps> = ({
 
   useEffect(() => {
     const updateLineClamp = () => {
-      const screenWidth = window.innerWidth;
-
       if (titleRef.current) {
         const titleElement = titleRef.current;
         const lineHeight = parseFloat(
@@ -55,13 +55,7 @@ const EventCard: React.FC<EventCardProps> = ({
     };
 
     updateLineClamp();
-
-    window.addEventListener('resize', updateLineClamp);
-
-    return () => {
-      window.removeEventListener('resize', updateLineClamp);
-    };
-  }, [lineClamp, title]);
+  }, [screenWidth, title]);
 
   const renderOpenedDescription = () => {
     return (
