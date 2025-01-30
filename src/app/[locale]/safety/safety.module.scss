@@ -70,6 +70,15 @@
       }
     }
 
+    @media (max-width: 500px) {
+      h2 {
+        margin-bottom: 37px;
+      }
+      ul {
+        grid-template-columns: 1fr;
+        margin-left: 35px;
+      }
+    }
     @media (max-width: $mobile) {
       padding: 40px 20px;
       top: 0;
@@ -141,6 +150,7 @@
       margin-top: 56px;
       p {
         @include text-small;
+        margin: 0 20px;
       }
     }
   }
