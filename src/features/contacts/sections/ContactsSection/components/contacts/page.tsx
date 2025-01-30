@@ -17,18 +17,18 @@ const Contacts = () => {
               width={24}
               height={24}
             />
-            +380 63 628 66 30
+            +380 63 628 6630
           </a>
         </li>
         <li>
-          <a href={`tel:+380675681788`}>
+          <a href={`tel:+380956621073`}>
             <Image
               src="/svg/phone-icon.svg"
               alt={translate('common.footer.phoneAlt')}
               width={24}
               height={24}
             />
-            +380 67 568 17 88
+            +380 95 662 1073
           </a>
         </li>
         <li>
@@ -43,7 +43,7 @@ const Contacts = () => {
           </a>
         </li>
         <li>
-          <a href="https://baza-trainee.tech">
+          <a className={styles.underline} href="https://baza-trainee.tech">
             <Image
               className={styles.svgIcon}
               src="/svg/link-icon.svg"
