@@ -131,6 +131,31 @@
       "title-p-1": "We are also grateful for the support of Baza Trainee Ukraine.",
       "title-p-2": "This allows us to support even more participants on their professional development journey."
     },
+    "instructionSection": {
+      "header": "How to help?",
+      "instructions": {
+        "number-1": {
+          "description": "Define your goal. You can support a specific person, a one-time initiative, or an ongoing process. Consider how much you can trust the recipient of the help.",
+          "icon": "/svg/how-to-help-one.svg"
+        },
+        "number-2": {
+          "description": "Define your resource, whether you have the ability to help right now, next month, or on a regular basis. You can help with your hands, time for organization, or a contribution instead of a cup of coffee.",
+          "icon": "/svg/how-to-help-two.svg"
+        },
+        "number-3": {
+          "description": "Combine the two criteria and define the object of help — an urgent fundraiser for a military vehicle, monthly support for a cat shelter, or arranging a flower bed near your house.",
+          "icon": "/svg/how-to-help-three.svg"
+        },
+        "number-4": {
+          "description": "Remember the three main criteria for effective help: openness, transparency, accountability.",
+          "icon": "/svg/how-to-help-four.svg"
+        },
+        "number-5": {
+          "description": "Don't forget that real help results in a sustainable process and long-term consequences.",
+          "icon": "/svg/how-to-help-five.svg"
+        }
+      }
+    },
     "qASection": {
       "header": "FAQ",
       "imageAlt": "Photo of the V.G. Korolenko Chernihiv Regional Library",

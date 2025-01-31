@@ -5,6 +5,11 @@ export interface IEvent {
   imageAlt: string;
 }
 
+export interface IInstruction {
+  icon: string;
+  description: string;
+}
+
 export interface IQuestion {
   questionNumber: string;
   title: string;
