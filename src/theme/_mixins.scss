@@ -148,12 +148,18 @@
 }
 
 @mixin section-padding {
-  padding: 6.25rem 4rem; //100px 64px;
+  padding: 100px 120px;
+  @media screen and (max-width: $small-medium-desktop) {
+    padding: 100px 80px;
+  }
   @media screen and (max-width: $small-desktop) {
-    padding: 3.75rem 1.9rem;
+    padding: 80px 40px;
+  }
+  @media screen and (max-width: $tablet) {
+    padding: 60px 40px;
   }
   @media screen and (max-width: $mobile) {
-    padding: 6.25rem 1rem 5.1rem 1rem;
+    padding: 40px 20px;
   }
 }
 

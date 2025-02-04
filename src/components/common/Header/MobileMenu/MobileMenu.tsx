@@ -1,7 +1,6 @@
 'use client';
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
-import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import Link from 'next/link';
 import React from 'react';
 import styles from './MobileMenu.module.scss';
@@ -66,7 +65,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           className={styles.supportButtonMobile}
           onClick={closeMobileMenu}
         >
-          {translation('supportBtn')}
+          {translation('mobileMenu.supportBtn')}
         </Button>
       </div>
     </div>

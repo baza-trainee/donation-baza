@@ -12,7 +12,7 @@
       "linkedinAlt": "linked in logo",
       "logoAlt": "logotype",
       "phoneAlt": "phone",
-      "rights": "Developed by Baza Trainee Ukraine 2024 \u00a9 All rights reserved",
+      "rights": "Developed by Baza Trainee Ukraine 2025 © All rights reserved",
       "telegramAlt": "telegram logo"
     },
     "header": {
@@ -32,6 +32,12 @@
       "dropDownIconClosedAlt": "language selection menu closed",
       "dropDownIconOpenedAlt": "language selection menu open"
     },
+    "modal": {
+      "applicationFeedback": {
+        "header": "Thank you for your application.",
+        "text": "Your application will be reviewed within 24 hours."
+      }
+    },
     "nav": {
       "contacts": "Contacts",
       "home": "Home",
@@ -48,6 +54,10 @@
       "from": "of",
       "page": "Page"
     }
+  },
+  "contactspage": {
+    "address": "15 Petropavlivska str., Kyiv, 04086, Ukraine",
+    "title": "Contacts"
   },
   "homepage": {
     "applicationSection": {
@@ -172,6 +182,14 @@
           "title": "What types of requests for help exist?"
         }
       }
+    },
+    "secondViewSection": {
+      "button": "Help Baza",
+      "copyright": "© Maryna Fedorenko, 2024",
+      "firstParagraph": "A sign of a developed society is private, local, corporate, or state-level charity.",
+      "header": "The Importance of Support",
+      "secondParagraph": "Transparency, involvement, control — these are the three pillars of modern charity.",
+      "thirdParagraph": "Regular small contributions bring the community together, support vulnerable groups, and also oversee the recipients of aid."
     }
   }
 }

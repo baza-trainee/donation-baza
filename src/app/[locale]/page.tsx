@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <FirstViewSection />
       <BannerSection />
-      {/* <SecondViewSection /> */}
+      <SecondViewSection />
       <EventsSection />
       <QASection />
       {/* <HelpNowSection /> */}
