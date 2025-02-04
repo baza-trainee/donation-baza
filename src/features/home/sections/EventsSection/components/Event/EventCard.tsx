@@ -36,7 +36,11 @@ const EventCard: React.FC<EventCardProps> = ({
         const numberOfLines = Math.round(titleHeight / lineHeight);
 
         const getLineClamp = () => {
-          if (screenWidth <= 768) {
+          if (screenWidth <= 580) {
+            return numberOfLines > 2 ? 7 : 8;
+          } else if (screenWidth <= 697) {
+            return numberOfLines > 1 ? 7 : 9;
+          } else if (screenWidth <= 768) {
             return numberOfLines > 1 ? 6 : 7;
           } else if (screenWidth <= 1024) {
             return numberOfLines > 1 ? 5 : 6;
