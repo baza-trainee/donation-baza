@@ -58,13 +58,23 @@
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    top: 0;
+    top: -78px;
     left: 50%;
-    transform: translate(calc(-50% - 6px), calc(-65% - 10px));
+    transform: translateX(calc(-50% - 10px));
+
+    @media (max-width: $desktop) {
+      transform: translateX(calc(-50% - 6px));
+    }
+
+    @media (max-width: 1280px) {
+      transform: translateX(calc(-50% - 4px));
+    }
 
     @media (max-width: $small-desktop) {
       width: 80px;
       height: 80px;
+      top: -67px;
+      transform: translateX(calc(-50% - 6px));
     }
 
     .iconWrapperSecond {
@@ -75,6 +85,10 @@
       position: absolute;
       top: 6px;
       left: 10px;
+
+      @media (max-width: $desktop) {
+        left: 6px;
+      }
 
       @media (max-width: 1280px) {
         left: 4px;
