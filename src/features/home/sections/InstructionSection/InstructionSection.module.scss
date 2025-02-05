@@ -58,6 +58,10 @@
       column-gap: 20px;
     }
 
+    @media (max-width: 1240px) {
+      column-gap: 55px;
+    }
+
     @media (max-width: $small-desktop) {
       column-gap: 55px;
       row-gap: 24px;

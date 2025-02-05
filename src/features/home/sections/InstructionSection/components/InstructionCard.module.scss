@@ -26,10 +26,26 @@
     padding: 24px;
   }
 
+  @media (max-width: 941px) {
+    width: 39%;
+  }
+
   @media (max-width: $tablet) {
-    width: 46.298%;
+    width: 46%;
     padding: 16px 24px;
     margin-top: 67px;
+  }
+
+  @media (max-width: 720px) {
+    width: 45%;
+  }
+
+  @media (max-width: 624px) {
+    width: 79%;
+  }
+
+  @media (max-width: 492px) {
+    width: 90%;
   }
 
   @media (max-width: $mobile) {
