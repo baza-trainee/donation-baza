@@ -49,6 +49,12 @@
     row-gap: 40px;
     column-gap: 120px;
     align-items: flex-start;
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
+
+    &.show {
+      opacity: 1;
+    }
 
     @media (max-width: $desktop) {
       column-gap: 54px;

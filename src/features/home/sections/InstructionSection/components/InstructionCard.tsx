@@ -2,9 +2,13 @@ import { IInstruction } from '@/features/home/types/home.types';
 import Image from 'next/image';
 import styles from './InstructionCard.module.scss';
 
-const InstructionCard: React.FC<IInstruction> = ({ icon, description }) => {
+const InstructionCard: React.FC<IInstruction> = ({
+  icon,
+  description,
+  isVisible,
+}) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${isVisible ? styles.animate : ''}`}>
       <div className={styles.iconWrapper}>
         <div className={styles.iconWrapperSecond}>
           <Image
