@@ -260,9 +260,19 @@
           -webkit-line-clamp: 4 !important;
         }
 
+        @media (max-width: 452px) {
+          line-clamp: 5 !important;
+          -webkit-line-clamp: 5 !important;
+        }
+
         @media (max-width: $mobile) {
           line-clamp: 3 !important;
           -webkit-line-clamp: 3 !important;
+        }
+
+        @media (max-width: 360px) {
+          line-clamp: 6 !important;
+          -webkit-line-clamp: 6 !important;
         }
       }
 
