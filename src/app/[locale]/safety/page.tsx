@@ -53,6 +53,7 @@ const SecurityPage: React.FC = () => {
         'Дуже наполегливий в своїй діяльності, імітує активність до останнього',
     },
   ];
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -65,17 +66,11 @@ const SecurityPage: React.FC = () => {
               description={card.description}
             />
           ))}
-          {cards.map((card, index) => (
-            <SecurityCard
-              key={index}
-              icon={card.icon}
-              description={card.description}
-            />
-          ))}
         </ul>
       </div>
 
       <div className={styles.secondWrapper}>
+        <div className={styles.signalVector}></div>
         <p>
           Завжди завчасно перевіряйте волонтерів, з якими плануєте співпрацю!
         </p>
