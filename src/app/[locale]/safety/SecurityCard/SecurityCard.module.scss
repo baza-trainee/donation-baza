@@ -195,4 +195,9 @@
   @media (max-width: 400px) {
     max-width: 96%;
   }
+  @media (max-width: 365px) {
+    .description {
+      font-size: 14px;
+    }
+  }
 }

@@ -98,7 +98,6 @@
         @include text-big-button;
         margin-bottom: 13px;
         width: auto;
-        // padding-left: 14px;
       }
 
       ul {
@@ -129,33 +128,8 @@
       padding: 60px 40px;
 
       ul {
-        grid-template-columns: 1fr;
         margin-top: 2.4rem;
-      }
-    }
-
-    @media (max-width: 561px) {
-      h2 {
-        margin-bottom: 37px;
-      }
-    }
-
-    @media (max-width: $mobile) {
-      padding: 40px 20px;
-      top: 0;
-
-      h2 {
-        @include text-big-button;
-        max-width: 300px;
-        width: 100%;
-        height: auto;
-        padding: 0;
-        margin: 0 auto;
-      }
-      /////////
-      ul {
-        margin-top: 22px;
-        gap: 16px;
+        // grid-template-columns: 1fr;
         display: flex;
         flex-direction: column;
         li:nth-child(1) {
@@ -189,11 +163,34 @@
           order: 10;
         }
       }
+    }
 
-      // /////////
+    @media (max-width: 561px) {
+      h2 {
+        margin-bottom: 37px;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      padding: 40px 20px;
+      top: 0;
+      
+      h2 {
+        @include text-big-button;
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0 auto;
+      }
+      
+      ul {
+        margin-top: 22px;
+        gap: 16px;      
+      } 
     }
   }
-  // ////////////////////////////
+  // secondWrapper ------------------
   .secondWrapper {
     position: relative;
     margin-top: 139px;
