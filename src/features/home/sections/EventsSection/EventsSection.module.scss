@@ -4,10 +4,13 @@
   background-color: $background-one;
   padding: 100px 0;
   @media (max-width: $small-desktop) {
-    padding-top: 60px;
+    padding: 80px 0;
+  }
+  @media (max-width: $tablet) {
+    padding: 60px 0;
   }
   @media (max-width: $mobile) {
-    padding-top: 100px;
+    padding: 40px 0;
   }
   .layout {
     @include layout-grid;
@@ -41,12 +44,19 @@
           font-weight: 600;
         }
       }
+
       .collection {
         display: flex;
-        gap: 24px;
+        gap: 72px;
+        flex-direction: row;
+
+        @media (max-width: $extra-large-desktop) {
+          gap: 24px;
+        }
+
         @media (max-width: 1280px) {
           flex-direction: column;
-          gap: 32px;
+          gap: 40px;
         }
       }
     }

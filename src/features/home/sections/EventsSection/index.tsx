@@ -1,9 +1,14 @@
+'use client';
+
 import EventCard from './components/Event/EventCard';
 import styles from './EventsSection.module.scss';
 import { useEventsData } from './hooks/useEventData';
+import { useWindowWidth } from './hooks/useWindowWidth';
 
 export default function EventsSection() {
   const { events, title, subtitle, buttonText } = useEventsData();
+  const screenWidth = useWindowWidth();
+
   return (
     <section className={styles.wrapper}>
       <div className={styles.layout}>
@@ -14,7 +19,12 @@ export default function EventsSection() {
           </header>
           <div className={styles.collection}>
             {events.map((event, idx) => (
-              <EventCard key={idx} {...event} buttonText={buttonText} />
+              <EventCard
+                key={idx}
+                {...event}
+                buttonText={buttonText}
+                screenWidth={screenWidth}
+              />
             ))}
           </div>
         </div>

@@ -8,6 +8,7 @@ import styles from './EventCard.module.scss';
 
 export interface EventCardProps extends IEvent {
   buttonText: string;
+  screenWidth: number;
 }
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -16,95 +17,135 @@ const EventCard: React.FC<EventCardProps> = ({
   image,
   imageAlt,
   buttonText,
+  screenWidth,
 }) => {
   const [isOpened, setIsOpened] = useState(false);
   const [lineClamp, setLineClamp] = useState(5);
+  const [savedHeight, setSavedHeight] = useState(0);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const articleRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (titleRef.current) {
-      const titleElement = titleRef.current;
-      const lineHeight = parseFloat(
-        window.getComputedStyle(titleElement).lineHeight
-      );
-      const titleHeight = titleElement.offsetHeight;
-      const numberOfLines = Math.round(titleHeight / lineHeight);
+    const updateLineClamp = () => {
+      if (titleRef.current) {
+        const titleElement = titleRef.current;
+        const lineHeight = parseFloat(
+          window.getComputedStyle(titleElement).lineHeight
+        );
+        const titleHeight = titleElement.offsetHeight;
+        const numberOfLines = Math.round(titleHeight / lineHeight);
 
-      if (numberOfLines > 1) {
-        setLineClamp(4);
+        const getLineClamp = () => {
+          if (screenWidth <= 580) {
+            return numberOfLines > 2 ? 7 : 8;
+          } else if (screenWidth <= 697) {
+            return numberOfLines > 1 ? 7 : 9;
+          } else if (screenWidth <= 768) {
+            return numberOfLines > 1 ? 6 : 7;
+          } else if (screenWidth <= 1024) {
+            return numberOfLines > 1 ? 5 : 6;
+          } else if (screenWidth <= 1280) {
+            return 5;
+          }
+          return numberOfLines > 1 ? 4 : 5;
+        };
+
+        const newLineClamp = getLineClamp();
+
+        if (newLineClamp !== lineClamp) {
+          setLineClamp(newLineClamp);
+        }
       }
-    }
-  }, [title]);
+    };
 
-  const renderOpened = () => {
-    return (
-      <article className={`${styles.wrapper} ${styles.wrapperOpened}`}>
-        <div className={`${styles.description} ${styles.descriptionOpened}`}>
-          <div className={styles.textContainer}>
-            <div className={styles.titleWrapper}>
-              <button
-                className={styles.backBtn}
-                type="button"
-                onClick={() => setIsOpened((prevState) => !prevState)}
-              >
-                <ArrowLeftWithoutDash />
-              </button>
-              <header className={`${styles.title} ${styles.textContainer}`}>
-                <h2 ref={titleRef}>{title}</h2>
-              </header>
-            </div>
-            <p className={`${styles.text} ${styles.opened}`}>{description}</p>
-          </div>
-        </div>
-      </article>
-    );
-  };
+    updateLineClamp();
+  }, [screenWidth, title]);
 
-  const renderClosed = () => {
+  const renderOpenedDescription = () => {
     return (
-      <article className={`${styles.wrapper} ${styles.wrapperClosed}`}>
-        <div className={styles.imageContainer}>
-          <Image
-            style={{ objectFit: 'cover' }}
-            quality={90}
-            loading="lazy"
-            src={image}
-            width={768}
-            height={814}
-            alt={imageAlt}
-          />
-        </div>
-        <div className={styles.description}>
-          <div className={styles.textContainer}>
-            <header>
-              <h2 ref={titleRef}>{title}</h2>
-            </header>
-            <p
-              className={`${styles.text} ${styles.closed}`}
-              style={{
-                WebkitLineClamp: lineClamp,
-                lineClamp,
-              }}
-            >
-              {description}
-            </p>
-          </div>
-          <Button
-            variant="underline"
-            size="small"
+      <>
+        <div className={styles.titleWrapper}>
+          <button
+            className={styles.backBtn}
             type="button"
             onClick={() => setIsOpened((prevState) => !prevState)}
-            aria-label="Читати далі"
-            className={styles.readMoreBtn}
           >
-            {buttonText}
-          </Button>
+            <ArrowLeftWithoutDash />
+          </button>
+          <header className={`${styles.title} ${styles.textContainer}`}>
+            <h2 ref={titleRef}>{title}</h2>
+          </header>
         </div>
-      </article>
+        <p className={`${styles.text} ${styles.opened}`}>{description}</p>
+      </>
     );
   };
 
-  return isOpened ? renderOpened() : renderClosed();
+  const handleOpen = () => {
+    if (articleRef.current) {
+      const articleElemnt = articleRef.current;
+      const articleHeight = articleElemnt.offsetHeight;
+      if (!isOpened) {
+        setSavedHeight(articleHeight);
+      }
+      setIsOpened((prevState) => !prevState);
+    }
+  };
+
+  return (
+    <article
+      ref={articleRef}
+      className={`${styles.wrapper} ${isOpened ? styles.wrapperOpened : styles.wrapperClosed}`}
+      style={{ height: isOpened ? `${savedHeight}px` : '' }}
+    >
+      <div className={`${styles.imageContainer}`}>
+        <Image
+          style={{ objectFit: 'cover' }}
+          quality={90}
+          loading="lazy"
+          src={image}
+          width={768}
+          height={814}
+          alt={imageAlt}
+        />
+      </div>
+
+      <div
+        className={`${styles.description} ${isOpened ? styles.descriptionOpened : styles.descriptionClosed}`}
+      >
+        <div className={styles.textContainer}>
+          {isOpened ? (
+            renderOpenedDescription()
+          ) : (
+            <>
+              <header>
+                <h2 ref={titleRef}>{title}</h2>
+              </header>
+              <p
+                className={`${styles.text} ${styles.closed}`}
+                style={{
+                  WebkitLineClamp: lineClamp,
+                  lineClamp,
+                }}
+              >
+                {description}
+              </p>
+              <Button
+                variant="underline"
+                size="small"
+                type="button"
+                onClick={handleOpen}
+                aria-label="Читати далі"
+                className={styles.readMoreBtn}
+              >
+                {buttonText}
+              </Button>
+            </>
+          )}
+        </div>
+      </div>
+    </article>
+  );
 };
 
 export default EventCard;
