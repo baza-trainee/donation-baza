@@ -12,7 +12,9 @@
   position: relative;
 
   &.animate {
-    animation: slide 1.6s ease-out forwards;
+    @media (min-width: $small-desktop) {
+      animation: slide 1.6s ease-out forwards;
+    }
   }
 
   @media (max-width: $desktop) {

@@ -1,26 +1,49 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import InstructionCard from './components/InstructionCard';
 import styles from './InstructionSection.module.scss';
 import { useInstructionsData } from './hooks/useInstructionData';
-import { useState } from 'react';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 
 export default function InstructionSection() {
   const { header, instructions } = useInstructionsData();
   const [isCardsVisible, setIsCardsVisible] = useState(false);
+  const headerRef = useRef<HTMLHeadingElement>(null);
+  const width = useWindowWidth();
 
-  const handleOnMouseEnter = () => {
-    setTimeout(() => {
+  useEffect(() => {
+    if (width < 1024) {
       setIsCardsVisible(true);
-    }, 100);
-  };
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setIsCardsVisible(true);
+          }, 200);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
+    return () => {
+      if (headerRef.current) {
+        observer.unobserve(headerRef.current);
+      }
+    };
+  }, [width]);
 
   return (
     <section className={styles.layout}>
-      <h2>{header}</h2>
+      <h2 ref={headerRef}>{header}</h2>
       <article
         className={`${styles.wrapper} ${isCardsVisible ? styles.show : ''}`}
-        onMouseEnter={handleOnMouseEnter}
       >
         {instructions.map((instruction, index) => (
           <InstructionCard

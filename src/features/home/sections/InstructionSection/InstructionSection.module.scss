@@ -50,7 +50,6 @@
     column-gap: 120px;
     align-items: flex-start;
     opacity: 0;
-    transition: opacity 1.8s ease-in-out;
 
     &.show {
       opacity: 1;
@@ -84,5 +83,16 @@
       column-gap: 0;
       row-gap: 24px;
     }
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
