@@ -4,53 +4,42 @@ import { useEffect, useRef, useState } from 'react';
 import InstructionCard from './components/InstructionCard';
 import styles from './InstructionSection.module.scss';
 import { useInstructionsData } from './hooks/useInstructionData';
-import { useWindowWidth } from '../../hooks/useWindowWidth';
 
 export default function InstructionSection() {
   const { header, instructions } = useInstructionsData();
-  const [isCardsVisible, setIsCardsVisible] = useState(false);
-  const headerRef = useRef<HTMLHeadingElement>(null);
-  const width = useWindowWidth();
+  const [isObserverTriggered, setIsObserverTriggered] = useState(false);
+  const sectionRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    if (width < 1024) {
-      setIsCardsVisible(true);
+    if (isObserverTriggered) {
       return;
     }
     const observer = new IntersectionObserver(
-      ([entry]) => {
+      ([entry], obs) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            setIsCardsVisible(true);
-          }, 200);
+          setIsObserverTriggered(true);
+          obs.disconnect();
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
-    if (headerRef.current) {
-      observer.observe(headerRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
 
-    return () => {
-      if (headerRef.current) {
-        observer.unobserve(headerRef.current);
-      }
-    };
-  }, [width]);
+    return () => observer.disconnect();
+  }, [isObserverTriggered]);
 
   return (
-    <section className={styles.layout}>
-      <h2 ref={headerRef}>{header}</h2>
-      <article
-        className={`${styles.wrapper} ${isCardsVisible ? styles.show : ''}`}
-      >
+    <section ref={sectionRef} className={styles.layout}>
+      <h2>{header}</h2>
+      <article className={isObserverTriggered ? styles.animate : ''}>
         {instructions.map((instruction, index) => (
           <InstructionCard
             key={index}
             icon={instruction.icon}
             description={instruction.description}
-            isVisible={isCardsVisible}
           />
         ))}
       </article>

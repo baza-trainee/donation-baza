@@ -8,7 +8,6 @@ export interface IEvent {
 export interface IInstruction {
   icon: string;
   description: string;
-  isVisible?: boolean;
 }
 
 export interface IQuestion {

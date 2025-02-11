@@ -11,12 +11,6 @@
   width: 25.85%;
   position: relative;
 
-  &.animate {
-    @media (min-width: $small-desktop) {
-      animation: slide 1.6s ease-out forwards;
-    }
-  }
-
   @media (max-width: $desktop) {
     width: 30.3%;
     padding: 40px 20px 24px;
@@ -133,16 +127,5 @@
       font-weight: 400;
       letter-spacing: 0.025em;
     }
-  }
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
   }
 }
