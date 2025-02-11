@@ -5,7 +5,7 @@
   img:hover {
     content: url('/svg/logo-hover.svg');
   }
-  @media (max-width: $mobile) {
+  @media (max-width: 600px) {
     margin: 0 auto;
     margin-bottom: 1.5rem;
   }
