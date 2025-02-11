@@ -7,7 +7,7 @@ import FirstViewSection from '@/features/home/sections/FirstViewSection';
 // Import HelpNowSection from '@/features/home/sections/HelpNowSection';
 import Modal from '@/components/common/Modal/Modal';
 import QASection from '@/features/home/sections/QASection';
-// Import SecondViewSection from '@/features/home/sections/SecondViewSection';
+import SecondViewSection from '@/features/home/sections/SecondViewSection';
 // Import TextExample from '@/components/examples/TextExample';
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <FirstViewSection />
       <BannerSection />
-      {/* <SecondViewSection /> */}
+      <SecondViewSection />
       <EventsSection />
       <QASection />
       {/* <HelpNowSection /> */}
