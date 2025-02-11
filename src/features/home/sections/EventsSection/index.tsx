@@ -3,7 +3,7 @@
 import EventCard from './components/Event/EventCard';
 import styles from './EventsSection.module.scss';
 import { useEventsData } from './hooks/useEventData';
-import { useWindowWidth } from './hooks/useWindowWidth';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 
 export default function EventsSection() {
   const { events, title, subtitle, buttonText } = useEventsData();

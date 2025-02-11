@@ -150,6 +150,31 @@
       "title-p-1": "Jesteśmy również wdzięczni za wsparcie Baza Trainee Ukraine.",
       "title-p-2": "Dzięki temu możemy wspierać jeszcze więcej uczestników na drodze ich rozwoju zawodowego."
     },
+    "instructionSection": {
+      "header": "Jak pomóc?",
+      "instructions": {
+        "number-1": {
+          "description": "Zdefiniuj swój cel. Możesz wspierać konkretną osobę, jednorazową inicjatywę lub stały proces. Zastanów się, na ile możesz zaufać odbiorcy pomocy.",
+          "icon": "/svg/how-to-help-one.svg"
+        },
+        "number-2": {
+          "description": "Zdefiniuj swój zasób, czy masz możliwość pomóc teraz, w przyszłym miesiącu, czy na stałe. Możesz pomóc rękami, czasem na organizację lub wkładem zamiast filiżanki kawy.",
+          "icon": "/svg/how-to-help-two.svg"
+        },
+        "number-3": {
+          "description": "Połącz dwa kryteria i określ obiekt pomocy — pilna zbiórka na pojazd wojskowy, miesięczna pomoc dla schroniska dla kotów lub urządzenie rabaty kwiatowej przy swoim domu.",
+          "icon": "/svg/how-to-help-three.svg"
+        },
+        "number-4": {
+          "description": "Pamiętaj o trzech głównych kryteriach skutecznej pomocy: otwartość, przejrzystość, kontrolowalność.",
+          "icon": "/svg/how-to-help-four.svg"
+        },
+        "number-5": {
+          "description": "Nie zapominaj, że prawdziwa pomoc skutkuje trwałym procesem i długoterminowymi konsekwencjami.",
+          "icon": "/svg/how-to-help-five.svg"
+        }
+      }
+    },
     "qASection": {
       "header": "FAQ",
       "imageAlt": "Zdjęcie Obwodowej Biblioteki im. W.G. Korolenki w Czernihowie",
