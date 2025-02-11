@@ -2,63 +2,40 @@
 @import '@/theme/mixins';
 
 .wrapper {
-  border-radius: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
   overflow: scroll;
-  position: absolute;
-  top: 55px;
-  left: 25px;
-  right: 25px;
-  bottom: 25px;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  .article {
+    width: 100%;
+    height: 100%;
+  }
   *:not(button) {
     cursor: default !important;
   }
 
   @media (max-width: $tablet) {
-    top: 45px;
-    left: 10px;
-    right: 10px;
-    bottom: 15px;
-    overflow: scroll;
   }
 }
 
 .pageIndicator {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  padding: 5px;
-  background-color: $background-two;
-  border-radius: 1.25rem;
-  @include text-extra-small;
-  font-size: 0.75rem;
-  color: $black-text;
   @media (max-width: $tablet) {
-    right: unset;
-    left: 6px;
   }
 }
 
 .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 15px;
-  background-color: $white-text;
   width: 100%;
   button {
     margin: 0 5px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: $background-two;
-    color: $black-text;
-    cursor: pointer;
-    @include text-medium-button;
+
     &:hover {
       background-color: $active-buttons;
     }
