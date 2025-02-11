@@ -1,0 +1,280 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+.container {
+  .wrapper {
+    padding: 60px 5%;
+    position: relative;
+    top: 100px;
+
+    h2 {
+      @include text-h2;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    ul {
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+      row-gap: 24px;
+      max-width: 100%;
+    }
+    // wrapper media queries
+    @media (min-width: 1681px) {
+      ul {
+        grid-template-columns: auto auto;
+        width: 79%;
+        margin: 0 auto;
+        grid-column-gap: 10%;
+      }
+    }
+    @media (max-width: $large-desktop) {
+      padding: 60px 135px;
+      padding: 60px 14.5%;
+      ul {
+        grid-column-gap: 10%;
+      }
+    }
+
+    @media (max-width: $desktop) {
+      padding: 60px 20px;
+      ul {
+        grid-template-columns: repeat(2, minmax(500px, 1fr));
+        width: 86%;
+        grid-column-gap: 12%;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 1357px) {
+      padding: 80px 5%;
+      ul {
+        width: 96%;
+        column-gap: 0;
+      }
+    }
+
+    @media (max-width: 1276px) {
+      ul {
+        margin: 0 auto;
+        width: 90%;
+        column-gap: 5%;
+        column-gap: 0;
+      }
+    }
+
+    @media (max-width: 1115px) {
+      ul {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: $small-desktop) {
+      padding: 80px 40px;
+
+      h2 {
+        width: 100%;
+        height: 48px;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 150%;
+        text-align: center;
+        letter-spacing: 0.01em;
+        padding-left: 0;
+        margin-bottom: 32px;
+      }
+
+      ul {
+        column-gap: 28px;
+        row-gap: 16px;
+        grid-template-columns: repeat(2, minmax(336px, 1fr));
+      }
+    }
+
+    @media (max-width: $tablet) {
+      padding: 60px 40px;
+
+      h2 {
+        @include text-big-button;
+        margin-bottom: 13px;
+        width: auto;
+      }
+
+      ul {
+        column-gap: 16px;
+        row-gap: 24px;
+      }
+    }
+    @media (max-width: 746px) {
+      padding: 60px 3%;
+      ul {
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+        column-gap: 1%;
+        row-gap: 24px;
+      }
+    }
+
+    @media (max-width: 668px) {
+      ul {
+        column-gap: 0;
+      }
+    }
+
+    @media (max-width: 604px) {
+      padding: 60px 2%;
+    }
+
+    @media (max-width: 585px) {
+      padding: 60px 40px;
+
+      ul {
+        margin-top: 2.4rem;
+        // grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        li:nth-child(1) {
+          order: 1;
+        }
+        li:nth-child(2) {
+          order: 6;
+        }
+        li:nth-child(3) {
+          order: 2;
+        }
+        li:nth-child(4) {
+          order: 7;
+        }
+        li:nth-child(5) {
+          order: 3;
+        }
+        li:nth-child(6) {
+          order: 8;
+        }
+        li:nth-child(7) {
+          order: 4;
+        }
+        li:nth-child(8) {
+          order: 9;
+        }
+        li:nth-child(9) {
+          order: 5;
+        }
+        li:nth-child(10) {
+          order: 10;
+        }
+      }
+    }
+
+    @media (max-width: 561px) {
+      h2 {
+        margin-bottom: 37px;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      padding: 40px 20px;
+      top: 0;
+      
+      h2 {
+        @include text-big-button;
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0 auto;
+      }
+      
+      ul {
+        margin-top: 22px;
+        gap: 16px;      
+      } 
+    }
+  }
+  // secondWrapper ------------------
+  .secondWrapper {
+    position: relative;
+    margin-top: 139px;
+    height: 154px;
+    overflow: hidden;
+
+    background-image: url('/img/securityBgr1680.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .signalVector {
+      background-image: url('/svg/signalVector.svg');
+      position: absolute;
+      top: 0;
+      left: 77%;
+      width: 344px;
+      height: 154px;
+    }
+    p {
+      text-align: center;
+      color: $white-text;
+      @include text-subtitle;
+      margin: 0 auto;
+      padding-left: 2px;
+      max-width: 962px;
+      z-index: 2;
+    }
+    // secondWrapper media queries
+    @media (max-width: $large-desktop) {
+      .signalVector {
+        left: 80%;
+      }
+    }
+    @media (max-width: $desktop) {
+      .signalVector {
+        left: 77%;
+      }
+    }
+    @media (max-width: $small-desktop) {
+      margin-top: 92px;
+      height: 140px;
+
+      .signalVector {
+        transform: rotate(2deg) translate(6px, -7px);
+        left: 75%;
+      }
+
+      p {
+        width: 698px;
+        padding-right: 85px;
+      }
+    }
+    @media (max-width: 852px) {
+      p {
+        padding-right: 0;
+      }
+    }
+    @media (max-width: $tablet) {
+      margin-top: 99px;
+      height: 120px;
+
+      .signalVector {
+        transform: rotate(7deg) translate(-38px, -8px);
+        left: 77.3%;
+      }
+
+      p {
+        width: 541px;
+        @include text-medium-button;
+        margin-left: 40px;
+      }
+    }
+    @media (max-width: $mobile) {
+      margin-top: 6px;
+
+      .signalVector {
+        left: 52%;
+      }
+
+      p {
+        @include text-small;
+        margin: 0 20px;
+      }
+    }
+  }
+}
