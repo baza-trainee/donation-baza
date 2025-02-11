@@ -28,7 +28,7 @@
   }
 
   @media (max-width: $small-desktop) {
-    width: 37.5%;
+    width: 34.7%;
     padding: 24px;
   }
 
@@ -39,7 +39,6 @@
   @media (max-width: $tablet) {
     width: 46%;
     padding: 16px 24px;
-    margin-top: 67px;
   }
 
   @media (max-width: 720px) {
@@ -122,6 +121,7 @@
 
     @media (max-width: $small-desktop) {
       @include text-small;
+      letter-spacing: 0.02em;
     }
 
     @media (max-width: $tablet) {
@@ -130,6 +130,8 @@
 
     @media (max-width: $mobile) {
       @include mobile-h5;
+      font-weight: 400;
+      letter-spacing: 0.025em;
     }
   }
 }

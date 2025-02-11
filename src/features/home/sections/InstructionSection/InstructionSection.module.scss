@@ -2,16 +2,19 @@
 @import '@/theme/mixins';
 
 .layout {
-  padding: 100px 120px;
+  padding: 110px 120px 130px;
   background-color: $background-two;
 
-  @media (max-width: 1280px) {
-    padding-left: 80px;
-    padding-right: 80px;
+  @media (max-width: $desktop) {
+    padding: 110px 120px 135px;
+  }
+
+  @media (max-width: $small-medium-desktop) {
+    padding: 110px 80px 146px;
   }
 
   @media (max-width: $small-desktop) {
-    padding: 60px 44px;
+    padding: 76px 44px 60px;
   }
 
   @media (max-width: $tablet) {
@@ -26,19 +29,27 @@
     @include text-h1;
     font-size: 2.5rem; // 40px / 16
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 
     @media (max-width: $desktop) {
       @include text-h2;
     }
 
+    @media (max-width: $small-medium-desktop) {
+      margin-bottom: 64px;
+    }
+
     @media (max-width: $small-desktop) {
       @include text-subtitle;
-      margin-bottom: 32px;
+      margin-bottom: 48px;
     }
 
     @media (max-width: $tablet) {
       @include text-card-title;
+      margin-bottom: 42px;
+    }
+    @media (max-width: $mobile) {
+      margin-bottom: 34px;
     }
   }
 
@@ -74,7 +85,7 @@
 
     @media (max-width: $tablet) {
       column-gap: 48px;
-      row-gap: 32px;
+      row-gap: 42px;
     }
 
     @media (max-width: $mobile) {
