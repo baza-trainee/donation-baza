@@ -7,7 +7,6 @@
   align-items: center;
 
   padding: 24px;
-  // margin-left: 5.9rem;
   gap: 15px;
   width: 538px;
   height: 186px;
@@ -17,7 +16,15 @@
   box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
 
+  position: relative;
+
   .iconContainer {
+    transition: transform 0.4s ease-out;
+
+    &:hover {
+      transform: scale(1.1) rotate(15deg);
+    }
+    // ---------------------
     border-radius: 60px;
     background: #f7a400;
     box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.25);
@@ -25,7 +32,7 @@
     top: -9px;
     width: 120px;
     height: 120px;
-    // /////////
+
     margin-right: 16px;
     border-radius: 50%;
     display: flex;
@@ -33,6 +40,8 @@
     justify-content: center;
 
     .iconContainerTwo {
+      transition: transform 0.4s ease-out;
+
       position: relative;
       top: 5%;
       left: 5%;
@@ -43,9 +52,20 @@
       border-radius: 50%;
 
       .icon {
+        transition: transform 0.4s ease-out;
+
         position: relative;
         top: 19%;
         left: 18%;
+
+        image-rendering: crisp-edges;
+        transform: translateZ(0);
+      }
+    }
+    &:hover {
+      .iconContainerTwo {
+        transform: scale(1);
+        background: #c2cdc4;
       }
     }
   }
@@ -53,22 +73,11 @@
   .description {
     @include text-accent;
     margin: 0;
-    // /===========
     flex-grow: 1;
     word-wrap: break-word;
   }
 
   // card LI media queries
-
-  // @media (min-width: $large-desktop) {
-  //   padding: 24px;
-  //   gap: 16px;
-  //   margin-left: 0%;
-  // }
-
-  @media (max-width: $large-desktop) {
-    // /////////
-  }
   @media (max-width: 1356px) {
     margin-left: 5%;
   }
