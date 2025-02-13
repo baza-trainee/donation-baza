@@ -21,12 +21,18 @@ const Page404: NextPage = () => {
         <p className={styles.description}>{translate('first')}</p>
         <p className={styles.description}>{translate('second')}</p>
       </div>
+
       <div className={styles.btnGroup}>
-        <Button variant="outline" size="medium" onClick={handleGoBack}>
+        <Button
+          variant="outline"
+          size="medium"
+          onClick={handleGoBack}
+          className={styles.button}
+        >
           {translate('buttonGoBack')}
         </Button>
         <Link href="/">
-          <Button variant="primary" size="medium">
+          <Button variant="primary" size="medium" className={styles.button}>
             {translate('buttonGoHome')}
           </Button>
         </Link>
