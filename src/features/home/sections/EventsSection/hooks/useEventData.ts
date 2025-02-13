@@ -2,7 +2,7 @@
 
 import { AbstractIntlMessages, useMessages, useTranslations } from 'next-intl';
 import { IEvent } from '@/features/home/types/home.types';
-import { useWindowWidth } from './useWindowWidth';
+import { useWindowWidth } from '@/features/home/hooks/useWindowWidth';
 
 type EventsMessages = AbstractIntlMessages & {
   homepage: {

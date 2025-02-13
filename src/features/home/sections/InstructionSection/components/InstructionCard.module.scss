@@ -1,0 +1,131 @@
+@import '@/theme/variables';
+@import '@/theme/mixins';
+
+.container {
+  box-sizing: border-box;
+  padding: 40px 24px 24px;
+  margin-top: 80px;
+  background-color: $modal-bg;
+  border-radius: 16px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+  width: 25.85%;
+  position: relative;
+
+  @media (max-width: $desktop) {
+    width: 30.3%;
+    padding: 40px 20px 24px;
+  }
+
+  @media (max-width: 1280px) {
+    width: 32.1%;
+    margin-top: 67px;
+  }
+
+  @media (max-width: $small-desktop) {
+    width: 34.7%;
+    padding: 24px;
+  }
+
+  @media (max-width: 941px) {
+    width: 39%;
+  }
+
+  @media (max-width: $tablet) {
+    width: 46%;
+    padding: 16px 24px;
+  }
+
+  @media (max-width: 720px) {
+    width: 45%;
+  }
+
+  @media (max-width: 624px) {
+    width: 79%;
+  }
+
+  @media (max-width: 492px) {
+    width: 90%;
+  }
+
+  @media (max-width: $mobile) {
+    width: 79%;
+  }
+
+  .iconWrapper {
+    position: absolute;
+    background-color: $active-buttons;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    top: -78px;
+    left: 50%;
+    transform: translateX(calc(-50% - 10px));
+
+    @media (max-width: $desktop) {
+      transform: translateX(calc(-50% - 6px));
+    }
+
+    @media (max-width: 1280px) {
+      transform: translateX(calc(-50% - 4px));
+    }
+
+    @media (max-width: $small-desktop) {
+      width: 80px;
+      height: 80px;
+      top: -67px;
+      transform: translateX(calc(-50% - 6px));
+    }
+
+    .iconWrapperSecond {
+      background-color: #3d6c60;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 6px;
+      left: 10px;
+
+      @media (max-width: $desktop) {
+        left: 6px;
+      }
+
+      @media (max-width: 1280px) {
+        left: 4px;
+      }
+
+      @media (max-width: $small-desktop) {
+        width: 80px;
+        height: 80px;
+        left: 6px;
+      }
+
+      .icon {
+        position: absolute;
+        width: auto !important;
+        height: auto !important;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+      }
+    }
+  }
+
+  p {
+    @include text-accent;
+
+    @media (max-width: $small-desktop) {
+      @include text-small;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: $tablet) {
+      @include text-extra-small;
+    }
+
+    @media (max-width: $mobile) {
+      @include mobile-h5;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+    }
+  }
+}
