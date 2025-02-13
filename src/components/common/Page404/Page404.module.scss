@@ -6,29 +6,120 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 160px 120px 200px 120px;
+  padding: 160px 105px 198px 120px;
+
   .textContainer {
     margin-bottom: 48px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     .title {
       @include text-h1;
       font-size: 10rem;
       color: $footer;
-      margin-bottom: 28px;
+      line-height: 115%;
       text-align: center;
+      padding-top: 6.5rem;
     }
+
     .description {
       @include text-card-title;
       color: $black-text;
+      text-align: center;
     }
+    // ///////////////
+    @media (max-width: $small-desktop) {
+      margin-bottom: 42px;
+
+      .title {
+        font-size: 9.2rem;
+        padding-top: 0;
+        margin-bottom: -4px;
+      }
+      .description {
+        @include text-medium-button;
+        line-height: 129%;
+      }
+      h1 + p {
+        padding-bottom: 4px;
+      }
+    }
+    // 👇end text container
   }
+
   .btnGroup {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 24px;
+  }
+
+  @media (max-width: $small-desktop) {
+    padding-bottom: 79px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 100px 40px 60px;
+
+    .textContainer {
+      margin-bottom: 51px;
+
+      .title {
+        font-size: 7.5rem;
+        margin-top: 4rem;
+        padding-left: 1.1rem;
+      }
+      .description {
+        @include text-small;
+        font-weight: 600;
+        padding-left: 0.9rem;
+      }
+      h1 + p {
+        padding-bottom: 0;
+      }
+    }
+    .btnGroup {
+      padding-left: 1rem;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding: 40px;
+
+    .textContainer {
+      margin-bottom: 45px;
+
+      .title {
+        font-size: 6.5rem;
+        margin-top: 2px;
+        padding-left: 0;
+      }
+      .description {
+        @include mobile-h5;
+        padding-left: 0;
+        margin-top: -2px;
+        font-weight: 600;
+      }
+      h1 + p {
+        padding-top: 1rem;
+      }
+    }
+
+    .btnGroup {
+      gap: 16px;
+      padding-left: 0;
+
+      .button {
+        height: 50px;
+        padding: 14px 24px;
+        color: $black-text;
+      }
+
+      a .button {
+        font-size: 0.87rem;
+      }
+    }
   }
 }
