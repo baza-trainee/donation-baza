@@ -26,7 +26,7 @@ export const FooterDocuments: React.FC = () => {
                 {translate(`docs.${doc.key}`)}
               </span>
               <Modal modalKey={doc.key}>
-                <PDFViewer file={doc.url} />
+                <PDFViewer file={doc.url} docKey={doc.key} />
               </Modal>
             </li>
           ))}

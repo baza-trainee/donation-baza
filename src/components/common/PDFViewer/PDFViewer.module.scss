@@ -1,27 +1,47 @@
 @import '@/theme/variables';
 @import '@/theme/mixins';
 
+*:not(button):not(.modalClose):not(.modalClose img) {
+  cursor: default;
+}
+
 .wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   height: 100%;
   width: 100%;
   user-select: none;
   -webkit-user-select: none;
-  overflow: scroll;
-  user-select: none;
-  -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  .article {
+}
+
+.container {
+  display: flex;
+  .closeContainer {
+    position: relative;
+    width: 1px;
+    height: 1px;
+    .modalClose {
+      position: absolute;
+      left: 64px;
+      top: 0;
+      height: 28px;
+      width: 28px;
+      cursor: pointer;
+      img {
+        @media screen and (max-width: $large-desktop) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  article {
+    overflow-y: scroll;
     width: 100%;
     height: 100%;
-  }
-  *:not(button) {
-    cursor: default !important;
-  }
-
-  @media (max-width: $tablet) {
   }
 }
 

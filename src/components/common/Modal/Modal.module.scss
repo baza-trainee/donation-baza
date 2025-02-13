@@ -89,7 +89,6 @@
   z-index: 1000;
   backdrop-filter: blur(10px) brightness(60%);
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 24px 120px;
 }
 .documentsContent {
   @include flex-center;
@@ -97,6 +96,8 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  padding: 24px 120px;
+
   @media screen and (max-width: $large-desktop) {
   }
   @media screen and (max-width: $small-desktop) {
@@ -104,29 +105,5 @@
   @media screen and (max-width: $tablet) {
   }
   @media screen and (max-width: $mobile) {
-  }
-
-  .modalClose {
-    position: absolute;
-    right: -88px;
-    top: 0;
-    height: 28px;
-    width: 28px;
-    cursor: pointer;
-    @media screen and (max-width: $large-desktop) {
-    }
-    @media screen and (max-width: $small-desktop) {
-    }
-    @media screen and (max-width: $tablet) {
-    }
-    @media screen and (max-width: $mobile) {
-    }
-
-    img {
-      @media screen and (max-width: $large-desktop) {
-        width: 30px;
-        height: 30px;
-      }
-    }
   }
 }
