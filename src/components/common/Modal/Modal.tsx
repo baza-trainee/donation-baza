@@ -30,12 +30,7 @@ const Modal = ({ modalKey, children }: ModalProps) => {
 
   const DocumentsLayout = () => (
     <div className={styles.documentsOverlay}>
-      <div className={styles.documentsContent}>
-        <div onClick={() => closeModal(modalKey)} className={styles.modalClose}>
-          <Image src="/svg/close.svg" alt="close" width={20} height={20} />
-        </div>
-        {children}
-      </div>
+      <div className={styles.documentsContent}>{children}</div>
     </div>
   );
 

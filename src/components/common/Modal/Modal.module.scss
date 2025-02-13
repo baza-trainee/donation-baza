@@ -48,6 +48,38 @@
       display: none;
     }
   }
+
+  .modalClose {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    cursor: pointer;
+    @media screen and (max-width: $large-desktop) {
+      right: 2.8rem;
+      top: 2.5rem;
+    }
+    @media screen and (max-width: $small-desktop) {
+      right: 2.35rem;
+      top: 1.73rem;
+    }
+    @media screen and (max-width: $tablet) {
+      right: 22px;
+      top: 34px;
+    }
+    @media screen and (max-width: $mobile) {
+      right: 27px;
+      top: 22px;
+    }
+
+    img {
+      @media screen and (max-width: $large-desktop) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
 }
 
 .documentsOverlay {
@@ -73,36 +105,28 @@
   }
   @media screen and (max-width: $mobile) {
   }
-}
 
-.modalClose {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  height: 1.5rem;
-  width: 1.5rem;
-  cursor: pointer;
-  @media screen and (max-width: $large-desktop) {
-    right: 2.8rem;
-    top: 2.5rem;
-  }
-  @media screen and (max-width: $small-desktop) {
-    right: 2.35rem;
-    top: 1.73rem;
-  }
-  @media screen and (max-width: $tablet) {
-    right: 22px;
-    top: 34px;
-  }
-  @media screen and (max-width: $mobile) {
-    right: 27px;
-    top: 22px;
-  }
-
-  img {
+  .modalClose {
+    position: absolute;
+    right: -88px;
+    top: 0;
+    height: 28px;
+    width: 28px;
+    cursor: pointer;
     @media screen and (max-width: $large-desktop) {
-      width: 30px;
-      height: 30px;
+    }
+    @media screen and (max-width: $small-desktop) {
+    }
+    @media screen and (max-width: $tablet) {
+    }
+    @media screen and (max-width: $mobile) {
+    }
+
+    img {
+      @media screen and (max-width: $large-desktop) {
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 }
