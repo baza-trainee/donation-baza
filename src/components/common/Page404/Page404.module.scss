@@ -54,6 +54,9 @@
     justify-content: center;
     align-items: center;
     gap: 24px;
+    .button {
+      color: $black-text;
+    }
   }
 
   @media (max-width: $small-desktop) {
@@ -114,10 +117,6 @@
       .button {
         height: 50px;
         padding: 14px 24px;
-        color: $black-text;
-      }
-
-      a .button {
         font-size: 0.87rem;
       }
     }
