@@ -42,8 +42,12 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ file, docKey }) => {
   }, []);
 
   useEffect(() => {
-    const getWidth = () =>
-      pageRef?.current?.getBoundingClientRect()?.width || 0;
+    const getWidth = () => {
+      if (clientWidth < 1280) {
+        return clientWidth - 40;
+      }
+      return 1040;
+    };
 
     const handleResize = () => {
       setViewerWidth(getWidth());
