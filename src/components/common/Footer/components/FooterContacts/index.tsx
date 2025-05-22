@@ -20,17 +20,14 @@ export const FooterContacts: React.FC = () => {
           </a>
         </li>
         <li>
-          <a
-            href={`tel:+380675681788
-електронна пошта`}
-          >
+          <a href={`tel:+380956621073`}>
             <Image
               src="/svg/phone-icon.svg"
               alt={translate('footer.phoneAlt')}
               width={24}
               height={24}
             />
-            +380 67 568 17 88
+            +380 95 662 10 73
           </a>
         </li>
         <li>

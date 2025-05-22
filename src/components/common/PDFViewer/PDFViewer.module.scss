@@ -1,66 +1,75 @@
 @import '@/theme/variables';
 @import '@/theme/mixins';
-
 .wrapper {
-  border-radius: 1.25rem;
-  overflow: scroll;
-  position: absolute;
-  top: 55px;
-  left: 25px;
-  right: 25px;
-  bottom: 25px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  *:not(button) {
-    cursor: default !important;
-  }
-
-  @media (max-width: $tablet) {
-    top: 45px;
-    left: 10px;
-    right: 10px;
-    bottom: 15px;
-    overflow: scroll;
-  }
 }
 
-.pageIndicator {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  padding: 5px;
-  background-color: $background-two;
-  border-radius: 1.25rem;
-  @include text-extra-small;
-  font-size: 0.75rem;
-  color: $black-text;
-  @media (max-width: $tablet) {
-    right: unset;
-    left: 6px;
+.container {
+  display: flex;
+}
+
+.article {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  * {
+    cursor: default;
+  }
+  .closeContainer {
+    position: relative;
+    width: 100%;
+    height: 46px;
+    background: $white-text;
+    .modalClose {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      height: 28px;
+      width: 28px;
+      cursor: pointer;
+      z-index: 100;
+      transition: transform 0.2s;
+      &:hover {
+        transform: scale(1.08);
+      }
+      img {
+        cursor: pointer;
+        @media screen and (max-width: $large-desktop) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
   }
 }
 
 .pagination {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 15px;
-  background-color: $white-text;
-  width: 100%;
+  gap: 16px;
+  padding: 24px 0;
   button {
-    margin: 0 5px;
-    padding: 5px 10px;
+    background: none;
     border: none;
-    border-radius: 5px;
-    background-color: $background-two;
-    color: $black-text;
     cursor: pointer;
-    @include text-medium-button;
+    color: $black-text;
+    @include text-accent;
     &:hover {
-      background-color: $active-buttons;
+      text-decoration: underline;
+      transition: all 0.2s;
+      transform: scale(1.1);
+    }
+    &.activePage {
+      text-decoration: underline;
     }
   }
 }
