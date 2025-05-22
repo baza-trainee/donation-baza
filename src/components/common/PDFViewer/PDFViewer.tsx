@@ -62,17 +62,15 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ file, docKey }) => {
     };
   }, [clientWidth]);
 
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
+  const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) =>
     setPages(numPages);
-  }
 
-  // Const changePage = (newPageNumber: number) => {
-  //   SetPageNumber(newPageNumber);
-  //   If (pageRef.current) {
-  //     PageRef.current.scrollIntoView({ behavior: 'smooth' });
-  //   }
-  // };
-  // Test;
+  const changePage = (newPageNumber: number) => {
+    setPageNumber(newPageNumber);
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -89,17 +87,17 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ file, docKey }) => {
         </div>
       </div>
 
-      {/* <div className={styles.pageIndicator}>
+      <div className={styles.pageIndicator}>
         {translations('page')} {pageNumber} {translations('from')} {pages}
-      </div> */}
-      {/* <div className={styles.pagination}>
+      </div>
+      <div className={styles.pagination}>
         {pageNumber > 1 && (
           <button onClick={() => changePage(pageNumber - 1)}>←</button>
         )}
         {pages && pageNumber + 1 <= pages && (
           <button onClick={() => changePage(pageNumber + 1)}>→</button>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };
