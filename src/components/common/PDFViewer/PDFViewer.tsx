@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import styles from './PDFViewer.module.scss';
 import { useModalContext } from '@/context/ModalContext';
-import { useTranslations } from 'next-intl';
 import { useWindowWidth } from '@/features/home/hooks/useWindowWidth';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
@@ -20,7 +19,6 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ file, docKey }) => {
   const [pages, setPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState<number>(1);
   const pageRef = useRef<HTMLDivElement>(null);
-  const translations = useTranslations('common.pdfViewer');
   const { closeModal } = useModalContext();
   const clientWidth = useWindowWidth();
   const [viewerWidth, setViewerWidth] = useState<number>(0);
@@ -91,23 +89,23 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ file, docKey }) => {
               </div>
             </div>
             <Page pageNumber={pageNumber} width={viewerWidth}>
-              <div>
-                <div className={styles.pageIndicator}>
-                  {translations('page')} {pageNumber} {translations('from')}
-                  {pages}
-                </div>
-                <div className={styles.pagination}>
-                  {pageNumber > 1 && (
-                    <button onClick={() => changePage(pageNumber - 1)}>
-                      ←
-                    </button>
-                  )}
-                  {pages && pageNumber + 1 <= pages && (
-                    <button onClick={() => changePage(pageNumber + 1)}>
-                      →
-                    </button>
-                  )}
-                </div>
+              <div className={styles.pagination}>
+                {pages &&
+                  Array.from({ length: pages }, (__, pageIndex) => {
+                    const pageNum = pageIndex + 1;
+                    return (
+                      <button
+                        key={pageNum}
+                        onClick={() => changePage(pageNum)}
+                        className={
+                          pageNum === pageNumber ? styles.activePage : ''
+                        }
+                        disabled={pageNum === pageNumber}
+                      >
+                        {pageNum}
+                      </button>
+                    );
+                  })}
               </div>
             </Page>
           </Document>

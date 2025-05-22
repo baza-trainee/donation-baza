@@ -51,18 +51,25 @@
   }
 }
 
-.pageIndicator {
-  @media (max-width: $tablet) {
-  }
-}
-
 .pagination {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 0;
   button {
-    margin: 0 5px;
-
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $black-text;
+    @include text-accent;
     &:hover {
-      background-color: $active-buttons;
+      text-decoration: underline;
+      transition: all 0.2s;
+      transform: scale(1.1);
+    }
+    &.activePage {
+      text-decoration: underline;
     }
   }
 }
