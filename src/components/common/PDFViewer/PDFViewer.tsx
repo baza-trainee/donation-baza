@@ -75,28 +75,43 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ file, docKey }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <article ref={pageRef}>
+        <article ref={pageRef} className={styles.article}>
           <Document {...{ file }} onLoadSuccess={onDocumentLoadSuccess}>
-            <Page pageNumber={pageNumber} width={viewerWidth}></Page>
+            <div className={styles.closeContainer}>
+              <div
+                onClick={() => closeModal(docKey)}
+                className={styles.modalClose}
+              >
+                <Image
+                  src="/svg/close.svg"
+                  alt="close"
+                  width={20}
+                  height={20}
+                />
+              </div>
+            </div>
+            <Page pageNumber={pageNumber} width={viewerWidth}>
+              <div>
+                <div className={styles.pageIndicator}>
+                  {translations('page')} {pageNumber} {translations('from')}
+                  {pages}
+                </div>
+                <div className={styles.pagination}>
+                  {pageNumber > 1 && (
+                    <button onClick={() => changePage(pageNumber - 1)}>
+                      ←
+                    </button>
+                  )}
+                  {pages && pageNumber + 1 <= pages && (
+                    <button onClick={() => changePage(pageNumber + 1)}>
+                      →
+                    </button>
+                  )}
+                </div>
+              </div>
+            </Page>
           </Document>
         </article>
-        <div className={styles.closeContainer}>
-          <div onClick={() => closeModal(docKey)} className={styles.modalClose}>
-            <Image src="/svg/close.svg" alt="close" width={20} height={20} />
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.pageIndicator}>
-        {translations('page')} {pageNumber} {translations('from')} {pages}
-      </div>
-      <div className={styles.pagination}>
-        {pageNumber > 1 && (
-          <button onClick={() => changePage(pageNumber - 1)}>←</button>
-        )}
-        {pages && pageNumber + 1 <= pages && (
-          <button onClick={() => changePage(pageNumber + 1)}>→</button>
-        )}
       </div>
     </div>
   );
